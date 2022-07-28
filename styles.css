@@ -1,0 +1,613 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  background-color: white;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: auto;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(skyblue), to(white));
+  background-image: linear-gradient(to bottom, skyblue, white);
+  overflow-x: hidden;
+}
+
+body prompt {
+  z-index: 10;
+  margin: 20% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  height: 30em;
+  width: 100%;
+  border-radius: 0;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+body prompt h1 {
+  margin: 5%;
+}
+
+body prompt input {
+  text-align: center;
+  width: 60%;
+  margin: 30px auto;
+  font-size: 250%;
+}
+
+body prompt a {
+  display: block;
+  background-color: darkslategrey;
+  height: 5em;
+  width: 50%;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 200%;
+  cursor: pointer;
+  text-decoration: none;
+  color: #151515;
+  margin: 0 auto;
+}
+
+body prompt a p {
+  font-size: 70%;
+}
+
+body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  height: 35em;
+  width: 60%;
+  background-color: darkslategrey;
+  margin: 30% auto 5% auto;
+  /* margins here are used just for now till the prompt and cards ar done same as prompt and cards */
+  border-radius: 20px;
+  -webkit-box-shadow: 14px 10px 70px;
+          box-shadow: 14px 10px 70px;
+}
+
+body main maincolumn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
+  position: relative;
+}
+
+body main maincolumn .descriptions {
+  display: block;
+  background-color: darkslategrey;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px 0 0 20px;
+  position: absolute;
+  display: none;
+  border: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body main maincolumn .descriptions p, body main maincolumn .descriptions h3, body main maincolumn .descriptions h2, body main maincolumn .descriptions h1, body main maincolumn .descriptions table {
+  width: 90%;
+  margin-top: 2em;
+  margin-left: 5%;
+}
+
+body main maincolumn .descriptions tr:first-of-type {
+  font-weight: 800;
+}
+
+body main maincolumn .descriptions td {
+  padding: 10px;
+  font-size: 100%;
+}
+
+body main maincolumn tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  bottom: 0;
+  left: 95%;
+  cursor: pointer;
+  width: 5%;
+  height: 20%;
+  border-radius: 0 0 0 20px;
+}
+
+body main maincolumn #profiletab {
+  background-color: #933bdb;
+  right: 100%;
+  top: 0em;
+  z-index: 8;
+}
+
+body main maincolumn #personalitytab {
+  background-color: #f25835;
+  right: 100%;
+  top: 10%;
+  z-index: 7;
+}
+
+body main maincolumn #educationtab {
+  background-color: #4fe833;
+  right: 100%;
+  top: 20%;
+  z-index: 6;
+}
+
+body main maincolumn #experiencetab {
+  background-color: #3dc8f5;
+  right: 100%;
+  top: 30%;
+  z-index: 5;
+}
+
+body main maincolumn #contacttab {
+  background-color: #ebca41;
+  right: 100%;
+  top: 40%;
+  z-index: 4;
+}
+
+body main maincolumn layer {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 0 20px 20px 0;
+  position: absolute;
+}
+
+body main maincolumn layer img#footballpic {
+  display: block;
+  background-color: transparent;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 5;
+}
+
+body main maincolumn div {
+  width: 90%;
+  margin: auto;
+  border: solid 4px #151515;
+  border-radius: 20px;
+}
+
+body main maincolumn div innerdiv {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+body main maincolumn div innerdiv a {
+  cursor: default;
+}
+
+body main maincolumn div innerdiv .selected {
+  background-color: #151515;
+  color: #f25835;
+}
+
+body main maincolumn div innerdiv .selectable {
+  border: solid var(--primary) 1px;
+  border-radius: 20px;
+  width: 90%;
+  padding: 0 5px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+body main maincolumn div innerdiv .selectable:hover {
+  color: white;
+  background-color: #151515;
+}
+
+body main maincolumn div table {
+  width: 100%;
+}
+
+body main maincolumn #profile {
+  background-color: #933bdb;
+  z-index: 7;
+}
+
+body main maincolumn #personality {
+  background-color: #f25835;
+  z-index: 6;
+}
+
+body main maincolumn #education {
+  background-color: #4fe833;
+  z-index: 5;
+}
+
+body main maincolumn #experience {
+  background-color: #3dc8f5;
+  z-index: 4;
+}
+
+body main maincolumn #contact {
+  background-color: #ebca41;
+  z-index: 3;
+}
+
+body main maincolumn #contact h1:first-of-type {
+  /* add a smooth animation effect for the contact header */
+  z-index: 10;
+}
+
+body main maincolumn #contact .contactfadein {
+  display: none;
+}
+
+body main maincolumn #contact div {
+  padding: 0;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  max-width: 90%;
+}
+
+body main maincolumn #contact div box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 90%;
+  border-radius: 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  border-bottom: black 2px solid;
+  margin: 20px 5%;
+}
+
+body main maincolumn #contact div box a {
+  margin: auto 0;
+}
+
+body main maincolumn #contact div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f25835;
+  height: 100px;
+  width: 90%;
+  border-radius: 5px;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 20px 5%;
+  border: none;
+  cursor: pointer;
+}
+
+body main maincolumn #contact div form {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #933bdb;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  /* #pay is to be 45% when i add radio buttons */
+}
+
+body main maincolumn #contact div form #closeemail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+  border-radius: 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  top: -4%;
+  right: 8.5%;
+  bottom: 104%;
+  left: 91.5%;
+}
+
+body main maincolumn #contact div form #closeemail img {
+  width: 100%;
+  height: 100%;
+}
+
+body main maincolumn #contact div form label {
+  font-size: 150%;
+  margin: 0 5%;
+}
+
+body main maincolumn #contact div form input {
+  width: 90%;
+  font-size: 140%;
+  margin: 0 5%;
+}
+
+body main maincolumn #contact div form #pay {
+  width: 90%;
+}
+
+body main maincolumn #contact div form textarea {
+  width: 90%;
+  max-width: 90%;
+  font-size: 140%;
+  margin: 0 5%;
+}
+
+body main maincolumn:first-of-type {
+  width: 40%;
+}
+
+body main maincolumn:last-of-type {
+  width: 60%;
+}
+
+body cardsection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: darkslateblue;
+  height: auto;
+  width: 80%;
+  border-radius: 20px;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  color: white;
+}
+
+body cardsection square {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #151515;
+  height: 10em;
+  width: 20%;
+  border-radius: 0px;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+body cardsection square h2 {
+  margin: 20px 10px;
+}
+
+body cardsection square h3 {
+  margin: 20px 10px;
+}
+
+body cardsection square:first-of-type {
+  border-radius: 20px 0 0 0;
+}
+
+body cardsection square:last-of-type {
+  border-radius: 0 20px 0 0;
+}
+
+body cardsection card:first-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+body cardsection card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #151515;
+  height: auto;
+  width: 80%;
+  border-radius: 20px;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 50px 10%;
+}
+
+body cardsection card h3 {
+  margin: 30px;
+}
+
+body cardsection card p {
+  margin: 30px;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,71 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&display=swap');
+
+:root{
+	--red: rgb(242, 88, 53);
+    --purple: rgb(147, 59, 219);
+    --green: rgb(79, 232, 51);
+    --blue: rgb(61, 200, 245);
+    --yellow: rgb(235, 202, 65);
+    --body: rgb(255, 255, 255);
+    --primary: rgb(21, 21, 21);
+}
+
+* {
+    font-family: 'Nunito', sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1 {
+    margin: 0 auto;
+    font-weight: 900;
+}
+h3 {
+    margin: 0 0 0 5%;
+    font-weight: 900;
+}
+innerdiv h3 {
+    position: relative;
+    bottom: 1rem;
+    max-width: 70%;
+    padding-left: 5%;
+    width: auto;
+}
+layer#profile h3 {
+    background-color: var(--purple);
+}
+prompt h1{
+    font-size: 300%;
+}
+prompt button p{
+    font-size: 30%;
+}
+
+
+layer#personality h3 {
+    background-color: var(--red);
+}
+layer#education h3{
+    background-color: var(--green);
+}
+layer#experience h3 {
+    background-color: var(--blue);
+}
+layer#contact h3 {
+    background-color: var(--yellow);
+}
+a {
+    margin: 0 0 0.2rem 5%;
+    font-weight: 400;
+    cursor: pointer;
+}
+a:last-of-type{
+    margin-bottom: 1rem;
+}
+.hdr {
+    font-size: 120%
+}
+th {
+    text-align: left;
+    color: rgb(21, 21, 21);
+    margin-right: 5em;
+}

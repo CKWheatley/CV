@@ -1,0 +1,38 @@
+/* CSS Document */
+@-webkit-keyframes football {
+  to {
+    -webkit-transform: translateX(300px) rotate(270deg);
+            transform: translateX(300px) rotate(270deg);
+  }
+}
+@keyframes football {
+  to {
+    -webkit-transform: translateX(300px) rotate(270deg);
+            transform: translateX(300px) rotate(270deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.selectable {
+  border: solid var(--primary) 1px;
+  border-radius: 20px;
+  width: 90%;
+  padding: 0 5px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.selectable:hover {
+  color: white;
+  background-color: var(--primary);
+}
+
+#footballpic {
+  -webkit-animation: none 3s 0.2s forwards;
+          animation: none 3s 0.2s forwards;
+  z-index: 3;
+}
+/*# sourceMappingURL=functions.css.map */

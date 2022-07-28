@@ -1,0 +1,32 @@
+$red: rgb(242, 88, 53);
+$purple: rgb(147, 59, 219);
+$green: rgb(79, 232, 51);
+$blue: rgb(61, 200, 245);
+$yellow: rgb(235, 202, 65);
+$body: rgb(255, 255, 255);
+$primary: rgb(21, 21, 21);
+
+
+
+@mixin flex-pos($flow: row, $j-c: center, $a-c: center, $a-i: center, $f-w: nowrap){
+    display: flex;
+    flex-flow: $flow;
+    justify-content: $j-c;
+    align-content: $a-c;
+    align-items: $a-i;
+    flex-wrap: $f-w;
+}
+@mixin box-props($display-type: block, $bg-colour: transparent, $height: 100px, $width: 100px, $b-r: 0px){
+    display: $display-type;
+    background-color: $bg-colour;
+    height: $height;
+    width: $width;
+    border-radius: $b-r;
+}
+@mixin position($top, $right: $top, $bottom: $top, $left: $right) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+ }
+ 

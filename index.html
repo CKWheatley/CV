@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>My Cv</title>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<link href="functions.css" rel="stylesheet" type="text/css">
+	<link href="responsive.css" rel="stylesheet" type="text/css">
+	<link href="typography.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+
+
+<body>
+	<prompt id="entryprompt">
+		<h1>What is your name?</h1>
+		<!-- If letters are typed box appears to continue -->
+		<input id="tempname" type="text" name="tempname" value="Jeff"/>
+		<a id="entrybutton" type="" action="" href="#main">My name is Jeff for now<p>Unless it actually is Jeff</p></a>
+	</prompt>
+	<!-- depending on time of day i could say good afternoon or good morning name of person-->
+	<!-- will be a night and day mode one will have a moon one will have sun-->
+	<!-- The h1 will flash on screen with a good morning or good afternoon statement with their name -->
+	<h1 id="intro"></h1>
+	<!-- all of stuff below will appear plain and blank and no scroll will be possible until beginning credentials are filled -->
+	<main id="main" class="hidden">
+		<maincolumn>
+			<h1>Callum Wheatley</h1>
+			<img src="images/profile.jpg" class="mainimg" />
+			<tab id="profiletab">P</tab>
+			<tab id="personalitytab">P</tab>
+			<tab id="educationtab">E</tab>
+			<tab id="experiencetab">E</tab>
+			<tab id="contacttab">C</tab>
+			<div class="descriptions">
+
+			</div>
+		</maincolumn>
+		<maincolumn>
+			<layer id="profile" class="activelayer">
+				<h1>Profile</h1>
+				<div>
+					<innerdiv>
+						<h3>Interests &amp; Hobbies</h3>
+						<a class="football-id selectable">Football</a>
+						<a class="music-id selectable">Music</a>
+						<a class="refereeing-id selectable">Refereeing</a>
+						<a class="gaming-id selectable">Gaming</a>
+					</innerdiv>
+				</div>
+				<div>
+					<innerdiv>
+						<h3>Proudest Acheivements</h3>
+						<a id="pa1" class="selectable">Innovating on the Universal Credit campaign</a>
+						<a id="pa2" class="selectable">Passing all important subjects in school</a>
+						<a id="pa3" class="selectable">Aquiring skills as a trainer</a>
+						<a id="pa4" class="selectable">Joining a political party</a>
+						<a id="pa5" class="selectable">Volunteering for the "Bring staff back" Campaign</a>
+						<a id="pa6" class="selectable">Becoming a football referee</a>
+					</innerdiv>
+				</div>
+				<div>
+					<innerdiv>
+						<h3>Favorite TV Series</h3>
+						<a>Game Of Thrones</a>
+					</innerdiv>
+				</div>
+			</layer>
+			<layer id="personality" class="">
+				<h1>Personality</h1>
+				<div>
+					<innerdiv>
+						<h3>Interests &amp; Hobbies</h3>
+						<a class="football-id selectable">Football</a>
+						<a class="music-id selectable">Music</a>
+						<a class="refereeing-id selectable">Refereeing</a>
+						<a class="gaming-id selectable">Gaming</a>
+					</innerdiv>
+				</div>
+			</layer>
+			<layer id="education" class="">
+				<h1>Education</h1>
+				<div>
+					<innerdiv>
+						<h3>Programming Qualifications &amp; Certs</h3>
+						<a class="selectable" id="f-e">Front-End</a>
+						<a class="selectable" id="b-e">Back-End</a>
+						<a class="selectable" id="scrip">Scripting</a>
+						<a class="selectable" id="lanlist">Language List</a>
+					</innerdiv>
+				</div>
+				<div>
+					<innerdiv>
+						<h3>Other Qualifications</h3>
+						<a class="selectable" id="train">Trainer</a>
+						<a class="selectable refereeing-id">Referee</a>
+						<a>Drivers License</a>
+					</innerdiv>
+				</div>
+				<div>
+					<innerdiv>
+						<h3>School &amp; Collage</h3>
+						<a class="selectable" id="school">School Qualifications</a>
+						<a class="selectable" id="college">College Diplomas</a>
+					</innerdiv>
+				</div>
+			</layer>
+			<layer id="experience" class="">
+				<h1>Experience</h1>
+				<div>
+					<table >
+						<tr class="hdr">
+							<th>Company</th>
+							<th>Job Title</th>
+							<th>Experience</th>
+						</tr>
+						<tr>
+							<th>Avanti/Premier LPG</th>
+							<th><a href="#cards" class="cardlink" id="prm">Customer Support Admin</a></th>
+							<th id="currentjob">3 months</th>
+						</tr>
+						<tr>
+							<th>Avanti Gas</th>
+							<th><a href="#cards" class="cardlink" id="ag">Data Administrator</a></th>
+							<th>1 month</th>
+						</tr>
+						<tr>
+							<th>Unbloq</th>
+							<th><a href="#cards" class="cardlink" id="dd">Digital/Web Developer</a></th>
+							<th>6 months</th>
+						</tr>
+						<tr>
+							<th>Parseq</th>
+							<th><a href="#cards" class="cardlink" id="de">Data Entry</a></th>
+							<th>4 Months</th>
+						</tr>
+						<tr>
+							<th>Capita</th>
+							<th><a href="#cards" class="cardlink" id="dwp">DWP Advisor</a></th>
+							<th>7 Months(Covid)</th>
+						</tr>
+						<tr>
+							<th>Capita</th>
+							<th><a href="#cards" class="cardlink" id="sr">Sales Retentions</a></th>
+							<th>5 Months</th>
+						</tr>
+						<tr>
+							<th>Welcome Break</th>
+							<th><a href="#cards" class="cardlink" id="kfc">Head Cook & MOH</a></th>
+							<th>17 Months</th>
+						</tr>
+						<tr>
+							<th>Webhelp</th>
+							<th><a href="#cards" class="cardlink" id="sa">Sales Advisor</a></th>
+							<th>7 Months</th>
+						</tr>
+						<tr>
+							<th>Welcome Break</th>
+							<th><a href="#cards" class="cardlink" id="cs">Customer Service</a></th>
+							<th>7 Months</th>
+						</tr>
+						<tr class="hdr">
+							<th>Other Experience</th>
+						</tr>
+						<tr>
+							<th>The FA</th>
+							<th><a href="#cards" class="cardlink" id="fo">Football Official</a></th>
+							<th>6 Years</th>
+						</tr>
+						<tr>
+							<th>Self Employed</th>
+							<th><a href="#cards" class="cardlink" id="mus">Musician</a></th>
+							<th>1 Year</th>
+						</tr>
+						<tr>
+							<th>In Practice</th>
+							<th><a href="#cards" class="cardlink" id="prog">Programming</a></th>
+							<th>1 Year(Roughly)</th>
+						</tr>
+					</table>
+				</div>
+			</layer>
+			<layer id="contact" class="">
+				<h1>Contact</h1>
+				<h1 class="contactfadeout">Lets Get The Ball Rolling</h1>
+				<img src="assets/football.png" id="footballpic" class="contactfadeout"/>
+				<div class="contactfadein">
+					<box class="contactoption">
+						<h2>Give me a call</h2>
+						<a href="tel:07588808894">07588808894</a>
+					</box>
+					<box class="contactoption">
+						<h2>Social Sites</h2>
+						<a href=""><img href="">IG</a>
+						<a href=""><img href="">FB</a>
+					</box>
+					<button id="contactbutton" class="contactoption">
+						<h2>Email</h2>
+					</button>
+					<form class="hidden" id="contactform" action="email.php" method="post">
+						<a id="closeemail" ><img alt="" src="assets/close.png"></a>
+						<label>Employer Name</label>
+						<input type="text" name="name" id="name">
+
+						<label>Employer Company</label>
+						<input type="text" name="company">
+
+						<label>Job Title</label>
+						<input type="text" name="jobtitle">
+						
+						<label>Offered Pay</label>
+						<input id="pay" type="text" name="pay"  placeholder="£-- per annum/week/hr or negotiable">
+						<!-- figure out how to do layout radio bttns for this -->
+
+						<label>Job Description</label>
+						<input type="text" name="description">
+
+						<label>Job Location</label>
+						<input type="text" name="location">
+
+						<label>Additional Info</label>
+						<textarea type="text" name="extrainfo"></textarea>
+						<input type="file" name="file">
+
+						<button type="submit">Yeet Email!! (This dosent Work Yet)</button>
+					</form>
+				</div>
+			</layer>
+		</maincolumn>
+	</main>
+	<cardsection id="cards" class="hidden">
+		<square id="square1">
+			<h2>Company</h2>
+			<h4 id="comdesc"></h4>
+		</square>
+		<square id="square2">
+			<h2>Location</h2>
+			<h4 id="locdesc"></h4>
+		</square>
+		<square id="square3">
+			<h2>Date</h2>
+			<h4 id="datdesc"></h4>
+		</square>
+		<square id="square4">
+			<h2>Job Title</h2>
+			<h4 id="jobdesc"></h4>
+		</square>
+		<square id="square5">
+			<h2>Department</h2>
+			<h4 id="depdesc"></h4>
+		</square>
+		<card id="card1">
+			<h3>Roles &amp; Responsibilities</h3>
+			<p id="card1d"></p>
+		</card>
+		<card id="card2">
+			<h3 id="card2h"></h3>
+			<p id="card2d"></p>
+		</card>
+		<card id="card3">
+			<h3 id="card3h"></h3>
+			<p id="card3d"></p>
+		</card>
+	</cardsection>
+</body>
+</html>
+<script src="functions.js"></script>
+<script src="descriptions.js"></script>

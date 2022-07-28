@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+@keyframes football{
+    to{
+        transform: translateX(300px) rotate(270deg);
+    }
+}
+
+.hidden{
+	display: none !important;
+}
+.selectable{
+    border: solid var(--primary) 1px;
+    border-radius: 20px;
+    width: 90%;
+    padding: 0 5px;
+    transition: all 1s ease-in-out;
+}
+.selectable:hover{
+    color: white;
+    background-color: var(--primary);
+}
+#footballpic{
+    animation: none 3s 0.2s forwards;
+    z-index: 3;
+}

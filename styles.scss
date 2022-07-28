@@ -1,0 +1,312 @@
+// test if this works
+// could use @import "../shortcuts";
+// but using @use if i want to use a MIXIN do shortcuts.MIXIN-NAME like its an object
+
+//tutorial here
+
+//https://www.youtube.com/watch?v=CR-a8upNjJ0&t=195s
+
+
+// @use '../shortcuts' as *;  that removes the need to use it as an object
+// @use '../shortcuts' as s;  that shortens it to s.Mixinname
+
+//scss version out of date import neccesary
+
+@import "shortcuts.scss";
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+$siteheight: auto;
+
+html{
+    background-color: white;
+}
+body{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    height: $siteheight;
+    background-image: linear-gradient(to bottom, skyblue, white);
+    overflow-x: hidden;
+    prompt{
+        z-index: 10;
+        margin: 20% 0;
+        @include box-props(flex, white, 30em, 100%, 0);
+        @include flex-pos(column, flex-start, center, center, nowrap);
+        h1{
+            margin: 5%;
+        }
+        input{
+            text-align: center;
+            width: 60%;
+            margin: 30px auto;
+            font-size: 250%;
+        }
+        a{
+            @include box-props(block, darkslategrey, 5em, 50%, 20px);
+            @include flex-pos(column);
+            font-size: 200%;
+            cursor: pointer;
+            text-decoration: none;
+            color: $primary;
+            margin: 0 auto;
+            p{
+                font-size: 70%;
+            }
+        }
+    }
+    main {
+        display: flex;
+        flex-flow: row nowrap;
+        height: 35em;
+        width: 60%;
+        background-color: darkslategrey;
+        margin: 30% auto 5% auto;
+        /* margins here are used just for now till the prompt and cards ar done same as prompt and cards */ 
+        border-radius: 20px;
+        box-shadow: 14px 10px 70px;
+        maincolumn{
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+            position: relative;
+            .descriptions{
+                @include box-props(block, darkslategrey, 100%, 100%, 20px 0 0 20px );
+                position: absolute;
+                display: none;
+                border: none;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                p, h3, h2, h1, table{
+                    width: 90%;
+                    margin-top: 2em;
+                    margin-left: 5%;
+                }
+                tr:first-of-type{
+                    font-weight: 800;
+                }
+                td{
+                    padding: 10px;
+                    font-size: 100%;
+                }
+            }
+            tab {
+                @include flex-pos(column, center, center, center);
+                position: absolute;
+                @include position(0, 5%, 0, 95%);
+                cursor: pointer;
+                width: 5%;
+                height: 20%;
+                border-radius: 0 0 0 20px;
+            }
+            #profiletab{
+                background-color: $purple;
+                right: 100%;
+                top: 0em;
+                z-index: 8;
+            }
+            #personalitytab {
+                background-color: $red;
+                right: 100%;
+                top: 10%;
+                z-index: 7;
+            }
+            #educationtab {
+                background-color: $green;
+                right: 100%;
+                top: 20%;
+                z-index: 6;
+            }
+            #experiencetab {
+                background-color: $blue;
+                right: 100%;
+                top: 30%;
+                z-index: 5;
+            }
+            #contacttab {
+                background-color: $yellow;
+                right: 100%;
+                top: 40%;
+                z-index: 4;
+            }
+            layer{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-around;
+                border-radius: 0 20px 20px 0;
+                position: absolute;
+                img#footballpic{
+                    @include box-props(block, transparent, 200px, 200px, 50%);
+                    position: absolute;
+                    z-index: 5;
+                }
+            }
+            div {
+                width: 90%;
+                margin: auto;
+                border: solid 4px $primary;
+                border-radius: 20px;
+                innerdiv{
+                    position: relative;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    a{
+                        cursor: default;
+                    }
+                    .selected{
+                        background-color: rgb(21, 21, 21);
+                        color: rgb(242, 88, 53);
+                    }
+                    .selectable{
+                        border: solid var(--primary) 1px;
+                        border-radius: 20px;
+                        width: 90%;
+                        padding: 0 5px;
+                        transition: all 0.4s ease-in-out;
+                        cursor: pointer;
+                        &:hover{
+                            color: $body;
+                            background-color: $primary;
+                        }
+                    }
+                }
+                table{
+                    width: 100%;
+                }
+            }
+            #profile {
+                background-color: $purple;
+                z-index: 7;
+            }
+            #personality {
+                background-color: $red;
+                z-index: 6;
+            }
+            #education {
+                background-color: $green;
+                z-index: 5;
+            }
+            #experience {
+                background-color: $blue;
+                z-index: 4;
+            }
+            #contact {
+                background-color: $yellow;
+                z-index: 3;
+                h1:first-of-type{
+                    /* add a smooth animation effect for the contact header */
+                    z-index: 10;
+                }
+                .contactfadein{
+                    display: none;
+                }
+                div{
+                    padding: 0;
+                    max-height: max-content;
+                    max-width: 90%;
+                    box{
+                        @include box-props(flex, transparent, max-content, 90%, 0);
+                        @include flex-pos(row, space-between, center, center, nowrap);
+                        border-bottom: black 2px solid;
+                        margin: 20px 5%;
+                        a{
+                            margin: auto 0;
+                        }
+                    }
+                    button{
+                        @include box-props(flex, $red, 100px, 90%, 5px);
+                        @include flex-pos();
+                        margin: 20px 5%;
+                        border: none;
+                        cursor: pointer;
+                    }
+                    form{
+                        position: relative;
+                        top: 0%;
+                        left: 0%;
+                        @include box-props(flex, $purple, max-content, 100%, 15px);
+                        @include flex-pos(column, flex-start, flex-start, flex-start, nowrap);
+                        #closeemail{
+                            @include box-props(flex, transparent, 50px, 50px, 0);
+                            @include flex-pos();
+                            position: absolute;
+                            @include position(-4%, 8.5%, 104%, 91.5%)
+                            // add hover animation
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        label{
+                            font-size: 150%;
+                            margin: 0 5%;
+                        }
+                        input{
+                            width: 90%;
+                            font-size: 140%;
+                            margin: 0 5%;
+                        }
+                        /* #pay is to be 45% when i add radio buttons */
+                        #pay{
+                            width: 90%;
+                        }
+                        textarea{
+                            width: 90%;
+                            max-width: 90%;
+                            font-size: 140%;
+                            margin: 0 5%;
+                        }
+                    }
+                }
+            }
+        }
+        maincolumn:first-of-type{
+            width: 40%;
+        }
+        maincolumn:last-of-type{
+            width: 60%;
+        }
+    }
+    cardsection{
+        @include box-props(flex, darkslateblue, auto, 80%, 20px);
+        @include flex-pos(row, space-around, center, center, wrap);
+        margin: 0 auto;
+        margin-bottom: 50px;
+        color: $body;
+        square{
+            @include box-props(flex, $primary, 10em, 20%);
+            @include flex-pos(column);
+            h2{
+                margin: 20px 10px;
+            }
+            h3{
+                margin: 20px 10px;
+            }
+            &:first-of-type{
+                border-radius: 20px 0 0 0;
+            }
+            &:last-of-type{
+                border-radius: 0 20px 0 0;
+            }
+        }
+        card:first-of-type{
+            @include flex-pos(row);
+        }
+        card{
+            @include box-props(flex, $primary, auto, 80%, 20px);
+            @include flex-pos(column);
+            margin: 50px 10%;
+            h3{
+                margin: 30px
+            }
+            p{
+                margin: 30px;
+            }
+        }
+    }
+}

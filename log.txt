@@ -1,0 +1,12 @@
+
+add the descriptions from the education to csv files so i can get and post data there if needed
+
+
+go through all links
+add all neccesary jpg's
+
+maybe change the card section to one similar to how my old cv was displayed
+button to vlose card section
+
+mobile responsiveness
+day/night mode
