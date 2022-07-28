@@ -1,5 +1,5 @@
 <?php
-/*
+
     $name = $_POST['name'];
     $company = $_POST['company'];
     $jobtitle = $_POST['jobtitle'];
@@ -15,7 +15,6 @@
     mail('ckwheatley15@gmail.com' ,"My CV Interest",$msg, $headers);
     header("Location: sent.html");
 
-*/
     // sent html will have a little game on it.
     // potentially add local db to stop duplicate offers if possible to show off sql ability
 
