@@ -32,10 +32,9 @@ $(document).ready(() => {
         let prm = {
             company: `Premier LPG`,
             location: `Chesterfield`,
-            // maybe add a timer here
             date: `April 2022 - Today`,
-            jobtitle: `Customer Support Administrator`,
-            department: `Customer Experience`,
+            jobtitle: `Internal/Customer Support Administrator`,
+            department: `Customer Experience & Resolutions`,
             desc1: ``,
             hdr2: `About the job`,
             desc2: ``
@@ -324,7 +323,7 @@ $(document).ready(() => {
     <tr>
         <td>HTML5 & CSS3</td>
         <td>${p_levels[3]}</td>
-        <td><a href="">CIW Advanced HTML5 &amp; CSS3 Specialist</a></td>
+        <td><a href="images\certificates\CIW Advanced HTML5 and CSS3 Specialist certificate.pdf">CIW Advanced HTML5 &amp; CSS3 Specialist</a></td>
     </tr>
     <tr>
         <td>SASS</td>
