@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(() => {
     $("#entrybutton").click(() => {
-        $("#entryprompt").fadeOut(1000);
+        $("#entryprompt").fadeOut(0);
         // dont fade out but do the good afternoon / morning thing with a button that scrolls to my profile
         $("#main").fadeIn(1000).removeClass("hidden");
     })
@@ -18,6 +18,24 @@ $(document).ready(() => {
     })
     $('.selectable').click(() => {
         $('.selectable').addClass('selected').siblings('.selected').removeClass('selected');
+    })
+    $('#mailer-button').click(() =>{
+        let a = $('#mailer-client')
+        a.removeClass('hidden')
+        let en = $('#name').val();
+        let ec = $('#company').val();
+        let jt = $('#jtitle').val();
+        let pay = $('#pay').val();
+        let jd = $('#jdescription').val();
+        let jl = $('#jlocation').val();
+        let ex = $('#extrainfo').val();
+        let mailer = `mailto:ckwheatley15@gmail.com?subject=Job Offer From Github Pages (dont change subject please)
+        &body=Employer Name: ${en}%0D%0ACompany: ${ec}%0D%0AJob Title: ${jt}%0D%0APay: ${pay}%0D%0AJob Description: ${jd}%0D%0AJob Location: ${jl}%0D%0AFurther Comments: %0D%0A%0D%0A${ex}
+        `
+        a.attr('href', mailer)
+    })
+    $('#mailer-client').click(() => {
+        $('#mailer-client').html("").addClass('hidden')
     })
     // sort this out ^^
 })

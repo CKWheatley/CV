@@ -33,11 +33,14 @@ body{
     overflow-x: hidden;
     prompt{
         z-index: 10;
-        margin: 20% 0;
+        margin: 10% 0;
         @include box-props(flex, white, 30em, 100%, 0);
         @include flex-pos(column, flex-start, center, center, nowrap);
         h1{
             margin: 5%;
+            @include c-respond(inch-27){
+                margin: 2%;
+            }
         }
         input{
             text-align: center;
@@ -46,33 +49,65 @@ body{
             font-size: 250%;
         }
         a{
-            @include box-props(block, darkslategrey, 5em, 50%, 20px);
+            @include box-props(block, darkslategrey, 2em, 50%, 20px);
             @include flex-pos(column);
             font-size: 200%;
             cursor: pointer;
             text-decoration: none;
             color: $primary;
             margin: 0 auto;
-            p{
-                font-size: 70%;
-            }
         }
     }
     main {
         display: flex;
         flex-flow: row nowrap;
         height: 35em;
-        width: 60%;
+        width: 60vw;
         background-color: darkslategrey;
-        margin: 30% auto 5% auto;
-        /* margins here are used just for now till the prompt and cards ar done same as prompt and cards */ 
+        margin: 10% auto 5% auto;
         border-radius: 20px;
         box-shadow: 14px 10px 70px;
+        @include c-respond(laptop){
+            width: 80vw;
+        }
+        @include c-respond(sm-laptop){
+            width: 90vw;
+        }
+        @include c-respond(all-mobile){
+            flex-flow: column nowrap;
+            width: 100vw;
+            border-radius: 0;
+            height: max-content;
+            margin: 0;
+        }
         maincolumn{
             display: flex;
             flex-flow: column;
             height: 100%;
             position: relative;
+            @include c-respond(all-mobile){
+                height: 100%;
+            }
+            .mainimg{
+                @include c-respond(inch-27){
+                    width: 80%;
+                    margin: auto;
+                    object-fit: contain;
+                }
+                @include c-respond(inch-21-26){
+                    max-height: 500px;
+                    max-width: 500px;
+                }
+                @include c-respond(laptop){
+                    max-height: 350px;
+                    max-width: 350px;
+                }
+                @include c-respond(all-mobile){
+                    max-height: 200px;
+                    max-width: auto;
+                    margin: auto;
+                }
+            }
             .descriptions{
                 @include box-props(block, darkslategrey, 100%, 100%, 20px 0 0 20px );
                 position: absolute;
@@ -140,11 +175,15 @@ body{
                 justify-content: space-around;
                 border-radius: 0 20px 20px 0;
                 position: absolute;
+                @include c-respond(all-mobile){
+                    border-radius: 0;
+                }
                 img#footballpic{
                     @include box-props(block, transparent, 200px, 200px, 50%);
                     position: absolute;
                     z-index: 5;
                 }
+
             }
             div {
                 width: 90%;
@@ -267,9 +306,19 @@ body{
         }
         maincolumn:first-of-type{
             width: 40%;
+            @include c-respond(all-mobile){
+                width: 100%;
+                border-radius: 0;
+                padding-bottom: 5em;
+            }
         }
         maincolumn:last-of-type{
             width: 60%;
+            @include c-respond(all-mobile){
+                width: 100%;
+                border-radius: 0;
+                padding: 0em 0 40em 0;
+            }
         }
     }
     cardsection{
@@ -278,6 +327,11 @@ body{
         margin: 0 auto;
         margin-bottom: 50px;
         color: $body;
+        @include c-respond(all-mobile){
+            border-radius: 0;
+            margin-top: 5em;
+            width: 100%;
+        }
         square{
             @include box-props(flex, $primary, 10em, 20%);
             @include flex-pos(column);
@@ -289,9 +343,15 @@ body{
             }
             &:first-of-type{
                 border-radius: 20px 0 0 0;
+                @include c-respond(all-mobile){
+                    border-radius: 0;
+                }
             }
             &:last-of-type{
                 border-radius: 0 20px 0 0;
+                @include c-respond(all-mobile){
+                    border-radius: 0;
+                }
             }
         }
         card:first-of-type{

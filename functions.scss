@@ -1,10 +1,13 @@
 @charset "UTF-8";
 /* CSS Document */
+
 @keyframes football{
     to{
         transform: translateX(300px) rotate(270deg);
     }
 }
+
+
 
 .hidden{
 	display: none !important;

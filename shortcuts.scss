@@ -29,4 +29,52 @@ $primary: rgb(21, 21, 21);
     bottom: $bottom;
     left: $left;
  }
+
+ @mixin c-respond($breakpoint) {
+    @if($breakpoint == inch-27)  {
+        @media only screen and (min-width: 2500px){ 
+            @content 
+        }
+    }
+    @if($breakpoint == inch-21-26)  {
+        @media only screen and (min-width: 1441px) and (max-width: 2500px){ 
+            @content 
+        }
+    }
+    @if($breakpoint == laptop)  {
+        @media only screen and (min-width: 1025px) and (max-width: 1440px) { 
+            @content 
+        }
+    }
+    @if($breakpoint == sm-laptop)  {
+        @media only screen and (min-width: 801px) and (max-width: 1024px) { 
+            @content 
+        }
+    }
+    @if($breakpoint == tablet)  {
+        @media only screen and (min-width: 550px) and (max-width: 800px){
+            @content
+        }
+    }
+    @if($breakpoint == lrg-mobile)  {
+        @media only screen and (min-width: 376px) and (max-width: 550px){
+            @content
+        }
+    }
+    @if($breakpoint == med-mobile)  {
+        @media only screen and (min-width: 321px) and (max-width: 376px){
+            @content
+        }
+    }
+    @if($breakpoint == sm-mobile)  {
+        @media only screen and (max-width: 320px){
+            @content
+        }
+    }
+    @if($breakpoint == all-mobile)  {
+        @media only screen and (max-width: 800px){
+            @content
+        }
+    }
+}
  

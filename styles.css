@@ -26,7 +26,7 @@ body {
 
 body prompt {
   z-index: 10;
-  margin: 20% 0;
+  margin: 10% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,6 +55,12 @@ body prompt h1 {
   margin: 5%;
 }
 
+@media only screen and (min-width: 2500px) {
+  body prompt h1 {
+    margin: 2%;
+  }
+}
+
 body prompt input {
   text-align: center;
   width: 60%;
@@ -65,7 +71,7 @@ body prompt input {
 body prompt a {
   display: block;
   background-color: darkslategrey;
-  height: 5em;
+  height: 2em;
   width: 50%;
   border-radius: 20px;
   display: -webkit-box;
@@ -92,10 +98,6 @@ body prompt a {
   margin: 0 auto;
 }
 
-body prompt a p {
-  font-size: 70%;
-}
-
 body main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,13 +107,39 @@ body main {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   height: 35em;
-  width: 60%;
+  width: 60vw;
   background-color: darkslategrey;
-  margin: 30% auto 5% auto;
-  /* margins here are used just for now till the prompt and cards ar done same as prompt and cards */
+  margin: 10% auto 5% auto;
   border-radius: 20px;
   -webkit-box-shadow: 14px 10px 70px;
           box-shadow: 14px 10px 70px;
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body main {
+    width: 80vw;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body main {
+    width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    width: 100vw;
+    border-radius: 0;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin: 0;
+  }
 }
 
 body main maincolumn {
@@ -124,6 +152,43 @@ body main maincolumn {
           flex-flow: column;
   height: 100%;
   position: relative;
+}
+
+@media only screen and (max-width: 800px) {
+  body main maincolumn {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  body main maincolumn .mainimg {
+    width: 80%;
+    margin: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 2500px) {
+  body main maincolumn .mainimg {
+    max-height: 500px;
+    max-width: 500px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body main maincolumn .mainimg {
+    max-height: 350px;
+    max-width: 350px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body main maincolumn .mainimg {
+    max-height: 200px;
+    max-width: auto;
+    margin: auto;
+  }
 }
 
 body main maincolumn .descriptions {
@@ -232,6 +297,12 @@ body main maincolumn layer {
       justify-content: space-around;
   border-radius: 0 20px 20px 0;
   position: absolute;
+}
+
+@media only screen and (max-width: 800px) {
+  body main maincolumn layer {
+    border-radius: 0;
+  }
 }
 
 body main maincolumn layer img#footballpic {
@@ -485,8 +556,24 @@ body main maincolumn:first-of-type {
   width: 40%;
 }
 
+@media only screen and (max-width: 800px) {
+  body main maincolumn:first-of-type {
+    width: 100%;
+    border-radius: 0;
+    padding-bottom: 5em;
+  }
+}
+
 body main maincolumn:last-of-type {
   width: 60%;
+}
+
+@media only screen and (max-width: 800px) {
+  body main maincolumn:last-of-type {
+    width: 100%;
+    border-radius: 0;
+    padding: 0em 0 40em 0;
+  }
 }
 
 body cardsection {
@@ -514,6 +601,14 @@ body cardsection {
   margin: 0 auto;
   margin-bottom: 50px;
   color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  body cardsection {
+    border-radius: 0;
+    margin-top: 5em;
+    width: 100%;
+  }
 }
 
 body cardsection square {
@@ -553,8 +648,20 @@ body cardsection square:first-of-type {
   border-radius: 20px 0 0 0;
 }
 
+@media only screen and (max-width: 800px) {
+  body cardsection square:first-of-type {
+    border-radius: 0;
+  }
+}
+
 body cardsection square:last-of-type {
   border-radius: 0 20px 0 0;
+}
+
+@media only screen and (max-width: 800px) {
+  body cardsection square:last-of-type {
+    border-radius: 0;
+  }
 }
 
 body cardsection card:first-of-type {

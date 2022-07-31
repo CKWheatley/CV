@@ -16,15 +16,12 @@
 <body>
 	<prompt id="entryprompt">
 		<h1>What is your name?</h1>
-		<!-- If letters are typed box appears to continue -->
 		<input id="tempname" type="text" name="tempname" value="Jeff"/>
 		<a id="entrybutton" type="" action="" href="#main">Lets Go!</a>
 	</prompt>
 	<!-- depending on time of day i could say good afternoon or good morning name of person-->
-	<!-- will be a night and day mode one will have a moon one will have sun-->
 	<!-- The h1 will flash on screen with a good morning or good afternoon statement with their name -->
-	<h1 id="intro"></h1>
-	<!-- all of stuff below will appear plain and blank and no scroll will be possible until beginning credentials are filled -->
+	<h1 id="intro-hdr"></h1>
 	<main id="main" class="hidden">
 		<maincolumn>
 			<h1>Callum Wheatley</h1>
@@ -203,29 +200,30 @@
 					<form class="hidden" id="contactform" action="email.php" method="post">
 						<a id="closeemail" ><img alt="" src="assets/close.png"></a>
 						<label>Employer Name</label>
-						<input type="text" name="name" id="name">
+						<input type="text" name="name" id="name" required>
 
 						<label>Employer Company</label>
-						<input type="text" name="company">
+						<input type="text" name="company" id="company" required>
 
 						<label>Job Title</label>
-						<input type="text" name="jobtitle">
+						<input type="text" name="jobtitle" id="jtitle" required>
 						
 						<label>Offered Pay</label>
-						<input id="pay" type="text" name="pay"  placeholder="£-- per annum/week/hr or negotiable">
+						<input id="pay" type="text" name="pay"  placeholder="£-- per annum/week/hr or negotiable" required>
 						<!-- figure out how to do layout radio bttns for this -->
 
 						<label>Job Description</label>
-						<input type="text" name="description">
+						<input type="text" name="description" id="jdescription" required>
 
 						<label>Job Location</label>
-						<input type="text" name="location">
+						<input type="text" name="location" id="jlocation" required>
 
-						<label>Additional Info</label>
-						<textarea type="text" name="extrainfo"></textarea>
-						<input type="file" name="file">
+						<label>Additional Info &amp; comments</label>
+						<textarea type="text" name="extrainfo" id="extrainfo"></textarea required>
 
-						<button type="submit">Yeet Email!! (This dosent Work Yet)</button>
+						<button type="button" id="mailer-button">Yeet Email!! (This dosent automaticaly work on Github :( )</button>
+						<a href="" class="hidden" id="mailer-client">Open email app instead</a>
+						<!-- Change type to submit for the php mailer to activate -->
 					</form>
 				</div>
 			</layer>

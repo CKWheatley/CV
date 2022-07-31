@@ -28,7 +28,6 @@ $(document).ready(() => {
         return Math.round(Math.abs(months));  
     }  
 
-
         let prm = {
             company: `Premier LPG`,
             location: `Chesterfield`,
@@ -37,7 +36,9 @@ $(document).ready(() => {
             department: `Customer Experience & Resolutions`,
             desc1: ``,
             hdr2: `About the job`,
-            desc2: ``
+            desc2: ``,
+            hdr3: ``,
+            desc3: ``
         }
         let ag = {
             company: `Avanti Gas`,
@@ -48,7 +49,9 @@ $(document).ready(() => {
             desc1: `Validating data from Premier LPG<br>
             Inputting Data into Avanti DB via excel and google sheets QR Scanning`,
             hdr2: `About the job`,
-            desc2: `At Avanti their parent company UGI Inernational was taking over Premier LPG, therefore all of their customers were to be switched over to Avantigas' systems. My job was to simply scan the QR codes on google sheets which would input data from tables they had extracted from the other system. I thought this was genius, semi-automating the switch process to save money however i took my job a bit further and decided to take on the QR coded sheets and start inputting my own data. Because of my coding experience i managed to manipulate the code in the google sheet making the process not only quicker but easier too. I enjoyed making this process quicker and more efficient as i always strive to do so with my work. `
+            desc2: `At Avanti their parent company UGI Inernational was taking over Premier LPG, therefore all of their customers were to be switched over to Avantigas' systems. My job was to simply scan the QR codes on google sheets which would input data from tables they had extracted from the other system. I thought this was genius, semi-automating the switch process to save money however i took my job a bit further and decided to take on the QR coded sheets and start inputting my own data. Because of my coding experience i managed to manipulate the code in the google sheet making the process not only quicker but easier too. I enjoyed making this process quicker and more efficient as i always strive to do so with my work. `,
+            hdr3: ``,
+            desc3: ``
         }
         let dd = {
             company: `Unbloq`,
