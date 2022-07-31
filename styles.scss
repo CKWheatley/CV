@@ -36,26 +36,43 @@ body{
         margin: 10% 0;
         @include box-props(flex, white, 30em, 100%, 0);
         @include flex-pos(column, flex-start, center, center, nowrap);
+        @include c-respond(all-mobile){
+            width: 100%;
+            height: 100%;
+        }
         h1{
             margin: 5%;
+            font-size: clamp(1.5rem, 4vw, 3em);
             @include c-respond(inch-27){
                 margin: 2%;
+            }
+            @include c-respond(sm-mobile){
+                font-size: 1.2em;
             }
         }
         input{
             text-align: center;
             width: 60%;
             margin: 30px auto;
-            font-size: 250%;
+            font-size: clamp(1.2rem, 6vw, 3.5em);
+            @include c-respond(all-mobile){
+                padding: .5em;
+            }
         }
         a{
             @include box-props(block, darkslategrey, 2em, 50%, 20px);
             @include flex-pos(column);
-            font-size: 200%;
+            font-size: clamp(1.2rem, 6vw, 3.5em);
             cursor: pointer;
             text-decoration: none;
             color: $primary;
             margin: 0 auto;
+            @include c-respond(all-mobile){
+                padding: .5em;
+                margin-top: 60px;
+                position: fixed;
+                bottom: 5%;
+            }
         }
     }
     main {
@@ -177,13 +194,17 @@ body{
                 position: absolute;
                 @include c-respond(all-mobile){
                     border-radius: 0;
+                    height: 100%;
+                    padding: 2em 0;
                 }
                 img#footballpic{
                     @include box-props(block, transparent, 200px, 200px, 50%);
                     position: absolute;
                     z-index: 5;
                 }
+                &#experience{
 
+                }
             }
             div {
                 width: 90%;
@@ -216,6 +237,17 @@ body{
                 }
                 table{
                     width: 100%;
+                    tr{
+                        @include c-respond(all-mobile){
+                            padding: 0 0 20px 0;
+                        }
+                        th{
+                            @include c-respond(all-mobile){
+                                font-size: 0.8em;
+                                padding: 0 0 20px 0;
+                            }
+                        }
+                    }
                 }
             }
             #profile {
@@ -316,8 +348,8 @@ body{
             width: 60%;
             @include c-respond(all-mobile){
                 width: 100%;
+                height: 50em;
                 border-radius: 0;
-                padding: 0em 0 40em 0;
             }
         }
     }
@@ -331,15 +363,28 @@ body{
             border-radius: 0;
             margin-top: 5em;
             width: 100%;
+            @include flex-pos(column, space-around, center, center, wrap);
         }
         square{
             @include box-props(flex, $primary, 10em, 20%);
             @include flex-pos(column);
+            @include c-respond(all-mobile){
+                @include flex-pos(row, flex-start, flex-start);
+                width: 100%;
+                height: max-content;
+            }
             h2{
                 margin: 20px 10px;
+                font-size: clamp(1rem, 2.5vw, 3rem);
+                @include c-respond(all-mobile){
+                    width: 40%;
+                }
             }
             h3{
                 margin: 20px 10px;
+            }
+            h4{
+                font-size: clamp(.8rem, 1.5vw, 2.5rem);
             }
             &:first-of-type{
                 border-radius: 20px 0 0 0;
@@ -356,11 +401,29 @@ body{
         }
         card:first-of-type{
             @include flex-pos(row);
+            @include c-respond(lrg-mobile){
+                @include flex-pos(column);
+            }
+            @include c-respond(med-mobile){
+                @include flex-pos(column);
+            }
+            @include c-respond(sm-mobile){
+                @include flex-pos(column);
+            }
         }
         card{
             @include box-props(flex, $primary, auto, 80%, 20px);
             @include flex-pos(column);
             margin: 50px 10%;
+            @include c-respond(lrg-mobile){
+                width: 90%;
+            }
+            @include c-respond(med-mobile){
+                width: 90%;
+            }
+            @include c-respond(sm-mobile){
+                width: 90%;
+            }
             h3{
                 margin: 30px
             }

@@ -27,6 +27,7 @@ $(document).ready(() => {
         // Show the final number of days between dates     
         return Math.round(Math.abs(months));  
     }  
+    // add this to how long i have been programming for
 
         let prm = {
             company: `Premier LPG`,
@@ -59,11 +60,11 @@ $(document).ready(() => {
             date: `September 2021 - March 2022`,
             jobtitle: `Digital Developer`,
             department: `Digital`,
-            desc1: `Creating websites from scratch using HTML5 & CSS3<br>
-            Design UX and UI elements with javascript<br>
-            Design email marketing campaigns<br>
-            Update existing websites<br>
-            Upload new websites to servers<br>
+            desc1: `Creating websites from scratch using HTML5 & CSS3<br><br>
+            Design UX and UI elements with javascript<br><br>
+            Design email marketing campaigns<br><br>
+            Update existing websites<br><br>
+            Upload new websites to servers<br><br>
             Worked with Wordpress`,
             hdr2: `About the Job`,
             desc2: `At Unbloq i worked on both the front end and the back end of websites and email marketing campaigns. Often at times I would find myself building sites from scratch and working on wordpress, At unbloq i had my first hands on experience working on mac systems and adobe suite applications such as dreamweaver, although as time went on i resulted to sticking to visual studio code as my prefered software for builds.`,
@@ -88,7 +89,7 @@ $(document).ready(() => {
             date: `April 2020 - November 2020`,
             jobtitle: `Customer Service Advisor`,
             department: `DWP Universal Credits`,
-            desc1: `Answer queries for new claimants<br>
+            desc1: `Answer queries for new claimants<br><br>
             Admin work for Case Managers & Work Coaches`,
             hdr2: `My Claim to fame on the Universal Credit Team`,
             desc2: `I worked on the campaign which as we all know was set up in a rushed fashion to cope with the stress of the pandemic and I could clearly see that all notes left were unorganised and the note taking process was slow and ineffective. So i literally took to the internet to see how i could use Microsoft excel to organise the note taking process and make it more efficient.<br>I spent roughly a week or 2 of my own time creating and learning how to make code within excel, create macros and generally learned how to make the excel sheet aesthetically pleasing as well as simple. I used the “Call Notes Tool” whilst on call with claimants and would gather a list of notes for improvements.<br>When the tool was near enough done it was time to reveal to the team. Then it blew up, Campaign wide adoption had happened within the first week and a personal thanks from the Campaign Manager for my hard work and innovation to help the campaign as a whole. Notably the entire campaign statistics had improved in terms of scorecards, wrap times and general job satisfaction on the campaign as a whole had dramatically improved.<br>`,
@@ -101,7 +102,7 @@ $(document).ready(() => {
             date: `January 2020 - April 2020`,
             jobtitle: `Customer/Sales Advisor`,
             department: `O2 Retentions`,
-            desc1: `Inbound calls for retention offers to leaving customers<br>
+            desc1: `Inbound calls for retention offers to leaving customers<br><br>
             Admin for leaving customers (PAC & STAC codes, Disconnection logging ect.)`,
             hdr2: `More Info`,
             desc2: `My job at Capita on O2 Retentions would be rather simple, Answer calls listen to their reason for cancellation then offer a compelling deal to stay with O2. If the barter didnt fall through i would have to perform a little bit of admin to send them on their way. There was several scenarios of which i was fully prepared for on the job however long story short the pandemic hit and i would be moved to the NHS back to work scheme where i would recruit retired health proffessionals handling their data doing security checks and performing the admin neccesary to get them started. Shortly after i was moved to the DWP department which you can read more about in the next job role.`,
@@ -114,13 +115,13 @@ $(document).ready(() => {
             date: `July 2018 - December 2019`,
             jobtitle: `Head Cook & MOH`,
             department: `KFC`,
-            desc1: `Managing and leading a team of cooks<br>
-            Training of new & existing cooks<br>
-            Food prep (breading, MOH burger station & wraps ec..t)<br>
-            Cooking Of Products<br>
-            Food stock & Defrost control<br>
-            Gutting Chicken<br>
-            Cleaning the unit (Vents, Workstations, Frier filtration & more)<br>
+            desc1: `Managing and leading a team of cooks<br><br>
+            Training of new & existing cooks<br><br>
+            Food prep (breading, MOH burger station & wraps ec..t)<br><br>
+            Cooking Of Products<br><br>
+            Food stock & Defrost control<br><br>
+            Gutting Chicken<br><br>
+            Cleaning the unit (Vents, Workstations, Frier filtration & more)<br><br>
             Morning setups & Night closes`,
             hdr2: `My Ascent to Head Cook`,
             desc2: `Whilst working there as a cook i quickly ascended the ladder as a renown worker within the team. Standards were on point and exceeding expectations even being praised for my work ethic in passing 3 ROCC examinations flawlessly.<br>I would oftenly work up to 14 hours a day and even up to 60 to 70 hours a week, primarily due to lack of staffing levels and it was my job to make sure the cleanliness and product quality was excellent.
@@ -134,7 +135,7 @@ $(document).ready(() => {
             date: `December 2017 - June 2018`,
             jobtitle: `Sales agent`,
             department: `Vodafone Sales`,
-            desc1: `Outbound calls to existing customers<br>
+            desc1: `Outbound calls to existing customers<br><br>
             Sales of gadgets (Phones, Tablets, Broadband ect.)`,
             hdr2: `More Info`,
             desc2: `My job at Webhelp consisted mostly of calling our customers at Vodafone to entise them to purchase another line such as a tablet or watch on contract with a sim in it. I would work on the Household department for 3 months before they needed more people on the broadband team so i switched over with practically no training selling broadband this time and continued working there untill the end.`,
@@ -147,9 +148,9 @@ $(document).ready(() => {
             date: `March 2016 - Sep 2016`,
             jobtitle: `Customer Service`,
             department: `Harry Ramsdens`,
-            desc1: `Serving customers<br>
-            Processing customer orders via till<br>
-            Food preparation and plating<br>
+            desc1: `Serving customers<br><br>
+            Processing customer orders via till<br><br>
+            Food preparation and plating<br><br>
             Pot washing (Industrial pot wash)`,
             hdr2: `More Info`,
             desc2: `At Harry Ramsdens i was the young recruit at just 16, literally fresh out of school i worked as the till operative who would take orders then prepare their food shortly before serving them their food.`,
@@ -163,15 +164,15 @@ $(document).ready(() => {
             jobtitle: `Football Official`,
             department: `Officials`,
             desc1: `
-            Organise pre-game (administration, kit, venue .etc)<br>
-            Pre-game checks and management<br>
-            Officiate in accordance to laws of the game<br>
-            Issueing disciplinaries to players that infringe the laws of the game<br>
-            Manage a team of officials or work with lead official<br>
-            Work as a team to make decisions decisively<br>
-            Organise and manage up to 22 - 32 players at any one time<br>
-            Perform crowd control and manage tension appropriately<br>
-            Manage substitutions during the game<br>
+            Organise pre-game (administration, kit, venue .etc)<br><br>
+            Pre-game checks and management<br><br>
+            Officiate in accordance to laws of the game<br><br>
+            Issueing disciplinaries to players that infringe the laws of the game<br><br>
+            Manage a team of officials or work with lead official<br><br>
+            Work as a team to make decisions decisively<br><br>
+            Organise and manage up to 22 - 32 players at any one time<br><br>
+            Perform crowd control and manage tension appropriately<br><br>
+            Manage substitutions during the game<br><br>
             Online administration of final game`,
             hdr2: `More Info`,
             desc2: `Its not often you will see official on a CV but it is an extremely usefull job/hobby to have. I have learned so many skills Officiating, mostly skills including anger management, crowd control, organisation, eye for detail, quick decision making, disciplinaries and ommanding respect all of which can come very usefull in other jobs. Not only has it improved and introduced new skills for me but its also helped me mature at a younger age in a working environment, That in turn has helped me work indipendently and organise my own games around a shedule of assigned games by league associates. Often at times i have de-escaleted situations where i was confronted by either players or managers all of which were dealt with in a propper manner. Its also quite funny to note that one of my worst games was a local u18s derby where i disciplined a total of 13 players 9 of which were yellow cards and 4 resulting in being sent off, These games are "extremely rare" as quoted by the U18s League representitive with upwards of 20 years refereeing experience and proudly applauded me for my efforts to calm down a game that was innevitaly going to be rough.`,
@@ -186,17 +187,17 @@ $(document).ready(() => {
             jobtitle: `Music Producer & Artist`,
             department: `Music`,
             desc1: `
-            Music production<br>
-            Music Mixing & Mastering<br>
-            Sound engineering<br>
-            Song writing<br>
-            Rap reccording<br>
-            Music publication administration<br>
-            Video choreographing<br>
-            Video Editing<br>
-            Music promotion<br>
-            Graphic Design<br>
-            DJ-ing<br>
+            Music production<br><br>
+            Music Mixing & Mastering<br><br>
+            Sound engineering<br><br>
+            Song writing<br><br>
+            Rap reccording<br><br>
+            Music publication administration<br><br>
+            Video choreographing<br><br>
+            Video Editing<br><br>
+            Music promotion<br><br>
+            Graphic Design<br><br>
+            DJ-ing<br><br>
             Delivering any of the above to clients`,
             hdr2: `More Info`,
             desc2: `Music was more of a passion to begin with, however it has grown to be more than that and has infact become more like a job like experience, the skills i have learned through being an artist could well benefit me in future jobs especially those that have relation to music, sounds & general creativity. This has certainly improved my ability to learn by myself, to fix and improve on errors, self manage & open up my creative ideas.`,

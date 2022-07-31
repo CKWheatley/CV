@@ -51,8 +51,16 @@ body prompt {
       flex-wrap: nowrap;
 }
 
+@media only screen and (max-width: 800px) {
+  body prompt {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 body prompt h1 {
   margin: 5%;
+  font-size: clamp(1.5rem, 4vw, 3em);
 }
 
 @media only screen and (min-width: 2500px) {
@@ -61,11 +69,23 @@ body prompt h1 {
   }
 }
 
+@media only screen and (max-width: 320px) {
+  body prompt h1 {
+    font-size: 1.2em;
+  }
+}
+
 body prompt input {
   text-align: center;
   width: 60%;
   margin: 30px auto;
-  font-size: 250%;
+  font-size: clamp(1.2rem, 6vw, 3.5em);
+}
+
+@media only screen and (max-width: 800px) {
+  body prompt input {
+    padding: .5em;
+  }
 }
 
 body prompt a {
@@ -91,11 +111,20 @@ body prompt a {
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  font-size: 200%;
+  font-size: clamp(1.2rem, 6vw, 3.5em);
   cursor: pointer;
   text-decoration: none;
   color: #151515;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 800px) {
+  body prompt a {
+    padding: .5em;
+    margin-top: 60px;
+    position: fixed;
+    bottom: 5%;
+  }
 }
 
 body main {
@@ -302,6 +331,8 @@ body main maincolumn layer {
 @media only screen and (max-width: 800px) {
   body main maincolumn layer {
     border-radius: 0;
+    height: 100%;
+    padding: 2em 0;
   }
 }
 
@@ -359,6 +390,19 @@ body main maincolumn div innerdiv .selectable:hover {
 
 body main maincolumn div table {
   width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  body main maincolumn div table tr {
+    padding: 0 0 20px 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body main maincolumn div table tr th {
+    font-size: 0.8em;
+    padding: 0 0 20px 0;
+  }
 }
 
 body main maincolumn #profile {
@@ -571,8 +615,8 @@ body main maincolumn:last-of-type {
 @media only screen and (max-width: 800px) {
   body main maincolumn:last-of-type {
     width: 100%;
+    height: 50em;
     border-radius: 0;
-    padding: 0em 0 40em 0;
   }
 }
 
@@ -608,6 +652,22 @@ body cardsection {
     border-radius: 0;
     margin-top: 5em;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -636,12 +696,49 @@ body cardsection square {
       flex-wrap: nowrap;
 }
 
+@media only screen and (max-width: 800px) {
+  body cardsection square {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+
 body cardsection square h2 {
   margin: 20px 10px;
+  font-size: clamp(1rem, 2.5vw, 3rem);
+}
+
+@media only screen and (max-width: 800px) {
+  body cardsection square h2 {
+    width: 40%;
+  }
 }
 
 body cardsection square h3 {
   margin: 20px 10px;
+}
+
+body cardsection square h4 {
+  font-size: clamp(0.8rem, 1.5vw, 2.5rem);
 }
 
 body cardsection square:first-of-type {
@@ -684,6 +781,72 @@ body cardsection card:first-of-type {
       flex-wrap: nowrap;
 }
 
+@media only screen and (min-width: 376px) and (max-width: 550px) {
+  body cardsection card:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  body cardsection card:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body cardsection card:first-of-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
 body cardsection card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -708,6 +871,24 @@ body cardsection card {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   margin: 50px 10%;
+}
+
+@media only screen and (min-width: 376px) and (max-width: 550px) {
+  body cardsection card {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  body cardsection card {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body cardsection card {
+    width: 90%;
+  }
 }
 
 body cardsection card h3 {

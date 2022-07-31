@@ -37,8 +37,16 @@ $(document).ready(() => {
     $('#mailer-client').click(() => {
         $('#mailer-client').html("").addClass('hidden')
     })
-    // sort this out ^^
+    window_width()
 })
+function window_width(){
+    if($(window).width() < 800){
+        $('.selectable').click(() => {
+            $(window).scrollTop(0)
+        })
+    }
+}
+// get this function to work on resize
 function tab_click(){
     function action(value){
         value.slideDown(500).siblings().slideUp(500);
@@ -66,4 +74,8 @@ function tab_click(){
     });
 };
 tab_click();
+$(window).resize(() => {
+    window_width()
+})
+// add js to resize the section 2 for the experience part so it fits
 
