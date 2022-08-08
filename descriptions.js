@@ -327,93 +327,46 @@ $(document).ready(() => {
     <tr>
         <td>HTML5 & CSS3</td>
         <td>${p_levels[3]}</td>
-        <td><a href="images\certificates\CIW Advanced HTML5 and CSS3 Specialist certificate.pdf">CIW Advanced HTML5 &amp; CSS3 Specialist</a></td>
+        <td><a id="htmlpdf" class="viewcerts">View Certs</a></td>
     </tr>
     <tr>
         <td>SASS</td>
         <td>${p_levels[2]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
+        <td><a id="sasspdf" class="viewcerts">View Certs</a></td>
     </tr>
     <tr>
         <td>Javascript</td>
         <td>${p_levels[1]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
+        <td><a id="jspdf" class="viewcerts">View Certs</a></td>
     </tr>
     <tr>
         <td>JQuery</td>
-        <td>${p_levels[2]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
+        <td>${p_levels[1]}</td>
+        <td><a id="jquerypdf" class="viewcerts">View Certs</a></td>
     </tr>
     <tr>
         <td>Bootstrap</td>
         <td>${p_levels[0]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
-    </tr>
-</table>
-        `
-        }
-        let e_pqc2 = {
-            desc: `
-            <table>
-    <tr>
-        <td>Language or Framework</td>
-        <td>My Honest Rating</td>
-        <td>Cert</td>
-    </tr>
-    <tr>
-        <td>Javascript</td>
-        <td>${p_levels[0]}</td>
-        <td><a href="">CIW Advanced HTML5 &amp; CSS3 Specialist</a></td>
-    </tr>
-    <tr>
-        <td>PHP</td>
-        <td>${p_levels[0]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
+        <td><a id="bootstrappdf" class="viewcerts">View Certs</a></td>
     </tr>
     <tr>
         <td>SQL</td>
         <td>${p_levels[1]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
-    </tr>
-</table>
-            
-            `
-        }
-        let e_pqc3 = {
-            desc: `
-            <table>
-    <tr>
-        <td>Language or Framework</td>
-        <td>My Honest Rating</td>
-        <td>Cert</td>
-    </tr>
-    <tr>
-        <td>Javascript</td>
-        <td>${p_levels[1]}</td>
-        <td><a href="">CIW Advanced HTML5 &amp; CSS3 Specialist</a></td>
+        <td><a id="sqlpdf" class="viewcerts">View Certs</a></td>
     </tr>
     <tr>
         <td>PHP</td>
-        <td>${p_levels[0]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
+        <td>${p_levels[1]}</td>
+        <td><a id="phppdf" class="viewcerts">View Certs</a></td>
     </tr>
     <tr>
         <td>Python</td>
-        <td>${p_levels[0]}</td>
-        <td><a href="">Codecademy Certificate</a></td>
+        <td>${p_levels[1]}</td>
+        <td><a id="pythonpdf" class="viewcerts">View Certs</a></td>
     </tr>
+    
 </table>
-            `
-        }
-        let e_pqc4 = {
-            desc: `
-            <p>HTML5 & CSS3</p>
-            <p>SASS/SCSS</p>
-            <p>Javascript</p>
-            <p>PHP</p>
-            <p>SQL</p>
-            <p>Python</p>
-            `
+        `
         }
         let e_oq1 = {
             desc: ``
@@ -421,14 +374,41 @@ $(document).ready(() => {
         let e_oq2 = {
             desc: ``
         }
-        let e_oq3 = {
-            desc: ``
-        }
         let e_sch = {
-            desc: ``
-        }
-        let e_col = {
-            desc: ``
+            desc: `            <table>
+            <tr>
+                <td>Subject</td>
+                <td>Grade</td>
+            </tr>
+            <tr>
+                <td>History</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td>Maths</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>Science Core</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>Science Additional</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>English literature</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>English language</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>Geography</td>
+                <td>D</td>
+            </tr>
+        </table>`
         }
 
         function detail_assignment_2(id){
@@ -441,8 +421,8 @@ $(document).ready(() => {
         }
         let clickable2 = [$('.football-id'), $('.music-id'), $('.refereeing-id'), $('.gaming-id'), $('#pa1'), $('#pa2'), $('#pa3'), $('#pa4'), $('#pa5'), $('#pa6')];
         let options2 = [p_fo, p_mus, p_ref, p_game, p_a1, p_a2, p_a3, p_a4, p_a5, p_a6];
-        let clickable3 = [$('#f-e'), $('#b-e'), $('#scrip'), $('#lanlist'), $('#train'), $('#school'), $('#college')]
-        options3 = [e_pqc1, e_pqc2, e_pqc3, e_pqc4, e_oq1, e_sch, e_col]
+        let clickable3 = [$('#lanlist')]
+        options3 = [e_pqc1, e_oq1, e_sch]
         function data_loop2(value1, value2){
             for(i in value1){
                 pass_data_2(value1[i], value2[i]);
@@ -451,8 +431,12 @@ $(document).ready(() => {
                 })
             }
         }
+        function pdf_viewer(){
+            var certs = [$("htmlpdf"), $("sasspdf"),$("jspdf"),$("jquerypdf"),$("bootstrappdf"),$("sqlpdf"),$("phppdf"),$("pythonpdf")]
+        }
         data_loop2(clickable2, options2)
         data_loop2(clickable3, options3)
+        pdf_viewer()
 
 
 

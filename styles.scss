@@ -31,6 +31,20 @@ body{
     height: $siteheight;
     background-image: linear-gradient(to bottom, skyblue, white);
     overflow-x: hidden;
+    .pdfviewer{
+        @include box-props(block, black, 50vh, 50vw);
+        position: fixed;
+        top: 25%;
+        left: 25%;
+        z-index: 10;
+        border: solid black 2px;
+        iframe{
+            width: 75%;
+            height: 100%;
+            border: none;
+        }
+        display: none;
+    }
     prompt{
         z-index: 10;
         margin: 10% 0;
@@ -144,6 +158,10 @@ body{
                     padding: 10px;
                     font-size: 100%;
                 }
+                a{
+                    color:rgb(242, 88, 53);
+                    margin: 0;
+                }
             }
             tab {
                 @include flex-pos(column, center, center, center);
@@ -203,7 +221,10 @@ body{
                     z-index: 5;
                 }
                 &#experience{
-
+                    a{
+                        color:rgb(242, 88, 53);
+                        text-decoration: none;
+                    }
                 }
             }
             div {
@@ -375,7 +396,7 @@ body{
             }
             h2{
                 margin: 20px 10px;
-                font-size: clamp(1rem, 2.5vw, 3rem);
+                font-size: clamp(1rem, 2.5vw, 2rem);
                 @include c-respond(all-mobile){
                     width: 40%;
                 }
@@ -384,7 +405,7 @@ body{
                 margin: 20px 10px;
             }
             h4{
-                font-size: clamp(.8rem, 1.5vw, 2.5rem);
+                font-size: clamp(.8rem, 1.5vw, 1.2rem);
             }
             &:first-of-type{
                 border-radius: 20px 0 0 0;

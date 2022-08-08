@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&display=swap');
 
 :root{
-	--red: rgb(242, 88, 53);
-    --purple: rgb(147, 59, 219);
-    --green: rgb(79, 232, 51);
-    --blue: rgb(61, 200, 245);
-    --yellow: rgb(235, 202, 65);
+	--red: rgb(255, 135, 107);
+    --purple: rgb(195, 122, 255);
+    --green: rgb(159, 255, 143);
+    --blue: rgb(136, 225, 255);
+    --yellow: rgb(255, 231, 137);
     --body: rgb(255, 255, 255);
     --primary: rgb(21, 21, 21);
 }
@@ -18,12 +18,12 @@
 h1 {
     margin: 0 auto;
     font-weight: 900;
-    font-size: clamp(1.5rem, 1vw, 3rem);
+    font-size: clamp(1.5rem, 1vw, 2.45rem);
 }
 h3 {
     margin: 0 0 0 5%;
     font-weight: 900;
-    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 innerdiv h3 {
     position: relative;

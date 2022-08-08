@@ -24,6 +24,26 @@ body {
   overflow-x: hidden;
 }
 
+body .pdfviewer {
+  display: block;
+  background-color: black;
+  height: 50vh;
+  width: 50vw;
+  border-radius: 0px;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  z-index: 10;
+  border: solid black 2px;
+  display: none;
+}
+
+body .pdfviewer iframe {
+  width: 75%;
+  height: 100%;
+  border: none;
+}
+
 body prompt {
   z-index: 10;
   margin: 10% 0;
@@ -248,6 +268,11 @@ body main maincolumn .descriptions td {
   font-size: 100%;
 }
 
+body main maincolumn .descriptions a {
+  color: #f25835;
+  margin: 0;
+}
+
 body main maincolumn tab {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,35 +303,35 @@ body main maincolumn tab {
 }
 
 body main maincolumn #profiletab {
-  background-color: #933bdb;
+  background-color: #c37aff;
   right: 100%;
   top: 0em;
   z-index: 8;
 }
 
 body main maincolumn #personalitytab {
-  background-color: #f25835;
+  background-color: #ff876b;
   right: 100%;
   top: 10%;
   z-index: 7;
 }
 
 body main maincolumn #educationtab {
-  background-color: #4fe833;
+  background-color: #9fff8f;
   right: 100%;
   top: 20%;
   z-index: 6;
 }
 
 body main maincolumn #experiencetab {
-  background-color: #3dc8f5;
+  background-color: #88e1ff;
   right: 100%;
   top: 30%;
   z-index: 5;
 }
 
 body main maincolumn #contacttab {
-  background-color: #ebca41;
+  background-color: #ffe789;
   right: 100%;
   top: 40%;
   z-index: 4;
@@ -344,6 +369,11 @@ body main maincolumn layer img#footballpic {
   border-radius: 50%;
   position: absolute;
   z-index: 5;
+}
+
+body main maincolumn layer#experience a {
+  color: #f25835;
+  text-decoration: none;
 }
 
 body main maincolumn div {
@@ -406,27 +436,27 @@ body main maincolumn div table {
 }
 
 body main maincolumn #profile {
-  background-color: #933bdb;
+  background-color: #c37aff;
   z-index: 7;
 }
 
 body main maincolumn #personality {
-  background-color: #f25835;
+  background-color: #ff876b;
   z-index: 6;
 }
 
 body main maincolumn #education {
-  background-color: #4fe833;
+  background-color: #9fff8f;
   z-index: 5;
 }
 
 body main maincolumn #experience {
-  background-color: #3dc8f5;
+  background-color: #88e1ff;
   z-index: 4;
 }
 
 body main maincolumn #contact {
-  background-color: #ebca41;
+  background-color: #ffe789;
   z-index: 3;
 }
 
@@ -484,7 +514,7 @@ body main maincolumn #contact div button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #f25835;
+  background-color: #ff876b;
   height: 100px;
   width: 90%;
   border-radius: 5px;
@@ -515,7 +545,7 @@ body main maincolumn #contact div form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #933bdb;
+  background-color: #c37aff;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -724,7 +754,7 @@ body cardsection square {
 
 body cardsection square h2 {
   margin: 20px 10px;
-  font-size: clamp(1rem, 2.5vw, 3rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 @media only screen and (max-width: 800px) {
@@ -738,7 +768,7 @@ body cardsection square h3 {
 }
 
 body cardsection square h4 {
-  font-size: clamp(0.8rem, 1.5vw, 2.5rem);
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
 }
 
 body cardsection square:first-of-type {

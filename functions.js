@@ -2,7 +2,6 @@
 $(document).ready(() => {
     $("#entrybutton").click(() => {
         $("#entryprompt").fadeOut(0);
-        // dont fade out but do the good afternoon / morning thing with a button that scrolls to my profile
         $("#main").fadeIn(1000).removeClass("hidden");
     })
     $(".cardlink").click(() => {
@@ -18,6 +17,7 @@ $(document).ready(() => {
     })
     $('.selectable').click(() => {
         $('.selectable').addClass('selected').siblings('.selected').removeClass('selected');
+        // fix this code
     })
     $('#mailer-button').click(() =>{
         let a = $('#mailer-client')
@@ -46,10 +46,9 @@ function window_width(){
         })
     }
 }
-// get this function to work on resize
 function tab_click(){
     function action(value){
-        value.slideDown(500).siblings().slideUp(500);
+        value.slideDown(500).siblings().slideUp(620);
     }
     $("#profiletab").click(() => {
         action($("#profile"));
@@ -76,6 +75,10 @@ function tab_click(){
 tab_click();
 $(window).resize(() => {
     window_width()
+})
+$(".viewcerts").click(() => {
+    console.log("clicked")
+    $(".pdfviewer").removeClass("hidden")
 })
 // add js to resize the section 2 for the experience part so it fits
 
