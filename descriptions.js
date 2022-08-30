@@ -35,10 +35,23 @@ $(document).ready(() => {
             date: `April 2022 - Today`,
             jobtitle: `Internal/Customer Support Administrator`,
             department: `Customer Experience & Resolutions`,
-            desc1: ``,
-            hdr2: `About the job`,
+            desc1: `PREMIER LPG - Signing/Sending/Receiving Contracts<BR><BR>
+            PREMIER LPG - Quoting Customers (Retentions and new)<BR><BR>
+            PREMIER LPG - Placing Orders for deliveries<BR><BR>
+            PREMIER LPG - Responding to customer queries via Email<BR><BR>
+            PREMIER LPG - Booking Engineer Visits (Tank issues/relocations/uplifts)<BR><BR>
+            PREMIER LPG - Chasing Customer Debts (Red lists)<BR><BR>
+            PREMIER LPG - Site Safety Reviews<BR><BR>
+            PREMIER LPG - Other Administrative duties such as Invoice querying & account changes<BR><BR>
+            Avanti Gas - Support Customer Experience with switching information<BR><BR>
+            Avanti Gas - Issue credits on accounts<BR><BR>
+            Avanti Gas - Invoicing Queries/Calculations/Credits<BR><BR>
+            Avanti Gas - Standing order to Direct Debit Switches<BR><BR>
+            Avanti Gas - Other Internal support administration duties<BR><BR>
+            `,
+            hdr2: `Premier LPG Customer Service Advisor`,
             desc2: ``,
-            hdr3: ``,
+            hdr3: `Avanti Gas Internal Support Administrator`,
             desc3: ``
         }
         let ag = {
