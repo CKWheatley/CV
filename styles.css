@@ -35,7 +35,6 @@ body .pdfviewer {
   left: 25%;
   z-index: 10;
   border: solid black 2px;
-  display: none;
 }
 
 body .pdfviewer iframe {
@@ -675,6 +674,11 @@ body cardsection {
   margin: 0 auto;
   margin-bottom: 50px;
   color: white;
+}
+
+body cardsection a {
+  color: #f25835;
+  margin: 0;
 }
 
 @media only screen and (max-width: 800px) {
