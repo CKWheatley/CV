@@ -15,10 +15,10 @@ $(document).ready(() => {
         $("#contactform").addClass("hidden");
         $(".contactoption").removeClass("hidden");
     })
-    $('.selectable').click(() => {
+    /*$('.selectable').click(() => {
         $('.selectable').addClass('selected').siblings('.selected').removeClass('selected');
         // fix this code
-    })
+    })*/
     $('#mailer-button').click(() =>{
         let a = $('#mailer-client')
         a.removeClass('hidden')
@@ -76,9 +76,88 @@ tab_click();
 $(window).resize(() => {
     window_width()
 })
-$(".viewcerts").click(() => {
-    console.log("clicked")
+$("#lanlist").click(() => {
     $(".pdfviewer").removeClass("hidden")
 })
 // add js to resize the section 2 for the experience part so it fits
+
+
+
+
+function cert_src(value1, value2){
+    $(value1).click(() => {
+        $("#cert-pdf").attr("src", value2)
+    })
+}
+/*
+For the cert loop do objects 
+
+function cert_loop(){
+    for(i in certs){
+        cert_src(cert[i], cert[i].src)
+    }
+}
+*/ 
+cert_src($("#html1"), "/images/certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.pdf#view=fitH")
+cert_src($("#html2"), "/images/certificates/CSS Intermediate Certificate.pdf#view=fitH")
+cert_src($("#html3"), "/images/certificates/SASS Certificate.pdf#view=fitH")
+cert_src($("#html4"), "/images/certificates/HTML Certificate.pdf#view=fitH")
+cert_src($("#html5"), "/images/certificates/CSS Certificate.pdf#view=fitH")
+cert_src($("#html6"), "/images/certificates/Bootstrap Certificate.pdf#view=fitH")
+cert_src($("#js1"), "/images/certificates/JavaScript Certificate.pdf#view=fitH")
+cert_src($("#js2"), "/images/certificates/JQuery Certificate.pdf#view=fitH")
+cert_src($("#sql1"), "/images/certificates/SQL Certification.pdf#view=fitH")
+cert_src($("#php1"), "/images/certificates/PHP Certificate.pdf#view=fitH")
+cert_src($("#py1"), "/images/certificates/Python Fundamentals.pdf#view=fitH")
+
+
+// make sure to include #view=fitH to fit to width
+let cert_list = [$("#html1"),$("#html2"),$("#html3"),$("#html4"),$("#html5"),$("#html6"),$("#js1"),$("#js2"),$("#sql1"),$("#php1"),$("#py1")
+]
+function reset_cert_list(){
+    for(i in cert_list){
+        cert_list[i].addClass("hidden")
+    }
+}
+
+$("#html").click(() =>{
+    $("#cert-list").removeClass("hidden");
+    reset_cert_list()
+    $("#html1").removeClass("hidden");
+    $("#html2").removeClass("hidden");
+    $("#html3").removeClass("hidden");
+    $("#html4").removeClass("hidden");
+    $("#html5").removeClass("hidden");
+    $("#html6").removeClass("hidden");
+})
+$("#js").click(() =>{
+    $("#cert-list").removeClass("hidden");
+    reset_cert_list()
+    $("#js1").removeClass("hidden");
+    $("#js2").removeClass("hidden");
+})
+$("#sql").click(() =>{
+    $("#cert-list").removeClass("hidden");
+    reset_cert_list()
+    $("#sql1").removeClass("hidden");
+})
+$("#php").click(() =>{
+    $("#cert-list").removeClass("hidden");
+    reset_cert_list()
+    $("#php1").removeClass("hidden");
+})
+$("#py").click(() =>{
+    $("#cert-list").removeClass("hidden");
+    reset_cert_list()
+    $("#py1").removeClass("hidden");
+})
+// clean up the above code
+
+
+$("#close-certs").click(() =>{
+    $(".pdfviewer").addClass("hidden");
+    $("#cert-list").addClass("hidden");
+    $("#cert-pdf").attr("src", "")
+    console.log("done")
+})
 

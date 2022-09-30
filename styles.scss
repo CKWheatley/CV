@@ -32,16 +32,77 @@ body{
     background-image: linear-gradient(to bottom, skyblue, white);
     overflow-x: hidden;
     .pdfviewer{
-        @include box-props(block, black, 50vh, 50vw);
+        @include box-props(flex, black, 50vh, 50vw);
         position: fixed;
         top: 25%;
         left: 25%;
         z-index: 10;
         border: solid black 2px;
+        h4{
+            color: white;
+            display: flex;
+            @include flex-pos();
+            position: absolute;
+            top: 50%;
+            left: 12.5%;
+            transform: translateY(-50%);
+            width: 50%;
+            height: 10%;
+        }
         iframe{
             width: 75%;
             height: 100%;
             border: none;
+        }
+        div{
+            display: flex;
+            flex-flow: column;
+            width: 25%;
+            height: 100%;
+            border: none;
+            color:rgb(242, 88, 53);
+            background: white;
+            a{
+                margin: 10px 10px 0 10px;
+                white-space: nowrap;
+                width: 80%;
+            }
+        }
+        aside{
+            display: flex;
+            flex-flow: column;
+            justify-content: space-evenly;
+            position: absolute;
+            left: 100%;
+            top: -2px;
+            width: max-content;
+            height: max-content;
+            min-height: 200px;
+            min-width: 200px;
+            border-top: solid black 2px;
+            border-right: solid black 2px;
+            border-bottom: solid black 2px;
+            border-left: dashed white 2px;
+            border-radius: 0 20px 20px 0;
+            color: skyblue;
+            background: white;
+            a{
+                white-space: nowrap;
+                width: 80%;
+                padding-right: 20px;
+            }
+        }
+        button{
+            display: flex;
+            @include flex-pos();
+            padding: 1em 3em;
+            position: absolute;
+            bottom: 102%;
+            left: 84%;
+            cursor: pointer;
+            border-radius: 20px;
+            background-color: $red;
+            font-weight: 900;
         }
     }
     prompt{

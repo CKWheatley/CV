@@ -20,16 +20,37 @@
 		<a id="entrybutton" type="" action="" href="#main">Lets Go!</a>
 	</prompt>
 	<span class="pdfviewer hidden">
-		<iframe src="images\certificates\CIW Advanced HTML5 and CSS3 Specialist certificate.pdf"></iframe>
-		<div id="certlist">
-			<!-- display each cert -->
+		<!-- add back and close buttons floating above element -->
+		<h4>Please choose a language to display my certificates</h4>
+		<!-- add typewriter effect -->
+		<iframe src="" title="Cert Viewer" id="cert-pdf"></iframe>
+		<div id="lan-list">
+			<a id="html" class="selectable">HTML5 & CSS3</a>
+			<a id="js" class="selectable">Javascript</a>
+			<a id="sql" class="selectable">SQL</a>
+			<a id="php" class="selectable">PHP</a>
+			<a id="py" class="selectable">Python</a>
 		</div>
+		<aside id="cert-list" class="hidden">
+			<a id="html1" src="/images//certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.pdf" class="hidden selectable">HTML & CSS Specialist</a>
+			<a id="html2" src="/images/certificates//CSS Intermediate Certificate.pdf" class="hidden selectable">CSS Intermediate</a>
+			<a id="html3" src="/images/certificates/SASS Certificate.pdf" class="hidden selectable">SCSS</a>
+			<a id="html4" src="/images//certificates/HTML Certificate.pdf" class="hidden selectable">HTML</a>
+			<a id="html5" src="/images//certificates/CSS Certificate.pdf" class="hidden selectable">CSS</a>
+			<a id="html6" src="/images//certificates/Bootstrap Certificate.pdf" class="hidden selectable">Bootstrap</a>
+			<a id="js1" src="/images//certificates/JavaScript Certificate.pdf" class="hidden selectable">Javascript</a>
+			<a id="js2" src="/images//certificates/JQuery Certificate.pdf" class="hidden selectable">JQuery</a>
+			<a id="sql1" src="/images//certificates/SQL Certification.pdf" class="hidden selectable">SQL</a>
+			<a id="php1" src="/images//certificates/PHP Certificate.pdf" class="hidden selectable">PHP</a>
+			<a id="py1" src="/images//certificates/Python Fundamentals.pdf" class="hidden selectable">Python Fundamentals</a>
+		</aside>
+		<button id="close-certs">Close</button>
 	</span>
 	<h1 id="intro-hdr"></h1>
 	<main id="main" class="hidden">
 		<maincolumn>
 			<h1>Callum Wheatley</h1>
-			<img src="images/profile.jpg" class="mainimg" />
+			<embed src="/images/profile.jpg" class="mainimg">
 			<tab id="profiletab">P</tab>
 			<tab id="personalitytab">P</tab>
 			<tab id="educationtab">E</tab>
@@ -87,12 +108,13 @@
 					<innerdiv>
 						<h3>Programming Qualifications &amp; Certs</h3>
 						<a class="selectable" id="lanlist">Language List</a>
+						<!-- add paths as another one -->
 					</innerdiv>
 				</div>
 				<div>
 					<innerdiv>
 						<h3>Other Qualifications</h3>
-						<a class="selectable" id="train">Trainer</a>
+						<a class="selectable" id="train">Trainer (Trying to get my cert)</a>
 						<a class="selectable refereeing-id">Referee</a>
 						<a>Drivers License</a>
 					</innerdiv>

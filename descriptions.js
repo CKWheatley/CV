@@ -332,60 +332,6 @@ $(document).ready(() => {
             desc: `<h2>Telling adults what to do at 15</h2>
             <p>Becoming a football referee gave me lots of skills i didnt think refereeing could give me, and of course starting at the age of 15 you can imagine it was some nice pocket money too.</p>`
         }
-        // use csv files for the tables below
-        let p_levels = ['Novice', 'Advanced Beginner', 'Intermediate', 'Proficient', 'Expert']
-        let e_pqc1 = {
-            desc: `
-            <table>
-    <tr>
-        <td>Language or Framework</td>
-        <td>My Honest Rating</td>
-        <td>Cert</td>
-    </tr>
-    <tr>
-        <td>HTML5 & CSS3</td>
-        <td>${p_levels[3]}</td>
-        <td><a id="htmlpdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    <tr>
-        <td>SASS</td>
-        <td>${p_levels[2]}</td>
-        <td><a id="sasspdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    <tr>
-        <td>Javascript</td>
-        <td>${p_levels[1]}</td>
-        <td><a id="jspdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    <tr>
-        <td>JQuery</td>
-        <td>${p_levels[1]}</td>
-        <td><a id="jquerypdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    <tr>
-        <td>Bootstrap</td>
-        <td>${p_levels[0]}</td>
-        <td><a id="bootstrappdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    <tr>
-        <td>SQL</td>
-        <td>${p_levels[1]}</td>
-        <td><a id="sqlpdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    <tr>
-        <td>PHP</td>
-        <td>${p_levels[1]}</td>
-        <td><a id="phppdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    <tr>
-        <td>Python</td>
-        <td>${p_levels[1]}</td>
-        <td><a id="pythonpdf" class="viewcerts">View Certs</a></td>
-    </tr>
-    
-</table>
-        `
-        }
         let e_oq1 = {
             desc: ``
         }
@@ -439,8 +385,8 @@ $(document).ready(() => {
         }
         let clickable2 = [$('.football-id'), $('.music-id'), $('.refereeing-id'), $('.gaming-id'), $('#pa1'), $('#pa2'), $('#pa3'), $('#pa4'), $('#pa5'), $('#pa6')];
         let options2 = [p_fo, p_mus, p_ref, p_game, p_a1, p_a2, p_a3, p_a4, p_a5, p_a6];
-        let clickable3 = [$('#lanlist')]
-        options3 = [e_pqc1, e_oq1, e_sch]
+        let clickable3 = [$('#train'), $('#school')]
+        let options3 = [e_oq1, e_sch]
         function data_loop2(value1, value2){
             for(i in value1){
                 pass_data_2(value1[i], value2[i]);
@@ -449,15 +395,11 @@ $(document).ready(() => {
                 })
             }
         }
-        function pdf_viewer(){
-            var certs = [$("htmlpdf"), $("sasspdf"),$("jspdf"),$("jquerypdf"),$("bootstrappdf"),$("sqlpdf"),$("phppdf"),$("pythonpdf")]
-        }
         data_loop2(clickable2, options2)
         data_loop2(clickable3, options3)
-        pdf_viewer()
 
-
-
+        let clickable_lan = [$("#html"), $("#js")]
+        let languages = [html, js]
 
 
 

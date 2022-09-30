@@ -25,7 +25,9 @@ body {
 }
 
 body .pdfviewer {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: black;
   height: 50vh;
   width: 50vw;
@@ -37,10 +39,126 @@ body .pdfviewer {
   border: solid black 2px;
 }
 
+body .pdfviewer h4 {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 12.5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 50%;
+  height: 10%;
+}
+
 body .pdfviewer iframe {
   width: 75%;
   height: 100%;
   border: none;
+}
+
+body .pdfviewer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 25%;
+  height: 100%;
+  border: none;
+  color: #f25835;
+  background: white;
+}
+
+body .pdfviewer div a {
+  margin: 10px 10px 0 10px;
+  white-space: nowrap;
+  width: 80%;
+}
+
+body .pdfviewer aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: absolute;
+  left: 100%;
+  top: -2px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-height: 200px;
+  min-width: 200px;
+  border-top: solid black 2px;
+  border-right: solid black 2px;
+  border-bottom: solid black 2px;
+  border-left: dashed white 2px;
+  border-radius: 0 20px 20px 0;
+  color: skyblue;
+  background: white;
+}
+
+body .pdfviewer aside a {
+  white-space: nowrap;
+  width: 80%;
+  padding-right: 20px;
+}
+
+body .pdfviewer button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 1em 3em;
+  position: absolute;
+  bottom: 102%;
+  left: 84%;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #ff876b;
+  font-weight: 900;
 }
 
 body prompt {
