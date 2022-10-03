@@ -10,7 +10,7 @@ $(document).ready(() => {
         }
     }
     
-    var months_worked = daysdifference('04/04/2022', new Date());  
+    var months_worked = daysdifference('10/03/2022', new Date());  
         // Add two dates to two variables     
     $("#currentjob").html(`${months_worked} Months`)
     function daysdifference(start_date, end_date){  
@@ -29,10 +29,25 @@ $(document).ready(() => {
     }  
     // add this to how long i have been programming for
 
-        let prm = {
-            company: `Premier LPG`,
+
+        let ag2 = {
+            company: `Avanti Gas`,
             location: `Chesterfield`,
-            date: `April 2022 - Today`,
+            date: `October 2022 - Today`,
+            jobtitle: `Data Administrator`,
+            department: `HR`,
+            desc1: `Sorting and Filtering old files<BR><BR>
+            Thats all as far as i have updated this
+            `,
+            hdr2: ``,
+            desc2: ``,
+            hdr3: ``,
+            desc3: ``
+        }
+        let prm = {
+            company: `Avanti Gas`,
+            location: `Chesterfield`,
+            date: `April 2022 - October 2022`,
             jobtitle: `Internal/Customer Support Administrator`,
             department: `Customer Experience & Resolutions`,
             desc1: `PREMIER LPG - Signing/Sending/Receiving Contracts<BR><BR>
@@ -50,7 +65,7 @@ $(document).ready(() => {
             Avanti Gas - Other Internal support administration duties<BR><BR>
             `,
             hdr2: `Premier LPG Customer Service Advisor`,
-            desc2: `Once my contract drew to its end as a Data Admin, they asked me to see if i could stay on longer as a customer support advisor, I straight away started my new role with little to no training other than getting straight on with the job. As I was picking up some of the smaller jobs such as signing contracts and placing orders I decided to use what I learned on the DWP campaign and gather as much info as I possibly could on the first instance I learned it. For example on the Premier LPG campaign we were tasked to do every role the company did between 3 to 4 members of staff, 2 on admin and emails and 2 on the calls plus 1 on finance as part of the Avantigas takeover. Because there were so many different roles I put together a rather complex google sheet which contained all the info I needed when juggling the tasks. Not only that but the sheet was designed to be fool proof so i wouldn't miss anything when following the procedures set out, which to my surprise was promptly adopted by my other colleagues who saw it as incredibly useful in making the administration process much easier and more organized as oppose to the 100’s of templates they had in their files. You can view this google sheet <a href="">here (Unable to show at the moment as customer details are on the sheet so i can ammend and or show on request)</a>. 
+            desc2: `Once my contract drew to its end as a Data Admin, they asked me to see if i could stay on longer as a customer support advisor, I straight away started my new role with little to no training other than getting straight on with the job. As I was picking up some of the smaller jobs such as signing contracts and placing orders I decided to use what I learned on the DWP campaign and gather as much info as I possibly could on the first instance I learned it. For example on the Premier LPG campaign we were tasked to do every role the company did between 3 to 4 members of staff, 2 on admin and emails and 2 on the calls plus 1 on finance as part of the Avantigas takeover. Because there were so many different roles I put together a rather complex google sheet which contained all the info I needed when juggling the tasks. Not only that but the sheet was designed to be fool proof so i wouldn't miss anything when following the procedures set out, which to my surprise was promptly adopted by my other colleagues who saw it as incredibly useful in making the administration process much easier and more organized as oppose to the 100’s of templates they had in their files. You can view this google sheet <a href="https://docs.google.com/spreadsheets/d/17YLgqRMS5JgdtSgw7B4FCmHdxFlPWqg5TLxtBAWikNw/edit?usp=sharing">here</a>. 
             <br><br>
             With the takeover around the corner we had started the campaign to retain all the customers out of contract at the time, this would involve us sending around 400 emails to customers in the middle of dealing with general enquiries, responding to their replies and then drafting their contracts to them input it on their system. By this point my contract was extended by a further 3 months with a new job role as i was one of the only people in the company capable of working on Premiers System, Sage 50, Avanti's engineering system and finally Avantis main system.`,
             hdr3: `Avanti Gas Internal Support Administrator`,
@@ -251,8 +266,8 @@ $(document).ready(() => {
         }
         // add new jobs to data loop
         function data_loop(){
-            let clickable = [$('#prm'),$('#ag'),$('#dd'), $('#de'), $('#dwp'), $('#sr'), $('#kfc'), $('#sa'), $('#cs'), $('#fo'), $('#mus'), $('#prog')];
-            let options = [prm,ag,dd, de, dwp, sr, kfc, sa, cs, fo, mus, prog];
+            let clickable = [$('#ag2'),$('#prm'),$('#ag'),$('#dd'), $('#de'), $('#dwp'), $('#sr'), $('#kfc'), $('#sa'), $('#cs'), $('#fo'), $('#mus'), $('#prog')];
+            let options = [ag2,prm,ag,dd, de, dwp, sr, kfc, sa, cs, fo, mus, prog];
             for(i in clickable){
                 pass_data(clickable[i], options[i]);
             }

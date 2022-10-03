@@ -21,51 +21,131 @@
 
 $siteheight: auto;
 
+.night{
+    transition: all 0.6s;
+    background-color: $primary !important;
+    color: $body !important;
+}
+.day{
+    transition: all 0.6s;
+    background-color: $body !important;
+    color: $primary !important;
+}
+
 html{
-    background-color: white;
+    background-color: $body;
 }
 body{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     height: $siteheight;
-    background-image: linear-gradient(to bottom, skyblue, white);
+    background: $body;
     overflow-x: hidden;
-    .pdfviewer{
-        @include box-props(flex, black, 50vh, 50vw);
+    .displaytog{
         position: fixed;
-        top: 25%;
-        left: 25%;
+        top: 5%;
+        left: 90%;
+        display: block;
+        width: 2.5em;
+        height: 1.2em;
+        border-radius: 50px;
+        background-color: grey;
+	    z-index: 5;
+        @include c-respond(all-mobile){
+            display:none;
+        }
+	    cursor: pointer;
+        #togglebutton{
+            position: absolute;
+            right: 0;
+            top: -30%;
+        }
+    }
+    a{
+        color: $primary
+    }
+    .certviewer{
+        @include box-props(flex, $body, 50vh, 50vw);
+        position: fixed;
+            top: 25%;
+            left: 25%;
         z-index: 10;
-        border: solid black 2px;
-        h4{
-            color: white;
+        border: solid $primary 2px;
+        @include c-respond(all-mobile){
+            display: flex;
+            flex-flow: column nowrap;
+            @include box-props(flex, $body, 80vh, 100vw);
+            position: fixed;
+                top: 20%;
+                left: 0;
+        }
+        @include c-respond(sm-laptop){
+            width: 80vw;
+            position: fixed;
+                top: 25%;
+                left: 10%;
+        }
+        @include c-respond(laptop){
+            width: 80vw;
+            position: fixed;
+                top: 25%;
+                left: 10%;
+        }
+        #cert-section{
+            width: 80%;
             display: flex;
             @include flex-pos();
-            position: absolute;
-            top: 50%;
-            left: 12.5%;
-            transform: translateY(-50%);
-            width: 50%;
-            height: 10%;
+            h4{
+                color: $primary;
+                display: flex;
+                @include flex-pos();
+                position: absolute;
+                    top: 50%;
+                    left: 50%;
+                transform: translate(-60%, -50%);
+                width: 100%;
+                height: 10%;
+                z-index: 7;
+                @include c-respond(all-mobile){
+                    position: absolute;
+                        top: 50%;
+                        left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            img{
+                width: auto;
+                height: 100%;
+                border: none;
+                z-index: 8;
+                @include c-respond(all-mobile){
+                    display: none;
+                }
+            }
         }
-        iframe{
-            width: 75%;
-            height: 100%;
-            border: none;
-        }
-        div{
+        #lan-list{
             display: flex;
             flex-flow: column;
             width: 25%;
             height: 100%;
             border: none;
             color:rgb(242, 88, 53);
-            background: white;
+            background: $body;
             a{
                 margin: 10px 10px 0 10px;
                 white-space: nowrap;
                 width: 80%;
+                color:rgb(242, 88, 53);
+                @include c-respond(all-mobile){
+                    width: 90%;
+                    margin: 10px auto;
+                    padding: 1em;
+                }
+            }
+            @include c-respond(all-mobile){
+                display: none;
+                width: 100%;
             }
         }
         aside{
@@ -79,17 +159,19 @@ body{
             height: max-content;
             min-height: 200px;
             min-width: 200px;
-            border-top: solid black 2px;
-            border-right: solid black 2px;
-            border-bottom: solid black 2px;
-            border-left: dashed white 2px;
+            border-top: solid $primary 2px;
+            border-right: solid $primary 2px;
+            border-bottom: solid $primary 2px;
             border-radius: 0 20px 20px 0;
-            color: skyblue;
-            background: white;
+            background: $body;
             a{
                 white-space: nowrap;
                 width: 80%;
                 padding-right: 20px;
+                color: skyblue;
+            }
+            @include c-respond(all-mobile){
+                width: 100%;
             }
         }
         button{
@@ -101,14 +183,50 @@ body{
             left: 84%;
             cursor: pointer;
             border-radius: 20px;
+            border: none;
             background-color: $red;
             font-weight: 900;
+            @include c-respond(all-mobile){
+                position: absolute;
+                bottom: 102%;
+                left: 50%;
+                transform: translateX(-50%)
+            }
+        }
+    }
+    #mobmenu{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        min-height: 10px;
+        background-color: $primary;
+        z-index: 10;
+        a{
+            color: $body;
+            margin: 20px 0 20px 20px;
+            border: $red solid 2px;
+            padding: 20px;
+            width: 50%;
+        }
+        #close-menu{
+            width: 5%;
+            display: flex;
+            @include flex-pos();
+            position: absolute;
+            right: 20px;
+            @include c-respond(sm-mobile){
+                position: absolute;
+                right: 10px;
+            }
         }
     }
     prompt{
         z-index: 10;
         margin: 10% 0;
-        @include box-props(flex, white, 30em, 100%, 0);
+        @include box-props(flex, white, 100vh, 100vw, 0);
         @include flex-pos(column, flex-start, center, center, nowrap);
         @include c-respond(all-mobile){
             width: 100%;
@@ -171,6 +289,24 @@ body{
             height: max-content;
             margin: 0;
         }
+        .menu-button{
+            display: none;
+            margin: 30px auto;
+            padding: 1em;
+            background: $red;
+            color: $primary;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 50px;
+            z-index: 9;
+            @include c-respond(all-mobile){
+                display: block;
+                @include flex-pos();
+            }
+        }
         maincolumn{
             display: flex;
             flex-flow: column;
@@ -210,6 +346,7 @@ body{
                     width: 90%;
                     margin-top: 2em;
                     margin-left: 5%;
+                    color: $primary;
                 }
                 tr:first-of-type{
                     font-weight: 800;
@@ -226,40 +363,43 @@ body{
             tab {
                 @include flex-pos(column, center, center, center);
                 position: absolute;
-                @include position(0, 5%, 0, 95%);
+                @include position(0, 10%, 0, 90%);
                 cursor: pointer;
-                width: 5%;
+                width: 10%;
                 height: 20%;
                 border-radius: 0 0 0 20px;
+                @include c-respond(all-mobile){
+                    display:none;
+                }
             }
-            #profiletab{
+            .profiletab{
                 background-color: $purple;
                 right: 100%;
                 top: 0em;
                 z-index: 8;
             }
-            #personalitytab {
+            .personalitytab {
                 background-color: $red;
                 right: 100%;
-                top: 10%;
+                top: 12%;
                 z-index: 7;
             }
-            #educationtab {
+            .educationtab {
                 background-color: $green;
                 right: 100%;
-                top: 20%;
+                top: 24%;
                 z-index: 6;
             }
-            #experiencetab {
+            .experiencetab {
                 background-color: $blue;
                 right: 100%;
-                top: 30%;
+                top: 36%;
                 z-index: 5;
             }
-            #contacttab {
+            .contacttab {
                 background-color: $yellow;
                 right: 100%;
-                top: 40%;
+                top: 48%;
                 z-index: 4;
             }
             layer{
@@ -270,6 +410,7 @@ body{
                 justify-content: space-around;
                 border-radius: 0 20px 20px 0;
                 position: absolute;
+                color: $primary;
                 @include c-respond(all-mobile){
                     border-radius: 0;
                     height: 100%;
@@ -364,7 +505,7 @@ body{
                     box{
                         @include box-props(flex, transparent, max-content, 90%, 0);
                         @include flex-pos(row, space-between, center, center, nowrap);
-                        border-bottom: black 2px solid;
+                        border-bottom: $primary 2px solid;
                         margin: 20px 5%;
                         a{
                             margin: auto 0;
@@ -412,6 +553,9 @@ body{
                             max-width: 90%;
                             font-size: 140%;
                             margin: 0 5%;
+                        }
+                        a{
+                            color: $primary;
                         }
                     }
                 }

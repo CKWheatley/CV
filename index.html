@@ -17,13 +17,19 @@
 	<prompt id="entryprompt">
 		<h1>What is your name?</h1>
 		<input id="tempname" type="text" name="tempname" value="Nameless"/>
+
 		<a id="entrybutton" type="" action="" href="#main">Lets Go!</a>
 	</prompt>
-	<span class="pdfviewer hidden">
+	<span class="displaytog">
+		<img src="assets/toggle_night.png" id="togglebutton"/>
+	</span>
+	<span class="certviewer hidden">
 		<!-- add back and close buttons floating above element -->
-		<h4>Please choose a language to display my certificates</h4>
-		<!-- add typewriter effect -->
-		<iframe src="" title="Cert Viewer" id="cert-pdf"></iframe>
+		<div id="cert-section">
+			<h4 id="cert-h4">Please choose a language to display my certificates</h4>
+			<!-- add typewriter effect -->
+			<img src="" title="Cert Viewer" id="cert-pdf">
+		</div>
 		<div id="lan-list">
 			<a id="html" class="selectable">HTML5 & CSS3</a>
 			<a id="js" class="selectable">Javascript</a>
@@ -47,15 +53,24 @@
 		<button id="close-certs">Close</button>
 	</span>
 	<h1 id="intro-hdr"></h1>
+	<span id="mobmenu">
+		<a class="profiletab">Profile</a>
+		<a class="personalitytab">Personality</a>
+		<a class="educationtab">Education</a>
+		<a class="experiencetab">Experience</a>
+		<a class="contacttab">Contact</a>
+		<a id="close-menu">Close</a>
+	</span>
 	<main id="main" class="hidden">
+		<button class="menu-button">More</button>
 		<maincolumn>
 			<h1>Callum Wheatley</h1>
-			<embed src="/images/profile.jpg" class="mainimg">
-			<tab id="profiletab">P</tab>
-			<tab id="personalitytab">P</tab>
-			<tab id="educationtab">E</tab>
-			<tab id="experiencetab">E</tab>
-			<tab id="contacttab">C</tab>
+			<img src="/images/profile.jpg" class="mainimg">
+			<tab class="profiletab">P</tab>
+			<tab class="personalitytab">P</tab>
+			<tab class="educationtab">E</tab>
+			<tab class="experiencetab">E</tab>
+			<tab class="contacttab">C</tab>
 			<div class="descriptions">
 
 			</div>
@@ -136,24 +151,29 @@
 							<th>Experience</th>
 						</tr>
 						<tr>
+							<th>Avanti Gas</th>
+							<th><a href="#cards" class="cardlink" id="ag2">Data Administrator</th>
+							<th id="currentjob">0 months</th>
+						</tr>
+						<tr>
 							<th>Avanti/Premier LPG</th>
 							<th><a href="#cards" class="cardlink" id="prm">Internal Support Admin</a></th>
-							<th id="currentjob">3 months</th>
+							<th id="currentjob">6 months(Contract)</th>
 						</tr>
 						<tr>
 							<th>Avanti Gas</th>
 							<th><a href="#cards" class="cardlink" id="ag">Data Administrator</a></th>
-							<th>1 month</th>
+							<th>1 month (Contract)</th>
 						</tr>
 						<tr>
 							<th>Unbloq</th>
 							<th><a href="#cards" class="cardlink" id="dd">Digital/Web Developer</a></th>
-							<th>6 months</th>
+							<th>6 months (Contract)</th>
 						</tr>
 						<tr>
 							<th>Parseq</th>
 							<th><a href="#cards" class="cardlink" id="de">Data Entry</a></th>
-							<th>4 Months</th>
+							<th>4 Months (Contract)</th>
 						</tr>
 						<tr>
 							<th>Capita</th>

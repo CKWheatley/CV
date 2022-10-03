@@ -39,30 +39,47 @@ $(document).ready(() => {
     })
     window_width()
 })
+$(".menu-button").click(() => {
+    $("#mobmenu").slideDown(400);
+    $("#mobmenu").css("display", "flex");
+    $("#mobmenu").css("flex-flow", "column");
+})
+function close_menu(){
+    let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$(".experiencetab"),$(".contacttab"),$("#close-menu")]
+    for(i in closeables){
+        $(closeables[i]).click(() => {
+            console.log(closeables[i])
+            $("#mobmenu").slideUp(400);
+        })
+    }
+    console.log("closables runnig")
+}
+close_menu()
 function window_width(){
     if($(window).width() < 800){
         $('.selectable').click(() => {
             $(window).scrollTop(0)
         })
+        $("#cert-h4").html("This feature is available on mobile yet.")
     }
 }
 function tab_click(){
     function action(value){
         value.slideDown(500).siblings().slideUp(620);
     }
-    $("#profiletab").click(() => {
+    $(".profiletab").click(() => {
         action($("#profile"));
     });
-    $("#personalitytab").click(() => {
+    $(".personalitytab").click(() => {
         action($("#personality"));
     });
-    $("#educationtab").click(() => {
+    $(".educationtab").click(() => {
         action($("#education"));
     });
-    $("#experiencetab").click(() => {
+    $(".experiencetab").click(() => {
         action($("#experience"));
     });
-    $("#contacttab").click(() => {
+    $(".contacttab").click(() => {
         action($("#contact"));
         $(".contactfadeout").delay(1000).fadeOut(2000);
         $(".contactfadein").delay(3000).fadeIn(1000);
@@ -77,7 +94,7 @@ $(window).resize(() => {
     window_width()
 })
 $("#lanlist").click(() => {
-    $(".pdfviewer").removeClass("hidden")
+    $(".certviewer").removeClass("hidden")
 })
 // add js to resize the section 2 for the experience part so it fits
 
@@ -98,17 +115,17 @@ function cert_loop(){
     }
 }
 */ 
-cert_src($("#html1"), "/images/certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.pdf#view=fitH")
-cert_src($("#html2"), "/images/certificates/CSS Intermediate Certificate.pdf#view=fitH")
-cert_src($("#html3"), "/images/certificates/SASS Certificate.pdf#view=fitH")
-cert_src($("#html4"), "/images/certificates/HTML Certificate.pdf#view=fitH")
-cert_src($("#html5"), "/images/certificates/CSS Certificate.pdf#view=fitH")
-cert_src($("#html6"), "/images/certificates/Bootstrap Certificate.pdf#view=fitH")
-cert_src($("#js1"), "/images/certificates/JavaScript Certificate.pdf#view=fitH")
-cert_src($("#js2"), "/images/certificates/JQuery Certificate.pdf#view=fitH")
-cert_src($("#sql1"), "/images/certificates/SQL Certification.pdf#view=fitH")
-cert_src($("#php1"), "/images/certificates/PHP Certificate.pdf#view=fitH")
-cert_src($("#py1"), "/images/certificates/Python Fundamentals.pdf#view=fitH")
+cert_src($("#html1"), "/images/certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.png")
+cert_src($("#html2"), "/images/certificates/CSS Intermediate Certificate.png")
+cert_src($("#html3"), "/images/certificates/SASS Certificate.png")
+cert_src($("#html4"), "/images/certificates/HTML Certificate.png")
+cert_src($("#html5"), "/images/certificates/CSS Certificate.png")
+cert_src($("#html6"), "/images/certificates/Bootstrap Certificate.png")
+cert_src($("#js1"), "/images/certificates/JavaScript Certificate.png")
+cert_src($("#js2"), "/images/certificates/JQuery Certificate.png")
+cert_src($("#sql1"), "/images/certificates/SQL Certification.png")
+cert_src($("#php1"), "/images/certificates/PHP Certificate.png")
+cert_src($("#py1"), "/images/certificates/Python Fundamentals.png")
 
 
 // make sure to include #view=fitH to fit to width
@@ -155,9 +172,41 @@ $("#py").click(() =>{
 
 
 $("#close-certs").click(() =>{
-    $(".pdfviewer").addClass("hidden");
+    $(".certviewer").addClass("hidden");
     $("#cert-list").addClass("hidden");
     $("#cert-pdf").attr("src", "")
-    console.log("done")
 })
 
+var icon = document.getElementById("togglebutton");
+var night_icon = 'assets/toggle_night.png';
+var day_icon = 'assets/toggle_day.png';
+
+function toggle_display(){
+    function switch_display(value1){
+        value1.toggleClass("night")
+        value1.toggleClass("day")
+    }
+    function set_day(){
+        $("body").toggleClass("day")
+        $("html").toggleClass("day")
+        $("prompt").toggleClass("day")
+    }
+    set_day()
+    $(".displaytog").click(() => {
+        if(icon.src.includes(night_icon)){
+            $(icon).animate({ right: '25%' });
+            icon.src = day_icon;
+            switch_display($("body"))
+            switch_display($("html"))
+            switch_display($("prompt"))
+        }else{
+            $(icon).animate({ right: '0%' });
+            icon.src = night_icon;
+            switch_display($("body"))
+            switch_display($("html"))
+            switch_display($("prompt"))
+        }
+    })
+    // add more elements to change
+}
+toggle_display()
