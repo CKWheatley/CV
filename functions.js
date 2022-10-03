@@ -115,17 +115,17 @@ function cert_loop(){
     }
 }
 */ 
-cert_src($("#html1"), "/images/certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.png")
-cert_src($("#html2"), "/images/certificates/CSS Intermediate Certificate.png")
-cert_src($("#html3"), "/images/certificates/SASS Certificate.png")
-cert_src($("#html4"), "/images/certificates/HTML Certificate.png")
-cert_src($("#html5"), "/images/certificates/CSS Certificate.png")
-cert_src($("#html6"), "/images/certificates/Bootstrap Certificate.png")
-cert_src($("#js1"), "/images/certificates/JavaScript Certificate.png")
-cert_src($("#js2"), "/images/certificates/JQuery Certificate.png")
-cert_src($("#sql1"), "/images/certificates/SQL Certification.png")
-cert_src($("#php1"), "/images/certificates/PHP Certificate.png")
-cert_src($("#py1"), "/images/certificates/Python Fundamentals.png")
+cert_src($("#html1"), "./images/certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.png")
+cert_src($("#html2"), "./images/certificates/CSS Intermediate Certificate.png")
+cert_src($("#html3"), "./images/certificates/SASS Certificate.png")
+cert_src($("#html4"), "./images/certificates/HTML Certificate.png")
+cert_src($("#html5"), "./images/certificates/CSS Certificate.png")
+cert_src($("#html6"), "./images/certificates/Bootstrap Certificate.png")
+cert_src($("#js1"), "./images/certificates/JavaScript Certificate.png")
+cert_src($("#js2"), "./images/certificates/JQuery Certificate.png")
+cert_src($("#sql1"), "./images/certificates/SQL Certification.png")
+cert_src($("#php1"), "./images/certificates/PHP Certificate.png")
+cert_src($("#py1"), "./images/certificates/Python Fundamentals.png")
 
 
 // make sure to include #view=fitH to fit to width
