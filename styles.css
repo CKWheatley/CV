@@ -5,38 +5,29 @@
 }
 
 .night {
-  -webkit-transition: all 0.6s;
   transition: all 0.6s;
-  background-color: #151515 !important;
-  color: white !important;
+  background-color: rgb(21, 21, 21) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .day {
-  -webkit-transition: all 0.6s;
   transition: all 0.6s;
-  background-color: white !important;
-  color: #151515 !important;
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(21, 21, 21) !important;
 }
 
 html {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-flow: column nowrap;
+  justify-content: space-around;
   height: auto;
-  background: white;
+  background: rgb(255, 255, 255);
   overflow-x: hidden;
 }
-
 body .displaytog {
   position: fixed;
   top: 5%;
@@ -49,28 +40,33 @@ body .displaytog {
   z-index: 5;
   cursor: pointer;
 }
-
 @media only screen and (max-width: 800px) {
   body .displaytog {
     display: none;
   }
 }
-
 body .displaytog #togglebutton {
   position: absolute;
   right: 0;
   top: -30%;
 }
-
 body a {
-  color: #151515;
+  color: rgb(21, 21, 21);
 }
-
-body .certviewer {
-  display: -webkit-box;
-  display: -ms-flexbox;
+body button {
   display: flex;
-  background-color: white;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  padding: 1em;
+}
+body .certviewer {
+  display: flex;
+  background-color: rgb(255, 255, 255);
   height: 50vh;
   width: 50vw;
   border-radius: 0px;
@@ -78,38 +74,30 @@ body .certviewer {
   top: 25%;
   left: 25%;
   z-index: 10;
-  border: solid #151515 2px;
+  border: solid rgb(21, 21, 21) 2px;
 }
-
 @media only screen and (max-width: 800px) {
   body .certviewer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+    flex-flow: column nowrap;
     display: flex;
-    background-color: white;
-    height: 80vh;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
     width: 100vw;
     border-radius: 0px;
     position: fixed;
-    top: 20%;
+    top: 0;
     left: 0;
   }
 }
-
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body .certviewer {
-    width: 80vw;
+    width: 90vw;
     position: fixed;
     top: 25%;
-    left: 10%;
+    left: 5%;
   }
 }
-
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   body .certviewer {
     width: 80vw;
@@ -118,130 +106,91 @@ body .certviewer {
     left: 10%;
   }
 }
-
 body .certviewer #cert-section {
   width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
-
+@media only screen and (max-width: 800px) {
+  body .certviewer #cert-section {
+    width: 100%;
+    height: 50%;
+  }
+}
 body .certviewer #cert-section h4 {
-  color: #151515;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  color: rgb(21, 21, 21);
   display: flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-60%, -50%);
-          transform: translate(-60%, -50%);
+  transform: translate(-60%, -50%);
   width: 100%;
   height: 10%;
   z-index: 7;
 }
-
 @media only screen and (max-width: 800px) {
   body .certviewer #cert-section h4 {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 }
-
 body .certviewer #cert-section img {
   width: auto;
   height: 100%;
   border: none;
   z-index: 8;
 }
-
 @media only screen and (max-width: 800px) {
   body .certviewer #cert-section img {
-    display: none;
+    transform: scale(0.8);
+    height: 45vh;
   }
 }
-
 body .certviewer #lan-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  flex-flow: column;
   width: 25%;
   height: 100%;
   border: none;
-  color: #f25835;
-  background: white;
+  color: rgb(242, 88, 53);
+  background: rgb(255, 255, 255);
 }
-
 body .certviewer #lan-list a {
   margin: 10px 10px 0 10px;
   white-space: nowrap;
   width: 80%;
-  color: #f25835;
+  color: rgb(242, 88, 53);
 }
-
 @media only screen and (max-width: 800px) {
   body .certviewer #lan-list a {
     width: 90%;
-    margin: 10px auto;
-    padding: 1em;
+    margin: 5px auto;
+    padding: 0.5em;
   }
 }
-
 @media only screen and (max-width: 800px) {
   body .certviewer #lan-list {
-    display: none;
     width: 100%;
+    overflow-x: scroll;
   }
 }
-
 body .certviewer aside {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-flow: column;
+  justify-content: space-evenly;
   position: absolute;
   left: 100%;
   top: -2px;
@@ -253,66 +202,81 @@ body .certviewer aside {
   height: max-content;
   min-height: 200px;
   min-width: 200px;
-  border-top: solid #151515 2px;
-  border-right: solid #151515 2px;
-  border-bottom: solid #151515 2px;
+  border-top: solid rgb(21, 21, 21) 2px;
+  border-right: solid rgb(21, 21, 21) 2px;
+  border-bottom: solid rgb(21, 21, 21) 2px;
   border-radius: 0 20px 20px 0;
-  background: white;
+  background: rgb(255, 255, 255);
+  z-index: 9;
 }
-
+@media only screen and (max-width: 800px) {
+  body .certviewer aside {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 5%;
+    border-radius: 0;
+    border-left: solid rgb(21, 21, 21) 2px;
+    overflow-x: scroll;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body .certviewer aside {
+    position: absolute;
+    left: 80%;
+    top: 10%;
+    border-radius: 20px;
+    border-left: solid rgb(21, 21, 21) 2px;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body .certviewer aside {
+    position: absolute;
+    left: 70%;
+    top: 10%;
+    border-radius: 20px;
+    border-left: solid rgb(21, 21, 21) 2px;
+  }
+}
 body .certviewer aside a {
   white-space: nowrap;
   width: 80%;
   padding-right: 20px;
   color: skyblue;
+  background-color: rgb(255, 255, 255);
 }
-
 @media only screen and (max-width: 800px) {
-  body .certviewer aside {
-    width: 100%;
+  body .certviewer aside a {
+    padding: 0.5em;
   }
 }
-
 body .certviewer button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   padding: 1em 3em;
-  position: absolute;
-  bottom: 102%;
-  left: 84%;
   cursor: pointer;
   border-radius: 20px;
   border: none;
-  background-color: #ff876b;
+  background-color: rgb(255, 135, 107);
   font-weight: 900;
 }
-
 @media only screen and (max-width: 800px) {
   body .certviewer button {
-    position: absolute;
-    bottom: 102%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    z-index: 9;
   }
 }
-
+body .certviewer button#close-certs {
+  position: absolute;
+  bottom: 102%;
+  left: 84%;
+}
+@media only screen and (max-width: 800px) {
+  body .certviewer button#close-certs {
+    position: static;
+    z-index: 9;
+    width: 50%;
+    margin: 10px auto;
+    padding: 0.5em;
+  }
+}
 body #mobmenu {
   display: none;
   position: fixed;
@@ -321,187 +285,143 @@ body #mobmenu {
   width: 100vw;
   height: 100vh;
   min-height: 10px;
-  background-color: #151515;
+  background-color: rgb(21, 21, 21);
   z-index: 10;
+  overflow-x: scroll;
 }
-
 body #mobmenu a {
-  color: white;
+  color: rgb(255, 255, 255);
   margin: 20px 0 20px 20px;
-  border: #ff876b solid 2px;
+  border: rgb(255, 135, 107) solid 2px;
   padding: 20px;
   width: 50%;
+  height: 20px;
 }
-
+@media only screen and (max-width: 320px) {
+  body #mobmenu a {
+    width: 40%;
+    margin: 10px 0 10px 10px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  body #mobmenu a {
+    width: 40%;
+    margin: 10px 0 10px 10px;
+  }
+}
 body #mobmenu #close-menu {
   width: 5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   position: absolute;
   right: 20px;
 }
-
 @media only screen and (max-width: 320px) {
   body #mobmenu #close-menu {
     position: absolute;
     right: 10px;
   }
 }
-
 body prompt {
   z-index: 10;
   margin: 10% 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: white;
   height: 100vh;
   width: 100vw;
   border-radius: 0;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
-
 @media only screen and (max-width: 800px) {
   body prompt {
     width: 100%;
     height: 100%;
   }
 }
-
 body prompt h1 {
   margin: 5%;
   font-size: clamp(1.5rem, 4vw, 3em);
 }
-
 @media only screen and (min-width: 2500px) {
   body prompt h1 {
     margin: 2%;
   }
 }
-
 @media only screen and (max-width: 320px) {
   body prompt h1 {
     font-size: 1.2em;
   }
 }
-
 body prompt input {
   text-align: center;
   width: 60%;
   margin: 30px auto;
   font-size: clamp(1.2rem, 6vw, 3.5em);
 }
-
 @media only screen and (max-width: 800px) {
   body prompt input {
-    padding: .5em;
+    padding: 0.5em;
   }
 }
-
 body prompt a {
   display: block;
   background-color: darkslategrey;
   height: 2em;
   width: 50%;
   border-radius: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   font-size: clamp(1.2rem, 6vw, 3.5em);
   cursor: pointer;
   text-decoration: none;
-  color: #151515;
+  color: rgb(21, 21, 21);
   margin: 0 auto;
 }
-
 @media only screen and (max-width: 800px) {
   body prompt a {
-    padding: .5em;
+    padding: 0.5em;
     margin-top: 60px;
     position: fixed;
     bottom: 5%;
   }
 }
-
 body main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  flex-flow: row nowrap;
   height: 35em;
   width: 60vw;
   background-color: darkslategrey;
   margin: 10% auto 5% auto;
   border-radius: 20px;
-  -webkit-box-shadow: 14px 10px 70px;
-          box-shadow: 14px 10px 70px;
+  box-shadow: 14px 10px 70px;
 }
-
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   body main {
     width: 80vw;
   }
 }
-
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body main {
     width: 90vw;
   }
 }
-
 @media only screen and (max-width: 800px) {
   body main {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+    flex-flow: column nowrap;
     width: 100vw;
     border-radius: 0;
     height: -webkit-max-content;
@@ -510,13 +430,11 @@ body main {
     margin: 0;
   }
 }
-
 body main .menu-button {
   display: none;
   margin: 30px auto;
-  padding: 1em;
-  background: #ff876b;
-  color: #151515;
+  background: rgb(255, 135, 107);
+  color: rgb(21, 21, 21);
   border: none;
   cursor: pointer;
   position: fixed;
@@ -524,49 +442,31 @@ body main .menu-button {
   top: 0;
   width: 50px;
   z-index: 9;
+  border-radius: 20px 0 0 20px;
 }
-
 @media only screen and (max-width: 800px) {
   body main .menu-button {
     display: block;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-flow: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 1.2em;
   }
 }
-
 body main maincolumn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  flex-flow: column;
   height: 100%;
   position: relative;
 }
-
 @media only screen and (max-width: 800px) {
   body main maincolumn {
     height: 100%;
   }
 }
-
 @media only screen and (min-width: 2500px) {
   body main maincolumn .mainimg {
     width: 80%;
@@ -575,21 +475,18 @@ body main maincolumn {
        object-fit: contain;
   }
 }
-
 @media only screen and (min-width: 1441px) and (max-width: 2500px) {
   body main maincolumn .mainimg {
     max-height: 500px;
     max-width: 500px;
   }
 }
-
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   body main maincolumn .mainimg {
     max-height: 350px;
     max-width: 350px;
   }
 }
-
 @media only screen and (max-width: 800px) {
   body main maincolumn .mainimg {
     max-height: 200px;
@@ -597,7 +494,6 @@ body main maincolumn {
     margin: auto;
   }
 }
-
 body main maincolumn .descriptions {
   display: block;
   background-color: darkslategrey;
@@ -610,46 +506,30 @@ body main maincolumn .descriptions {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-
 body main maincolumn .descriptions p, body main maincolumn .descriptions h3, body main maincolumn .descriptions h2, body main maincolumn .descriptions h1, body main maincolumn .descriptions table {
   width: 90%;
   margin-top: 2em;
   margin-left: 5%;
-  color: #151515;
+  color: rgb(21, 21, 21);
 }
-
 body main maincolumn .descriptions tr:first-of-type {
   font-weight: 800;
 }
-
 body main maincolumn .descriptions td {
   padding: 10px;
   font-size: 100%;
 }
-
 body main maincolumn .descriptions a {
-  color: #f25835;
+  color: rgb(242, 88, 53);
   margin: 0;
 }
-
 body main maincolumn tab {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   position: absolute;
   top: 0;
   right: 10%;
@@ -660,65 +540,59 @@ body main maincolumn tab {
   height: 20%;
   border-radius: 0 0 0 20px;
 }
-
 @media only screen and (max-width: 800px) {
   body main maincolumn tab {
     display: none;
   }
 }
-
+body main maincolumn tab .tab-icons {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 10%;
+  background: transparent;
+}
 body main maincolumn .profiletab {
-  background-color: #c37aff;
+  background-color: rgb(195, 122, 255);
   right: 100%;
   top: 0em;
   z-index: 8;
 }
-
 body main maincolumn .personalitytab {
-  background-color: #ff876b;
+  background-color: rgb(255, 135, 107);
   right: 100%;
   top: 12%;
   z-index: 7;
 }
-
 body main maincolumn .educationtab {
-  background-color: #9fff8f;
+  background-color: rgb(159, 255, 143);
   right: 100%;
   top: 24%;
   z-index: 6;
 }
-
 body main maincolumn .experiencetab {
-  background-color: #88e1ff;
+  background-color: rgb(136, 225, 255);
   right: 100%;
   top: 36%;
   z-index: 5;
 }
-
 body main maincolumn .contacttab {
-  background-color: #ffe789;
+  background-color: rgb(255, 231, 137);
   right: 100%;
   top: 48%;
   z-index: 4;
 }
-
 body main maincolumn layer {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-flow: column nowrap;
+  justify-content: space-around;
   border-radius: 0 20px 20px 0;
   position: absolute;
-  color: #151515;
+  color: rgb(21, 21, 21);
 }
-
 @media only screen and (max-width: 800px) {
   body main maincolumn layer {
     border-radius: 0;
@@ -726,7 +600,6 @@ body main maincolumn layer {
     padding: 2em 0;
   }
 }
-
 body main maincolumn layer img#footballpic {
   display: block;
   background-color: transparent;
@@ -736,105 +609,97 @@ body main maincolumn layer img#footballpic {
   position: absolute;
   z-index: 5;
 }
-
 body main maincolumn layer#experience a {
-  color: #f25835;
+  color: rgb(242, 88, 53);
   text-decoration: none;
 }
-
 body main maincolumn div {
   width: 90%;
   margin: auto;
-  border: solid 4px #151515;
+  border: solid 4px rgb(21, 21, 21);
   border-radius: 20px;
 }
-
 body main maincolumn div innerdiv {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  flex-flow: column nowrap;
 }
-
 body main maincolumn div innerdiv a {
   cursor: default;
 }
-
 body main maincolumn div innerdiv .selected {
-  background-color: #151515;
-  color: #f25835;
+  background-color: rgb(21, 21, 21);
+  color: rgb(242, 88, 53);
 }
-
 body main maincolumn div innerdiv .selectable {
   border: solid var(--primary) 1px;
   border-radius: 20px;
   width: 90%;
   padding: 0 5px;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
-
 body main maincolumn div innerdiv .selectable:hover {
-  color: white;
-  background-color: #151515;
+  color: rgb(255, 255, 255);
+  background-color: rgb(21, 21, 21);
 }
-
 body main maincolumn div table {
   width: 100%;
 }
-
-@media only screen and (max-width: 800px) {
-  body main maincolumn div table tr {
-    padding: 0 0 20px 0;
-  }
+body main maincolumn div table tr a {
+  margin: 0;
 }
-
 @media only screen and (max-width: 800px) {
   body main maincolumn div table tr th {
-    font-size: 0.8em;
-    padding: 0 0 20px 0;
+    font-size: 1em;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
   }
 }
-
 body main maincolumn #profile {
-  background-color: #c37aff;
+  background-color: rgb(195, 122, 255);
   z-index: 7;
 }
-
 body main maincolumn #personality {
-  background-color: #ff876b;
+  background-color: rgb(255, 135, 107);
   z-index: 6;
 }
-
 body main maincolumn #education {
-  background-color: #9fff8f;
+  background-color: rgb(159, 255, 143);
   z-index: 5;
 }
-
 body main maincolumn #experience {
-  background-color: #88e1ff;
+  background-color: rgb(136, 225, 255);
   z-index: 4;
 }
-
+@media only screen and (max-width: 800px) {
+  body main maincolumn #experience {
+    overflow-x: scroll;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body main maincolumn #experience table tr {
+    display: flex;
+    flex-flow: column;
+    border: rgb(21, 21, 21) 2px solid;
+    width: 90%;
+    border-radius: 20px;
+    margin: 10px auto;
+  }
+}
 body main maincolumn #contact {
-  background-color: #ffe789;
+  background-color: rgb(255, 231, 137);
   z-index: 3;
 }
-
 body main maincolumn #contact h1:first-of-type {
   /* add a smooth animation effect for the contact header */
   z-index: 10;
 }
-
 body main maincolumn #contact .contactfadein {
   display: none;
 }
-
 body main maincolumn #contact div {
   padding: 0;
   max-height: -webkit-max-content;
@@ -842,10 +707,7 @@ body main maincolumn #contact div {
   max-height: max-content;
   max-width: 90%;
 }
-
 body main maincolumn #contact div box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: transparent;
   height: -webkit-max-content;
@@ -854,152 +716,98 @@ body main maincolumn #contact div box {
   width: 90%;
   border-radius: 0;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  border-bottom: #151515 2px solid;
+  flex-flow: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: rgb(21, 21, 21) 2px solid;
   margin: 20px 5%;
 }
-
 body main maincolumn #contact div box a {
   margin: auto 0;
 }
-
 body main maincolumn #contact div button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  background-color: #ff876b;
+  background-color: rgb(255, 135, 107);
   height: 100px;
   width: 90%;
   border-radius: 5px;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   margin: 20px 5%;
   border: none;
   cursor: pointer;
 }
-
 body main maincolumn #contact div form {
   position: relative;
   top: 0%;
   left: 0%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  background-color: #c37aff;
+  background-color: rgb(195, 122, 255);
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   width: 100%;
   border-radius: 15px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
   /* #pay is to be 45% when i add radio buttons */
 }
-
 body main maincolumn #contact div form #closeemail {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: transparent;
   height: 50px;
   width: 50px;
   border-radius: 0;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   position: absolute;
   top: -4%;
   right: 8.5%;
   bottom: 104%;
   left: 91.5%;
 }
-
 body main maincolumn #contact div form #closeemail img {
   width: 100%;
   height: 100%;
 }
-
 body main maincolumn #contact div form label {
   font-size: 150%;
   margin: 0 5%;
 }
-
 body main maincolumn #contact div form input {
   width: 90%;
   font-size: 140%;
   margin: 0 5%;
 }
-
 body main maincolumn #contact div form #pay {
   width: 90%;
 }
-
 body main maincolumn #contact div form textarea {
   width: 90%;
   max-width: 90%;
   font-size: 140%;
   margin: 0 5%;
 }
-
 body main maincolumn #contact div form a {
-  color: #151515;
+  color: rgb(21, 21, 21);
 }
-
 body main maincolumn:first-of-type {
   width: 40%;
 }
-
 @media only screen and (max-width: 800px) {
   body main maincolumn:first-of-type {
     width: 100%;
@@ -1007,300 +815,213 @@ body main maincolumn:first-of-type {
     padding-bottom: 5em;
   }
 }
-
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body main maincolumn:first-of-type {
+    width: 30%;
+    border-radius: 0;
+    padding-bottom: 5em;
+  }
+}
 body main maincolumn:last-of-type {
   width: 60%;
 }
-
 @media only screen and (max-width: 800px) {
   body main maincolumn:last-of-type {
     width: 100%;
-    height: 50em;
+    height: 40em;
     border-radius: 0;
   }
 }
-
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body main maincolumn:last-of-type {
+    width: 70%;
+  }
+}
 body cardsection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: darkslateblue;
   height: auto;
   width: 80%;
   border-radius: 20px;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   margin: 0 auto;
   margin-bottom: 50px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
-
 body cardsection a {
-  color: #f25835;
+  color: rgb(242, 88, 53);
   margin: 0;
 }
-
 @media only screen and (max-width: 800px) {
   body cardsection {
     border-radius: 0;
     margin-top: 5em;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
-
 body cardsection square {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  background-color: #151515;
+  background-color: rgb(21, 21, 21);
   height: 10em;
   width: 20%;
   border-radius: 0px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
-
 @media only screen and (max-width: 800px) {
   body cardsection square {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
     width: 100%;
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
   }
 }
-
 body cardsection square h2 {
   margin: 20px 10px;
   font-size: clamp(1rem, 2.5vw, 2rem);
 }
-
 @media only screen and (max-width: 800px) {
   body cardsection square h2 {
     width: 40%;
   }
 }
-
 body cardsection square h3 {
   margin: 20px 10px;
 }
-
 body cardsection square h4 {
   font-size: clamp(0.8rem, 1.5vw, 1.2rem);
 }
-
 body cardsection square:first-of-type {
   border-radius: 20px 0 0 0;
 }
-
 @media only screen and (max-width: 800px) {
   body cardsection square:first-of-type {
     border-radius: 0;
   }
 }
-
 body cardsection square:last-of-type {
   border-radius: 0 20px 0 0;
 }
-
 @media only screen and (max-width: 800px) {
   body cardsection square:last-of-type {
     border-radius: 0;
   }
 }
-
 body cardsection card:first-of-type {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
-
 @media only screen and (min-width: 376px) and (max-width: 550px) {
   body cardsection card:first-of-type {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 }
-
 @media only screen and (min-width: 321px) and (max-width: 376px) {
   body cardsection card:first-of-type {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 }
-
 @media only screen and (max-width: 320px) {
   body cardsection card:first-of-type {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 }
-
 body cardsection card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  background-color: #151515;
+  background-color: rgb(21, 21, 21);
   height: auto;
   width: 80%;
   border-radius: 20px;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   margin: 50px 10%;
 }
-
 @media only screen and (min-width: 376px) and (max-width: 550px) {
   body cardsection card {
     width: 90%;
   }
 }
-
 @media only screen and (min-width: 321px) and (max-width: 376px) {
   body cardsection card {
     width: 90%;
   }
 }
-
 @media only screen and (max-width: 320px) {
   body cardsection card {
     width: 90%;
   }
 }
-
 body cardsection card h3 {
   margin: 30px;
 }
-
 body cardsection card p {
   margin: 30px;
 }
-/*# sourceMappingURL=styles.css.map */
+body #to-top {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  body #to-top {
+    display: flex;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    border-radius: 20px;
+    border: rgb(21, 21, 21) solid 2px;
+    background-color: rgb(255, 135, 107);
+    padding: 1em;
+    z-index: 10;
+  }
+}/*# sourceMappingURL=styles.css.map */

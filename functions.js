@@ -1,4 +1,3 @@
-// JavaScript Document
 $(document).ready(() => {
     $("#entrybutton").click(() => {
         $("#entryprompt").fadeOut(0);
@@ -15,10 +14,7 @@ $(document).ready(() => {
         $("#contactform").addClass("hidden");
         $(".contactoption").removeClass("hidden");
     })
-    /*$('.selectable').click(() => {
-        $('.selectable').addClass('selected').siblings('.selected').removeClass('selected');
-        // fix this code
-    })*/
+
     $('#mailer-button').click(() =>{
         let a = $('#mailer-client')
         a.removeClass('hidden')
@@ -29,7 +25,7 @@ $(document).ready(() => {
         let jd = $('#jdescription').val();
         let jl = $('#jlocation').val();
         let ex = $('#extrainfo').val();
-        let mailer = `mailto:ckwheatley15@gmail.com?subject=Job Offer From Github Pages (dont change subject please)
+        let mailer = `mailto:ckwheatley15@gmail.com?subject=Job Offer From Github Pages
         &body=Employer Name: ${en}%0D%0ACompany: ${ec}%0D%0AJob Title: ${jt}%0D%0APay: ${pay}%0D%0AJob Description: ${jd}%0D%0AJob Location: ${jl}%0D%0AFurther Comments: %0D%0A%0D%0A${ex}
         `
         a.attr('href', mailer)
@@ -39,34 +35,44 @@ $(document).ready(() => {
     })
     window_width()
 })
+
 $(".menu-button").click(() => {
     $("#mobmenu").slideDown(400);
     $("#mobmenu").css("display", "flex");
     $("#mobmenu").css("flex-flow", "column");
 })
+
 function close_menu(){
     let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$(".experiencetab"),$(".contacttab"),$("#close-menu")]
     for(i in closeables){
         $(closeables[i]).click(() => {
-            console.log(closeables[i])
             $("#mobmenu").slideUp(400);
         })
     }
-    console.log("closables runnig")
 }
 close_menu()
+
 function window_width(){
     if($(window).width() < 800){
         $('.selectable').click(() => {
             $(window).scrollTop(0)
         })
-        $("#cert-h4").html("This feature is available on mobile yet.")
+    }else{
+        var selectables = document.querySelectorAll('.selectable');
+
+        selectables.forEach(function(selectable) {
+            selectable.addEventListener('click', function() {
+                $(".selected").removeClass("selected")
+                this.classList.add("selected")
+          })
+        })
     }
 }
+function action(value){
+    value.slideDown(600).siblings().slideUp(920);
+}
+action($("#profile"));
 function tab_click(){
-    function action(value){
-        value.slideDown(500).siblings().slideUp(620);
-    }
     $(".profiletab").click(() => {
         action($("#profile"));
     });
@@ -90,6 +96,7 @@ function tab_click(){
     });
 };
 tab_click();
+
 $(window).resize(() => {
     window_width()
 })
@@ -104,8 +111,11 @@ $("#lanlist").click(() => {
 function cert_src(value1, value2){
     $(value1).click(() => {
         $("#cert-pdf").attr("src", value2)
+        $("#cert-list").addClass("hidden");
     })
 }
+
+let cert_list = [$("#html1"),$("#html2"),$("#html3"),$("#html4"),$("#html5"),$("#html6"),$("#js1"),$("#js2"),$("#sql1"),$("#php1"),$("#py1")]
 /*
 For the cert loop do objects 
 
@@ -127,16 +137,27 @@ cert_src($("#sql1"), "./images/certificates/SQL Certification.png")
 cert_src($("#php1"), "./images/certificates/PHP Certificate.png")
 cert_src($("#py1"), "./images/certificates/Python Fundamentals.png")
 
-
-// make sure to include #view=fitH to fit to width
-let cert_list = [$("#html1"),$("#html2"),$("#html3"),$("#html4"),$("#html5"),$("#html6"),$("#js1"),$("#js2"),$("#sql1"),$("#php1"),$("#py1")
-]
 function reset_cert_list(){
     for(i in cert_list){
         cert_list[i].addClass("hidden")
+        $("#cert-h4").addClass("hidden");
     }
 }
 
+/*
+function cert_selected(value1,value2, start, end){
+    value1.click(() => {
+        for(i in end){
+            cert_list[start].
+        }
+        reset_cert_list()
+        value2.removeClass("hidden")
+    })
+}
+
+Work on this to clean up code below
+
+*/
 $("#html").click(() =>{
     $("#cert-list").removeClass("hidden");
     reset_cert_list()
@@ -175,6 +196,7 @@ $("#close-certs").click(() =>{
     $(".certviewer").addClass("hidden");
     $("#cert-list").addClass("hidden");
     $("#cert-pdf").attr("src", "")
+    $("#cert-h4").removeClass("hidden");
 })
 
 var icon = document.getElementById("togglebutton");
@@ -194,12 +216,16 @@ function toggle_display(){
     set_day()
     $(".displaytog").click(() => {
         if(icon.src.includes(night_icon)){
+            // switches to day mode
+            // add rising sun animation
             $(icon).animate({ right: '25%' });
             icon.src = day_icon;
             switch_display($("body"))
             switch_display($("html"))
             switch_display($("prompt"))
         }else{
+            // switches to dark mode.
+            // add rising moon animation
             $(icon).animate({ right: '0%' });
             icon.src = night_icon;
             switch_display($("body"))

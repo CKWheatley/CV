@@ -11,8 +11,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-
-
 <body>
 	<prompt id="entryprompt">
 		<h1>What is your name?</h1>
@@ -66,11 +64,21 @@
 		<maincolumn>
 			<h1>Callum Wheatley</h1>
 			<img src="./images/profile.jpg" class="mainimg">
-			<tab class="profiletab">P</tab>
-			<tab class="personalitytab">P</tab>
-			<tab class="educationtab">E</tab>
-			<tab class="experiencetab">E</tab>
-			<tab class="contacttab">C</tab>
+			<tab class="profiletab">
+				<img src="./assets/profile.png" class="tab-icons">
+			</tab>
+			<tab class="personalitytab" >
+				<img src="./assets/personality.png" class="tab-icons">
+			</tab>
+			<tab class="educationtab">
+				<img src="./assets/education.png" class="tab-icons">
+			</tab>
+			<tab class="experiencetab">
+				<img src="./assets/experience.png" class="tab-icons">
+			</tab>
+			<tab class="contacttab">
+				<img src="./assets/contact.png" class="tab-icons">
+			</tab>
 			<div class="descriptions">
 
 			</div>
@@ -156,7 +164,7 @@
 							<th id="currentjob">0 months</th>
 						</tr>
 						<tr>
-							<th>Avanti/Premier LPG</th>
+							<th>Avanti Gas</th>
 							<th><a href="#cards" class="cardlink" id="prm">Internal Support Admin</a></th>
 							<th id="currentjob">6 months(Contract)</th>
 						</tr>
@@ -203,11 +211,13 @@
 						<tr class="hdr">
 							<th>Other Experience</th>
 						</tr>
+						<!-- Use a timer for these below maybe -->
 						<tr>
 							<th>The FA</th>
 							<th><a href="#cards" class="cardlink" id="fo">Football Official</a></th>
 							<th>6 Years</th>
 						</tr>
+						<!--
 						<tr>
 							<th>Self Employed</th>
 							<th><a href="#cards" class="cardlink" id="mus">Musician</a></th>
@@ -218,6 +228,7 @@
 							<th><a href="#cards" class="cardlink" id="prog">Programming</a></th>
 							<th>2 Year</th>
 						</tr>
+						-->
 					</table>
 				</div>
 			</layer>
@@ -232,8 +243,7 @@
 					</box>
 					<box class="contactoption">
 						<h2>Social Sites</h2>
-						<a href=""><img href="">IG</a>
-						<a href=""><img href="">FB</a>
+						<a href="https://www.facebook.com/callumwheatley157/">FB</a>
 						<!-- sort a tags -->
 					</box>
 					<button id="contactbutton" class="contactoption">
@@ -264,7 +274,7 @@
 						<textarea type="text" name="extrainfo" id="extrainfo"></textarea required>
 
 						<button type="button" id="mailer-button">Yeet Email!! (This dosent automaticaly work on Github :( )</button>
-						<a href="" class="hidden" id="mailer-client">Open email app instead</a>
+						<a href="" class="hidden" id="mailer-client">Open email app instead (Dont change the subject please)</a>
 						<!-- Change type to submit for the php mailer to activate -->
 					</form>
 				</div>
@@ -305,6 +315,7 @@
 			<p id="card3d"></p>
 		</card>
 	</cardsection>
+	<!-- <button href="#top" id="to-top">To Top</button> -->
 </body>
 </html>
 <script src="functions.js"></script>
