@@ -36,13 +36,20 @@ $(document).ready(() => {
             date: `October 2022 - Today`,
             jobtitle: `Data Administrator`,
             department: `HR`,
-            desc1: `Sorting and Filtering old files<BR><BR>
-            Thats all as far as i have updated this
+            desc1: `Sorting and Filtering old files (GDPR)<BR><BR>
+            Checking if data is still relevant<BR><BR>
+            Organising paperwork storage<BR><BR>
+            Acting as senior team member to 4 other recruits<BR><BR>
+            Delegating tasks<BR><BR>
+            <BR><BR>
             `,
-            hdr2: ``,
-            desc2: ``,
-            hdr3: ``,
-            desc3: ``
+            hdr2: `More about the job`,
+            desc2: `The job assigned to me this time around was fairly simple although with a little more responsibility. As i am working back on the premier documents im one of the most senior members of staff who is still within this company that knows premier well. This has played a major role for the project as I am essentially acting as a senior member to the 4 new recruits. As of today we have thrown away 40 bin bags full of information we didnt need and counting. Me and one other recruit have just been organising files in order of department and clearing anything we have that is beyond the GDPR breaching time limit.
+            <br><br>
+            After the first week of us clearing out and organising files in accordance to each department 3 new recruits had started, so i got right to the point of explaining the first task 2 of them would be doing. Invoices and proof of delivery slips needed seperating and putting into date order. The other recruit would remain with me to filter through customer files for dates considered too old whilst I checked if the files were relevant and the customers still remained. This has evolved over time as now one of the recruits organises the filing structure 2 of them are on the invoice job and one of them will check the dates of the customer files.
+            <br><br>`,
+            hdr3: `Extra Tasks`,
+            desc3: `As i mentioned in the previous paragraph im one of the only ones who has expertise working with premier, and as such so many customers still need documents. The customer services team still require adhoc for the customers and similar to the last role i had to provide with the exception of responding to the customer. This was taken on as a favour whilst managing the other team mates and filtering through premiers data, Throught this time i continued to use the Gas Business System, Sage & CRM to carry out all tasks assigned.`
         }
         let prm = {
             company: `Avanti Gas`,
