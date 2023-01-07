@@ -36,6 +36,18 @@ $(document).ready(() => {
     window_width()
 })
 
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    const main = document.querySelector('main')
+    let offset = main.offsetTop - nav.offsetTop
+    if (window.scrollY < 120) {
+        nav.style.top = (150 - window.scrollY) + "px"
+    } else {
+        nav.style.top = 20 + "px";
+    }
+  });
+
+
 $(".menu-button").click(() => {
     $("#mobmenu").slideDown(400);
     $("#mobmenu").css("display", "flex");
@@ -104,9 +116,6 @@ $("#lanlist").click(() => {
     $(".certviewer").removeClass("hidden")
 })
 // add js to resize the section 2 for the experience part so it fits
-
-
-
 
 function cert_src(value1, value2){
     $(value1).click(() => {

@@ -1,8 +1,8 @@
-$red: rgb(255, 135, 107);
-$purple: rgb(195, 122, 255);
-$green: rgb(159, 255, 143);
-$blue: rgb(136, 225, 255);
-$yellow: rgb(255, 231, 137);
+$red: rgb(103, 103, 103);
+$purple: darkslateblue;
+$green: rgb(47, 69, 79);
+$blue: rgb(47, 50, 79);
+$yellow: rgb(26, 67, 120);
 $body: rgb(255, 255, 255);
 $primary: rgb(21, 21, 21);
 
@@ -14,7 +14,6 @@ $primary: rgb(21, 21, 21);
     justify-content: $j-c;
     align-content: $a-c;
     align-items: $a-i;
-    flex-wrap: $f-w;
 }
 @mixin box-props($display-type: block, $bg-colour: transparent, $height: 100px, $width: 100px, $b-r: 0px){
     display: $display-type;

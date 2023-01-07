@@ -318,13 +318,68 @@ body{
             }
         }
     }
+    nav{
+        position: fixed;
+        top: 150px;
+        width: 20%;
+        height: 35em;
+        @include flex-pos(column, space-evenly, center, center);
+        transition: top 0.4s 0 ease-in;
+        .tab{
+            position: absolute;
+            @include flex-pos(column, space-evenly, center, center);
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: $body;
+            border: solid 3px $blue;
+            transition: all 0.5s 0.2s ease;
+            @include c-respond(all-mobile){
+                display:none;
+            }
+            .tab-icons{
+                display: none;
+                // remove display none when completed
+                width: 40px;
+                height: 40px;
+                position: relative;
+                top: 10%;
+                background: transparent;
+            }
+            &:hover{
+                transform: translate(20%, 0) scale(1.1);
+            }
+        }
+        .profiletab{
+            top: 0em;
+            z-index: 8;
+        }
+        .personalitytab {
+            top: 12%;
+            z-index: 7;
+        }
+        .educationtab {
+            top: 24%;
+            z-index: 6;
+        }
+        .experiencetab {
+            top: 36%;
+            z-index: 5;
+        }
+        .contacttab {
+            top: 48%;
+            z-index: 4;
+        }
+    }
     main {
         display: flex;
         flex-flow: row nowrap;
-        height: 35em;
+        height: 50vh;
+        min-height: 35em;
         width: 60vw;
         background-color: darkslategrey;
-        margin: 10% auto 5% auto;
+        margin: 150px auto 150px auto;
         border-radius: 20px;
         box-shadow: 14px 10px 70px;
         @include c-respond(laptop){
@@ -359,13 +414,16 @@ body{
                 padding: 1.2em;
             }
         }
-        maincolumn{
+        .maincolumn{
             display: flex;
             flex-flow: column;
             height: 100%;
             position: relative;
             @include c-respond(all-mobile){
                 height: 100%;
+            }
+            h1{
+                margin-top: 30px;
             }
             .mainimg{
                 @include c-respond(inch-27){
@@ -408,60 +466,9 @@ body{
                     font-size: 100%;
                 }
                 a{
-                    color:rgb(242, 88, 53);
+                    color:$red;
                     margin: 0;
                 }
-            }
-            tab {
-                @include flex-pos(column, center, center, center);
-                position: absolute;
-                @include position(0, 10%, 0, 90%);
-                cursor: pointer;
-                width: 10%;
-                height: 20%;
-                border-radius: 0 0 0 20px;
-                @include c-respond(all-mobile){
-                    display:none;
-                }
-                .tab-icons{
-                    display: none;
-                    // remove display none when completed
-                    width: 40px;
-                    height: 40px;
-                    position: relative;
-                    top: 10%;
-                    background: transparent;
-                }
-            }
-            .profiletab{
-                background-color: $purple;
-                right: 100%;
-                top: 0em;
-                z-index: 8;
-            }
-            .personalitytab {
-                background-color: $red;
-                right: 100%;
-                top: 12%;
-                z-index: 7;
-            }
-            .educationtab {
-                background-color: $green;
-                right: 100%;
-                top: 24%;
-                z-index: 6;
-            }
-            .experiencetab {
-                background-color: $blue;
-                right: 100%;
-                top: 36%;
-                z-index: 5;
-            }
-            .contacttab {
-                background-color: $yellow;
-                right: 100%;
-                top: 48%;
-                z-index: 4;
             }
             layer{
                 width: 100%;
@@ -639,7 +646,7 @@ body{
                 }
             }
         }
-        maincolumn:first-of-type{
+        .maincolumn:first-of-type{
             width: 40%;
             @include c-respond(all-mobile){
                 width: 100%;
@@ -652,7 +659,7 @@ body{
                 padding-bottom: 5em;
             }
         }
-        maincolumn:last-of-type{
+        .maincolumn:last-of-type{
             width: 60%;
             @include c-respond(all-mobile){
                 width: 100%;
@@ -664,9 +671,9 @@ body{
             }
         }
     }
-    cardsection{
-        @include box-props(flex, darkslateblue, auto, 80%, 20px);
-        @include flex-pos(row, space-around, center, center, wrap);
+    .cardsection{
+        @include box-props(flex, darkslateblue, auto, 60vw, 20px);
+        @include flex-pos(row wrap, space-around, center, center);
         margin: 0 auto;
         margin-bottom: 50px;
         color: $body;
@@ -680,7 +687,7 @@ body{
             width: 100%;
             @include flex-pos(column, space-around, center, center, wrap);
         }
-        square{
+        .square{
             @include box-props(flex, $primary, 10em, 20%);
             @include flex-pos(column);
             @include c-respond(all-mobile){
@@ -714,7 +721,7 @@ body{
                 }
             }
         }
-        card:first-of-type{
+        .card:first-of-type{
             @include flex-pos(row);
             @include c-respond(lrg-mobile){
                 @include flex-pos(column);
@@ -726,7 +733,7 @@ body{
                 @include flex-pos(column);
             }
         }
-        card{
+        .card{
             @include box-props(flex, $primary, auto, 80%, 20px);
             @include flex-pos(column);
             margin: 50px 10%;
