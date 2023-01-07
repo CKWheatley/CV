@@ -333,7 +333,7 @@ body{
             height: 100px;
             border-radius: 100%;
             background-color: $body;
-            border: solid 3px $blue;
+            border: solid 4px $blue;
             transition: all 0.5s 0.2s ease;
             @include c-respond(all-mobile){
                 display:none;
@@ -670,6 +670,9 @@ body{
                 width: 70%;
             }
         }
+    }
+    section{
+        display: flex;
     }
     .cardsection{
         @include box-props(flex, darkslateblue, auto, 60vw, 20px);

@@ -14,7 +14,7 @@ $(document).ready(() => {
         $("#contactform").addClass("hidden");
         $(".contactoption").removeClass("hidden");
     })
-
+// mail function
     $('#mailer-button').click(() =>{
         let a = $('#mailer-client')
         a.removeClass('hidden')
@@ -35,7 +35,7 @@ $(document).ready(() => {
     })
     window_width()
 })
-
+// nav bar sticky
 window.addEventListener('scroll', function() {
     const nav = document.querySelector('nav');
     const main = document.querySelector('main')
@@ -71,7 +71,6 @@ function window_width(){
         })
     }else{
         var selectables = document.querySelectorAll('.selectable');
-
         selectables.forEach(function(selectable) {
             selectable.addEventListener('click', function() {
                 $(".selected").removeClass("selected")
@@ -80,8 +79,10 @@ function window_width(){
         })
     }
 }
-function action(value){
-    value.slideDown(600).siblings().slideUp(920);
+function action(fader){
+    const colour = fader.css('background-color');
+    fader.fadeIn(600).siblings().fadeOut(400);
+    $('.tab').css('border', 'solid 3px ' + colour)
 }
 action($("#profile"));
 function tab_click(){
