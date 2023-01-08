@@ -35,7 +35,7 @@ $(document).ready(() => {
             location: `Chesterfield`,
             date: `October 2022 - Today`,
             jobtitle: `Data Administrator`,
-            department: `HR`,
+            department: `Internal Support`,
             desc1: `Sorting and Filtering old files (GDPR)<BR><BR>
             Checking if data is still relevant<BR><BR>
             Organising paperwork storage<BR><BR>

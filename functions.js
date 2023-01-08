@@ -40,26 +40,31 @@ window.addEventListener('scroll', function() {
     const nav = document.querySelector('nav');
     const main = document.querySelector('main')
     let offset = main.offsetTop - nav.offsetTop
-    if (window.scrollY < 120) {
-        nav.style.top = (150 - window.scrollY) + "px"
-    } else {
-        nav.style.top = 20 + "px";
+    if(window.innerWidth > 1024){
+        if (window.scrollY < 120) {
+            nav.style.top = (150 - window.scrollY) + "px"
+        } else {
+            nav.style.top = 20 + "px";
+        }
+    }else{
+        // do nothing
     }
   });
-
-
 $(".menu-button").click(() => {
-    $("#mobmenu").slideDown(400);
-    $("#mobmenu").css("display", "flex");
-    $("#mobmenu").css("flex-flow", "column");
+    $("nav").fadeIn(400);
+    $("nav").css("display", "flex");
+    $("nav").css("flex-flow", "column");
 })
-
 function close_menu(){
-    let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$(".experiencetab"),$(".contacttab"),$("#close-menu")]
-    for(i in closeables){
-        $(closeables[i]).click(() => {
-            $("#mobmenu").slideUp(400);
-        })
+    if(window.innerWidth <= 1024){
+        let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$(".experiencetab"),$(".contacttab"),$("#close-menu")]
+        for(i in closeables){
+            $(closeables[i]).click(() => {
+                $("nav").fadeOut(400);
+            })
+        }
+    }else{
+        // do nothing
     }
 }
 close_menu()
@@ -215,33 +220,34 @@ var night_icon = 'assets/toggle_night.png';
 var day_icon = 'assets/toggle_day.png';
 
 function toggle_display(){
-    function switch_display(value1){
-        value1.toggleClass("night")
-        value1.toggleClass("day")
+    function switch_display(value1, value2){
+        value1.css('transition', 'all 0.5s 0.2s ease')
+        if(value2 === 'd'){
+            value1.css('background-color', 'rgb(5, 26, 37)')
+        }else if(value2 === 'l'){
+            value1.css('background-color', 'rgb(244, 235, 217)')
+        }
     }
-    function set_day(){
-        $("body").toggleClass("day")
-        $("html").toggleClass("day")
-        $("prompt").toggleClass("day")
-    }
-    set_day()
+    $('.displaytog')
     $(".displaytog").click(() => {
         if(icon.src.includes(night_icon)){
             // switches to day mode
             // add rising sun animation
             $(icon).animate({ right: '25%' });
             icon.src = day_icon;
-            switch_display($("body"))
-            switch_display($("html"))
-            switch_display($("prompt"))
+            switch_display($("body"), 'l')
+            switch_display($("html"), 'l')
+            switch_display($("prompt"), 'l')
+            switch_display($(".tab"), 'l')
         }else{
             // switches to dark mode.
             // add rising moon animation
             $(icon).animate({ right: '0%' });
             icon.src = night_icon;
-            switch_display($("body"))
-            switch_display($("html"))
-            switch_display($("prompt"))
+            switch_display($("body"), 'd')
+            switch_display($("html"), 'd')
+            switch_display($("prompt"), 'd')
+            switch_display($(".tab"), 'd')
         }
     })
     // add more elements to change

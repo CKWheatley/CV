@@ -4,20 +4,8 @@
   scroll-behavior: smooth;
 }
 
-.night {
-  transition: all 0.6s;
-  background-color: rgb(21, 21, 21) !important;
-  color: rgb(255, 255, 255) !important;
-}
-
-.day {
-  transition: all 0.6s;
-  background-color: rgb(255, 255, 255) !important;
-  color: rgb(21, 21, 21) !important;
-}
-
 html {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(244, 235, 217);
 }
 
 body {
@@ -25,7 +13,7 @@ body {
   flex-flow: column nowrap;
   justify-content: space-around;
   height: auto;
-  background: rgb(255, 255, 255);
+  background: rgb(244, 235, 217);
   overflow-x: hidden;
 }
 body .displaytog {
@@ -37,7 +25,7 @@ body .displaytog {
   height: 1.2em;
   border-radius: 50px;
   background-color: grey;
-  z-index: 5;
+  z-index: 10;
   cursor: pointer;
 }
 @media only screen and (max-width: 800px) {
@@ -47,11 +35,11 @@ body .displaytog {
 }
 body .displaytog #togglebutton {
   position: absolute;
-  right: 0;
+  right: 25%;
   top: -30%;
 }
 body a {
-  color: rgb(21, 21, 21);
+  color: rgb(5, 26, 37);
 }
 body button {
   display: flex;
@@ -65,7 +53,7 @@ body button {
 }
 body .certviewer {
   display: flex;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(244, 235, 217);
   height: 50vh;
   width: 50vw;
   border-radius: 0px;
@@ -73,14 +61,14 @@ body .certviewer {
   top: 25%;
   left: 25%;
   z-index: 10;
-  border: solid rgb(21, 21, 21) 2px;
+  border: solid rgb(5, 26, 37) 2px;
 }
 @media only screen and (max-width: 800px) {
   body .certviewer {
     display: flex;
     flex-flow: column nowrap;
     display: flex;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(244, 235, 217);
     height: 100vh;
     width: 100vw;
     border-radius: 0px;
@@ -121,7 +109,7 @@ body .certviewer #cert-section {
   }
 }
 body .certviewer #cert-section h4 {
-  color: rgb(21, 21, 21);
+  color: rgb(5, 26, 37);
   display: flex;
   display: flex;
   flex-flow: row;
@@ -163,7 +151,7 @@ body .certviewer #lan-list {
   height: 100%;
   border: none;
   color: rgb(242, 88, 53);
-  background: rgb(255, 255, 255);
+  background: rgb(244, 235, 217);
 }
 body .certviewer #lan-list a {
   margin: 10px 10px 0 10px;
@@ -199,11 +187,11 @@ body .certviewer aside {
   height: max-content;
   min-height: 200px;
   min-width: 200px;
-  border-top: solid rgb(21, 21, 21) 2px;
-  border-right: solid rgb(21, 21, 21) 2px;
-  border-bottom: solid rgb(21, 21, 21) 2px;
+  border-top: solid rgb(5, 26, 37) 2px;
+  border-right: solid rgb(5, 26, 37) 2px;
+  border-bottom: solid rgb(5, 26, 37) 2px;
   border-radius: 0 20px 20px 0;
-  background: rgb(255, 255, 255);
+  background: rgb(244, 235, 217);
   z-index: 9;
 }
 @media only screen and (max-width: 800px) {
@@ -213,7 +201,7 @@ body .certviewer aside {
     left: 0;
     top: 5%;
     border-radius: 0;
-    border-left: solid rgb(21, 21, 21) 2px;
+    border-left: solid rgb(5, 26, 37) 2px;
     overflow-x: scroll;
   }
 }
@@ -223,7 +211,7 @@ body .certviewer aside {
     left: 80%;
     top: 10%;
     border-radius: 20px;
-    border-left: solid rgb(21, 21, 21) 2px;
+    border-left: solid rgb(5, 26, 37) 2px;
   }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
@@ -232,7 +220,7 @@ body .certviewer aside {
     left: 70%;
     top: 10%;
     border-radius: 20px;
-    border-left: solid rgb(21, 21, 21) 2px;
+    border-left: solid rgb(5, 26, 37) 2px;
   }
 }
 body .certviewer aside a {
@@ -240,7 +228,7 @@ body .certviewer aside a {
   width: 80%;
   padding-right: 20px;
   color: skyblue;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(244, 235, 217);
 }
 @media only screen and (max-width: 800px) {
   body .certviewer aside a {
@@ -252,7 +240,7 @@ body .certviewer button {
   cursor: pointer;
   border-radius: 20px;
   border: none;
-  background-color: rgb(103, 103, 103);
+  background-color: rgb(214, 40, 40);
   font-weight: 900;
 }
 @media only screen and (max-width: 800px) {
@@ -272,55 +260,6 @@ body .certviewer button#close-certs {
     width: 50%;
     margin: 10px auto;
     padding: 0.5em;
-  }
-}
-body #mobmenu {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  min-height: 10px;
-  background-color: rgb(21, 21, 21);
-  z-index: 10;
-  overflow-x: scroll;
-}
-body #mobmenu a {
-  color: rgb(255, 255, 255);
-  margin: 20px 0 20px 20px;
-  border: rgb(103, 103, 103) solid 2px;
-  padding: 20px;
-  width: 50%;
-  height: 20px;
-}
-@media only screen and (max-width: 320px) {
-  body #mobmenu a {
-    width: 40%;
-    margin: 10px 0 10px 10px;
-  }
-}
-@media only screen and (min-width: 321px) and (max-width: 376px) {
-  body #mobmenu a {
-    width: 40%;
-    margin: 10px 0 10px 10px;
-  }
-}
-body #mobmenu #close-menu {
-  width: 5%;
-  display: flex;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  position: absolute;
-  right: 20px;
-}
-@media only screen and (max-width: 320px) {
-  body #mobmenu #close-menu {
-    position: absolute;
-    right: 10px;
   }
 }
 body prompt {
@@ -382,7 +321,7 @@ body prompt a {
   font-size: clamp(1.2rem, 6vw, 3.5em);
   cursor: pointer;
   text-decoration: none;
-  color: rgb(21, 21, 21);
+  color: rgb(5, 26, 37);
   margin: 0 auto;
 }
 @media only screen and (max-width: 800px) {
@@ -400,10 +339,46 @@ body nav {
   height: 35em;
   display: flex;
   flex-flow: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
   align-items: center;
   transition: top 0.4s 0 ease-in;
+  z-index: 100;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body nav {
+    width: 10%;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(5, 26, 37);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    align-items: flex-start;
+    display: none;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body nav {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(5, 26, 37);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    align-items: flex-start;
+    display: none;
+  }
 }
 body nav .tab {
   position: absolute;
@@ -416,13 +391,20 @@ body nav .tab {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  background-color: rgb(255, 255, 255);
-  border: solid 4px rgb(47, 50, 79);
+  background-color: rgb(244, 235, 217);
+  border: solid 4px rgb(0, 48, 73);
   transition: all 0.5s 0.2s ease;
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav .tab {
+    position: static;
+    margin-left: 10vw;
+  }
 }
 @media only screen and (max-width: 800px) {
   body nav .tab {
-    display: none;
+    position: static;
+    margin: 1vh 0 1vh 10vw;
   }
 }
 body nav .tab .tab-icons {
@@ -434,27 +416,97 @@ body nav .tab .tab-icons {
   background: transparent;
 }
 body nav .tab:hover {
-  transform: translate(20%, 0) scale(1.1);
+  transform: translate(10%, 0) scale(1.1);
 }
 body nav .profiletab {
-  top: 0em;
+  top: 0;
   z-index: 8;
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav .profiletab {
+    position: static;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body nav .profiletab {
+    position: static;
+  }
 }
 body nav .personalitytab {
   top: 12%;
   z-index: 7;
 }
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body nav .personalitytab {
+    top: 14%;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav .personalitytab {
+    position: static;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body nav .personalitytab {
+    position: static;
+  }
+}
 body nav .educationtab {
   top: 24%;
   z-index: 6;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body nav .educationtab {
+    top: 28%;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav .educationtab {
+    position: static;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body nav .educationtab {
+    position: static;
+  }
 }
 body nav .experiencetab {
   top: 36%;
   z-index: 5;
 }
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body nav .experiencetab {
+    top: 42%;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav .experiencetab {
+    position: static;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body nav .experiencetab {
+    position: static;
+  }
+}
 body nav .contacttab {
   top: 48%;
   z-index: 4;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body nav .contacttab {
+    top: 56%;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav .contacttab {
+    position: static;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body nav .contacttab {
+    position: static;
+  }
 }
 body main {
   display: flex;
@@ -462,19 +514,21 @@ body main {
   height: 50vh;
   min-height: 35em;
   width: 60vw;
-  background-color: darkslategrey;
-  margin: 150px auto 150px auto;
+  background-color: rgb(0, 74, 114);
+  margin: 150px 20% 150px 20%;
   border-radius: 20px;
   box-shadow: 14px 10px 70px;
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   body main {
     width: 80vw;
+    margin: 150px 10% 150px 10%;
   }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body main {
     width: 90vw;
+    margin: 150px 5% 150px 5%;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -490,17 +544,29 @@ body main {
 }
 body main .menu-button {
   display: none;
-  margin: 30px auto;
-  background: rgb(103, 103, 103);
-  color: rgb(21, 21, 21);
-  border: none;
+  background: transparent;
+  color: rgb(5, 26, 37);
+  border: rgb(214, 40, 40) solid 4px;
   cursor: pointer;
   position: fixed;
-  right: 0;
-  top: 0;
+  top: 5%;
+  transform: translate(0, -50%);
+  right: 90%;
   width: 50px;
   z-index: 9;
-  border-radius: 20px 0 0 20px;
+  border-radius: 100%;
+  color: rgb(214, 40, 40);
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body main .menu-button {
+    display: block;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 1.2em;
+  }
 }
 @media only screen and (max-width: 800px) {
   body main .menu-button {
@@ -570,7 +636,7 @@ body main .maincolumn .descriptions p, body main .maincolumn .descriptions h3, b
   width: 90%;
   margin-top: 2em;
   margin-left: 5%;
-  color: rgb(21, 21, 21);
+  color: rgb(5, 26, 37);
 }
 body main .maincolumn .descriptions tr:first-of-type {
   font-weight: 800;
@@ -580,7 +646,7 @@ body main .maincolumn .descriptions td {
   font-size: 100%;
 }
 body main .maincolumn .descriptions a {
-  color: rgb(103, 103, 103);
+  color: rgb(214, 40, 40);
   margin: 0;
 }
 body main .maincolumn layer {
@@ -591,7 +657,7 @@ body main .maincolumn layer {
   justify-content: space-around;
   border-radius: 0 20px 20px 0;
   position: absolute;
-  color: rgb(21, 21, 21);
+  color: rgb(5, 26, 37);
 }
 @media only screen and (max-width: 800px) {
   body main .maincolumn layer {
@@ -616,7 +682,7 @@ body main .maincolumn layer#experience a {
 body main .maincolumn div {
   width: 90%;
   margin: auto;
-  border: solid 4px rgb(21, 21, 21);
+  border: solid 4px rgb(5, 26, 37);
   border-radius: 20px;
 }
 body main .maincolumn div innerdiv {
@@ -640,8 +706,11 @@ body main .maincolumn div innerdiv .selectable {
   cursor: pointer;
 }
 body main .maincolumn div innerdiv .selectable:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgb(21, 21, 21);
+  color: rgb(244, 235, 217);
+  background-color: rgb(5, 26, 37);
+}
+body main .maincolumn div innerdiv#personality h3 {
+  background-color: rgb(214, 40, 40);
 }
 body main .maincolumn div table {
   width: 100%;
@@ -658,19 +727,19 @@ body main .maincolumn div table tr a {
   }
 }
 body main .maincolumn #profile {
-  background-color: darkslateblue;
+  background-color: #f77f00;
   z-index: 7;
 }
 body main .maincolumn #personality {
-  background-color: rgb(103, 103, 103);
+  background-color: rgb(214, 40, 40);
   z-index: 6;
 }
 body main .maincolumn #education {
-  background-color: rgb(47, 69, 79);
+  background-color: #eae2b7;
   z-index: 5;
 }
 body main .maincolumn #experience {
-  background-color: rgb(47, 50, 79);
+  background-color: rgb(0, 48, 73);
   z-index: 4;
 }
 @media only screen and (max-width: 800px) {
@@ -683,14 +752,14 @@ body main .maincolumn #experience {
   body main .maincolumn #experience table tr {
     display: flex;
     flex-flow: column;
-    border: rgb(21, 21, 21) 2px solid;
+    border: rgb(5, 26, 37) 2px solid;
     width: 90%;
     border-radius: 20px;
     margin: 10px auto;
   }
 }
 body main .maincolumn #contact {
-  background-color: rgb(26, 67, 120);
+  background-color: rgb(252, 191, 73);
   z-index: 3;
 }
 body main .maincolumn #contact h1:first-of-type {
@@ -720,7 +789,7 @@ body main .maincolumn #contact div box {
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  border-bottom: rgb(21, 21, 21) 2px solid;
+  border-bottom: rgb(5, 26, 37) 2px solid;
   margin: 20px 5%;
 }
 body main .maincolumn #contact div box a {
@@ -728,7 +797,7 @@ body main .maincolumn #contact div box a {
 }
 body main .maincolumn #contact div button {
   display: flex;
-  background-color: rgb(103, 103, 103);
+  background-color: rgb(214, 40, 40);
   height: 100px;
   width: 90%;
   border-radius: 5px;
@@ -746,7 +815,7 @@ body main .maincolumn #contact div form {
   top: 0%;
   left: 0%;
   display: flex;
-  background-color: darkslateblue;
+  background-color: #f77f00;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -799,10 +868,13 @@ body main .maincolumn #contact div form textarea {
   margin: 0 5%;
 }
 body main .maincolumn #contact div form a {
-  color: rgb(21, 21, 21);
+  color: rgb(5, 26, 37);
 }
 body main .maincolumn:first-of-type {
   width: 40%;
+}
+body main .maincolumn:first-of-type img {
+  border-radius: 100%;
 }
 @media only screen and (max-width: 800px) {
   body main .maincolumn:first-of-type {
@@ -833,12 +905,27 @@ body main .maincolumn:last-of-type {
     width: 70%;
   }
 }
-body section {
-  display: flex;
+body main .maincolumn:last-of-type layer#profile h3 {
+  background-color: #f77f00;
+}
+body main .maincolumn:last-of-type layer#personality h3 {
+  background-color: rgb(214, 40, 40);
+}
+body main .maincolumn:last-of-type layer#education h3 {
+  background-color: rgb(214, 40, 40);
+}
+body main .maincolumn:last-of-type layer#education h3 {
+  background-color: #eae2b7;
+}
+body main .maincolumn:last-of-type layer#experience h3 {
+  background-color: rgb(0, 48, 73);
+}
+body main .maincolumn:last-of-type layer#contact h3 {
+  background-color: rgb(252, 191, 73);
 }
 body .cardsection {
   display: flex;
-  background-color: darkslateblue;
+  background-color: rgb(0, 48, 73);
   height: auto;
   width: 60vw;
   border-radius: 20px;
@@ -847,13 +934,24 @@ body .cardsection {
   justify-content: space-around;
   align-content: center;
   align-items: center;
+  border: rgb(244, 235, 217) solid 2px;
   margin: 0 auto;
   margin-bottom: 50px;
-  color: rgb(255, 255, 255);
+  color: rgb(244, 235, 217);
 }
 body .cardsection a {
   color: rgb(242, 88, 53);
   margin: 0;
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body .cardsection {
+    width: 80vw;
+  }
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body .cardsection {
+    width: 90vw;
+  }
 }
 @media only screen and (max-width: 800px) {
   body .cardsection {
@@ -862,18 +960,33 @@ body .cardsection a {
     width: 100%;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    justify-content: center;
     align-content: center;
     align-items: center;
   }
 }
-body .cardsection .square {
+body .cardsection .squares {
   display: flex;
-  background-color: rgb(21, 21, 21);
-  height: 100%;
-  width: 20%;
-  border-radius: 0px;
-  max-height: 200%;
+  flex-flow: row wrap;
+  justify-items: center;
+  background-color: rgb(5, 26, 37);
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+@media only screen and (max-width: 800px) {
+  body .cardsection .squares {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+body .cardsection .squares .square {
+  display: flex;
+  height: 10em;
+  width: 30%;
+  flex-grow: 1;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -881,7 +994,7 @@ body .cardsection .square {
   align-items: center;
 }
 @media only screen and (max-width: 800px) {
-  body .cardsection .square {
+  body .cardsection .squares .square {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
@@ -893,37 +1006,26 @@ body .cardsection .square {
     height: max-content;
   }
 }
-body .cardsection .square h2 {
+body .cardsection .squares .square h2 {
   height: 30%;
   margin: 20px 10px;
   font-size: clamp(1rem, 2.5vw, 2rem);
 }
 @media only screen and (max-width: 800px) {
-  body .cardsection .square h2 {
+  body .cardsection .squares .square h2 {
     width: 40%;
+    margin-left: 10%;
   }
 }
-body .cardsection .square h4 {
+body .cardsection .squares .square h4 {
   font-size: clamp(0.8rem, 1.5vw, 1.2rem);
   height: 60%;
 }
-body .cardsection .square:first-of-type {
-  border-radius: 20px 0 0 0;
+body .cardsection .cards {
+  display: flex;
+  flex-flow: column;
 }
-@media only screen and (max-width: 800px) {
-  body .cardsection .square:first-of-type {
-    border-radius: 0;
-  }
-}
-body .cardsection .square:last-of-type {
-  border-radius: 0 20px 0 0;
-}
-@media only screen and (max-width: 800px) {
-  body .cardsection .square:last-of-type {
-    border-radius: 0;
-  }
-}
-body .cardsection .card:first-of-type {
+body .cardsection .cards .card:first-of-type {
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -931,7 +1033,7 @@ body .cardsection .card:first-of-type {
   align-items: center;
 }
 @media only screen and (min-width: 376px) and (max-width: 550px) {
-  body .cardsection .card:first-of-type {
+  body .cardsection .cards .card:first-of-type {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -940,7 +1042,7 @@ body .cardsection .card:first-of-type {
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 376px) {
-  body .cardsection .card:first-of-type {
+  body .cardsection .cards .card:first-of-type {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -949,7 +1051,7 @@ body .cardsection .card:first-of-type {
   }
 }
 @media only screen and (max-width: 320px) {
-  body .cardsection .card:first-of-type {
+  body .cardsection .cards .card:first-of-type {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -957,9 +1059,9 @@ body .cardsection .card:first-of-type {
     align-items: center;
   }
 }
-body .cardsection .card {
+body .cardsection .cards .card {
   display: flex;
-  background-color: rgb(21, 21, 21);
+  background-color: rgb(5, 26, 37);
   height: auto;
   width: 80%;
   border-radius: 20px;
@@ -971,24 +1073,27 @@ body .cardsection .card {
   margin: 50px 10%;
 }
 @media only screen and (min-width: 376px) and (max-width: 550px) {
-  body .cardsection .card {
+  body .cardsection .cards .card {
     width: 90%;
+    margin: 50px 5%;
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 376px) {
-  body .cardsection .card {
+  body .cardsection .cards .card {
     width: 90%;
+    margin: 50px 5%;
   }
 }
 @media only screen and (max-width: 320px) {
-  body .cardsection .card {
+  body .cardsection .cards .card {
     width: 90%;
+    margin: 50px 5%;
   }
 }
-body .cardsection .card h3 {
+body .cardsection .cards .card h3 {
   margin: 30px;
 }
-body .cardsection .card p {
+body .cardsection .cards .card p {
   margin: 30px;
 }
 body #to-top {
@@ -1008,8 +1113,8 @@ body #to-top {
     transform: translate(-50%, -50%);
     width: 50%;
     border-radius: 20px;
-    border: rgb(21, 21, 21) solid 2px;
-    background-color: rgb(103, 103, 103);
+    border: rgb(5, 26, 37) solid 2px;
+    background-color: rgb(214, 40, 40);
     padding: 1em;
     z-index: 10;
   }

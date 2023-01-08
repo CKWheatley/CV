@@ -19,7 +19,7 @@
 		<a id="entrybutton" type="" action="" href="#main">Lets Go!</a>
 	</prompt>
 	<span class="displaytog">
-		<img src="assets/toggle_night.png" id="togglebutton"/>
+		<img src="assets/toggle_day.png" id="togglebutton"/>
 	</span>
 	<span class="certviewer hidden">
 		<!-- add back and close buttons floating above element -->
@@ -51,14 +51,6 @@
 		<button id="close-certs">Close</button>
 	</span>
 	<h1 id="intro-hdr"></h1>
-	<span id="mobmenu">
-		<a class="profiletab">Profile</a>
-		<a class="personalitytab">Personality</a>
-		<a class="educationtab">Education</a>
-		<a class="experiencetab">Experience</a>
-		<a class="contacttab">Contact</a>
-		<a id="close-menu">Close</a>
-	</span>
 	<nav>
 		<div class="profiletab tab">
 			<img src="./assets/profile.png" class="tab-icons" alt="">
@@ -80,7 +72,7 @@
 		<button class="menu-button">More</button>
 		<section class="maincolumn">
 			<h1>Callum Wheatley</h1>
-			<img src="./images/profile.jpg" class="mainimg" alt="">
+			<img src="./images/profile.png" class="mainimg" alt="">
 			<div class="descriptions">
 
 			</div>
@@ -284,40 +276,42 @@
 		</section>
 	</main>
 	<section id="cards" class="hidden cardsection">
-		<div id="square1" class="square">
-			<h2>Company</h2>
-			<h4 id="comdesc"></h4>
-		</div>
-		
-		<div id="square2" class="square">
-			<h2>Location</h2>
-			<h4 id="locdesc"></h4>
-		</div>
-		<div id="square3" class="square">
-			<h2>Date</h2>
-			<h4 id="datdesc"></h4>
-		</div>
-		<div id="square4" class="square">
-			<h2>Job Title</h2>
-			<h4 id="jobdesc"></h4>
-		</div>
-		<div id="square5" class="square">
-			<h2>Department</h2>
-			<h4 id="depdesc"></h4>
-		</div>
-
-		<div id="card1" class="card">
-			<h3>Roles &amp; Responsibilities</h3>
-			<p id="card1d"></p>
-		</div>
-		<div id="card2" class="card">
-			<h3 id="card2h"></h3>
-			<p id="card2d"></p>
-		</div>
-		<div id="card3" class="card">
-			<h3 id="card3h"></h3>
-			<p id="card3d"></p>
-		</div>
+		<section class="squares">
+			<div id="square1" class="square">
+				<h2>Company</h2>
+				<h4 id="comdesc"></h4>
+			</div>
+			<div id="square2" class="square">
+				<h2>Location</h2>
+				<h4 id="locdesc"></h4>
+			</div>
+			<div id="square3" class="square">
+				<h2>Date</h2>
+				<h4 id="datdesc"></h4>
+			</div>
+			<div id="square4" class="square">
+				<h2>Job Title</h2>
+				<h4 id="jobdesc"></h4>
+			</div>
+			<div id="square5" class="square">
+				<h2>Department</h2>
+				<h4 id="depdesc"></h4>
+			</div>
+		</section>
+		<section class="cards">
+			<div id="card1" class="card">
+				<h3>Roles &amp; Responsibilities</h3>
+				<p id="card1d"></p>
+			</div>
+			<div id="card2" class="card">
+				<h3 id="card2h"></h3>
+				<p id="card2d"></p>
+			</div>
+			<div id="card3" class="card">
+				<h3 id="card3h"></h3>
+				<p id="card3d"></p>
+			</div>
+		</section>
 	</section>
 	<!-- <button href="#top" id="to-top">To Top</button> -->
 </body>
