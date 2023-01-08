@@ -83,6 +83,7 @@ function action(fader){
     const colour = fader.css('background-color');
     fader.fadeIn(600).siblings().fadeOut(400);
     $('.tab').css('border', 'solid 3px ' + colour)
+    window.scrollTo({top: 0, behavior: 'smooth',duration: 600})
 }
 action($("#profile"));
 function tab_click(){

@@ -691,7 +691,8 @@ body{
             @include flex-pos(column, space-around, center, center, wrap);
         }
         .square{
-            @include box-props(flex, $primary, 10em, 20%);
+            @include box-props(flex, $primary, 100%, 20%);
+            max-height: 200%;
             @include flex-pos(column);
             @include c-respond(all-mobile){
                 @include flex-pos(row, flex-start, flex-start);
@@ -699,17 +700,16 @@ body{
                 height: max-content;
             }
             h2{
+                height: 30%;
                 margin: 20px 10px;
                 font-size: clamp(1rem, 2.5vw, 2rem);
                 @include c-respond(all-mobile){
                     width: 40%;
                 }
             }
-            h3{
-                margin: 20px 10px;
-            }
             h4{
                 font-size: clamp(.8rem, 1.5vw, 1.2rem);
+                height: 60%;
             }
             &:first-of-type{
                 border-radius: 20px 0 0 0;

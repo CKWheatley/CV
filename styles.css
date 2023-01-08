@@ -870,9 +870,10 @@ body .cardsection a {
 body .cardsection .square {
   display: flex;
   background-color: rgb(21, 21, 21);
-  height: 10em;
+  height: 100%;
   width: 20%;
   border-radius: 0px;
+  max-height: 200%;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -893,6 +894,7 @@ body .cardsection .square {
   }
 }
 body .cardsection .square h2 {
+  height: 30%;
   margin: 20px 10px;
   font-size: clamp(1rem, 2.5vw, 2rem);
 }
@@ -901,11 +903,9 @@ body .cardsection .square h2 {
     width: 40%;
   }
 }
-body .cardsection .square h3 {
-  margin: 20px 10px;
-}
 body .cardsection .square h4 {
   font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  height: 60%;
 }
 body .cardsection .square:first-of-type {
   border-radius: 20px 0 0 0;
