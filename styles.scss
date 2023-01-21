@@ -287,7 +287,7 @@ body{
         width: 20%;
         height: 35em;
         @include flex-pos(column);
-        transition: top 0.4s 0 ease-in;
+        transition: all 0.4s 0 ease-in;
         z-index: 90;
         @include c-respond(laptop){
             width: 10vw;
@@ -295,8 +295,9 @@ body{
         @include c-respond(sm-laptop){
             width: 100vw;
             height: 100vh;
-                top: 0;
-                left: 0;
+            position: fixed;
+                top: 0 !important;
+                left: 0 !important;
             background-color: $light;
             @include flex-pos(column, space-evenly, flex-start, flex-start);
             display: none;
@@ -304,8 +305,9 @@ body{
         @include c-respond(all-mobile){
             width: 100vw;
             height: 100vh;
-            top: 0;
-            left: 0;
+            position: fixed;
+                top: 0 !important;
+                left: 0 !important;
             background-color: $light;
             @include flex-pos(column, space-evenly, flex-start, flex-start);
             display: none;
@@ -335,7 +337,6 @@ body{
                 height: 50px;
             }
             .tab-icons{
-                // remove display none when completed
                 width: 48px;
                 height: 48px;
                 background: transparent;

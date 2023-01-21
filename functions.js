@@ -64,25 +64,27 @@ $(".menu-button").click(() => {
     $("nav").css("flex-flow", "column");
 })
 function close_menu(){
-    if(window.innerWidth <= 1024){
-        let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$(".experiencetab"),$(".contacttab"),$("#close-menu")]
+    let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$("experiencetab"),$(".contacttab"),$("#close-menu")]
+    if($(window).width() < 1025){
         for(i in closeables){
             $(closeables[i]).click(() => {
                 $("nav").fadeOut(400);
             })
         }
     }else{
-        // do nothing
+        $("nav").fadeIn(400);
     }
 }
-close_menu()
-
 function window_width(){
     if($(window).width() < 1025){
         $('.tab').addClass('tabspanded')
         $('.tabHDR').removeClass('hidden')
+        close_menu()
     }
     else{
+        $('.tab').removeClass('tabspanded')
+        $('.tabHDR').addClass('hidden')
+        close_menu()
         var selectables = document.querySelectorAll('.selectable');
         selectables.forEach(function(selectable) {
             selectable.addEventListener('click', function() {
@@ -244,6 +246,8 @@ function toggle_display(){
             target.css(property, 'rgb(5, 26, 37)')
         }else if(setting === 'l'){
             target.css(property, 'rgb(244, 235, 217)')
+        }else if(setting === 't'){
+            target.css(property, 'transparent')
         }
     }
     function switch_icons(from, to){
@@ -265,8 +269,12 @@ function toggle_display(){
             switch_display($("html"),'background-color', 'l')
             switch_display($("prompt"),'background-color', 'l')
             switch_display($(".tab"),'background-color', 'l')
-            switch_display($("nav"),'background-color', 'l')
             switch_display($("nav h3"),'color', 'd')
+            if($(window).width() < 1025){
+                switch_display($("nav"),'background-color', 'l')
+            }else{
+                switch_display($("nav"),'background-color', 't')
+            }
         }else{
             // switches to dark mode.
             // add rising moon animation
@@ -277,8 +285,12 @@ function toggle_display(){
             switch_display($("html"),'background-color', 'd')
             switch_display($("prompt"),'background-color', 'd')
             switch_display($(".tab"),'background-color', 'd')
-            switch_display($("nav"),'background-color', 'd')
             switch_display($("nav h3"),'color', 'l')
+            if($(window).width() < 1025){
+                switch_display($("nav"),'background-color', 'd')
+            }else{
+                switch_display($("nav"),'background-color', 't')
+            }
         }
     })
     // add more elements to change
