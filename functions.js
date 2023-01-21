@@ -3,8 +3,16 @@ $(document).ready(() => {
         $("#entryprompt").fadeOut(0);
         $("#main").fadeIn(1000).removeClass("hidden");
     })
+    function scrollToCards(){
+        $('html, body').animate({
+            scrollTop: $(".cardsection").offset().top
+        }, 400);
+    }
+    $('.selectable').click(() => {
+        scrollToCards();
+    })
     $(".cardlink").click(() => {
-        $("#cards").fadeIn(1000).removeClass("hidden");
+        scrollToCards();
     })
     $("#contactbutton").click(() => {
         $("#contactform").removeClass("hidden");
@@ -14,7 +22,7 @@ $(document).ready(() => {
         $("#contactform").addClass("hidden");
         $(".contactoption").removeClass("hidden");
     })
-// mail function
+    // mail function
     $('#mailer-button').click(() =>{
         let a = $('#mailer-client')
         a.removeClass('hidden')
@@ -70,11 +78,11 @@ function close_menu(){
 close_menu()
 
 function window_width(){
-    if($(window).width() < 800){
-        $('.selectable').click(() => {
-            $(window).scrollTop(0)
-        })
-    }else{
+    if($(window).width() < 1025){
+        $('.tab').addClass('tabspanded')
+        $('.tabHDR').removeClass('hidden')
+    }
+    else{
         var selectables = document.querySelectorAll('.selectable');
         selectables.forEach(function(selectable) {
             selectable.addEventListener('click', function() {
@@ -91,20 +99,26 @@ function action(fader){
     window.scrollTo({top: 0, behavior: 'smooth',duration: 600})
 }
 action($("#profile"));
+$(".profiletab").addClass("tabbed").siblings().removeClass("tabbed")
 function tab_click(){
-    $(".profiletab").click(() => {
+    $(".profiletab").click(function(){
+        $(this).addClass("tabbed").siblings().removeClass("tabbed")
         action($("#profile"));
     });
-    $(".personalitytab").click(() => {
+    $(".personalitytab").click(function(){
+        $(this).addClass("tabbed").siblings().removeClass("tabbed")
         action($("#personality"));
     });
-    $(".educationtab").click(() => {
+    $(".educationtab").click(function(){
+        $(this).addClass("tabbed").siblings().removeClass("tabbed")
         action($("#education"));
     });
-    $(".experiencetab").click(() => {
+    $(".experiencetab").click(function(){
+        $(this).addClass("tabbed").siblings().removeClass("tabbed")
         action($("#experience"));
     });
-    $(".contacttab").click(() => {
+    $(".contacttab").click(function(){
+        $(this).addClass("tabbed").siblings().removeClass("tabbed")
         action($("#contact"));
         $(".contactfadeout").delay(1000).fadeOut(2000);
         $(".contactfadein").delay(3000).fadeIn(1000);
@@ -123,6 +137,12 @@ $("#lanlist").click(() => {
     $(".certviewer").removeClass("hidden")
 })
 // add js to resize the section 2 for the experience part so it fits
+
+
+
+
+
+
 
 function cert_src(value1, value2){
     $(value1).click(() => {
@@ -206,8 +226,6 @@ $("#py").click(() =>{
     $("#py1").removeClass("hidden");
 })
 // clean up the above code
-
-
 $("#close-certs").click(() =>{
     $(".certviewer").addClass("hidden");
     $("#cert-list").addClass("hidden");
@@ -215,41 +233,55 @@ $("#close-certs").click(() =>{
     $("#cert-h4").removeClass("hidden");
 })
 
-var icon = document.getElementById("togglebutton");
-var night_icon = 'assets/toggle_night.png';
-var day_icon = 'assets/toggle_day.png';
+const icon = document.getElementById("togglebutton");
+const night_icon = 'assets/toggle_night.png';
+const day_icon = 'assets/toggle_day.png';
 
 function toggle_display(){
-    function switch_display(value1, value2){
-        value1.css('transition', 'all 0.5s 0.2s ease')
-        if(value2 === 'd'){
-            value1.css('background-color', 'rgb(5, 26, 37)')
-        }else if(value2 === 'l'){
-            value1.css('background-color', 'rgb(244, 235, 217)')
+    function switch_display(target,property, setting){
+        target.css('transition', 'all 0.5s 0.2s ease')
+        if(setting === 'd'){
+            target.css(property, 'rgb(5, 26, 37)')
+        }else if(setting === 'l'){
+            target.css(property, 'rgb(244, 235, 217)')
         }
     }
-    $('.displaytog')
+    function switch_icons(from, to){
+        $(".tab-icons").each(function() {
+            var newSrc = this.src.replace(from, to)
+            $(this).fadeTo(400, 0, function() {
+                $(this).attr("src", newSrc);
+            }).fadeTo(400, 1);
+        });
+    }
     $(".displaytog").click(() => {
         if(icon.src.includes(night_icon)){
             // switches to day mode
             // add rising sun animation
+            switch_icons('white', 'black')
             $(icon).animate({ right: '25%' });
             icon.src = day_icon;
-            switch_display($("body"), 'l')
-            switch_display($("html"), 'l')
-            switch_display($("prompt"), 'l')
-            switch_display($(".tab"), 'l')
+            switch_display($("body"),'background-color', 'l')
+            switch_display($("html"),'background-color', 'l')
+            switch_display($("prompt"),'background-color', 'l')
+            switch_display($(".tab"),'background-color', 'l')
+            switch_display($("nav"),'background-color', 'l')
+            switch_display($("nav h3"),'color', 'd')
         }else{
             // switches to dark mode.
             // add rising moon animation
             $(icon).animate({ right: '0%' });
             icon.src = night_icon;
-            switch_display($("body"), 'd')
-            switch_display($("html"), 'd')
-            switch_display($("prompt"), 'd')
-            switch_display($(".tab"), 'd')
+            switch_icons('black', 'white')
+            switch_display($("body"),'background-color', 'd')
+            switch_display($("html"),'background-color', 'd')
+            switch_display($("prompt"),'background-color', 'd')
+            switch_display($(".tab"),'background-color', 'd')
+            switch_display($("nav"),'background-color', 'd')
+            switch_display($("nav h3"),'color', 'l')
         }
     })
     // add more elements to change
 }
 toggle_display()
+

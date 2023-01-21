@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,17 +9,18 @@
 	<link href="responsive.css" rel="stylesheet" type="text/css">
 	<link href="typography.css" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="descriptions.js"></script>
 </head>
 
 <body>
 	<prompt id="entryprompt">
 		<h1>What is your name?</h1>
-		<input id="tempname" type="text" name="tempname" value="Nameless"/>
+		<input id="tempname" type="text" name="tempname" value="Nameless" placeholder=false/>
 
 		<a id="entrybutton" type="" action="" href="#main">Lets Go!</a>
 	</prompt>
 	<span class="displaytog">
-		<img src="assets/toggle_day.png" id="togglebutton"/>
+		<img src="assets/toggle_day.png" id="togglebutton" alt=""/>
 	</span>
 	<span class="certviewer hidden">
 		<!-- add back and close buttons floating above element -->
@@ -53,51 +54,50 @@
 	<h1 id="intro-hdr"></h1>
 	<nav>
 		<div class="profiletab tab">
-			<img src="./assets/profile.png" class="tab-icons" alt="">
+			<img src="./assets/profile-icon-black.png" class="tab-icons" alt="">
+			<h3 class="hidden tabHDR">Profile</h3>
 		</div>
 		<div class="personalitytab tab" >
-			<img src="./assets/personality.png" class="tab-icons" alt="">
+			<img src="./assets/personality-icon-black.png" class="tab-icons" alt="">
+			<h3 class="hidden tabHDR">Personality</h3>
 		</div>
 		<div class="educationtab tab">
-			<img src="./assets/education.png" class="tab-icons" alt="">
+			<img src="./assets/education-icon-black.png" class="tab-icons" alt="">
+			<h3 class="hidden tabHDR">Education</h3>
 		</div>
 		<div class="experiencetab tab">
-			<img src="./assets/experience.png" class="tab-icons" alt="">
+			<img src="./assets/experience-icon-black.png" class="tab-icons" alt="">
+			<h3 class="hidden tabHDR">Experience</h3>
 		</div>
 		<div class="contacttab tab">
-			<img src="./assets/contact.png" class="tab-icons" alt="">
+			<img src="./assets/contact-icon-black.png" class="tab-icons" alt="">
+			<h3 class="hidden tabHDR">Contact</h3>
 		</div>
 	</nav>
 	<main id="main" class="hidden">
-		<button class="menu-button">More</button>
+		<button class="menu-button"><img alt=">" src="./assets/chevron-right-white.png">More</button>
 		<section class="maincolumn">
 			<h1>Callum Wheatley</h1>
 			<img src="./images/profile.png" class="mainimg" alt="">
-			<div class="descriptions">
-
-			</div>
 		</section>
 		<section class="maincolumn">
 			<layer id="profile" class="activelayer">
 				<h1>Profile</h1>
 				<div>
 					<innerdiv>
-						<h3>Interests &amp; Hobbies</h3>
-						<a class="football-id selectable">Football</a>
-						<a class="music-id selectable">Music</a>
-						<a class="refereeing-id selectable">Refereeing</a>
-						<a class="gaming-id selectable">Gaming</a>
+						<h3>My name is Callum</h3>
+						<p id="intro-p">Fueled by a boundless passion for coding and a relentless drive to innovate, I am a self-taught developer carving my own path in the tech industry. Armed with an arsenal of practical skills and an insatiable thirst for knowledge, I am constantly pushing the boundaries of what's possible and turning my wildest coding dreams into reality - all through immersive online learning and building a diverse portfolio.</p>
 					</innerdiv>
 				</div>
 				<div>
 					<innerdiv>
 						<h3>Proudest Acheivements</h3>
-						<a id="pa1" class="selectable">Innovating on the Universal Credit campaign</a>
-						<a id="pa2" class="selectable">Passing all important subjects in school</a>
-						<a id="pa3" class="selectable">Aquiring skills as a trainer</a>
-						<a id="pa4" class="selectable">Joining a political party</a>
-						<a id="pa5" class="selectable">Volunteering for the "Bring staff back" Campaign</a>
-						<a id="pa6" class="selectable">Becoming a football referee</a>
+						<a id="pa1" class="selectable" onclick="addHTML(p_a1)">Innovating on the Universal Credit campaign</a>
+						<a id="pa2" class="selectable" onclick="addHTML(p_a2)">Passing all important subjects in school</a>
+						<a id="pa3" class="selectable" onclick="addHTML(p_a3)">Aquiring skills as a trainer</a>
+						<a id="pa4" class="selectable" onclick="addHTML(p_a4)">Joining a political party</a>
+						<a id="pa5" class="selectable" onclick="addHTML(p_a5)">Volunteering for the "Bring staff back" Campaign</a>
+						<a id="pa6" class="selectable" onclick="addHTML(p_a6)">Becoming a football referee</a>
 					</innerdiv>
 				</div>
 				<div>
@@ -112,10 +112,10 @@
 				<div>
 					<innerdiv>
 						<h3>Interests &amp; Hobbies</h3>
-						<a class="football-id selectable">Football</a>
-						<a class="music-id selectable">Music</a>
-						<a class="refereeing-id selectable">Refereeing</a>
-						<a class="gaming-id selectable">Gaming</a>
+						<a class="football-id selectable" onclick="addHTML(p_fo)">Football</a>
+						<a class="music-id selectable" onclick="addHTML(p_mus)">Music</a>
+						<a class="refereeing-id selectable" onclick="addHTML(p_ref)">Refereeing</a>
+						<a class="gaming-id selectable" onclick="addHTML(p_game)">Gaming</a>
 					</innerdiv>
 				</div>
 			</layer>
@@ -139,7 +139,7 @@
 				<div>
 					<innerdiv>
 						<h3>School</h3>
-						<a class="selectable" id="school">School Qualifications</a>
+						<a class="selectable" id="school" onclick="addHTML(e_sch)">School Qualifications</a>
 					</innerdiv>
 				</div>
 			</layer>
@@ -154,52 +154,52 @@
 						</tr>
 						<tr>
 							<th>Avanti Gas</th>
-							<th><a href="#cards" class="cardlink" id="ag2">Data Administrator</th>
+							<th><a href="#cards" class="cardlink" id="ag2" onclick="addExperienceHTML(ag2)">Data Administrator</th>
 							<th id="currentjob">0 months</th>
 						</tr>
 						<tr>
 							<th>Avanti Gas</th>
-							<th><a href="#cards" class="cardlink" id="prm">Internal Support Admin</a></th>
+							<th><a href="#cards" class="cardlink" id="prm"  onclick="addExperienceHTML(prm)">Internal Support Admin</a></th>
 							<th id="currentjob">6 months(Contract)</th>
 						</tr>
 						<tr>
 							<th>Avanti Gas</th>
-							<th><a href="#cards" class="cardlink" id="ag">Data Administrator</a></th>
+							<th><a href="#cards" class="cardlink" id="ag" onclick="addExperienceHTML(ag)">Data Administrator</a></th>
 							<th>1 month (Contract)</th>
 						</tr>
 						<tr>
 							<th>Unbloq</th>
-							<th><a href="#cards" class="cardlink" id="dd">Digital/Web Developer</a></th>
+							<th><a href="#cards" class="cardlink" id="dd" onclick="addExperienceHTML(dd)">Digital/Web Developer</a></th>
 							<th>6 months (Contract)</th>
 						</tr>
 						<tr>
 							<th>Parseq</th>
-							<th><a href="#cards" class="cardlink" id="de">Data Entry</a></th>
+							<th><a href="#cards" class="cardlink" id="de" onclick="addExperienceHTML(de)">Data Entry</a></th>
 							<th>4 Months (Contract)</th>
 						</tr>
 						<tr>
 							<th>Capita</th>
-							<th><a href="#cards" class="cardlink" id="dwp">DWP Advisor</a></th>
+							<th><a href="#cards" class="cardlink" id="dwp" onclick="addExperienceHTML(dwp)">DWP Advisor</a></th>
 							<th>7 Months (Covid)</th>
 						</tr>
 						<tr>
 							<th>Capita</th>
-							<th><a href="#cards" class="cardlink" id="sr">Sales Retentions</a></th>
+							<th><a href="#cards" class="cardlink" id="sr" onclick="addExperienceHTML(sr)">Sales Retentions</a></th>
 							<th>5 Months</th>
 						</tr>
 						<tr>
 							<th>Welcome Break</th>
-							<th><a href="#cards" class="cardlink" id="kfc">Head Cook & MOH</a></th>
+							<th><a href="#cards" class="cardlink" id="kfc" onclick="addExperienceHTML(kfc)">Head Cook & MOH</a></th>
 							<th>17 Months</th>
 						</tr>
 						<tr>
 							<th>Webhelp</th>
-							<th><a href="#cards" class="cardlink" id="sa">Sales Advisor</a></th>
+							<th><a href="#cards" class="cardlink" id="sa" onclick="addExperienceHTML(sa)">Sales Advisor</a></th>
 							<th>7 Months</th>
 						</tr>
 						<tr>
 							<th>Welcome Break</th>
-							<th><a href="#cards" class="cardlink" id="cs">Customer Service</a></th>
+							<th><a href="#cards" class="cardlink" id="cs" onclick="addExperienceHTML(cs)">Customer Service</a></th>
 							<th>7 Months</th>
 						</tr>
 						<tr class="hdr">
@@ -208,7 +208,7 @@
 						<!-- Use a timer for these below maybe -->
 						<tr>
 							<th>The FA</th>
-							<th><a href="#cards" class="cardlink" id="fo">Football Official</a></th>
+							<th><a href="#cards" class="cardlink" id="fo" onclick="addExperienceHTML(fo)">Football Official</a></th>
 							<th>6 Years</th>
 						</tr>
 						<!--
@@ -229,7 +229,7 @@
 			<layer id="contact" class="">
 				<h1>Contact</h1>
 				<h1 class="contactfadeout">Lets Get The Ball Rolling</h1>
-				<img src="assets/football.png" id="footballpic" class="contactfadeout"/>
+				<img src="assets/football.png" id="footballpic" class="contactfadeout" alt=""/>
 				<div class="contactfadein">
 					<box class="contactoption">
 						<h2>Give me a call</h2>
@@ -245,26 +245,26 @@
 					</button>
 					<form class="hidden" id="contactform" action="email.php" method="post">
 						<a id="closeemail" ><img alt="" src="assets/close.png"></a>
-						<label>Employer Name</label>
+						<label for="name">Employer Name</label>
 						<input type="text" name="name" id="name" required>
 
-						<label>Employer Company</label>
+						<label for="company">Employer Company</label>
 						<input type="text" name="company" id="company" required>
 
-						<label>Job Title</label>
+						<label for="jtitle">Job Title</label>
 						<input type="text" name="jobtitle" id="jtitle" required>
 						
-						<label>Offered Pay</label>
+						<label for="pay">Offered Pay</label>
 						<input id="pay" type="text" name="pay"  placeholder="£-- per annum/week/hr or negotiable" required>
 						<!-- figure out how to do layout radio bttns for this -->
 
-						<label>Job Description</label>
+						<label for="jdescription">Job Description</label>
 						<input type="text" name="description" id="jdescription" required>
 
-						<label>Job Location</label>
+						<label for="jlocation">Job Location</label>
 						<input type="text" name="location" id="jlocation" required>
 
-						<label>Additional Info &amp; comments</label>
+						<label for="extrainfo">Additional Info &amp; comments</label>
 						<textarea type="text" name="extrainfo" id="extrainfo"></textarea required>
 
 						<button type="button" id="mailer-button">Yeet Email!! (This dosent automaticaly work on Github :( )</button>
@@ -275,46 +275,7 @@
 			</layer>
 		</section>
 	</main>
-	<section id="cards" class="hidden cardsection">
-		<section class="squares">
-			<div id="square1" class="square">
-				<h2>Company</h2>
-				<h4 id="comdesc"></h4>
-			</div>
-			<div id="square2" class="square">
-				<h2>Location</h2>
-				<h4 id="locdesc"></h4>
-			</div>
-			<div id="square3" class="square">
-				<h2>Date</h2>
-				<h4 id="datdesc"></h4>
-			</div>
-			<div id="square4" class="square">
-				<h2>Job Title</h2>
-				<h4 id="jobdesc"></h4>
-			</div>
-			<div id="square5" class="square">
-				<h2>Department</h2>
-				<h4 id="depdesc"></h4>
-			</div>
-		</section>
-		<section class="cards">
-			<div id="card1" class="card">
-				<h3>Roles &amp; Responsibilities</h3>
-				<p id="card1d"></p>
-			</div>
-			<div id="card2" class="card">
-				<h3 id="card2h"></h3>
-				<p id="card2d"></p>
-			</div>
-			<div id="card3" class="card">
-				<h3 id="card3h"></h3>
-				<p id="card3d"></p>
-			</div>
-		</section>
-	</section>
-	<!-- <button href="#top" id="to-top">To Top</button> -->
+	 <!-- <button href="#top" id="to-top">To Top</button> -->
 </body>
-</html>
 <script src="functions.js"></script>
-<script src="descriptions.js"></script>
+</html>

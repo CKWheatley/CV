@@ -25,12 +25,28 @@ body .displaytog {
   height: 1.2em;
   border-radius: 50px;
   background-color: grey;
-  z-index: 10;
+  z-index: 95;
   cursor: pointer;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 376px) and (max-width: 550px) {
   body .displaytog {
-    display: none;
+    position: fixed;
+    top: 2%;
+    left: 85%;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  body .displaytog {
+    position: fixed;
+    top: 2%;
+    left: 85%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body .displaytog {
+    position: fixed;
+    top: 2%;
+    left: 80%;
   }
 }
 body .displaytog #togglebutton {
@@ -55,11 +71,12 @@ body .certviewer {
   display: flex;
   background-color: rgb(244, 235, 217);
   height: 50vh;
-  width: 50vw;
-  border-radius: 0px;
+  width: 60vw;
+  border-radius: 20px 0px 20px 20px;
+  min-height: 35em;
   position: fixed;
-  top: 25%;
-  left: 25%;
+  top: 16%;
+  left: 20%;
   z-index: 10;
   border: solid rgb(5, 26, 37) 2px;
 }
@@ -137,6 +154,7 @@ body .certviewer #cert-section img {
   height: 100%;
   border: none;
   z-index: 8;
+  border-radius: 20px;
 }
 @media only screen and (max-width: 800px) {
   body .certviewer #cert-section img {
@@ -150,14 +168,15 @@ body .certviewer #lan-list {
   width: 25%;
   height: 100%;
   border: none;
-  color: rgb(242, 88, 53);
+  border-radius: 20px;
+  color: rgb(214, 40, 40);
   background: rgb(244, 235, 217);
 }
 body .certviewer #lan-list a {
   margin: 10px 10px 0 10px;
   white-space: nowrap;
   width: 80%;
-  color: rgb(242, 88, 53);
+  color: rgb(214, 40, 40);
 }
 @media only screen and (max-width: 800px) {
   body .certviewer #lan-list a {
@@ -227,7 +246,7 @@ body .certviewer aside a {
   white-space: nowrap;
   width: 80%;
   padding-right: 20px;
-  color: skyblue;
+  color: rgb(0, 48, 73);
   background-color: rgb(244, 235, 217);
 }
 @media only screen and (max-width: 800px) {
@@ -264,9 +283,13 @@ body .certviewer button#close-certs {
 }
 body prompt {
   z-index: 10;
-  margin: 10% 0;
+  top: 10%;
+  z-index: 95;
+  position: flex;
+  width: 100%;
+  height: 100%;
   display: flex;
-  background-color: transparent;
+  background-color: rgb(244, 235, 217);
   height: 100vh;
   width: 100vw;
   border-radius: 0;
@@ -275,12 +298,6 @@ body prompt {
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-}
-@media only screen and (max-width: 800px) {
-  body prompt {
-    width: 100%;
-    height: 100%;
-  }
 }
 body prompt h1 {
   margin: 5%;
@@ -343,20 +360,20 @@ body nav {
   align-content: center;
   align-items: center;
   transition: top 0.4s 0 ease-in;
-  z-index: 100;
+  z-index: 90;
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   body nav {
-    width: 10%;
+    width: 10vw;
   }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body nav {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgb(5, 26, 37);
+    background-color: rgb(244, 235, 217);
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
@@ -367,11 +384,11 @@ body nav {
 }
 @media only screen and (max-width: 800px) {
   body nav {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgb(5, 26, 37);
+    background-color: rgb(244, 235, 217);
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
@@ -395,28 +412,52 @@ body nav .tab {
   border: solid 4px rgb(0, 48, 73);
   transition: all 0.5s 0.2s ease;
 }
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body nav .tab {
+    width: 80px;
+    height: 80px;
+  }
+}
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body nav .tab {
     position: static;
     margin-left: 10vw;
+    height: 80px;
   }
 }
 @media only screen and (max-width: 800px) {
   body nav .tab {
     position: static;
     margin: 1vh 0 1vh 10vw;
+    height: 50px;
   }
 }
 body nav .tab .tab-icons {
-  display: none;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  top: 10%;
+  width: 48px;
+  height: 48px;
   background: transparent;
 }
 body nav .tab:hover {
   transform: translate(10%, 0) scale(1.1);
+}
+body nav .tabbed {
+  transform: translate(10%, 0) scale(1.1);
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body nav .tabbed {
+    transform: translate(5%, 0) scale(1.1);
+  }
+}
+@media only screen and (max-width: 800px) {
+  body nav .tabbed {
+    transform: translate(5%, 0) scale(1.1);
+  }
+}
+body nav .tabspanded {
+  display: flex;
+  flex-flow: row;
+  border-radius: 100px;
+  width: 60vw;
 }
 body nav .profiletab {
   top: 0;
@@ -433,13 +474,8 @@ body nav .profiletab {
   }
 }
 body nav .personalitytab {
-  top: 12%;
+  top: 14%;
   z-index: 7;
-}
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-  body nav .personalitytab {
-    top: 14%;
-  }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body nav .personalitytab {
@@ -452,13 +488,8 @@ body nav .personalitytab {
   }
 }
 body nav .educationtab {
-  top: 24%;
+  top: 28%;
   z-index: 6;
-}
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-  body nav .educationtab {
-    top: 28%;
-  }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body nav .educationtab {
@@ -471,13 +502,8 @@ body nav .educationtab {
   }
 }
 body nav .experiencetab {
-  top: 36%;
+  top: 42%;
   z-index: 5;
-}
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-  body nav .experiencetab {
-    top: 42%;
-  }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body nav .experiencetab {
@@ -490,13 +516,8 @@ body nav .experiencetab {
   }
 }
 body nav .contacttab {
-  top: 48%;
+  top: 56%;
   z-index: 4;
-}
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-  body nav .contacttab {
-    top: 56%;
-  }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body nav .contacttab {
@@ -512,7 +533,7 @@ body main {
   display: flex;
   flex-flow: row nowrap;
   height: 50vh;
-  min-height: 35em;
+  min-height: 50em;
   width: 60vw;
   background-color: rgb(0, 74, 114);
   margin: 150px 20% 150px 20%;
@@ -545,17 +566,14 @@ body main {
 body main .menu-button {
   display: none;
   background: transparent;
-  color: rgb(5, 26, 37);
-  border: rgb(214, 40, 40) solid 4px;
   cursor: pointer;
+  border: none;
   position: fixed;
-  top: 5%;
-  transform: translate(0, -50%);
+  top: 0;
   right: 90%;
   width: 50px;
   z-index: 9;
-  border-radius: 100%;
-  color: rgb(214, 40, 40);
+  color: rgb(5, 26, 37);
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
   body main .menu-button {
@@ -579,6 +597,43 @@ body main .menu-button {
     padding: 1.2em;
   }
 }
+@media only screen and (min-width: 376px) and (max-width: 550px) {
+  body main .menu-button {
+    position: fixed;
+    top: -15px;
+    right: 85%;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  body main .menu-button {
+    position: fixed;
+    top: -10px;
+    right: 85%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body main .menu-button {
+    position: fixed;
+    top: -10px;
+    right: 80%;
+  }
+}
+body main .menu-button img {
+  width: 48px;
+  height: 48px;
+}
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  body main .menu-button img {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body main .menu-button img {
+    width: 24px;
+    height: 24px;
+  }
+}
 body main .maincolumn {
   display: flex;
   flex-flow: column;
@@ -593,10 +648,13 @@ body main .maincolumn {
 body main .maincolumn h1 {
   margin-top: 30px;
 }
+body main .maincolumn .mainimg {
+  border-radius: 100%;
+  margin: auto;
+}
 @media only screen and (min-width: 2500px) {
   body main .maincolumn .mainimg {
     width: 80%;
-    margin: auto;
     -o-object-fit: contain;
        object-fit: contain;
   }
@@ -613,41 +671,17 @@ body main .maincolumn h1 {
     max-width: 350px;
   }
 }
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  body main .maincolumn .mainimg {
+    max-height: 250px;
+    max-width: 250px;
+  }
+}
 @media only screen and (max-width: 800px) {
   body main .maincolumn .mainimg {
     max-height: 200px;
     max-width: auto;
-    margin: auto;
   }
-}
-body main .maincolumn .descriptions {
-  display: block;
-  background-color: darkslategrey;
-  height: 100%;
-  width: 100%;
-  border-radius: 20px 0 0 20px;
-  position: absolute;
-  display: none;
-  border: none;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-body main .maincolumn .descriptions p, body main .maincolumn .descriptions h3, body main .maincolumn .descriptions h2, body main .maincolumn .descriptions h1, body main .maincolumn .descriptions table {
-  width: 90%;
-  margin-top: 2em;
-  margin-left: 5%;
-  color: rgb(5, 26, 37);
-}
-body main .maincolumn .descriptions tr:first-of-type {
-  font-weight: 800;
-}
-body main .maincolumn .descriptions td {
-  padding: 10px;
-  font-size: 100%;
-}
-body main .maincolumn .descriptions a {
-  color: rgb(214, 40, 40);
-  margin: 0;
 }
 body main .maincolumn layer {
   width: 100%;
@@ -815,7 +849,7 @@ body main .maincolumn #contact div form {
   top: 0%;
   left: 0%;
   display: flex;
-  background-color: #f77f00;
+  background-color: rgb(252, 191, 73);
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -873,9 +907,6 @@ body main .maincolumn #contact div form a {
 body main .maincolumn:first-of-type {
   width: 40%;
 }
-body main .maincolumn:first-of-type img {
-  border-radius: 100%;
-}
 @media only screen and (max-width: 800px) {
   body main .maincolumn:first-of-type {
     width: 100%;
@@ -904,6 +935,10 @@ body main .maincolumn:last-of-type {
   body main .maincolumn:last-of-type {
     width: 70%;
   }
+}
+body main .maincolumn:last-of-type layer #intro-p {
+  width: 80%;
+  margin: 10px auto;
 }
 body main .maincolumn:last-of-type layer#profile h3 {
   background-color: #f77f00;
@@ -1024,6 +1059,7 @@ body .cardsection .squares .square h4 {
 body .cardsection .cards {
   display: flex;
   flex-flow: column;
+  border: none;
 }
 body .cardsection .cards .card:first-of-type {
   display: flex;

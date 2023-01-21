@@ -1,19 +1,19 @@
 <?php
 
-    $name = $_POST['name'];
-    $company = $_POST['company'];
-    $jobtitle = $_POST['jobtitle'];
-    $pay = $_POST['pay'];
-    $description = $_POST['description'];
-    $location = $_POST['location'];
-    $extrainfo = $_POST['extrainfo'];
-    $file = $_POST['file'];
+    // $name = $_POST['name'];
+    // $company = $_POST['company'];
+    // $jobtitle = $_POST['jobtitle'];
+    // $pay = $_POST['pay'];
+    // $description = $_POST['description'];
+    // $location = $_POST['location'];
+    // $extrainfo = $_POST['extrainfo'];
+    // $file = $_POST['file'];
 
-    $msg = "Employer Name: " . $name . "\nCompany: " . $company . "\nJob Title: " . $jobtitle "\nOffered Pay: " . $pay . "\nJob Description: " . $description . "\nLocation: " . $location . "\nextra info: " . $extrainfo . "\n" . $file;
-    $headers = "MIME-Version: 1.0" . "\r\n";
-	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    mail('ckwheatley15@gmail.com' ,"My CV Interest",$msg, $headers);
-    header("Location: sent.html");
+    // $msg = "Employer Name: " . $name . "\nCompany: " . $company . "\nJob Title: " . $jobtitle "\nOffered Pay: " . $pay . "\nJob Description: " . $description . "\nLocation: " . $location . "\nextra info: " . $extrainfo . "\n" . $file;
+    // $headers = "MIME-Version: 1.0" . "\r\n";
+	// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    // mail('ckwheatley15@gmail.com' ,"My CV Interest",$msg, $headers);
+    // header("Location: sent.html");
 
     // sent html will have a little game on it.
     // potentially add local db to stop duplicate offers if possible to show off sql ability
