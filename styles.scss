@@ -30,36 +30,74 @@ body{
     height: $siteheight;
     background: $light;
     overflow-x: hidden;
-    .displaytog{
-        position: fixed;
-            top: 5%;
-            left: 90%;
-        display: block;
-        width: 2.5em;
-        height: 1.2em;
-        border-radius: 50px;
-        background-color: grey;
-	    z-index: 95;
-	    cursor: pointer;
-        @include c-respond(lrg-mobile){
-            position: fixed;
-            top: 2%;
-            left: 85%;
+    header{
+        width: 100vw;
+        height: 100%;
+        background-color: $dark;
+        display: flex;
+        align-items: center;
+        .menu-button{
+            background-color: transparent;
+            border: none;
+            color: white;
+            margin-left: 5%;
+            cursor: pointer;
+            width: 50px;
+            z-index: 9;
+            img{
+                width: 48px;
+                height: 48px;
+                @include c-respond(med-mobile){
+                    width: 36px;
+                    height: 36px;
+                }
+                @include c-respond(sm-mobile){
+                    width: 24px;
+                    height: 24px;
+                }
+            }
         }
-        @include c-respond(med-mobile){
-            position: fixed;
-            top: 2%;
-            left: 85%;
+        .displaytog{
+            position: sticky;
+                left: 95%;
+                bottom: 0;
+            display: block;
+            width: 2.5em;
+            height: 1.2em;
+            border-radius: 50px;
+            background-color: grey;
+            z-index: 95;
+            cursor: pointer;
+            @include c-respond(laptop){
+                position: sticky;
+                left: 95%;
+                transform: translate(-40%)
+            }
+            @include c-respond(lrg-mobile){
+                position: sticky;
+                left: 85%;
+            }
+            @include c-respond(med-mobile){
+                position: sticky;
+                left: 85%;
+            }
+            @include c-respond(sm-mobile){
+                position: sticky;
+                left: 80%;
+            }
+            #togglebutton{
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                right: 25%;
+                top: -30%;
+            }
         }
-        @include c-respond(sm-mobile){
+        &.fixed{
             position: fixed;
-            top: 2%;
-            left: 80%;
-        }
-        #togglebutton{
-            position: absolute;
-            right: 25%;
-            top: -30%;
+            top: 0;
+            left: 0;
+            height: 10vh
         }
     }
     a{
@@ -287,7 +325,7 @@ body{
         width: 20%;
         height: 35em;
         @include flex-pos(column);
-        transition: all 0.4s 0 ease-in;
+        // transition: all 0.4s 0 ease-in;
         z-index: 90;
         @include c-respond(laptop){
             width: 10vw;
@@ -435,55 +473,6 @@ body{
             border-radius: 0;
             height: max-content;
             margin: 0;
-        }
-        .menu-button{
-            display: none;
-            background: transparent;
-            cursor: pointer;
-            border: none;
-            position: fixed;
-                top: 0;
-                right: 90%;
-            width: 50px;
-            z-index: 9;
-            color: $dark;
-            @include c-respond(sm-laptop){
-                display: block;
-                @include flex-pos();
-                padding: 1.2em;
-            }
-            @include c-respond(all-mobile){
-                display: block;
-                @include flex-pos();
-                padding: 1.2em;
-            }
-            @include c-respond(lrg-mobile){
-                position: fixed;
-                top: -15px;
-                right: 85%;
-            }
-            @include c-respond(med-mobile){
-                position: fixed;
-                top: -10px;
-                right: 85%;
-            }
-            @include c-respond(sm-mobile){
-                position: fixed;
-                top: -10px;
-                right: 80%;
-            }
-            img{
-                width: 48px;
-                height: 48px;
-                @include c-respond(med-mobile){
-                    width: 36px;
-                    height: 36px;
-                }
-                @include c-respond(sm-mobile){
-                    width: 24px;
-                    height: 24px;
-                }
-            }
         }
         .maincolumn{
             display: flex;
@@ -666,14 +655,12 @@ body{
                         @include box-props(flex, $yellow, max-content, 100%, 15px);
                         @include flex-pos(column, flex-start, flex-start, flex-start, nowrap);
                         #closeemail{
-                            @include box-props(flex, transparent, 50px, 50px, 0);
                             @include flex-pos();
                             position: absolute;
-                            @include position(-4%, 8.5%, 104%, 91.5%);
-                            img{
-                                width: 100%;
-                                height: 100%;
-                            }
+                            bottom: 100%;
+                            right: 0;
+                            width: 20%;
+                            height: auto;
                         }
                         label{
                             font-size: 150%;
@@ -718,7 +705,7 @@ body{
             width: 60%;
             @include c-respond(all-mobile){
                 width: 100%;
-                height: 40em;
+                height: 60em;
                 border-radius: 0;
             }
             @include c-respond(sm-laptop){
@@ -769,6 +756,7 @@ body{
         }
         @include c-respond(all-mobile){
             border-radius: 0;
+            border: none;
             margin-top: 5em;
             width: 100%;
             @include flex-pos(column);
@@ -785,6 +773,7 @@ body{
             border-radius: 20px 20px 0 0;
             @include c-respond(all-mobile){
                 @include flex-pos(column);
+                border-radius: 0;
             }
             .square{
                 display: flex;

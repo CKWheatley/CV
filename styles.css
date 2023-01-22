@@ -16,10 +16,43 @@ body {
   background: rgb(244, 235, 217);
   overflow-x: hidden;
 }
-body .displaytog {
-  position: fixed;
-  top: 5%;
-  left: 90%;
+body header {
+  width: 100vw;
+  height: 100%;
+  background-color: rgb(5, 26, 37);
+  display: flex;
+  align-items: center;
+}
+body header .menu-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  margin-left: 5%;
+  cursor: pointer;
+  width: 50px;
+  z-index: 9;
+}
+body header .menu-button img {
+  width: 48px;
+  height: 48px;
+}
+@media only screen and (min-width: 321px) and (max-width: 376px) {
+  body header .menu-button img {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  body header .menu-button img {
+    width: 24px;
+    height: 24px;
+  }
+}
+body header .displaytog {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 95%;
+  bottom: 0;
   display: block;
   width: 2.5em;
   height: 1.2em;
@@ -28,31 +61,47 @@ body .displaytog {
   z-index: 95;
   cursor: pointer;
 }
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body header .displaytog {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 95%;
+    transform: translate(-40%);
+  }
+}
 @media only screen and (min-width: 376px) and (max-width: 550px) {
-  body .displaytog {
-    position: fixed;
-    top: 2%;
+  body header .displaytog {
+    position: -webkit-sticky;
+    position: sticky;
     left: 85%;
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 376px) {
-  body .displaytog {
-    position: fixed;
-    top: 2%;
+  body header .displaytog {
+    position: -webkit-sticky;
+    position: sticky;
     left: 85%;
   }
 }
 @media only screen and (max-width: 320px) {
-  body .displaytog {
-    position: fixed;
-    top: 2%;
+  body header .displaytog {
+    position: -webkit-sticky;
+    position: sticky;
     left: 80%;
   }
 }
-body .displaytog #togglebutton {
+body header .displaytog #togglebutton {
+  width: 30px;
+  height: 30px;
   position: absolute;
   right: 25%;
   top: -30%;
+}
+body header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10vh;
 }
 body a {
   color: rgb(5, 26, 37);
@@ -359,7 +408,6 @@ body nav {
   justify-content: center;
   align-content: center;
   align-items: center;
-  transition: all 0.4s 0 ease-in;
   z-index: 90;
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -563,77 +611,6 @@ body main {
     height: -moz-max-content;
     height: max-content;
     margin: 0;
-  }
-}
-body main .menu-button {
-  display: none;
-  background: transparent;
-  cursor: pointer;
-  border: none;
-  position: fixed;
-  top: 0;
-  right: 90%;
-  width: 50px;
-  z-index: 9;
-  color: rgb(5, 26, 37);
-}
-@media only screen and (min-width: 801px) and (max-width: 1024px) {
-  body main .menu-button {
-    display: block;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    padding: 1.2em;
-  }
-}
-@media only screen and (max-width: 800px) {
-  body main .menu-button {
-    display: block;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    padding: 1.2em;
-  }
-}
-@media only screen and (min-width: 376px) and (max-width: 550px) {
-  body main .menu-button {
-    position: fixed;
-    top: -15px;
-    right: 85%;
-  }
-}
-@media only screen and (min-width: 321px) and (max-width: 376px) {
-  body main .menu-button {
-    position: fixed;
-    top: -10px;
-    right: 85%;
-  }
-}
-@media only screen and (max-width: 320px) {
-  body main .menu-button {
-    position: fixed;
-    top: -10px;
-    right: 80%;
-  }
-}
-body main .menu-button img {
-  width: 48px;
-  height: 48px;
-}
-@media only screen and (min-width: 321px) and (max-width: 376px) {
-  body main .menu-button img {
-    width: 36px;
-    height: 36px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  body main .menu-button img {
-    width: 24px;
-    height: 24px;
   }
 }
 body main .maincolumn {
@@ -866,24 +843,15 @@ body main .maincolumn #contact div form {
 }
 body main .maincolumn #contact div form #closeemail {
   display: flex;
-  background-color: transparent;
-  height: 50px;
-  width: 50px;
-  border-radius: 0;
-  display: flex;
   flex-flow: row;
   justify-content: center;
   align-content: center;
   align-items: center;
   position: absolute;
-  top: -4%;
-  right: 8.5%;
-  bottom: 104%;
-  left: 91.5%;
-}
-body main .maincolumn #contact div form #closeemail img {
-  width: 100%;
-  height: 100%;
+  bottom: 100%;
+  right: 0;
+  width: 20%;
+  height: auto;
 }
 body main .maincolumn #contact div form label {
   font-size: 150%;
@@ -929,7 +897,7 @@ body main .maincolumn:last-of-type {
 @media only screen and (max-width: 800px) {
   body main .maincolumn:last-of-type {
     width: 100%;
-    height: 40em;
+    height: 60em;
     border-radius: 0;
   }
 }
@@ -993,6 +961,7 @@ body .cardsection a {
 @media only screen and (max-width: 800px) {
   body .cardsection {
     border-radius: 0;
+    border: none;
     margin-top: 5em;
     width: 100%;
     display: flex;
@@ -1017,6 +986,7 @@ body .cardsection .squares {
     justify-content: center;
     align-content: center;
     align-items: center;
+    border-radius: 0;
   }
 }
 body .cardsection .squares .square {

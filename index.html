@@ -19,9 +19,12 @@
 
 		<a id="entrybutton" type="" action="" href="#main">Lets Go!</a>
 	</prompt>
-	<span class="displaytog">
-		<img src="assets/toggle_day.png" id="togglebutton" alt=""/>
-	</span>
+	<header>
+		<button class="menu-button"><img alt=">" src="./assets/chevron-white.png">More</button>
+		<span class="displaytog">
+			<img src="assets/toggle_day.png" id="togglebutton" alt=""/>
+		</span>
+	</header>
 	<span class="certviewer hidden">
 		<!-- add back and close buttons floating above element -->
 		<div id="cert-section">
@@ -75,7 +78,6 @@
 		</div>
 	</nav>
 	<main id="main" class="hidden">
-		<button class="menu-button"><img alt=">" src="./assets/chevron-right-white.png">More</button>
 		<section class="maincolumn">
 			<h1>Callum Wheatley</h1>
 			<img src="./images/profile.png" class="mainimg" alt="">
@@ -244,7 +246,7 @@
 						<h2>Email</h2>
 					</button>
 					<form class="hidden" id="contactform" action="email.php" method="post">
-						<a id="closeemail" ><img alt="" src="assets/close.png"></a>
+						<button id="closeemail" type="button">Close Form</button>
 						<label for="name">Employer Name</label>
 						<input type="text" name="name" id="name" required>
 

@@ -1,7 +1,7 @@
 $(document).ready(() => {
     $("#entrybutton").click(() => {
         $("#entryprompt").fadeOut(0);
-        $("#main").fadeIn(1000).removeClass("hidden");
+        $("#main").fadeIn(2000).removeClass("hidden");
     })
     function scrollToCards(){
         $('html, body').animate({
@@ -9,7 +9,9 @@ $(document).ready(() => {
         }, 400);
     }
     $('.selectable').click(() => {
-        scrollToCards();
+        if(!$(this).is("#lanlist")){
+            scrollToCards();
+        }
     })
     $(".cardlink").click(() => {
         scrollToCards();
@@ -41,50 +43,58 @@ $(document).ready(() => {
     $('#mailer-client').click(() => {
         $('#mailer-client').html("").addClass('hidden')
     })
-    window_width()
+    checkWindowWidth()
+    stickyNav()
+    mobMenuClose()
+    tab_click();
+    toggle_display()
 })
-// nav bar sticky
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('nav');
-    const main = document.querySelector('main')
-    let offset = main.offsetTop - nav.offsetTop
-    if(window.innerWidth > 1024){
-        if (window.scrollY < 120) {
-            nav.style.top = (150 - window.scrollY) + "px"
-        } else {
-            nav.style.top = 20 + "px";
+
+
+
+
+
+// Nav bar sticky
+function stickyNav(){
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if(window.innerWidth > 1024){
+            if (window.scrollY < 120) {
+                nav.style.top = (150 - window.scrollY) + "px"
+            } else {
+                nav.style.top = 20 + "px";
+            }
         }
-    }else{
-        // do nothing
-    }
-  });
+    });
+}
+// Nav Settings
 $(".menu-button").click(() => {
     $("nav").fadeIn(400);
     $("nav").css("display", "flex");
     $("nav").css("flex-flow", "column");
 })
-function close_menu(){
-    let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$("experiencetab"),$(".contacttab"),$("#close-menu")]
-    if($(window).width() < 1025){
-        for(i in closeables){
-            $(closeables[i]).click(() => {
+function mobMenuClose(){
+    let closeables = [$(".profiletab"),$(".personalitytab"),$(".educationtab"),$(".experiencetab"),$(".contacttab"),$("#close-menu")]
+    for(i in closeables){
+        $(closeables[i]).click(() => {
+            if($(window).width() < 1025){
                 $("nav").fadeOut(400);
-            })
-        }
-    }else{
-        $("nav").fadeIn(400);
+            }else{
+                $("nav").stop(false,true);
+            }
+        })
     }
 }
-function window_width(){
+function checkWindowWidth(){
     if($(window).width() < 1025){
         $('.tab').addClass('tabspanded')
         $('.tabHDR').removeClass('hidden')
-        close_menu()
+        $('.menu-button').removeClass('hidden')
+        $('header').removeClass('fixed')
     }
     else{
         $('.tab').removeClass('tabspanded')
         $('.tabHDR').addClass('hidden')
-        close_menu()
         var selectables = document.querySelectorAll('.selectable');
         selectables.forEach(function(selectable) {
             selectable.addEventListener('click', function() {
@@ -92,6 +102,9 @@ function window_width(){
                 this.classList.add("selected")
           })
         })
+        $("nav").fadeIn(400);
+        $('.menu-button').addClass('hidden')
+        $('header').addClass('fixed')
     }
 }
 function action(fader){
@@ -100,27 +113,30 @@ function action(fader){
     $('.tab').css('border', 'solid 3px ' + colour)
     window.scrollTo({top: 0, behavior: 'smooth',duration: 600})
 }
+function tabbed(tab){
+    tab.addClass("tabbed").siblings().removeClass("tabbed")
+}
 action($("#profile"));
-$(".profiletab").addClass("tabbed").siblings().removeClass("tabbed")
+tabbed($(".profiletab"));
 function tab_click(){
     $(".profiletab").click(function(){
-        $(this).addClass("tabbed").siblings().removeClass("tabbed")
+        tabbed($(this));
         action($("#profile"));
     });
     $(".personalitytab").click(function(){
-        $(this).addClass("tabbed").siblings().removeClass("tabbed")
+        tabbed($(this));
         action($("#personality"));
     });
     $(".educationtab").click(function(){
-        $(this).addClass("tabbed").siblings().removeClass("tabbed")
+        tabbed($(this));
         action($("#education"));
     });
     $(".experiencetab").click(function(){
-        $(this).addClass("tabbed").siblings().removeClass("tabbed")
+        tabbed($(this));
         action($("#experience"));
     });
     $(".contacttab").click(function(){
-        $(this).addClass("tabbed").siblings().removeClass("tabbed")
+        tabbed($(this));
         action($("#contact"));
         $(".contactfadeout").delay(1000).fadeOut(2000);
         $(".contactfadein").delay(3000).fadeIn(1000);
@@ -130,13 +146,12 @@ function tab_click(){
         $("#name").val(name);
     });
 };
-tab_click();
+
 
 $(window).resize(() => {
-    window_width()
-})
-$("#lanlist").click(() => {
-    $(".certviewer").removeClass("hidden")
+    checkWindowWidth()
+    mobMenuClose()
+    stickyNav()
 })
 // add js to resize the section 2 for the experience part so it fits
 
@@ -144,8 +159,10 @@ $("#lanlist").click(() => {
 
 
 
-
-
+// Cert Viewer Settings
+$("#lanlist").click(() => {
+    $(".certviewer").removeClass("hidden")
+})
 function cert_src(value1, value2){
     $(value1).click(() => {
         $("#cert-pdf").attr("src", value2)
@@ -252,11 +269,18 @@ function toggle_display(){
     }
     function switch_icons(from, to){
         $(".tab-icons").each(function() {
-            var newSrc = this.src.replace(from, to)
+            let newSrc = this.src.replace(from, to)
             $(this).fadeTo(400, 0, function() {
                 $(this).attr("src", newSrc);
             }).fadeTo(400, 1);
         });
+        $('.menu-button img').fadeTo(400, 0, function() {
+            let newSrc = this.src.replace(to, from)
+            $(this).attr("src", newSrc);
+        }).fadeTo(400, 1);
+    }
+    if($(window).width() > 1025){
+        switch_display($("header"),'background-color', 't')
     }
     $(".displaytog").click(() => {
         if(icon.src.includes(night_icon)){
@@ -272,8 +296,11 @@ function toggle_display(){
             switch_display($("nav h3"),'color', 'd')
             if($(window).width() < 1025){
                 switch_display($("nav"),'background-color', 'l')
+                switch_display($(".menu-button"),'color', 'l')
+                switch_display($("header"),'background-color', 'd')
             }else{
                 switch_display($("nav"),'background-color', 't')
+                switch_display($("header"),'background-color', 't')
             }
         }else{
             // switches to dark mode.
@@ -288,12 +315,14 @@ function toggle_display(){
             switch_display($("nav h3"),'color', 'l')
             if($(window).width() < 1025){
                 switch_display($("nav"),'background-color', 'd')
+                switch_display($(".menu-button"),'color', 'd')
+                switch_display($("header"),'background-color', 'l')
             }else{
                 switch_display($("nav"),'background-color', 't')
+                switch_display($("header"),'background-color', 't')
             }
         }
     })
     // add more elements to change
 }
-toggle_display()
 
