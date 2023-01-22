@@ -32,26 +32,8 @@ innerdiv h3 {
     padding-left: 5%;
     width: auto;
 }
-layer#profile h3 {
-    background-color: var(--purple);
-}
-
 prompt button p{
     font-size: 30%;
-}
-
-
-layer#personality h3 {
-    background-color: var(--red);
-}
-layer#education h3{
-    background-color: var(--green);
-}
-layer#experience h3 {
-    background-color: var(--blue);
-}
-layer#contact h3 {
-    background-color: var(--yellow);
 }
 a {
     margin: 0 0 0.2rem 5%;
