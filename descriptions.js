@@ -1,6 +1,6 @@
 //jquery ready
 $(document).ready(() => {
-    var months_worked = daysdifference('10/03/2022', new Date());  
+    var months_worked = daysdifference('01/02/2023', new Date());  
         // Add two dates to two variables     
     $("#currentjob").html(`${months_worked} Months`)
     function daysdifference(start_date, end_date){  
@@ -19,10 +19,33 @@ $(document).ready(() => {
     }
 })
     // work experience //
+const ag3 = {
+    company: `Avanti Gas`,
+    location: `Chesterfield`,
+    date: `February 2023 - Today`,
+    jobtitle: `Pricing & Management Information Admin`,
+    department: `Financial Pricing & Analysis`,
+    desc1: `
+        Creating management reports on request<br><br>
+        Using Both Access & SQL Server for data<br><br>
+        Teaching the analysis team SQL<BR><BR>
+        Generating sheduled reports for analysis<br><br>
+        Converting Access code into SQL Server<br><br>
+        Creating automatic functions in excel using VBA<br><br>
+        Assisting the analysis team with their work<br><br>
+        Liaising with leadership and management teams (home & abroad)<br><br>
+    `,
+    hdr2: `Sharing SQL Expertise`,
+    desc2: `As a Pricing & MI Admin, I found myself in a unique position where I could use my skills to greatly benefit the analysis team. One major contribution I made was teaching the team how to use SQL Server for extracting data, as they were unfamiliar with it. This knowledge sharing not only improved the efficiency of our team but also enabled us to work more effectively with the data at hand. In fact, my deep understanding of SQL allowed me to confidently work with the language, using it extensively to extract, manipulate, and analyze data to drive better decision-making. By combining my SQL and Excel expertise, I was able to create innovative work for the management and leadership teams, developing instantly accessible extractions that were highly accurate.`,
+    hdr3: `Coding for Automation & Boosting Efficiency`,
+    desc3: `During my time in this role, I utilized MS Access to build queries and relied heavily on Excel for various tasks. Working closely with the analysis team, I honed my skills in Excel and developed key analysis abilities that greatly enhanced my expertise. My knack for finding innovative solutions played a crucial role in data extraction; for instance, I was able to reduce query times from a staggering 7 hours to just 30 seconds, significantly boosting our productivity. Whenever there was an issue, I proactively addressed and resolved it, ensuring that the quality of my work remained consistently high.
+    <br><br>
+    My coding abilities have earned me much recognition, particularly when it comes to automating tasks and streamlining processes. Some of my notable achievements include creating automatic emails within Excel documents and acquiring skills in PowerShell, VBA, and VBScript. These proficiencies have allowed me to automate tasks and further contribute to the overall efficiency and success of the team. By leveraging my SQL skills and other technical proficiencies, I was able to demonstrate my dedication to finding innovative solutions to improve our work processes and solidify my role as an essential member of the team.`
+}
 const ag2 = {
         company: `Avanti Gas`,
         location: `Chesterfield`,
-        date: `October 2022 - Today`,
+        date: `October 2022 - February 2023`,
         jobtitle: `Data Administrator`,
         department: `Internal Support`,
         desc1: `Sorting and Filtering old files (GDPR)<BR><BR>
@@ -33,12 +56,16 @@ const ag2 = {
         <BR><BR>
         `,
         hdr2: `More about the job`,
-        desc2: `The job assigned to me this time around was fairly simple although with a little more responsibility. As i am working back on the premier documents im one of the most senior members of staff who is still within this company that knows premier well. This has played a major role for the project as I am essentially acting as a senior member to the 4 new recruits. As of today we have thrown away 40 bin bags full of information we didnt need and counting. Me and one other recruit have just been organising files in order of department and clearing anything we have that is beyond the GDPR breaching time limit.
-        <br><br>
-        After the first week of us clearing out and organising files in accordance to each department 3 new recruits had started, so i got right to the point of explaining the first task 2 of them would be doing. Invoices and proof of delivery slips needed seperating and putting into date order. The other recruit would remain with me to filter through customer files for dates considered too old whilst I checked if the files were relevant and the customers still remained. This has evolved over time as now one of the recruits organises the filing structure 2 of them are on the invoice job and one of them will check the dates of the customer files.
+        desc2: `The job assigned to me that time around was fairly simple, although with a little more responsibility. As I was working back on the premier documents, I was one of the most senior members of staff who was still within the company that knew Premier well. This played a major role in the project as I essentially acted as a senior member to the four new recruits. As of that time, we had thrown away 40 bin bags full of information we didn't need and counting. My colleague and I had been organizing files in order of department and clearing anything we had that was beyond the GDPR breaching time limit.
+
+        After the first week of us clearing out and organizing files in accordance with each department, three new recruits had started, so I got right to the point of explaining the first task two of them would be doing. Invoices and proof of delivery slips needed separating and putting into date order. The other recruit would remain with me to filter through customer files for dates considered too old while I checked if the files were relevant and the customers still remained. This evolved over time as, eventually, one of the recruits organized the filing structure, two of them were on the invoice job, and one of them checked the dates of the customer files.
         <br><br>`,
         hdr3: `Extra Tasks`,
-        desc3: `As i mentioned in the previous paragraph im one of the only ones who has expertise working with premier, and as such so many customers still need documents. The customer services team still require adhoc for the customers and similar to the last role i had to provide with the exception of responding to the customer. This was taken on as a favour whilst managing the other team mates and filtering through premiers data, Throught this time i continued to use the Gas Business System, Sage & CRM to carry out all tasks assigned.`
+        desc3: `As I mentioned in the previous paragraph, I was one of the only ones who had expertise working with Premier, and as such, many customers still needed documents. The customer services team still required adhoc for the customers and, similar to the last role, I had to provide with the exception of responding to the customer. This was taken on as a favor while managing the other teammates and filtering through Premier's data. Throughout that time, I continued to use the Gas Business System, Sage, and CRM to carry out all tasks assigned.
+        <br><br>
+        A surge of demand meant that I had to step in and assist the customer services team with some of their roles. Having as much experience, if not more, than most of the customer service team members, I was the first to be picked to help out. The rest of my team followed suit, except for one who continued working on the data project. Initially, I focused on making outbound calls for customers who were due to receive a gas delivery, but my responsibilities soon evolved into handling many more tasks for the team. This continued until I transitioned into my new role in FP&A.
+
+        `
 }
 const prm = {
         company: `Avanti Gas`,

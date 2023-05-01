@@ -115,6 +115,7 @@ body button {
   align-items: center;
   cursor: pointer;
   padding: 1em;
+  -webkit-tap-highlight-color: transparent;
 }
 body .certviewer {
   display: flex;
@@ -771,6 +772,9 @@ body main .maincolumn #experience {
     margin: 10px auto;
   }
 }
+body main .maincolumn #experience table tr th {
+  color: black;
+}
 body main .maincolumn #contact {
   background-color: rgb(252, 191, 73);
   z-index: 3;
@@ -945,7 +949,7 @@ body .cardsection {
   color: rgb(244, 235, 217);
 }
 body .cardsection a {
-  color: rgb(242, 88, 53);
+  color: rgb(214, 40, 40);
   margin: 0;
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
