@@ -4,6 +4,10 @@
   scroll-behavior: smooth;
 }
 
+.printAnchors {
+  display: none;
+}
+
 html {
   background-color: rgb(244, 235, 217);
 }
@@ -49,7 +53,6 @@ body header .menu-button img {
   }
 }
 body header .displaytog {
-  position: -webkit-sticky;
   position: sticky;
   left: 95%;
   bottom: 0;
@@ -63,7 +66,6 @@ body header .displaytog {
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   body header .displaytog {
-    position: -webkit-sticky;
     position: sticky;
     left: 95%;
     transform: translate(-40%);
@@ -71,21 +73,18 @@ body header .displaytog {
 }
 @media only screen and (min-width: 376px) and (max-width: 550px) {
   body header .displaytog {
-    position: -webkit-sticky;
     position: sticky;
     left: 85%;
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 376px) {
   body header .displaytog {
-    position: -webkit-sticky;
     position: sticky;
     left: 85%;
   }
 }
 @media only screen and (max-width: 320px) {
   body header .displaytog {
-    position: -webkit-sticky;
     position: sticky;
     left: 80%;
   }
@@ -248,10 +247,8 @@ body .certviewer aside {
   position: absolute;
   left: 100%;
   top: -2px;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   min-height: 200px;
@@ -608,7 +605,6 @@ body main {
     flex-flow: column nowrap;
     width: 100vw;
     border-radius: 0;
-    height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
     margin: 0;
@@ -788,7 +784,6 @@ body main .maincolumn #contact .contactfadein {
 }
 body main .maincolumn #contact div {
   padding: 0;
-  max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
   max-width: 90%;
@@ -796,7 +791,6 @@ body main .maincolumn #contact div {
 body main .maincolumn #contact div box {
   display: flex;
   background-color: transparent;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   width: 90%;
@@ -833,7 +827,6 @@ body main .maincolumn #contact div form {
   left: 0%;
   display: flex;
   background-color: rgb(252, 191, 73);
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   width: 100%;
@@ -1012,7 +1005,6 @@ body .cardsection .squares .square {
     align-content: flex-start;
     align-items: center;
     width: 100%;
-    height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
   }
@@ -1130,4 +1122,10 @@ body #to-top {
     padding: 1em;
     z-index: 10;
   }
+}
+body footer {
+  display: none;
+}
+body footer #printNote {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */

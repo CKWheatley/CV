@@ -1,0 +1,135 @@
+@media print {
+  @page {
+    margin: 0;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    color: rgb(244, 235, 217);
+  }
+  main {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    background-color: rgb(5, 26, 37);
+  }
+  main h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    color: rgb(244, 235, 217);
+    font-size: 2.2em;
+    margin: 10px auto;
+  }
+  main .printAnchors {
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  main .printAnchors a {
+    color: #eae2b7;
+    margin: 0;
+  }
+  main layer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+  }
+  main layer h1 {
+    font-size: 1.6em;
+  }
+  main #profile {
+    color: rgb(244, 235, 217);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  main #profile div {
+    display: none;
+    width: 80%;
+  }
+  main #profile div innerdiv h3 {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  main #profile div innerdiv a {
+    display: none;
+  }
+  main #profile div innerdiv p {
+    width: 90%;
+    margin: 10px 0 10px 20px;
+  }
+  main #profile div:first-of-type {
+    display: block;
+    border: solid rgb(244, 235, 217) 4px;
+    border-radius: 20px;
+  }
+  main #experience div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  main #experience div table {
+    width: 80%;
+    border: solid rgb(244, 235, 217) 4px;
+    border-radius: 20px;
+  }
+  main #experience div table th {
+    color: rgb(244, 235, 217);
+  }
+  main #experience div table th a {
+    color: rgb(244, 235, 217);
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+  .displaytog,
+  nav,
+  span,
+  header,
+  prompt,
+  .cards,
+  .cardsection,
+  .squares,
+  .menu-button,
+  .mainimg,
+  #personality,
+  #contact {
+    display: none;
+  }
+  footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+    width: 100vw;
+    background-color: rgb(5, 26, 37);
+  }
+  footer #printNote {
+    display: block;
+    width: 80%;
+  }
+  footer div {
+    width: 80%;
+  }
+  footer div div {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+  footer div div p {
+    margin: 0;
+  }
+  footer div div a {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=print.css.map */

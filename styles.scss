@@ -18,7 +18,9 @@
     padding: 0;
     scroll-behavior: smooth;
 }
-
+.printAnchors{
+    display: none;
+}
 $siteheight: auto;
 html{
     background-color: $light;
@@ -862,6 +864,12 @@ body{
             background-color: $red;
             padding: 1em;
             z-index: 10;
+        }
+    }
+    footer{
+        display: none;
+        #printNote{
+            display: none;
         }
     }
 }

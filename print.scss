@@ -1,0 +1,155 @@
+// test if this works
+// could use @import "../shortcuts";
+// but using @use if i want to use a MIXIN do shortcuts.MIXIN-NAME like its an object
+
+//tutorial here
+
+//https://www.youtube.com/watch?v=CR-a8upNjJ0&t=195s
+
+
+// @use '../shortcuts' as *;  that removes the need to use it as an object
+// @use '../shortcuts' as s;  that shortens it to s.Mixinname
+
+//scss version out of date import neccesary
+
+@import "shortcuts.scss";
+
+@media print{
+    @page {
+        margin: 0;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        color: $light
+    }
+    main{
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        flex-flow: column;
+        align-content: center;
+        background-color: $dark;
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 80%;
+            color: $light;
+            font-size: 2.2em;
+            margin: 10px auto;
+        }
+        .printAnchors{
+            width: 50%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-between;
+            a{
+                color: $green;
+                margin: 0;
+            }
+        }
+        layer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin: 10px auto;
+            h1{
+                font-size: 1.6em;
+            }
+        }
+        #profile{
+            div{
+                display: none;
+                width: 80%;
+                innerdiv{
+                    h3{
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                    }
+                    a{
+                        display: none;
+                    }
+                    p{
+                        width: 90%;
+                        margin: 10px 0 10px 20px;
+                    }
+                }
+                &:first-of-type{
+                    display: block;
+                    border: solid $light 4px;
+                    border-radius: 20px;
+                }
+            }
+            color: $light;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        #experience{
+            div{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                table{
+                    width: 80%;
+                    border: solid $light 4px;
+                    border-radius: 20px;
+                    th{
+                        color: $light;
+                        a{
+                            color: $light;
+                            text-decoration: none;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .displaytog, 
+    nav, 
+    span, 
+    header, 
+    prompt, 
+    .cards, 
+    .cardsection, 
+    .squares, 
+    .menu-button, 
+    .mainimg, 
+    #personality,
+    #contact {
+        display: none;
+    }
+    footer{
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 20vh;
+        width: 100vw;
+        background-color: $dark;
+        #printNote{
+            display: block;
+            width: 80%;
+        }
+        div{
+            width: 80%;
+            div{
+                display: flex;
+                flex-flow: column;
+                width: 100%;
+                p{
+                    margin: 0;
+                }
+                a{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,9 +1,4 @@
 /* CSS Document */
-@-webkit-keyframes football {
-  to {
-    transform: translateX(300px) rotate(270deg);
-  }
-}
 @keyframes football {
   to {
     transform: translateX(300px) rotate(270deg);
@@ -27,7 +22,6 @@
 }
 
 #footballpic {
-  -webkit-animation: none 3s 0.2s forwards;
-          animation: none 3s 0.2s forwards;
+  animation: none 3s 0.2s forwards;
   z-index: 3;
 }/*# sourceMappingURL=functions.css.map */

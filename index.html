@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>My Cv</title>
-	<link href="styles.css" rel="stylesheet" type="text/css">
-	<link href="functions.css" rel="stylesheet" type="text/css">
-	<link href="responsive.css" rel="stylesheet" type="text/css">
+	<link href="styles.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="functions.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="responsive.css" rel="stylesheet" type="text/css" media="screen">
 	<link href="typography.css" rel="stylesheet" type="text/css">
+	<link href="print.css" rel="stylesheet" type="text/css" media="print" >
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="descriptions.js"></script>
 </head>
@@ -80,6 +81,10 @@
 	<main id="main" class="hidden">
 		<section class="maincolumn">
 			<h1>Callum Wheatley</h1>
+			<div class="printAnchors">
+				<a href="https://ckwheatley.github.io/CV/">Full CV Here</a>
+				<a href="https://github.com/CKWheatley">Github</a>
+			</div>
 			<img src="./images/profile.png" class="mainimg" alt="">
 		</section>
 		<section class="maincolumn">
@@ -283,6 +288,17 @@
 		</section>
 	</main>
 	 <!-- <button href="#top" id="to-top">To Top</button> -->
+	 <footer>
+		<div id="printNote">
+			If you wish to view a lot more about my education, personality & backstory you can view the full CV link at the top which will take you to my custom made CV site, please be aware the site is in beta and not complete yet however you can view my code to understand the skills i possess to create it.
+		</div>
+		<div>
+			<div>
+				<p>Callum Wheatley &copy; https://ckwheatley.github.io/CV/</p>
+				<a href="mail:ckwheatley15@gmail.com">ckwheatley15@gmail.com</a>
+				<a href="tel:07588808894">07588808894</a></div>
+			</div>
+	</footer>
 </body>
 <script src="functions.js"></script>
 </html>
