@@ -108,6 +108,7 @@ body{
         @include flex-pos();
         cursor: pointer;
         padding: 1em;
+        -webkit-tap-highlight-color: transparent;
     }
     .certviewer{
         @include box-props(flex, $light, 50vh, 60vw, 20px 0px 20px 20px);
@@ -615,6 +616,9 @@ body{
                             border-radius: 20px;
                             margin: 10px auto;
                         }
+                        th{
+                            color: black;
+                        }
                     }
                 }
             }
@@ -745,7 +749,7 @@ body{
         margin-bottom: 50px;
         color: $light;
         a{
-            color:rgb(242, 88, 53);
+            color:$red;
             margin: 0;
         }
         @include c-respond(laptop){

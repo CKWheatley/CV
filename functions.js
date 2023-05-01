@@ -2,6 +2,7 @@ $(document).ready(() => {
     $("#entrybutton").click(() => {
         $("#entryprompt").fadeOut(0);
         $("#main").fadeIn(2000).removeClass("hidden");
+        $("header").fadeIn(4000).removeClass("hidden");
     })
     function scrollToCards(){
         $('html, body').animate({
@@ -9,7 +10,7 @@ $(document).ready(() => {
         }, 400);
     }
     $('.selectable').click(() => {
-        if(!$(this).is("#lanlist")){
+        if($(this).id !== "lanlist"){
             scrollToCards();
         }
     })
@@ -49,10 +50,6 @@ $(document).ready(() => {
     tab_click();
     toggle_display()
 })
-
-
-
-
 
 // Nav bar sticky
 function stickyNav(){
