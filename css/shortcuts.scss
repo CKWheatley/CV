@@ -1,0 +1,79 @@
+$red: rgb(214, 40, 40);
+$orange: #f77f00;
+$green: #eae2b7;
+$blue: rgb(0, 48, 73);
+$yellow: rgb(252, 191, 73);
+$light: rgb(244, 235, 217);
+$dark: rgb(5, 26, 37);
+
+
+
+@mixin flex-pos($flow: row, $j-c: center, $a-c: center, $a-i: center, $f-w: nowrap){
+    display: flex;
+    flex-flow: $flow;
+    justify-content: $j-c;
+    align-content: $a-c;
+    align-items: $a-i;
+}
+@mixin box-props($display-type: block, $bg-colour: transparent, $height: 100px, $width: 100px, $b-r: 0px){
+    display: $display-type;
+    background-color: $bg-colour;
+    height: $height;
+    width: $width;
+    border-radius: $b-r;
+}
+@mixin position($top, $right: $top, $bottom: $top, $left: $right) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+ }
+
+ @mixin c-respond($breakpoint) {
+    @if($breakpoint == inch-27)  {
+        @media only screen and (min-width: 2500px){ 
+            @content 
+        }
+    }
+    @if($breakpoint == inch-21-26)  {
+        @media only screen and (min-width: 1441px) and (max-width: 2500px){ 
+            @content 
+        }
+    }
+    @if($breakpoint == laptop)  {
+        @media only screen and (min-width: 1025px) and (max-width: 1440px) { 
+            @content 
+        }
+    }
+    @if($breakpoint == sm-laptop)  {
+        @media only screen and (min-width: 801px) and (max-width: 1024px) { 
+            @content 
+        }
+    }
+    @if($breakpoint == tablet)  {
+        @media only screen and (min-width: 550px) and (max-width: 800px){
+            @content
+        }
+    }
+    @if($breakpoint == lrg-mobile)  {
+        @media only screen and (min-width: 376px) and (max-width: 550px){
+            @content
+        }
+    }
+    @if($breakpoint == med-mobile)  {
+        @media only screen and (min-width: 321px) and (max-width: 376px){
+            @content
+        }
+    }
+    @if($breakpoint == sm-mobile)  {
+        @media only screen and (max-width: 320px){
+            @content
+        }
+    }
+    @if($breakpoint == all-mobile)  {
+        @media only screen and (max-width: 800px){
+            @content
+        }
+    }
+}
+ 

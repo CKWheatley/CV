@@ -24,7 +24,7 @@ body header {
   width: 100vw;
   height: 100%;
   background-color: rgb(5, 26, 37);
-  display: flex;
+  display: none;
   align-items: center;
 }
 body header .menu-button {
@@ -95,6 +95,7 @@ body header .displaytog #togglebutton {
   position: absolute;
   right: 25%;
   top: -30%;
+  transition: right 0.4s ease-in-out;
 }
 body header.fixed {
   position: fixed;
@@ -141,6 +142,7 @@ body .certviewer {
     position: fixed;
     top: 0;
     left: 0;
+    border-radius: 20px;
   }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
@@ -149,6 +151,7 @@ body .certviewer {
     position: fixed;
     top: 25%;
     left: 5%;
+    border-radius: 20px;
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -157,6 +160,7 @@ body .certviewer {
     position: fixed;
     top: 25%;
     left: 10%;
+    border-radius: 20px;
   }
 }
 body .certviewer #cert-section {
@@ -616,11 +620,6 @@ body main .maincolumn {
   height: 100%;
   position: relative;
 }
-@media only screen and (max-width: 800px) {
-  body main .maincolumn {
-    height: 100%;
-  }
-}
 body main .maincolumn h1 {
   margin-top: 30px;
 }
@@ -672,7 +671,7 @@ body main .maincolumn layer {
 @media only screen and (max-width: 800px) {
   body main .maincolumn layer {
     border-radius: 0;
-    height: 100%;
+    height: auto;
     padding: 2em 0;
   }
 }
@@ -695,10 +694,23 @@ body main .maincolumn div {
   border: solid 4px rgb(5, 26, 37);
   border-radius: 20px;
 }
+@media only screen and (max-width: 800px) {
+  body main .maincolumn div {
+    height: auto;
+    padding: 10px 0;
+    margin: 30px auto;
+  }
+}
 body main .maincolumn div innerdiv {
   position: relative;
   display: flex;
   flex-flow: column nowrap;
+}
+@media only screen and (max-width: 800px) {
+  body main .maincolumn div innerdiv {
+    height: -moz-min-content;
+    height: min-content;
+  }
 }
 body main .maincolumn div innerdiv a {
   cursor: default;
@@ -894,8 +906,9 @@ body main .maincolumn:last-of-type {
 @media only screen and (max-width: 800px) {
   body main .maincolumn:last-of-type {
     width: 100%;
-    height: 60em;
+    height: 100%;
     border-radius: 0;
+    overflow: visible;
   }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px) {
@@ -1028,6 +1041,7 @@ body .cardsection .cards {
   display: flex;
   flex-flow: column;
   border: none;
+  width: 100%;
 }
 body .cardsection .cards .card:first-of-type {
   display: flex;
@@ -1099,6 +1113,9 @@ body .cardsection .cards .card h3 {
 }
 body .cardsection .cards .card p {
   margin: 30px;
+}
+body .cardsection .cards .card table {
+  width: 80%;
 }
 body #to-top {
   display: none;

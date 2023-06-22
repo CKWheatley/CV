@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>My Cv</title>
-	<link href="styles.css" rel="stylesheet" type="text/css" media="screen">
-	<link href="functions.css" rel="stylesheet" type="text/css" media="screen">
-	<link href="responsive.css" rel="stylesheet" type="text/css" media="screen">
-	<link href="typography.css" rel="stylesheet" type="text/css">
-	<link href="print.css" rel="stylesheet" type="text/css" media="print" >
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="descriptions.js"></script>
+	<link href="css/styles.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="css/functions.css" rel="stylesheet" type="text/css" media="screen">
+	<!-- <link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen"> -->
+	<link href="css/typography.css" rel="stylesheet" type="text/css">
+	<link href="css/print.css" rel="stylesheet" type="text/css" media="print" >
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="js/descriptions.js"></script>
 </head>
 
 <body>
@@ -33,25 +33,25 @@
 			<!-- add typewriter effect -->
 			<img src="" title="Cert Viewer" id="cert-pdf">
 		</div>
-		<div id="lan-list">
-			<a id="html" class="selectable">HTML5 & CSS3</a>
-			<a id="js" class="selectable">Javascript</a>
-			<a id="sql" class="selectable">SQL</a>
-			<a id="php" class="selectable">PHP</a>
-			<a id="py" class="selectable">Python</a>
+		<div id="lan-list" class="noScroll">
+			<a id="html" class="selectable noScroll">HTML5 & CSS3</a>
+			<a id="js" class="selectable noScroll">Javascript</a>
+			<a id="sql" class="selectable noScroll">SQL</a>
+			<a id="php" class="selectable noScroll">PHP</a>
+			<a id="py" class="selectable noScroll">Python</a>
 		</div>
-		<aside id="cert-list" class="hidden">
-			<a id="html1" src="./images//certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.pdf" class="hidden selectable">HTML & CSS Specialist</a>
-			<a id="html2" src="./images/certificates//CSS Intermediate Certificate.pdf" class="hidden selectable">CSS Intermediate</a>
-			<a id="html3" src="./images/certificates/SASS Certificate.pdf" class="hidden selectable">SCSS</a>
-			<a id="html4" src="./images//certificates/HTML Certificate.pdf" class="hidden selectable">HTML</a>
-			<a id="html5" src="./images//certificates/CSS Certificate.pdf" class="hidden selectable">CSS</a>
-			<a id="html6" src="./images//certificates/Bootstrap Certificate.pdf" class="hidden selectable">Bootstrap</a>
-			<a id="js1" src="./images//certificates/JavaScript Certificate.pdf" class="hidden selectable">Javascript</a>
-			<a id="js2" src="./images//certificates/JQuery Certificate.pdf" class="hidden selectable">JQuery</a>
-			<a id="sql1" src="./images//certificates/SQL Certification.pdf" class="hidden selectable">SQL</a>
-			<a id="php1" src="./images//certificates/PHP Certificate.pdf" class="hidden selectable">PHP</a>
-			<a id="py1" src="./images//certificates/Python Fundamentals.pdf" class="hidden selectable">Python Fundamentals</a>
+		<aside id="cert-list" class="hidden noScroll">
+			<a id="html1" src="./images//certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.pdf" class="hidden selectable noScroll">HTML & CSS Specialist</a>
+			<a id="html2" src="./images/certificates//CSS Intermediate Certificate.pdf" class="hidden selectable noScroll">CSS Intermediate</a>
+			<a id="html3" src="./images/certificates/SASS Certificate.pdf" class="hidden selectable noScroll">SCSS</a>
+			<a id="html4" src="./images//certificates/HTML Certificate.pdf" class="hidden selectable noScroll">HTML</a>
+			<a id="html5" src="./images//certificates/CSS Certificate.pdf" class="hidden selectable noScroll">CSS</a>
+			<a id="html6" src="./images//certificates/Bootstrap Certificate.pdf" class="hidden selectable noScroll">Bootstrap</a>
+			<a id="js1" src="./images//certificates/JavaScript Certificate.pdf" class="hidden selectable noScroll">Javascript</a>
+			<a id="js2" src="./images//certificates/JQuery Certificate.pdf" class="hidden selectable noScroll">JQuery</a>
+			<a id="sql1" src="./images//certificates/SQL Certification.pdf" class="hidden selectable noScroll">SQL</a>
+			<a id="php1" src="./images//certificates/PHP Certificate.pdf" class="hidden selectable noScroll">PHP</a>
+			<a id="py1" src="./images//certificates/Python Fundamentals.pdf" class="hidden selectable noScroll">Python Fundamentals</a>
 		</aside>
 		<button id="close-certs">Close</button>
 	</span>
@@ -131,7 +131,7 @@
 				<div>
 					<innerdiv>
 						<h3>Programming Qualifications &amp; Certs</h3>
-						<a class="selectable" id="lanlist">Language List</a>
+						<a class="selectable noScroll" id="lanlist">Language List</a>
 						<!-- add paths as another one -->
 					</innerdiv>
 				</div>
@@ -166,7 +166,7 @@
 						</tr>
 						<tr>
 							<th>Avanti Gas</th>
-							<th><a href="#cards" class="cardlink" id="ag2" onclick="addExperienceHTML(ag2)">Data Administrator</th>
+							<th><a href="#cards" class="cardlink" id="ag2" onclick="addExperienceHTML(ag2)">Data Administrator(Contract)</th>
 							<th id="">5 months</th>
 						</tr>
 						<tr>
@@ -284,6 +284,9 @@
 						<!-- Change type to submit for the php mailer to activate -->
 					</form>
 				</div>
+				<div class="contactfadein" id="bugDiv">
+					<button type="button" href="" id="bugButton">Report a Bug</button>
+				</div>
 			</layer>
 		</section>
 	</main>
@@ -300,5 +303,10 @@
 			</div>
 	</footer>
 </body>
-<script src="functions.js"></script>
+<script src="js/theme.js" type="module"></script>
+<script src="js/mobile.js" type="module"></script>
+<script src="js/certList.js" type="module"></script>
+<script src="js/functions.js" type="module"></script>
+<script src="js/print.js" type="module"></script>
+<script src="js/contact.js" type="module"></script>
 </html>
