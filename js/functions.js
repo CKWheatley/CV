@@ -51,7 +51,6 @@ function scrollToCards(){
     window.scrollTo({
         top: offset,
         behaviour: 'smooth'
-
     })
 }
 window.onload = () => {
@@ -65,6 +64,7 @@ window.onload = () => {
     });
     variables.selectables.forEach(selectable => {
         selectable.addEventListener('click', (event) => {
+            document.querySelector('.cardsection').style.display = 'flex'
             if(!event.target.classList.contains('noScroll')){
                 scrollToCards();
             }
