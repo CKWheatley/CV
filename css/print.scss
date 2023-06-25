@@ -122,8 +122,10 @@
     .menu-button, 
     .mainimg, 
     #personality,
-    #contact {
-        display: none;
+    #contact,
+    #education,
+    .tab {
+        display: none !important;
     }
     footer{
         display: flex;
