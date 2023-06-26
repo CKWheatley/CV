@@ -468,6 +468,7 @@ function addHTML(data){
         `)
     }
     cleanData()
+    document.querySelector('.cardsection').style.display = 'flex'
 }
 function addExperienceHTML(data){
     const moreInfo = document.getElementById("moreInfo")
@@ -554,4 +555,5 @@ function addExperienceHTML(data){
         )
     }
     cleanData()
+    document.querySelector('.cardsection').style.display = 'flex'
 }
