@@ -1,0 +1,330 @@
+import { ExperienceDate } from './dateUtils.js';
+import { CvSearchEngine } from './searchEngine.js';
+import { EASTER_EGGS } from './easterEggs.js';
+import { TimelineLayoutEngine } from './timelineLayout.js';
+
+const elements = {
+  input: document.querySelector('#search-input'), button: document.querySelector('#search-button'),
+  quickSearchTrack: document.querySelector('#quick-search-track'),
+  summary: document.querySelector('#result-summary'),
+  empty: document.querySelector('#empty-state'), results: document.querySelector('#results'),
+  timeline: document.querySelector('#timeline'), timelineResults: document.querySelector('#timeline-results'), timelineAxis: document.querySelector('#timeline-axis'),
+  searchView: document.querySelector('#search-view-button'), timelineView: document.querySelector('#timeline-view-button'),
+  timelineToggle: document.querySelector('#timeline-toggle-button'),
+  heading: document.querySelector('#query-heading'), skills: document.querySelector('#skills-results'),
+  experience: document.querySelector('#experience-results'), education: document.querySelector('#education-results'),
+  skillsViewToggle: document.querySelector('#skills-view-toggle'),
+  printCv: document.querySelector('#print-cv'), drawer: document.querySelector('#role-drawer'),
+  drawerBackdrop: document.querySelector('#role-drawer-backdrop'), drawerContent: document.querySelector('#role-drawer-content'),
+  drawerClose: document.querySelector('#role-drawer-close'),
+  aiSummaryPrompt: document.querySelector('#ai-summary-prompt'),
+  contactPrompt: document.querySelector('#contact-prompt'),
+};
+
+const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+const durationFromMonths = (months) => `${Math.floor(months / 12) ? `${Math.floor(months / 12)}y ` : ''}${months % 12}m`;
+let timelineExpanded = false;
+let recordsById = new Map();
+let currentResult = { skills: [] };
+let typewriterTimer;
+let contactPromptTimer;
+let timelineObserver;
+let currentTimeline;
+const timelineLayoutEngine = new TimelineLayoutEngine();
+
+function roleDetails(record, dates, timeline = false) {
+  let timelineSkills = timeline && record.job_description_summary?.length ? `<ul class="timeline-responsibilities">${record.job_description_summary.map((responsibility) => `<li>${escapeHtml(responsibility)}</li>`).join('')}</ul>` : '';
+  if (timeline) timelineSkills += `<ul class="tag-list timeline-skill-list">${record.skills_used.map((skill) => `<li>${escapeHtml(skill)}</li>`).join('')}</ul>`;
+  return `<div class="role-summary"><h3>${escapeHtml(record.job_title)}</h3><p class="card-meta">${dates.displayRange} &middot; ${timeline ? escapeHtml(record.company) : `${escapeHtml(record.company)} &middot; ${dates.durationLabel}`}</p>${timelineSkills}<button class="role-open-button" type="button" data-role-id="${escapeHtml(record.id)}">Open role details <span aria-hidden="true">→</span></button></div>`;
+}
+
+function openRoleDrawer(record) {
+  const dates = new ExperienceDate(record.start_date, record.end_date);
+  const descriptions = (record.full_description ?? []).filter((section) => section.heading || section.content);
+  elements.drawerContent.innerHTML = `<p class="eyebrow">ROLE DETAILS</p><h2>${escapeHtml(record.job_title)}</h2><p class="card-meta">${escapeHtml(record.company)} &middot; ${dates.displayRange} &middot; ${dates.durationLabel}</p><p>${escapeHtml(record.department)}</p><h3>Skills used</h3><ul class="tag-list">${record.skills_used.map((skill) => `<li>${escapeHtml(skill)}</li>`).join('')}</ul><h3>Responsibilities</h3><ul>${record.job_description_summary.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>${descriptions.map((section) => `<section><h3>${escapeHtml(section.heading)}</h3><p>${escapeHtml(section.content)}</p></section>`).join('')}`;
+  elements.drawer.classList.add('is-open');
+  elements.drawerBackdrop.classList.add('is-open');
+  elements.drawer.setAttribute('aria-hidden', 'false');
+}
+
+function closeRoleDrawer() {
+  elements.drawer.classList.remove('is-open');
+  elements.drawerBackdrop.classList.remove('is-open');
+  elements.drawer.setAttribute('aria-hidden', 'true');
+}
+
+function renderSkills(skills) {
+  elements.skills.innerHTML = skills.length ? skills.map((skill) => `<article class="skill-card"><h3>${escapeHtml(skill.name)}</h3><p class="duration">${durationFromMonths(skill.totalMonths)} total career exposure</p><p class="skill-context">${durationFromMonths(skill.relevantMonths)} in the ${skill.roles.length} role${skill.roles.length === 1 ? '' : 's'} relevant to this search</p><details><summary>View relevant roles</summary><ul>${skill.roles.map((role) => `<li>${escapeHtml(role.title)} &middot; ${escapeHtml(role.company)} (${role.duration})</li>`).join('')}</ul></details></article>`).join('') : '<p class="empty-result">No skills matched this search.</p>';
+}
+
+function setSkillsView(listView) {
+  elements.skillsViewToggle.checked = listView;
+  elements.skills.classList.toggle('is-list-view', listView);
+}
+
+function populateQuickSearch(engine) {
+  const items = [...new Set(engine.experience.flatMap((record) => [...(record.tags ?? []), ...(record.skills_used ?? [])]))].sort((a, b) => a.localeCompare(b));
+  const carouselItems = [...items, ...items];
+  elements.quickSearchTrack.innerHTML = carouselItems.map((item) => `<button type="button" data-query="${escapeHtml(item)}">${escapeHtml(item)}</button>`).join('');
+}
+
+function renderExperience(matches) {
+  elements.experience.innerHTML = matches.length ? matches.map(({ record }) => `<article class="experience-card">${roleDetails(record, new ExperienceDate(record.start_date, record.end_date))}</article>`).join('') : '<p class="empty-result">No experience matched this search.</p>';
+}
+
+function renderEducation(records) {
+  elements.education.innerHTML = records.length ? records.map((record) => `<article class="education-card"><h3>${escapeHtml(record.title)}</h3><p class="card-meta">${escapeHtml(record.level)}${record.issuer ? ` &middot; ${escapeHtml(record.issuer)}` : ''}</p></article>`).join('') : '<p class="empty-result">No education or certificates matched this search.</p>';
+}
+
+function renderTimeline(timeline) {
+  currentTimeline = timeline;
+  elements.timelineResults.style.setProperty('--timeline-months', timeline.monthCount);
+  elements.timelineResults.style.setProperty('--timeline-lanes', timeline.laneCount);
+  elements.timelineAxis.style.setProperty('--timeline-months', timeline.monthCount);
+  const dateFromMonth = (month) => new Date(Math.floor(month / 12), month % 12, 1);
+  elements.timelineAxis.innerHTML = Array.from({ length: timeline.monthCount }, (_, offset) => {
+    const date = dateFromMonth(timeline.latestMonth - offset);
+    if (offset !== 0 && date.getMonth() !== 0 && date.getMonth() !== 6 && offset !== timeline.monthCount - 1) return '';
+    const label = offset === 0 ? 'Today' : new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(date.getFullYear(), date.getMonth() + 1, 0));
+    return `<span style="grid-row: ${offset + 1};">${label}</span>`;
+  }).join('');
+  elements.timelineResults.innerHTML = timeline.records.map(({ record, lane, rowStart, rowSpan }, index) => {
+    const dates = new ExperienceDate(record.start_date, record.end_date);
+    const label = `${record.job_title} · ${dates.displayRange} · ${record.company}`;
+    return `<button class="timeline-dot" type="button" data-role-id="${escapeHtml(record.id)}" aria-label="Open ${escapeHtml(label)}" style="grid-column: 1; grid-row: ${rowStart};"></button><article class="timeline-item" data-role-id="${escapeHtml(record.id)}" data-label="${escapeHtml(label)}" style="--detail-index: ${index}; grid-column: ${lane + 2}; grid-row: ${rowStart} / span ${rowSpan};"><div class="experience-card">${roleDetails(record, dates, true)}</div></article>`;
+  }).join('');
+  timeline.records.forEach(({ record, eventRow }) => {
+    const item = elements.timelineResults.querySelector(`.timeline-item[data-role-id="${record.id}"]`);
+    const dot = elements.timelineResults.querySelector(`.timeline-dot[data-role-id="${record.id}"]`);
+    item?.style.setProperty('--event-row', eventRow);
+    if (dot) dot.style.gridRow = eventRow;
+  });
+  timeline.records.filter(({ record }) => record.end_date === null).forEach(({ record }) => {
+    elements.timelineResults.querySelector(`.timeline-dot[data-role-id="${record.id}"]`)?.classList.add('is-active');
+  });
+  relayoutTimeline(false);
+}
+
+function relayoutTimeline() {
+  if (!currentTimeline) return;
+  const cardsById = new Map([...elements.timelineResults.querySelectorAll('.timeline-item')].map((item) => [item.dataset.roleId, item]));
+  const layout = timelineLayoutEngine.arrange(currentTimeline.records.map(({ record, rowStart, rowSpan, durationMonths }) => {
+    return { id: record.id, rowStart, rowSpan, durationMonths };
+  }));
+  const monthCount = Math.max(currentTimeline.monthCount, ...layout.items.map((item) => item.rowEnd));
+  elements.timelineResults.style.setProperty('--timeline-lanes', layout.laneCount);
+  elements.timelineResults.style.setProperty('--timeline-months', monthCount);
+  elements.timelineAxis.style.setProperty('--timeline-months', monthCount);
+  layout.items.forEach((item, index) => {
+    const element = cardsById.get(item.id);
+    element.style.setProperty('--detail-index', index);
+    element.style.setProperty('--role-height', `${item.rowSpan * 20}px`);
+    element.style.gridColumn = item.lane + 2;
+    element.style.gridRow = `${item.rowStart} / span ${item.rowSpan}`;
+  });
+}
+
+function settleTimelineLayout(attempts = 2) {
+  relayoutTimeline();
+  markTimelineOverflows();
+}
+
+function captureTimelinePositions() {
+  return new Map([...elements.timelineResults.querySelectorAll('.timeline-item')].map((item) => [item.dataset.roleId, item.getBoundingClientRect()]));
+}
+
+function animateTimelineExpansion(previousPositions) {
+  elements.timelineResults.querySelectorAll('.timeline-item').forEach((item) => {
+    const previous = previousPositions.get(item.dataset.roleId);
+    const current = item.getBoundingClientRect();
+    if (previous) item.animate([{ transform: `translate(${previous.left - current.left}px, ${previous.top - current.top}px)` }, { transform: 'translate(0, 0)' }], { duration: 320, easing: 'cubic-bezier(.16, 1, .3, 1)', fill: 'both' });
+    item.querySelector('.experience-card')?.animate([{ clipPath: 'inset(0 0 100% 0)', opacity: 0 }, { clipPath: 'inset(0 0 0 0)', opacity: 1 }], { delay: 220, duration: 460, easing: 'cubic-bezier(.16, 1, .3, 1)', fill: 'both' });
+  });
+}
+
+function markTimelineOverflows() {
+  elements.timelineResults.querySelectorAll('.experience-card').forEach((card) => {
+    card.classList.toggle('has-overflow', card.scrollHeight > card.clientHeight + 1);
+  });
+}
+
+function observeTimelineItems() {
+  timelineObserver?.disconnect();
+  const items = elements.timelineResults.querySelectorAll('.timeline-item');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((item) => item.classList.add('is-visible'));
+    return;
+  }
+  timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      timelineObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  items.forEach((item) => timelineObserver.observe(item));
+}
+
+function setTimelineDensity(expanded) {
+  const previousPositions = expanded ? captureTimelinePositions() : null;
+  timelineExpanded = expanded;
+  elements.timelineResults.classList.toggle('is-compact', !expanded);
+  elements.timelineToggle.textContent = expanded ? 'Show event dots' : 'Show Role Summaries';
+  if (expanded) requestAnimationFrame(() => {
+    settleTimelineLayout();
+    animateTimelineExpansion(previousPositions);
+  });
+}
+
+function showAiSummaryPrompt() {
+  if (!elements.aiSummaryPrompt.hidden) return;
+  elements.aiSummaryPrompt.hidden = false;
+  requestAnimationFrame(() => elements.aiSummaryPrompt.classList.add('is-visible'));
+}
+
+function scheduleContactPrompt() {
+  clearTimeout(contactPromptTimer);
+  elements.contactPrompt.classList.remove('is-visible');
+  elements.contactPrompt.hidden = true;
+  contactPromptTimer = window.setTimeout(() => {
+    elements.contactPrompt.hidden = false;
+    requestAnimationFrame(() => elements.contactPrompt.classList.add('is-visible'));
+  }, 10000);
+}
+
+function dismissPrompt(promptId) {
+  const prompt = document.querySelector(`#${promptId}`);
+  if (!prompt) return;
+  prompt.classList.remove('is-visible');
+  window.setTimeout(() => { prompt.hidden = true; }, 450);
+}
+
+function renderPrintCv(query, matches) {
+  const skills = currentResult.skills.slice(0, 10);
+  const moreSkills = currentResult.skills.length > 10 ? `<p class="print-more-skills">More skills found <a href="https://ckwheatley.github.io/CV/">here</a>.</p>` : '';
+  elements.printCv.innerHTML = `<header class="print-header"><h1>Tailored CV</h1><p class="print-profile">Business Analyst with experience in data analysis, management information, automation, and process improvement.</p><p class="print-site">Explore the full CV database: <a href="https://ckwheatley.github.io/CV/">ckwheatley.github.io/CV</a></p></header><section><h2>Relevant Experience</h2>${matches.map(({ record }) => { const dates = new ExperienceDate(record.start_date, record.end_date); return `<div class="print-item"><h3>${escapeHtml(record.job_title)}</h3><p>${dates.durationLabel}</p></div>`; }).join('')}</section><section><h2>Top Skills</h2><ul class="print-skills">${skills.map((skill) => `<li>${escapeHtml(skill.name)}</li>`).join('')}</ul>${moreSkills}</section><section class="print-cta"><h2>Get in touch</h2><p>Please contact me through the job platform used for this application or via LinkedIn.</p></section>`;
+}
+
+function setView(view) {
+  const timelineVisible = view === 'timeline';
+  const hasResults = elements.results.dataset.hasResults === 'true';
+  elements.timeline.hidden = !timelineVisible;
+  elements.results.hidden = timelineVisible || !hasResults;
+  elements.empty.hidden = timelineVisible || hasResults;
+  elements.searchView.classList.toggle('active', !timelineVisible);
+  elements.timelineView.classList.toggle('active', timelineVisible);
+  if (timelineVisible) requestAnimationFrame(observeTimelineItems);
+}
+
+function renderResult(result) {
+  currentResult = result;
+  elements.results.dataset.hasResults = 'true'; elements.empty.hidden = true; elements.results.hidden = false; elements.timeline.hidden = true;
+  elements.searchView.classList.add('active');
+  elements.timelineView.classList.remove('active');
+  setSkillsView(true);
+  showAiSummaryPrompt();
+  scheduleContactPrompt();
+  requestAnimationFrame(() => elements.results.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  clearInterval(typewriterTimer);
+  if (result.easterEgg === 'answer') {
+    const egg = EASTER_EGGS.answer;
+    elements.summary.textContent = egg.summary;
+    elements.heading.textContent = egg.title;
+    elements.skills.innerHTML = `<p class="easter-egg">${egg.contentHtml}</p>`;
+    elements.experience.innerHTML = `<p class="easter-egg">${egg.contentHtml}</p>`;
+    elements.education.innerHTML = `<p class="easter-egg">${egg.contentHtml}</p>`;
+    elements.printCv.innerHTML = '';
+    return;
+  }
+  if (result.easterEgg === 'galaxy') {
+    const egg = EASTER_EGGS.galaxy;
+    elements.summary.textContent = egg.summary;
+    elements.heading.textContent = egg.title;
+    elements.skills.innerHTML = `<div class="galaxy-crawl"><p id="galaxy-typewriter"></p></div>`;
+    elements.experience.innerHTML = '';
+    elements.education.innerHTML = '';
+    elements.printCv.innerHTML = '';
+    const target = document.querySelector('#galaxy-typewriter');
+    let index = 0;
+    typewriterTimer = setInterval(() => {
+      target.textContent += egg.crawlText[index] ?? '';
+      index += 1;
+      if (index >= egg.crawlText.length) clearInterval(typewriterTimer);
+    }, 45);
+    return;
+  }
+  if (result.easterEgg === 'halo') {
+    const egg = EASTER_EGGS.halo;
+    elements.summary.textContent = egg.summary;
+    elements.heading.textContent = egg.title;
+    elements.skills.innerHTML = `<blockquote class="halo-quote">${egg.contentHtml}</blockquote>`;
+    elements.experience.innerHTML = '';
+    elements.education.innerHTML = '';
+    elements.printCv.innerHTML = '';
+    return;
+  }
+  if (result.easterEgg === 'jonSnow') {
+    const egg = EASTER_EGGS.jonSnow;
+    elements.summary.textContent = egg.summary;
+    elements.heading.textContent = egg.title;
+    elements.skills.innerHTML = `<p class="jon-snow-quote">${egg.contentHtml}</p>`;
+    elements.experience.innerHTML = '';
+    elements.education.innerHTML = '';
+    elements.printCv.innerHTML = '';
+    return;
+  }
+  if (result.easterEgg === 'barrelRoll') {
+    const egg = EASTER_EGGS.barrelRoll;
+    document.body.classList.remove('barrel-roll');
+    void document.body.offsetWidth;
+    document.body.classList.add('barrel-roll');
+    elements.summary.textContent = egg.summary;
+    elements.heading.textContent = egg.title;
+    elements.skills.innerHTML = `<p class="jon-snow-quote">${egg.contentHtml}</p>`;
+    elements.experience.innerHTML = '';
+    elements.education.innerHTML = '';
+    elements.printCv.innerHTML = '';
+    return;
+  }
+  elements.summary.textContent = `${result.experience.length} experience records · ${result.skills.length} relevant skills`;
+  elements.heading.textContent = result.query === '*' ? 'All CV evidence' : `Results for “${result.query}”`;
+  renderSkills(result.skills); renderExperience(result.experience); renderEducation(result.education); renderPrintCv(result.query, result.experience);
+}
+
+async function initialise() {
+  try {
+    const [experienceResponse, educationResponse] = await Promise.all([fetch('data/experience.json'), fetch('data/education.json')]);
+    const engine = new CvSearchEngine(await experienceResponse.json(), await educationResponse.json());
+    recordsById = new Map(engine.experience.map((record) => [record.id, record]));
+    elements.summary.textContent = 'Search the CV database to begin.';
+    populateQuickSearch(engine);
+    renderTimeline(engine.timeline());
+    const submit = () => renderResult(engine.search(elements.input.value));
+    elements.button.addEventListener('click', submit);
+    elements.input.addEventListener('keydown', (event) => { if (event.key === 'Enter') submit(); });
+    elements.quickSearchTrack.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-query]');
+      if (button) { elements.input.value = button.dataset.query; submit(); }
+    });
+    elements.searchView.addEventListener('click', () => setView('search'));
+    elements.timelineView.addEventListener('click', () => setView('timeline'));
+    elements.timelineToggle.addEventListener('click', () => setTimelineDensity(!timelineExpanded));
+    document.addEventListener('click', (event) => {
+      const closeButton = event.target.closest('[data-dismiss-prompt]');
+      if (closeButton) dismissPrompt(closeButton.dataset.dismissPrompt);
+    });
+    window.addEventListener('resize', () => {
+      if (timelineExpanded) requestAnimationFrame(() => settleTimelineLayout());
+    });
+    elements.skillsViewToggle.addEventListener('change', () => setSkillsView(elements.skillsViewToggle.checked));
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-role-id]');
+      if (button) openRoleDrawer(recordsById.get(button.dataset.roleId));
+    });
+    elements.drawerClose.addEventListener('click', closeRoleDrawer);
+    elements.drawerBackdrop.addEventListener('click', closeRoleDrawer);
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeRoleDrawer(); });
+  } catch (error) { elements.summary.textContent = 'Unable to load the CV database.'; console.error(error); }
+}
+
+initialise();
