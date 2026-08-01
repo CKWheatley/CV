@@ -5,14 +5,16 @@ import { TimelineLayoutEngine } from './timelineLayout.js';
 
 const elements = {
   input: document.querySelector('#search-input'), button: document.querySelector('#search-button'),
-  quickSearchTrack: document.querySelector('#quick-search-track'),
+  quickSearchTrack: document.querySelector('#quick-search-track'), specialSearches: document.querySelector('.special-searches'),
   summary: document.querySelector('#result-summary'),
   empty: document.querySelector('#empty-state'), results: document.querySelector('#results'),
   timeline: document.querySelector('#timeline'), timelineResults: document.querySelector('#timeline-results'), timelineAxis: document.querySelector('#timeline-axis'),
   searchView: document.querySelector('#search-view-button'), timelineView: document.querySelector('#timeline-view-button'),
+  exportAi: document.querySelector('#export-ai-button'),
   timelineToggle: document.querySelector('#timeline-toggle-button'),
   heading: document.querySelector('#query-heading'), skills: document.querySelector('#skills-results'),
   experience: document.querySelector('#experience-results'), education: document.querySelector('#education-results'),
+  experienceSection: document.querySelector('#experience-section'), skillsSection: document.querySelector('#skills-section'), educationSection: document.querySelector('#education-section'),
   skillsViewToggle: document.querySelector('#skills-view-toggle'),
   printCv: document.querySelector('#print-cv'), drawer: document.querySelector('#role-drawer'),
   drawerBackdrop: document.querySelector('#role-drawer-backdrop'), drawerContent: document.querySelector('#role-drawer-content'),
@@ -60,6 +62,20 @@ function renderSkills(skills) {
 function setSkillsView(listView) {
   elements.skillsViewToggle.checked = listView;
   elements.skills.classList.toggle('is-list-view', listView);
+}
+
+function setResultScope(scope) {
+  const sections = {
+    experience: scope === 'everything' || scope === 'experience',
+    skills: scope === 'everything' || scope === 'skills',
+    education: scope === 'everything' || scope === 'education',
+  };
+  elements.experienceSection.hidden = !sections.experience;
+  elements.skillsSection.hidden = !sections.skills;
+  elements.educationSection.hidden = !sections.education;
+  elements.specialSearches.querySelectorAll('[data-special-scope]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(button.dataset.specialScope === scope));
+  });
 }
 
 function populateQuickSearch(engine) {
@@ -199,10 +215,33 @@ function dismissPrompt(promptId) {
   window.setTimeout(() => { prompt.hidden = true; }, 450);
 }
 
+function createAiExport(engine) {
+  const allEvidence = engine.search('*');
+  const skillLines = allEvidence.skills.map((skill) => `- ${skill.name}: ${durationFromMonths(skill.totalMonths)} accumulated role exposure`).join('\n');
+  const experienceLines = engine.experience.map((record) => {
+    const dates = new ExperienceDate(record.start_date, record.end_date);
+    const responsibilities = record.job_description_summary.map((item) => `  - ${item}`).join('\n');
+    const skills = record.skills_used.join(', ');
+    const achievements = (record.achievements ?? []).map(({ achievement, impact }) => `  - ${achievement}${impact ? ` — ${impact}` : ''}`).join('\n');
+    return `${record.job_title} | ${record.company} | ${dates.displayRange}\nDepartment: ${record.department}\nResponsibilities:\n${responsibilities}\nSkills: ${skills}${achievements ? `\nAchievements:\n${achievements}` : ''}`;
+  }).join('\n\n');
+  const educationLines = engine.education.length ? engine.education.map((record) => `${record.level}: ${record.title}${record.issuer ? ` | ${record.issuer}` : ''}${record.awarded_date ? ` | Awarded: ${record.awarded_date}` : ''}`).join('\n') : 'No education or certificate records have been completed yet.';
+  return `CALLUM WHEATLEY — CV DATABASE EXPORT\nGenerated for AI analysis from the public CV Database.\n\nSKILLS\n${skillLines}\n\nEXPERIENCE\n${experienceLines}\n\nEDUCATION AND CERTIFICATES\n${educationLines}\n`;
+}
+
+function downloadAiExport(engine) {
+  const blob = new Blob([createAiExport(engine)], { type: 'text/plain;charset=utf-8' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'callum-wheatley-cv-database.txt';
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
 function renderPrintCv(query, matches) {
   const skills = currentResult.skills.slice(0, 10);
   const moreSkills = currentResult.skills.length > 10 ? `<p class="print-more-skills">More skills found <a href="https://ckwheatley.github.io/CV/">here</a>.</p>` : '';
-  elements.printCv.innerHTML = `<header class="print-header"><h1>Tailored CV</h1><p class="print-profile">Business Analyst with experience in data analysis, management information, automation, and process improvement.</p><p class="print-site">Explore the full CV database: <a href="https://ckwheatley.github.io/CV/">ckwheatley.github.io/CV</a></p></header><section><h2>Relevant Experience</h2>${matches.map(({ record }) => { const dates = new ExperienceDate(record.start_date, record.end_date); return `<div class="print-item"><h3>${escapeHtml(record.job_title)}</h3><p>${dates.durationLabel}</p></div>`; }).join('')}</section><section><h2>Top Skills</h2><ul class="print-skills">${skills.map((skill) => `<li>${escapeHtml(skill.name)}</li>`).join('')}</ul>${moreSkills}</section><section class="print-cta"><h2>Get in touch</h2><p>Please contact me through the job platform used for this application or via LinkedIn.</p></section>`;
+  elements.printCv.innerHTML = `<header class="print-header"><h1>Callum Wheatley — Tailored CV</h1><p class="print-profile">Business Analyst with experience in data analysis, management information, automation, and process improvement.</p><p class="print-site">Explore the full CV database: <a href="https://ckwheatley.github.io/CV/">ckwheatley.github.io/CV</a></p></header><section><h2>Relevant Experience</h2>${matches.map(({ record }) => { const dates = new ExperienceDate(record.start_date, record.end_date); return `<div class="print-item"><h3>${escapeHtml(record.job_title)}</h3><p>${dates.durationLabel}</p></div>`; }).join('')}</section><section><h2>Top Skills</h2><ul class="print-skills">${skills.map((skill) => `<li>${escapeHtml(skill.name)}</li>`).join('')}</ul>${moreSkills}</section><section class="print-cta"><h2>Get to know more about me</h2><p>I’d genuinely enjoy having a chat and seeing how you feel about bringing me into your team. You can find more about me on <a href="https://www.linkedin.com/in/callum-wheatley-73b289212/">LinkedIn</a>, or contact me through the application platform.</p></section>`;
 }
 
 function setView(view) {
@@ -216,11 +255,12 @@ function setView(view) {
   if (timelineVisible) requestAnimationFrame(observeTimelineItems);
 }
 
-function renderResult(result) {
+function renderResult(result, scope = 'everything') {
   currentResult = result;
   elements.results.dataset.hasResults = 'true'; elements.empty.hidden = true; elements.results.hidden = false; elements.timeline.hidden = true;
   elements.searchView.classList.add('active');
   elements.timelineView.classList.remove('active');
+  setResultScope(scope);
   setSkillsView(true);
   showAiSummaryPrompt();
   scheduleContactPrompt();
@@ -288,6 +328,9 @@ function renderResult(result) {
   }
   elements.summary.textContent = `${result.experience.length} experience records · ${result.skills.length} relevant skills`;
   elements.heading.textContent = result.query === '*' ? 'All CV evidence' : `Results for “${result.query}”`;
+  if (result.query === '*') {
+    elements.heading.textContent = { experience: 'All experience', skills: 'All skills', education: 'All education', everything: 'All CV evidence' }[scope];
+  }
   renderSkills(result.skills); renderExperience(result.experience); renderEducation(result.education); renderPrintCv(result.query, result.experience);
 }
 
@@ -306,9 +349,16 @@ async function initialise() {
       const button = event.target.closest('[data-query]');
       if (button) { elements.input.value = button.dataset.query; submit(); }
     });
+    elements.specialSearches.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-special-scope]');
+      if (!button) return;
+      elements.input.value = '*';
+      renderResult(engine.search('*'), button.dataset.specialScope);
+    });
     elements.searchView.addEventListener('click', () => setView('search'));
     elements.timelineView.addEventListener('click', () => setView('timeline'));
     elements.timelineToggle.addEventListener('click', () => setTimelineDensity(!timelineExpanded));
+    elements.exportAi.addEventListener('click', () => downloadAiExport(engine));
     document.addEventListener('click', (event) => {
       const closeButton = event.target.closest('[data-dismiss-prompt]');
       if (closeButton) dismissPrompt(closeButton.dataset.dismissPrompt);

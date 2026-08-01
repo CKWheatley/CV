@@ -18,20 +18,24 @@ export class CvSearchEngine {
   }
 
   search(query) {
-    const searchEverything = query.trim() === '*';
-    const normalisedQuery = normalise(query);
-    const terms = normalisedQuery.split(' ').filter(Boolean);
-    const easterEgg = findEasterEgg(query);
+    const trimmedQuery = query.trim();
+    const searchEverything = trimmedQuery === '*';
+    const customSearch = /^\[.*\]$/.test(trimmedQuery);
+    const queryGroups = customSearch
+      ? trimmedQuery.slice(1, -1).split(',').map(normalise).filter(Boolean).map((group) => group.split(' ').filter(Boolean))
+      : [normalise(query).split(' ').filter(Boolean)];
+    const terms = queryGroups.flat();
+    const easterEgg = searchEverything ? null : findEasterEgg(query);
     if (easterEgg) return { query, experience: [], skills: [], education: [], easterEgg };
     if (!terms.length && !searchEverything) return { query: '', experience: [], skills: [], education: [], easterEgg: 'answer' };
     const experience = this.experience
       .map((record) => ({ record, text: recordSearchText(record) }))
-      .filter(({ text }) => searchEverything || terms.every((term) => hasTerm(text, term)))
+      .filter(({ text }) => searchEverything || (customSearch ? queryGroups.some((group) => group.every((term) => hasTerm(text, term))) : terms.every((term) => hasTerm(text, term))))
       .map(({ record, text }) => ({ record, score: terms.reduce((total, term) => total + text.split(term).length - 1, 0) }))
       .sort((a, b) => b.record.start_date.localeCompare(a.record.start_date));
     const allSkills = this.aggregateSkills(experience);
-    const directSkills = allSkills.filter((skill) => terms.every((term) => normalise(skill.name).includes(term)));
-    return { query, experience, skills: directSkills.length ? directSkills : allSkills, education: searchEverything ? this.education : this.searchEducation(terms) };
+    const directSkills = allSkills.filter((skill) => customSearch ? queryGroups.some((group) => group.every((term) => normalise(skill.name).includes(term))) : terms.every((term) => normalise(skill.name).includes(term)));
+    return { query, customSearch, experience, skills: directSkills.length ? directSkills : allSkills, education: searchEverything ? this.education : this.searchEducation(terms, queryGroups, customSearch) };
   }
 
   aggregateSkills(matches) {
@@ -57,10 +61,10 @@ export class CvSearchEngine {
       .sort((a, b) => b.totalMonths - a.totalMonths || a.name.localeCompare(b.name));
   }
 
-  searchEducation(terms) {
+  searchEducation(terms, queryGroups = [terms], customSearch = false) {
     return this.education.filter((record) => {
       const text = normalise([record.title, record.level, record.issuer, ...(record.tags ?? [])].join(' '));
-      return terms.every((term) => hasTerm(text, term));
+      return customSearch ? queryGroups.some((group) => group.every((term) => hasTerm(text, term))) : terms.every((term) => hasTerm(text, term));
     });
   }
 

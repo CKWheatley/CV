@@ -12,16 +12,25 @@
     <main class="shell">
       <header class="hero no-print">
         <p class="eyebrow">CV DATABASE / PROTOTYPE</p>
-        <h1>Evidence, not just a timeline.</h1>
-        <p>Start with the role you need. Follow the evidence behind it.</p>
+        <h1>A Timeline for a Lifeline</h1>
+        <p>Start with the role your looking for. Stock up on your ammo to hire me.</p>
       </header>
 
       <section class="search-panel no-print" aria-label="CV search">
-        <label for="search-input">What are you looking for?</label>
+        <div class="search-panel-heading">
+          <label for="search-input">What are you looking for?</label>
+          <div class="special-searches" aria-label="Browse all CV evidence">
+            <button type="button" data-special-scope="experience">All Experience</button>
+            <button type="button" data-special-scope="skills">All Skills</button>
+            <button type="button" data-special-scope="education">All Education</button>
+            <button type="button" data-special-scope="everything">Everything</button>
+          </div>
+        </div>
         <div class="search-row">
           <input id="search-input" type="search" placeholder="Try Analyst, Excel, SQL or customer service" autocomplete="off">
           <button id="search-button" type="button">Search</button>
         </div>
+        <p class="custom-search-tooltip" role="tooltip">For several areas at once, try <code>[data, analysis, programming]</code>.</p>
         <div class="quick-search-window" aria-label="Searchable skills and tags">
           <div id="quick-search-track" class="quick-search"></div>
         </div>
@@ -30,6 +39,7 @@
       <section class="toolbar no-print" aria-label="CV actions">
         <p id="result-summary" aria-live="polite">Loading CV database…</p>
         <div class="view-actions">
+          <button id="export-ai-button" class="export-ai-button" type="button">Export text file for AI analysis</button>
           <button id="search-view-button" type="button" class="active">Search view</button>
           <button id="timeline-view-button" type="button">Timeline</button>
         </div>
@@ -45,7 +55,7 @@
           <h2 id="query-heading"></h2>
         </div>
 
-        <section class="result-section" aria-labelledby="experience-heading">
+        <section id="experience-section" class="result-section" aria-labelledby="experience-heading">
           <div class="section-heading">
             <p class="eyebrow">EXPERIENCE</p>
             <h2 id="experience-heading">Relevant experience</h2>
@@ -53,7 +63,7 @@
           <div id="experience-results" class="stack"></div>
         </section>
 
-        <section class="result-section" aria-labelledby="skills-heading">
+        <section id="skills-section" class="result-section" aria-labelledby="skills-heading">
           <div class="section-heading">
             <p class="eyebrow">SKILLS</p>
             <h2 id="skills-heading">Skills in relevant roles</h2>
@@ -62,7 +72,7 @@
           <div id="skills-results" class="result-grid"></div>
         </section>
 
-        <section class="result-section" aria-labelledby="education-heading">
+        <section id="education-section" class="result-section" aria-labelledby="education-heading">
           <div class="section-heading">
             <p class="eyebrow">EDUCATION</p>
             <h2 id="education-heading">Qualifications and certificates</h2>
