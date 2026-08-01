@@ -12,8 +12,13 @@
   .print-profile { max-width: 75ch; margin-top: 2mm !important; }
   .print-site { margin-top: 2mm !important; font-size: 9pt; }
   .print-cv a { color: #003049; font-weight: 700; text-decoration: none; }
-  .print-cv .print-item { display: flex; justify-content: space-between; gap: 8mm; margin-bottom: 1.75mm; break-inside: avoid; }
-  .print-cv .print-item p { white-space: nowrap; }
+  .print-cv .print-item { margin-bottom: 3mm; break-inside: avoid; }
+  .print-cv .print-role-heading { display: flex; justify-content: space-between; gap: 8mm; }
+  .print-cv .print-role-heading p { white-space: nowrap; }
+  .print-cv .print-evidence { margin-top: 1mm; }
+  .print-cv .print-evidence h4 { margin: 0; color: #003049; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .06em; }
+  .print-cv .print-evidence ul { margin: .5mm 0 0; padding-left: 4mm; font-size: 9pt; }
+  .print-cv .print-evidence li { margin-bottom: .35mm; }
   .print-skills { display: flex; flex-wrap: wrap; gap: 1.5mm 3mm; margin: 0; padding: 0; list-style: none; }
   .print-skills li::after { margin-left: 3mm; color: #003049; content: '•'; }
   .print-skills li:last-child::after { content: ''; }
