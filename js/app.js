@@ -241,7 +241,15 @@ function downloadAiExport(engine) {
 function renderPrintCv(query, matches) {
   const skills = currentResult.skills.slice(0, 10);
   const moreSkills = currentResult.skills.length > 10 ? `<p class="print-more-skills">More skills found <a href="https://ckwheatley.github.io/CV/">here</a>.</p>` : '';
-  elements.printCv.innerHTML = `<header class="print-header"><h1>Callum Wheatley — Tailored CV</h1><p class="print-profile">Business Analyst with experience in data analysis, management information, automation, and process improvement.</p><p class="print-site">Explore the full CV database: <a href="https://ckwheatley.github.io/CV/">ckwheatley.github.io/CV</a></p></header><section><h2>Relevant Experience</h2>${matches.map(({ record }) => { const dates = new ExperienceDate(record.start_date, record.end_date); return `<div class="print-item"><h3>${escapeHtml(record.job_title)}</h3><p>${dates.durationLabel}</p></div>`; }).join('')}</section><section><h2>Top Skills</h2><ul class="print-skills">${skills.map((skill) => `<li>${escapeHtml(skill.name)}</li>`).join('')}</ul>${moreSkills}</section><section class="print-cta"><h2>Get to know more about me</h2><p>I’d genuinely enjoy having a chat and seeing how you feel about bringing me into your team. You can find more about me on <a href="https://www.linkedin.com/in/callum-wheatley-73b289212/">LinkedIn</a>, or contact me through the application platform.</p></section>`;
+  const experience = matches.map(({ record }) => {
+    const dates = new ExperienceDate(record.start_date, record.end_date);
+    const responsibilities = record.job_description_summary.slice(0, 2);
+    const achievements = (record.achievements ?? []).slice(0, 2);
+    const responsibilityEvidence = responsibilities.length ? `<section class="print-evidence"><h4>Responsibilities</h4><ul>${responsibilities.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : '';
+    const achievementEvidence = achievements.length ? `<section class="print-evidence"><h4>Achievements</h4><ul>${achievements.map(({ achievement, impact }) => `<li><strong>${escapeHtml(achievement)}</strong>${impact ? ` — ${escapeHtml(impact)}` : ''}</li>`).join('')}</ul></section>` : '';
+    return `<article class="print-item"><div class="print-role-heading"><h3>${escapeHtml(record.job_title)}</h3><p>${dates.durationLabel}</p></div>${responsibilityEvidence}${achievementEvidence}</article>`;
+  }).join('');
+  elements.printCv.innerHTML = `<header class="print-header"><h1>Callum Wheatley — Tailored CV</h1><p class="print-profile">Business Analyst with experience in data analysis, management information, automation, and process improvement.</p><p class="print-site">Explore the full CV database: <a href="https://ckwheatley.github.io/CV/">ckwheatley.github.io/CV</a></p></header><section><h2>Relevant Experience</h2>${experience}</section><section><h2>Top Skills</h2><ul class="print-skills">${skills.map((skill) => `<li>${escapeHtml(skill.name)}</li>`).join('')}</ul>${moreSkills}</section><section class="print-cta"><h2>Get to know more about me</h2><p>I’d genuinely enjoy having a chat and seeing how you feel about bringing me into your team. You can find more about me on <a href="https://www.linkedin.com/in/callum-wheatley-73b289212/">LinkedIn</a>, or contact me through the application platform.</p></section>`;
 }
 
 function setView(view) {
