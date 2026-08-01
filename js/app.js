@@ -243,8 +243,8 @@ function renderPrintCv(query, matches) {
   const moreSkills = currentResult.skills.length > 10 ? `<p class="print-more-skills">More skills found <a href="https://ckwheatley.github.io/CV/">here</a>.</p>` : '';
   const experience = matches.map(({ record }) => {
     const dates = new ExperienceDate(record.start_date, record.end_date);
-    const responsibilities = record.job_description_summary.slice(0, 2);
-    const achievements = (record.achievements ?? []).slice(0, 2);
+    const responsibilities = record.job_description_summary;
+    const achievements = record.achievements ?? [];
     const responsibilityEvidence = responsibilities.length ? `<section class="print-evidence"><h4>Responsibilities</h4><ul>${responsibilities.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul></section>` : '';
     const achievementEvidence = achievements.length ? `<section class="print-evidence"><h4>Achievements</h4><ul>${achievements.map(({ achievement, impact }) => `<li><strong>${escapeHtml(achievement)}</strong>${impact ? ` — ${escapeHtml(impact)}` : ''}</li>`).join('')}</ul></section>` : '';
     return `<article class="print-item"><div class="print-role-heading"><h3>${escapeHtml(record.job_title)}</h3><p>${dates.durationLabel}</p></div>${responsibilityEvidence}${achievementEvidence}</article>`;
