@@ -12,7 +12,11 @@
       "end_date": null,
       "job_description_summary": [
         "Creating Dashboards for management and leadership teams",
-        "Managing and Maintaining Pricing Models/Matrixes"
+        "Managing and Maintaining Pricing Models/Matrixes",
+        "Creating, Managing and Maintaining Data Warehouses and ETL Pipelines",
+        "Proposing business solutions to improve efficiency and effectiveness",
+        "S&OP Forecasting analysis and modeling",
+        "Creating and maintaining data pipelines for analysis and reporting"
       ],
       "full_description": [
         {
@@ -26,15 +30,33 @@
       ],
       "achievements": [
         {
-          "achievement": "Sharing SQL Expertise",
+          "achievement": "250k portfolio optimisation",
           "impact": null,
-          "evidence": "",
+          "evidence": "I, for obvious reasons cant go into details about the company strategy, but to me was a very simple, 'Why arent we doing things this way?' which was lit a lightbulb moment for the team that optimised in the region of quarter of a million pounds simply by suggesting a new strategy to both data and decision making, so much so i was given a nickname Callum 'Red Band' Wheatley",
           "needs_manual_impact": true
         },
         {
-          "achievement": "",
+          "achievement": "The 15 Year old pricing models",
           "impact": null,
-          "evidence": "",
+          "evidence": "Pricng models are tricky, large and complex beasts, even fellow analysts took a shot at both our new business and retention models, they failed in the attempt, since i was assigned the task of updating the 15 year old pricing models it was challenging but taught me a great deal about financial decision making and financial assignment within a pricing matrix. I conquered the task, Its far more efficient and effective than before, introduced version control, newer scripting via macros (As it was an excel matrix) new data modeling merging 2 of the New business models into one, audit logging for faster debugging and error checking and finally, seperation of concerns with out monthly supply updates.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "Fully automated Price increase process 30k profit optimisation",
+          "impact": null,
+          "evidence": "Weekly price increases were a pain, they took me probably 1.5 hour every week of manual excel manipulation and lookuping data from one sheet to another, This process removed thet friction completely. I developed an end to end Price increase process that meant a single Procedure execution, and Excel spreadsheet connection refresh followed by macros to serve the data to multiple departments for their part of the process. this reduced times down to 15 mins, and removed the human error factor completely. Even better, it found error on the data pulling side, all in all in year one optimised 30k in profits that was missed due to human error.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "S&OP Process accuracy of 90%",
+          "impact": null,
+          "evidence": "S&OP Was such a fun bit of work, trying to predict volumes was both challenging and very good and learning how to code Time series analysis and forecast modeling. I proposed a total of 4 methods, One eliminated early, one fall back simplified aggregated approach and 2 time series. One of those time series had so many snags in the process which meant sinking hours improving accuracies but eventually got our aggregated model to hit 90% regularly and the time series one hitting between 70-80% accuracy, the other time series analysis is more recent and involves using my ETL Warehousing and data engineering skills to feed a xgboost decision tree model to predict volumes, Its still in development but is proving to be almost as accurate as the aggregated model with limited time spent on it so its promising for the future. Youl have to ask me more about this one its interesting stuff.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "Pushing AI for the workplace",
+          "impact": null,
+          "evidence": "I have long been considered the 'AI Man' of the business, as such i have started monthly meeting designed to educate the business in LLM usage within the business with my techniques and methods to get the most out of AI since i have been using LLM's since GPT Launched, i was once told by another analyst 'I tell people you think you know how to use AI but you havent met Callum', a compliment of course but thats because im pushing innovation with its usage daily. We now have Algorithmic Skills developed by me that can Query the database accurately mimicing previous data examples and schema searching for management info and for assistance on more complex work, sometimes its one shot prompts some times itl take 2 or three, but the AI is now the second best SQL writer in the business, after me of course :). But Thats just one example, feel free to speak to me more about this.",
           "needs_manual_impact": true
         }
       ],
@@ -81,7 +103,15 @@
         "Data Visualization",
         "ETL Pipelines",
         "Analytics Engineering",
-        "Administration"
+        "Administration",
+        "Visual Studio Code",
+        "Data Cleaning",
+        "Data Enrichment",
+        "Data Lakes",
+        "Time Series Analysis",
+        "Supply Chain Analysis",
+        "Supply Chain Optimisation",
+        "Machine Learning Model Development"
       ],
       "tags": [
         "Analyst",
@@ -153,7 +183,9 @@
         "Training",
         "Programming",
         "Coding",
-        "Administration"
+        "Administration",
+        "Visual Studio Code",
+        "Hubspot"
       ],
       "tags": [
         "Analyst",
@@ -217,7 +249,8 @@
         "Customer Service",
         "CRM",
         "Sage 50",
-        "Microsoft Excel"
+        "Microsoft Excel",
+        "Hubspot"
       ],
       "tags": [
         "Data",
@@ -401,6 +434,7 @@
         "UI/UX Design",
         "Email Marketing",
         "Adobe Creative Suite",
+        "Adobe Dreamweaver",
         "Visual Studio Code",
         "Quality Assurance",
         "Programming",
@@ -508,7 +542,6 @@
         "Process Improvement",
         "Call Handling",
         "Continuous Improvement",
-        "Data",
         "Administration",
         "GDPR",
         "DPA"
