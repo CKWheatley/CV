@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "qualifications": [],
+  "certificates": [
+    {
+      "id": "certificate-ciw-advanced-html5-and-css3-specialist-certificate",
+      "level": "Certificate",
+      "title": "CIW Advanced HTML5 and CSS3 Specialist",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-css-intermediate-certificate",
+      "level": "Certificate",
+      "title": "CSS Intermediate Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/CSS Intermediate Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-sass-certificate",
+      "level": "Certificate",
+      "title": "Sass Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/SASS Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-html-certificate",
+      "level": "Certificate",
+      "title": "HTML Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/HTML Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-css-certificate",
+      "level": "Certificate",
+      "title": "CSS Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/CSS Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-bootstrap-certificate",
+      "level": "Certificate",
+      "title": "Bootstrap Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/Bootstrap Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-javascript-certificate",
+      "level": "Certificate",
+      "title": "JavaScript Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/JavaScript Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-jquery-certificate",
+      "level": "Certificate",
+      "title": "jQuery Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/JQuery Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-sql-certification",
+      "level": "Certificate",
+      "title": "SQL Certification",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/SQL Certification.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-php-certificate",
+      "level": "Certificate",
+      "title": "PHP Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/PHP Certificate.png",
+      "tags": []
+    },
+    {
+      "id": "certificate-python-fundamentals",
+      "level": "Certificate",
+      "title": "Python Fundamentals Certificate",
+      "issuer": null,
+      "awarded_date": null,
+      "evidence_path": "images/certificates/Python Fundamentals.png",
+      "tags": []
+    }
+  ]
+}

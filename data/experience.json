@@ -1,0 +1,778 @@
+{
+  "schema_version": "1.0.0",
+  "record_count": 13,
+  "records": [
+    {
+      "id": "experience-ag4",
+      "job_title": "Junior Business Analyst",
+      "company": "Avanti Gas",
+      "location": "Chesterfield",
+      "department": "Financial Pricing & Analysis",
+      "start_date": "2025-02-01",
+      "end_date": null,
+      "job_description_summary": [
+        "Creating Dashboards for management and leadership teams",
+        "Managing and Maintaining Pricing Models/Matrixes"
+      ],
+      "full_description": [
+        {
+          "heading": "",
+          "content": ""
+        },
+        {
+          "heading": "",
+          "content": ""
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "Sharing SQL Expertise",
+          "impact": null,
+          "evidence": "",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "",
+          "impact": null,
+          "evidence": "",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "SQL",
+        "Microsoft Excel",
+        "VBA",
+        "VBScript",
+        "PowerShell",
+        "Macros",
+        "Microsoft SQL Server",
+        "Microsoft Access",
+        "Python",
+        "Process Mapping",
+        "GDPR",
+        "Data Analysis",
+        "Management Information",
+        "Automation",
+        "Stakeholder Management",
+        "Training",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "AI (LLM)",
+        "ETL",
+        "Data Warehousing",
+        "Tableau",
+        "Snowflake",
+        "Power Automate",
+        "PowerPoint",
+        "Pricing Models",
+        "UI/UX Design",
+        "Version Control",
+        "Process Innovation",
+        "API Development",
+        "Google Maps API",
+        "Context Engineering (AI)",
+        "Prompt Engineering (AI)",
+        "Programming",
+        "Coding",
+        "Data Analytics",
+        "Data Pipelines",
+        "Data Engineering",
+        "Data Visualization",
+        "ETL Pipelines",
+        "Analytics Engineering",
+        "Administration"
+      ],
+      "tags": [
+        "Analyst",
+        "Data",
+        "Engineering",
+        "Administration",
+        "Automation"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-ag3",
+      "job_title": "Pricing & Management Information Admin",
+      "company": "Avanti Gas",
+      "location": "Chesterfield",
+      "department": "Financial Pricing & Analysis",
+      "start_date": "2023-02-01",
+      "end_date": "2025-02-01",
+      "job_description_summary": [
+        "Creating management reports on request",
+        "Using Both Access & SQL Server for data",
+        "Teaching the analysis team SQL",
+        "Generating sheduled reports for analysis",
+        "Converting Access code into SQL Server",
+        "Creating automatic functions in excel using VBA",
+        "Assisting the analysis team with their work",
+        "Liaising with leadership and management teams (home & abroad)"
+      ],
+      "full_description": [
+        {
+          "heading": "Sharing SQL Expertise",
+          "content": "As a Pricing & MI Admin, I found myself in a unique position where I could use my skills to greatly benefit the analysis team. One major contribution I made was teaching the team how to use SQL Server for extracting data, as they were unfamiliar with it. This knowledge sharing not only improved the efficiency of our team but also enabled us to work more effectively with the data at hand. In fact, my deep understanding of SQL allowed me to confidently work with the language, using it extensively to extract, manipulate, and analyze data to drive better decision-making. By combining my SQL and Excel expertise, I was able to create innovative work for the management and leadership teams, developing instantly accessible extractions that were highly accurate."
+        },
+        {
+          "heading": "Coding for Automation & Boosting Efficiency",
+          "content": "During my time in this role, I utilized MS Access to build queries and relied heavily on Excel for various tasks. Working closely with the analysis team, I honed my skills in Excel and developed key analysis abilities that greatly enhanced my expertise. My knack for finding innovative solutions played a crucial role in data extraction; for instance, I was able to reduce query times from a staggering 7 hours to just 30 seconds, significantly boosting our productivity. Whenever there was an issue, I proactively addressed and resolved it, ensuring that the quality of my work remained consistently high.\n \n My coding abilities have earned me much recognition, particularly when it comes to automating tasks and streamlining processes. Some of my notable achievements include creating automatic emails within Excel documents and acquiring skills in PowerShell, VBA, and VBScript. These proficiencies have allowed me to automate tasks and further contribute to the overall efficiency and success of the team. By leveraging my SQL skills and other technical proficiencies, I was able to demonstrate my dedication to finding innovative solutions to improve our work processes and solidify my role as an essential member of the team."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "Sharing SQL Expertise",
+          "impact": null,
+          "evidence": "As a Pricing & MI Admin, I found myself in a unique position where I could use my skills to greatly benefit the analysis team. One major contribution I made was teaching the team how to use SQL Server for extracting data, as they were unfamiliar with it. This knowledge sharing not only improved the efficiency of our team but also enabled us to work more effectively with the data at hand. In fact, my deep understanding of SQL allowed me to confidently work with the language, using it extensively to extract, manipulate, and analyze data to drive better decision-making. By combining my SQL and Excel expertise, I was able to create innovative work for the management and leadership teams, developing instantly accessible extractions that were highly accurate.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "Coding for Automation & Boosting Efficiency",
+          "impact": null,
+          "evidence": "During my time in this role, I utilized MS Access to build queries and relied heavily on Excel for various tasks. Working closely with the analysis team, I honed my skills in Excel and developed key analysis abilities that greatly enhanced my expertise. My knack for finding innovative solutions played a crucial role in data extraction; for instance, I was able to reduce query times from a staggering 7 hours to just 30 seconds, significantly boosting our productivity. Whenever there was an issue, I proactively addressed and resolved it, ensuring that the quality of my work remained consistently high.\n \n My coding abilities have earned me much recognition, particularly when it comes to automating tasks and streamlining processes. Some of my notable achievements include creating automatic emails within Excel documents and acquiring skills in PowerShell, VBA, and VBScript. These proficiencies have allowed me to automate tasks and further contribute to the overall efficiency and success of the team. By leveraging my SQL skills and other technical proficiencies, I was able to demonstrate my dedication to finding innovative solutions to improve our work processes and solidify my role as an essential member of the team.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "SQL",
+        "Microsoft Excel",
+        "VBA",
+        "Microsoft Access",
+        "PowerShell",
+        "VBScript",
+        "Process Mapping",
+        "GDPR",
+        "Data Analysis",
+        "Management Information",
+        "Automation",
+        "Stakeholder Management",
+        "Training",
+        "Programming",
+        "Coding",
+        "Administration"
+      ],
+      "tags": [
+        "Analyst",
+        "Data",
+        "Engineering",
+        "Administration",
+        "Customer Service",
+        "Automation"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-ag2",
+      "job_title": "Senior Data Administrator",
+      "company": "Avanti Gas",
+      "location": "Chesterfield",
+      "department": "Internal Support",
+      "start_date": "2022-10-01",
+      "end_date": "2023-02-28",
+      "job_description_summary": [
+        "Sorting and Filtering old files (GDPR)",
+        "Checking if data is still relevant",
+        "Organising paperwork storage",
+        "Acting as senior team member to 4 other recruits",
+        "Delegating tasks"
+      ],
+      "full_description": [
+        {
+          "heading": "More about the job",
+          "content": "The job assigned to me that time around was fairly simple, although with a little more responsibility. As I was working back on the premier documents, I was one of the most senior members of staff who was still within the company that knew Premier well. This played a major role in the project as I essentially acted as a senior member to the four new recruits. As of that time, we had thrown away 40 bin bags full of information we didn't need and counting. My colleague and I had been organizing files in order of department and clearing anything we had that was beyond the GDPR breaching time limit.\n\n After the first week of us clearing out and organizing files in accordance with each department, three new recruits had started, so I got right to the point of explaining the first task two of them would be doing. Invoices and proof of delivery slips needed separating and putting into date order. The other recruit would remain with me to filter through customer files for dates considered too old while I checked if the files were relevant and the customers still remained. This evolved over time as, eventually, one of the recruits organized the filing structure, two of them were on the invoice job, and one of them checked the dates of the customer files."
+        },
+        {
+          "heading": "Extra Tasks",
+          "content": "As I mentioned in the previous paragraph, I was one of the only ones who had expertise working with Premier, and as such, many customers still needed documents. The customer services team still required adhoc for the customers and, similar to the last role, I had to provide with the exception of responding to the customer. This was taken on as a favor while managing the other teammates and filtering through Premier's data. Throughout that time, I continued to use the Gas Business System, Sage, and CRM to carry out all tasks assigned.\n \n A surge of demand meant that I had to step in and assist the customer services team with some of their roles. Having as much experience, if not more, than most of the customer service team members, I was the first to be picked to help out. The rest of my team followed suit, except for one who continued working on the data project. Initially, I focused on making outbound calls for customers who were due to receive a gas delivery, but my responsibilities soon evolved into handling many more tasks for the team. This continued until I transitioned into my new role in FP&A."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "More about the job",
+          "impact": null,
+          "evidence": "The job assigned to me that time around was fairly simple, although with a little more responsibility. As I was working back on the premier documents, I was one of the most senior members of staff who was still within the company that knew Premier well. This played a major role in the project as I essentially acted as a senior member to the four new recruits. As of that time, we had thrown away 40 bin bags full of information we didn't need and counting. My colleague and I had been organizing files in order of department and clearing anything we had that was beyond the GDPR breaching time limit.\n\n After the first week of us clearing out and organizing files in accordance with each department, three new recruits had started, so I got right to the point of explaining the first task two of them would be doing. Invoices and proof of delivery slips needed separating and putting into date order. The other recruit would remain with me to filter through customer files for dates considered too old while I checked if the files were relevant and the customers still remained. This evolved over time as, eventually, one of the recruits organized the filing structure, two of them were on the invoice job, and one of them checked the dates of the customer files.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "Extra Tasks",
+          "impact": null,
+          "evidence": "As I mentioned in the previous paragraph, I was one of the only ones who had expertise working with Premier, and as such, many customers still needed documents. The customer services team still required adhoc for the customers and, similar to the last role, I had to provide with the exception of responding to the customer. This was taken on as a favor while managing the other teammates and filtering through Premier's data. Throughout that time, I continued to use the Gas Business System, Sage, and CRM to carry out all tasks assigned.\n \n A surge of demand meant that I had to step in and assist the customer services team with some of their roles. Having as much experience, if not more, than most of the customer service team members, I was the first to be picked to help out. The rest of my team followed suit, except for one who continued working on the data project. Initially, I focused on making outbound calls for customers who were due to receive a gas delivery, but my responsibilities soon evolved into handling many more tasks for the team. This continued until I transitioned into my new role in FP&A.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Data Management",
+        "GDPR",
+        "Document Management",
+        "Leadership",
+        "Training",
+        "Delegation",
+        "Customer Service",
+        "CRM",
+        "Sage 50",
+        "Microsoft Excel"
+      ],
+      "tags": [
+        "Data",
+        "Administration",
+        "Customer Service",
+        "Leadership",
+        "Compliance"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-prm",
+      "job_title": "Internal/Customer Support Administrator",
+      "company": "Avanti Gas",
+      "location": "Chesterfield",
+      "department": "Customer Experience & Resolutions",
+      "start_date": "2022-04-01",
+      "end_date": "2022-10-31",
+      "job_description_summary": [
+        "PREMIER LPG - Signing/Sending/Receiving Contracts",
+        "PREMIER LPG - Quoting Customers (Retentions and new)",
+        "PREMIER LPG - Placing Orders for deliveries",
+        "PREMIER LPG - Responding to customer queries via Email",
+        "PREMIER LPG - Booking Engineer Visits (Tank issues/relocations/uplifts)",
+        "PREMIER LPG - Chasing Customer Debts (Red lists)",
+        "PREMIER LPG - Site Safety Reviews",
+        "PREMIER LPG - Other Administrative duties such as Invoice querying & account changes",
+        "Avanti Gas - Support Customer Experience with switching information",
+        "Avanti Gas - Issue credits on accounts",
+        "Avanti Gas - Invoicing Queries/Calculations/Credits",
+        "Avanti Gas - Standing order to Direct Debit Switches",
+        "Avanti Gas - Other Internal support administration duties"
+      ],
+      "full_description": [
+        {
+          "heading": "Premier LPG Customer Service Advisor",
+          "content": "Once my contract drew to its end as a Data Admin, they asked me to see if i could stay on longer as a customer support advisor, I straight away started my new role with little to no training other than getting straight on with the job. As I was picking up some of the smaller jobs such as signing contracts and placing orders I decided to use what I learned on the DWP campaign and gather as much info as I possibly could on the first instance I learned it. For example on the Premier LPG campaign we were tasked to do every role the company did between 3 to 4 members of staff, 2 on admin and emails and 2 on the calls plus 1 on finance as part of the Avantigas takeover. Because there were so many different roles I put together a rather complex google sheet which contained all the info I needed when juggling the tasks. Not only that but the sheet was designed to be fool proof so i wouldn't miss anything when following the procedures set out, which to my surprise was promptly adopted by my other colleagues who saw it as incredibly useful in making the administration process much easier and more organized as oppose to the 100\u2019s of templates they had in their files. I created this Google Sheet to make the administration process clearer and more consistent. \n \n With the takeover around the corner we had started the campaign to retain all the customers out of contract at the time, this would involve us sending around 400 emails to customers in the middle of dealing with general enquiries, responding to their replies and then drafting their contracts to them input it on their system. By this point my contract was extended by a further 3 months with a new job role as i was one of the only people in the company capable of working on Premiers System, Sage 50, Avanti's engineering system and finally Avantis main system."
+        },
+        {
+          "heading": "Avanti Gas Internal Support Administrator",
+          "content": "Once the company takeover had finally happened and I had returned to work from surgery my role had changed to Internal Support Advisor/Administrator. My duties were rather all over the place and unpredictable, the switch from one company to the other could have gone much smoother for the customers and an example of that was customers who paid standing order to premier lpg. Lots of the customers were getting through to the customer service department explaining that they had already paid their tank rentals and it was mine and my colleagues' jobs to investigate if that was the case by pulling up previous invoices. The standing orders were already set up in Premier LPG\u2019s name however as they did not foresee that customers wouldnt cancel or even notice the switch, we also had to contact around 250 customers to cancel their SO\u2019s and switch to a direct debit. We had around 4 weeks to complete this along with keeping on top with Customer queries from the CE Team, Signing contracts on behalf of the Retentions teams and keeping on top of 4 inboxes, it makes me proud to say we completed all of these in 2 weeks just before my colleague was due to have time off. I would often find myself contacting customers to pay off the remainder of their outstanding balances and doing odd jobs for other departments as a lot of the time I found myself completing work before the predicted time frame allowing me to help other departments. \n \n It is also worth noting that whenever we had a project using the Standing orders and the final renewal offers we had to send out as examples it was always my duty to report statistics back to the manager. I created a page from scratch to better organise and support notes in Avanti's system, and practised moving the spreadsheet workflow into a page-based tool."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "Premier LPG Customer Service Advisor",
+          "impact": null,
+          "evidence": "Once my contract drew to its end as a Data Admin, they asked me to see if i could stay on longer as a customer support advisor, I straight away started my new role with little to no training other than getting straight on with the job. As I was picking up some of the smaller jobs such as signing contracts and placing orders I decided to use what I learned on the DWP campaign and gather as much info as I possibly could on the first instance I learned it. For example on the Premier LPG campaign we were tasked to do every role the company did between 3 to 4 members of staff, 2 on admin and emails and 2 on the calls plus 1 on finance as part of the Avantigas takeover. Because there were so many different roles I put together a rather complex google sheet which contained all the info I needed when juggling the tasks. Not only that but the sheet was designed to be fool proof so i wouldn't miss anything when following the procedures set out, which to my surprise was promptly adopted by my other colleagues who saw it as incredibly useful in making the administration process much easier and more organized as oppose to the 100\u2019s of templates they had in their files. I created this Google Sheet to make the administration process clearer and more consistent. \n \n With the takeover around the corner we had started the campaign to retain all the customers out of contract at the time, this would involve us sending around 400 emails to customers in the middle of dealing with general enquiries, responding to their replies and then drafting their contracts to them input it on their system. By this point my contract was extended by a further 3 months with a new job role as i was one of the only people in the company capable of working on Premiers System, Sage 50, Avanti's engineering system and finally Avantis main system.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "Avanti Gas Internal Support Administrator",
+          "impact": null,
+          "evidence": "Once the company takeover had finally happened and I had returned to work from surgery my role had changed to Internal Support Advisor/Administrator. My duties were rather all over the place and unpredictable, the switch from one company to the other could have gone much smoother for the customers and an example of that was customers who paid standing order to premier lpg. Lots of the customers were getting through to the customer service department explaining that they had already paid their tank rentals and it was mine and my colleagues' jobs to investigate if that was the case by pulling up previous invoices. The standing orders were already set up in Premier LPG\u2019s name however as they did not foresee that customers wouldnt cancel or even notice the switch, we also had to contact around 250 customers to cancel their SO\u2019s and switch to a direct debit. We had around 4 weeks to complete this along with keeping on top with Customer queries from the CE Team, Signing contracts on behalf of the Retentions teams and keeping on top of 4 inboxes, it makes me proud to say we completed all of these in 2 weeks just before my colleague was due to have time off. I would often find myself contacting customers to pay off the remainder of their outstanding balances and doing odd jobs for other departments as a lot of the time I found myself completing work before the predicted time frame allowing me to help other departments. \n \n It is also worth noting that whenever we had a project using the Standing orders and the final renewal offers we had to send out as examples it was always my duty to report statistics back to the manager. I created a page from scratch to better organise and support notes in Avanti's system, and practised moving the spreadsheet workflow into a page-based tool.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Customer Service",
+        "Administration",
+        "Google Sheets",
+        "Microsoft Excel",
+        "Process Improvement",
+        "Sage 50",
+        "CRM",
+        "Invoicing",
+        "Data Reporting",
+        "Direct Debit Administration",
+        "Customer Retention"
+      ],
+      "tags": [
+        "Data",
+        "Administration",
+        "Customer Service",
+        "Leadership",
+        "Compliance",
+        "Sales"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-ag",
+      "job_title": "Data administrator",
+      "company": "Avanti Gas",
+      "location": "Chesterfield",
+      "department": "IT/Data Transfer",
+      "start_date": "2022-03-01",
+      "end_date": "2022-04-30",
+      "job_description_summary": [
+        "Validating data from Premier LPG",
+        "Inputting Data into Avanti DB via excel and google sheets QR Scanning"
+      ],
+      "full_description": [
+        {
+          "heading": "About the job",
+          "content": "At Avanti their parent company UGI Inernational was taking over Premier LPG, therefore all of their customers were to be switched over to Avantigas' systems. My job was to simply scan the QR codes on google sheets which would input data from tables they had extracted from the other system. I thought this was genius, semi-automating the switch process to save money however i took my job a bit further and decided to take on the QR coded sheets and start inputting my own data. Because of my coding experience i managed to manipulate the code in the google sheet making the process not only quicker but easier too. I enjoyed making this process quicker and more efficient as i always strive to do so with my work."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "About the job",
+          "impact": null,
+          "evidence": "At Avanti their parent company UGI Inernational was taking over Premier LPG, therefore all of their customers were to be switched over to Avantigas' systems. My job was to simply scan the QR codes on google sheets which would input data from tables they had extracted from the other system. I thought this was genius, semi-automating the switch process to save money however i took my job a bit further and decided to take on the QR coded sheets and start inputting my own data. Because of my coding experience i managed to manipulate the code in the google sheet making the process not only quicker but easier too. I enjoyed making this process quicker and more efficient as i always strive to do so with my work.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Data Validation",
+        "Data Entry",
+        "Google Sheets",
+        "Process Improvement",
+        "Automation",
+        "Administration"
+      ],
+      "tags": [
+        "Data",
+        "Engineering",
+        "Administration",
+        "Customer Service",
+        "Automation"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-dd",
+      "job_title": "Digital Developer",
+      "company": "Unbloq",
+      "location": "Doncaster",
+      "department": "Digital",
+      "start_date": "2021-09-01",
+      "end_date": "2022-03-31",
+      "job_description_summary": [
+        "Creating websites from scratch using HTML5 & CSS3",
+        "Design UX and UI elements with javascript",
+        "Design email marketing campaigns",
+        "Update existing websites",
+        "Upload new websites to servers",
+        "Worked with Wordpress"
+      ],
+      "full_description": [
+        {
+          "heading": "About the Job",
+          "content": "At Unbloq i worked on both the front end and the back end of websites and email marketing campaigns. Often at times I would find myself building sites from scratch and working on wordpress, At unbloq i had my first hands on experience working on mac systems and adobe suite applications such as dreamweaver, although as time went on i resulted to sticking to visual studio code as my prefered software for builds."
+        },
+        {
+          "heading": "The Experience I gained",
+          "content": "I used a variety of languages, including HTML, CSS, SASS, JavaScript, PHP and SQL."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "About the Job",
+          "impact": null,
+          "evidence": "At Unbloq i worked on both the front end and the back end of websites and email marketing campaigns. Often at times I would find myself building sites from scratch and working on wordpress, At unbloq i had my first hands on experience working on mac systems and adobe suite applications such as dreamweaver, although as time went on i resulted to sticking to visual studio code as my prefered software for builds.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "The Experience I gained",
+          "impact": null,
+          "evidence": "I used a variety of languages, including HTML, CSS, SASS, JavaScript, PHP and SQL.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "HTML",
+        "CSS",
+        "Sass",
+        "JavaScript",
+        "PHP",
+        "SQL",
+        "WordPress",
+        "UI/UX Design",
+        "Email Marketing",
+        "Adobe Creative Suite",
+        "Visual Studio Code",
+        "Quality Assurance",
+        "Programming",
+        "Coding"
+      ],
+      "tags": [
+        "Data",
+        "Engineering"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-de",
+      "job_title": "Keying Agent",
+      "company": "Parseq",
+      "location": "Bramley",
+      "department": "Keying",
+      "start_date": "2021-03-01",
+      "end_date": "2021-07-31",
+      "job_description_summary": [
+        "Keying data received through the system"
+      ],
+      "full_description": [
+        {
+          "heading": "Targets",
+          "content": "I regularly exceeded my speed target by around 80% on average, I also exceeded my accuracy target by 1.5% bringing my accuracy rate to almost 99%"
+        },
+        {
+          "heading": "More Info",
+          "content": "During the pandemic the Census project had to go on, So on a temporary contract my duty would be to key in data received from the warehouses and update the information on the system."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "Targets",
+          "impact": null,
+          "evidence": "I regularly exceeded my speed target by around 80% on average, I also exceeded my accuracy target by 1.5% bringing my accuracy rate to almost 99%",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "More Info",
+          "impact": null,
+          "evidence": "During the pandemic the Census project had to go on, So on a temporary contract my duty would be to key in data received from the warehouses and update the information on the system.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Data Entry",
+        "Data Accuracy",
+        "Productivity",
+        "Quality Assurance"
+      ],
+      "tags": [
+        "Data"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-dwp",
+      "job_title": "Customer Service Advisor",
+      "company": "Capita",
+      "location": "Home",
+      "department": "DWP Universal Credits",
+      "start_date": "2020-04-01",
+      "end_date": "2020-11-30",
+      "job_description_summary": [
+        "Answer queries for new claimants",
+        "Admin work for Case Managers & Work Coaches"
+      ],
+      "full_description": [
+        {
+          "heading": "My Claim to fame on the Universal Credit Team",
+          "content": "I worked on the campaign which as we all know was set up in a rushed fashion to cope with the stress of the pandemic and I could clearly see that all notes left were unorganised and the note taking process was slow and ineffective. So i literally took to the internet to see how i could use Microsoft excel to organise the note taking process and make it more efficient.I spent roughly a week or 2 of my own time creating and learning how to make code within excel, create macros and generally learned how to make the excel sheet aesthetically pleasing as well as simple. I used the \u201cCall Notes Tool\u201d whilst on call with claimants and would gather a list of notes for improvements.When the tool was near enough done it was time to reveal to the team. Then it blew up, Campaign wide adoption had happened within the first week and a personal thanks from the Campaign Manager for my hard work and innovation to help the campaign as a whole. Notably the entire campaign statistics had improved in terms of scorecards, wrap times and general job satisfaction on the campaign as a whole had dramatically improved."
+        },
+        {
+          "heading": "This was a turning point for my career direction & decided that creation and innovation was what i want to do.",
+          "content": null
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "My Claim to fame on the Universal Credit Team",
+          "impact": null,
+          "evidence": "I worked on the campaign which as we all know was set up in a rushed fashion to cope with the stress of the pandemic and I could clearly see that all notes left were unorganised and the note taking process was slow and ineffective. So i literally took to the internet to see how i could use Microsoft excel to organise the note taking process and make it more efficient.I spent roughly a week or 2 of my own time creating and learning how to make code within excel, create macros and generally learned how to make the excel sheet aesthetically pleasing as well as simple. I used the \u201cCall Notes Tool\u201d whilst on call with claimants and would gather a list of notes for improvements.When the tool was near enough done it was time to reveal to the team. Then it blew up, Campaign wide adoption had happened within the first week and a personal thanks from the Campaign Manager for my hard work and innovation to help the campaign as a whole. Notably the entire campaign statistics had improved in terms of scorecards, wrap times and general job satisfaction on the campaign as a whole had dramatically improved.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "This was a turning point for my career direction & decided that creation and innovation was what i want to do.",
+          "impact": null,
+          "evidence": null,
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Customer Service",
+        "Microsoft Excel",
+        "VBA",
+        "Macros",
+        "Process Improvement",
+        "Call Handling",
+        "Continuous Improvement",
+        "Data",
+        "Administration",
+        "GDPR",
+        "DPA"
+      ],
+      "tags": [
+        "Data",
+        "Administration",
+        "Customer Service",
+        "Leadership",
+        "Automation"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-sr",
+      "job_title": "Customer/Sales Advisor",
+      "company": "Capita",
+      "location": "Dearne Valley",
+      "department": "O2 Retentions",
+      "start_date": "2020-01-01",
+      "end_date": "2020-04-30",
+      "job_description_summary": [
+        "Inbound calls for retention offers to leaving customers",
+        "Admin for leaving customers (PAC & STAC codes, Disconnection logging ect.)"
+      ],
+      "full_description": [
+        {
+          "heading": "More Info",
+          "content": "My job at Capita on O2 Retentions would be rather simple, Answer calls listen to their reason for cancellation then offer a compelling deal to stay with O2. If the barter didnt fall through i would have to perform a little bit of admin to send them on their way. There was several scenarios of which i was fully prepared for on the job however long story short the pandemic hit and i would be moved to the NHS back to work scheme where i would recruit retired health proffessionals handling their data doing security checks and performing the admin neccesary to get them started. Shortly after i was moved to the DWP department which you can read more about in the next job role."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "More Info",
+          "impact": null,
+          "evidence": "My job at Capita on O2 Retentions would be rather simple, Answer calls listen to their reason for cancellation then offer a compelling deal to stay with O2. If the barter didnt fall through i would have to perform a little bit of admin to send them on their way. There was several scenarios of which i was fully prepared for on the job however long story short the pandemic hit and i would be moved to the NHS back to work scheme where i would recruit retired health proffessionals handling their data doing security checks and performing the admin neccesary to get them started. Shortly after i was moved to the DWP department which you can read more about in the next job role.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Customer Service",
+        "Sales",
+        "Customer Retention",
+        "Administration",
+        "Data Handling",
+        "Security Checks",
+        "GDPR",
+        "DPA"
+      ],
+      "tags": [
+        "Data",
+        "Administration",
+        "Customer Service",
+        "Compliance",
+        "Sales"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-kfc",
+      "job_title": "Head Cook & MOH",
+      "company": "Welcome Break",
+      "location": "Woodall Services",
+      "department": "KFC",
+      "start_date": "2018-07-01",
+      "end_date": "2019-12-31",
+      "job_description_summary": [
+        "Managing and leading a team of cooks",
+        "Training of new & existing cooks",
+        "Food prep (breading, MOH burger station & wraps ec..t)",
+        "Cooking Of Products",
+        "Food stock & Defrost control",
+        "Gutting Chicken",
+        "Cleaning the unit (Vents, Workstations, Frier filtration & more)",
+        "Morning setups & Night closes"
+      ],
+      "full_description": [
+        {
+          "heading": "My Ascent to Head Cook",
+          "content": "Whilst working there as a cook i quickly ascended the ladder as a renown worker within the team. Standards were on point and exceeding expectations even being praised for my work ethic in passing 3 ROCC examinations flawlessly.I would oftenly work up to 14 hours a day and even up to 60 to 70 hours a week, primarily due to lack of staffing levels and it was my job to make sure the cleanliness and product quality was excellent.\n My supervisors and Manager quickly realised my potential and offered me a position as a head cook and asked if i would also work in the middle of house (MOH) to make up for staffing shortfalls to which I took graciously.On some occasions the KFC\u2019s Regional CEO of the UK would check in on the unit as it was a centre of excellence prior to me working there. Although upon a few visits they then came to the decision that they would use our workplace as a hub for cook\u2019s to improve upon their skills which was a huge compliment to my work experience whilst being there"
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "My Ascent to Head Cook",
+          "impact": null,
+          "evidence": "Whilst working there as a cook i quickly ascended the ladder as a renown worker within the team. Standards were on point and exceeding expectations even being praised for my work ethic in passing 3 ROCC examinations flawlessly.I would oftenly work up to 14 hours a day and even up to 60 to 70 hours a week, primarily due to lack of staffing levels and it was my job to make sure the cleanliness and product quality was excellent.\n My supervisors and Manager quickly realised my potential and offered me a position as a head cook and asked if i would also work in the middle of house (MOH) to make up for staffing shortfalls to which I took graciously.On some occasions the KFC\u2019s Regional CEO of the UK would check in on the unit as it was a centre of excellence prior to me working there. Although upon a few visits they then came to the decision that they would use our workplace as a hub for cook\u2019s to improve upon their skills which was a huge compliment to my work experience whilst being there",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Leadership",
+        "Team Management",
+        "Training",
+        "Food Safety",
+        "Stock Control",
+        "Quality Control",
+        "Time Management",
+        "Organisation",
+        "Customer Service"
+      ],
+      "tags": [
+        "Data",
+        "Leadership"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-sa",
+      "job_title": "Sales agent",
+      "company": "Webhelp",
+      "location": "Dearne Valley",
+      "department": "Vodafone Sales",
+      "start_date": "2017-12-01",
+      "end_date": "2018-06-30",
+      "job_description_summary": [
+        "Outbound calls to existing customers",
+        "Sales of gadgets (Phones, Tablets, Broadband ect.)"
+      ],
+      "full_description": [
+        {
+          "heading": "More Info",
+          "content": "My job at Webhelp consisted mostly of calling our customers at Vodafone to entise them to purchase another line such as a tablet or watch on contract with a sim in it. I would work on the Household department for 3 months before they needed more people on the broadband team so i switched over with practically no training selling broadband this time and continued working there untill the end."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "More Info",
+          "impact": null,
+          "evidence": "My job at Webhelp consisted mostly of calling our customers at Vodafone to entise them to purchase another line such as a tablet or watch on contract with a sim in it. I would work on the Household department for 3 months before they needed more people on the broadband team so i switched over with practically no training selling broadband this time and continued working there untill the end.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Sales",
+        "Outbound Calling",
+        "Customer Service",
+        "Broadband Sales",
+        "GDPR",
+        "DPA"
+      ],
+      "tags": [
+        "Customer Service",
+        "Leadership",
+        "Sales"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-cs",
+      "job_title": "Customer Service",
+      "company": "Welcome Break",
+      "location": "Woodall Services",
+      "department": "Harry Ramsdens",
+      "start_date": "2016-03-01",
+      "end_date": "2016-09-30",
+      "job_description_summary": [
+        "Serving customers",
+        "Processing customer orders via till",
+        "Food preparation and plating",
+        "Pot washing (Industrial pot wash)"
+      ],
+      "full_description": [
+        {
+          "heading": "More Info",
+          "content": "At Harry Ramsdens i was the young recruit at just 16, literally fresh out of school i worked as the till operative who would take orders then prepare their food shortly before serving them their food."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "More Info",
+          "impact": null,
+          "evidence": "At Harry Ramsdens i was the young recruit at just 16, literally fresh out of school i worked as the till operative who would take orders then prepare their food shortly before serving them their food.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Customer Service",
+        "Cash Handling",
+        "Food Preparation",
+        "Point of Sale"
+      ],
+      "tags": [
+        "Customer Service"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-fo",
+      "job_title": "Football Official",
+      "company": "The FA",
+      "location": "Varied Venues",
+      "department": "Officials",
+      "start_date": "2015-03-01",
+      "end_date": "2021-12-31",
+      "job_description_summary": [
+        "Organise pre-game (administration, kit, venue .etc)",
+        "Pre-game checks and management",
+        "Officiate in accordance to laws of the game",
+        "Issueing disciplinaries to players that infringe the laws of the game",
+        "Manage a team of officials or work with lead official",
+        "Work as a team to make decisions decisively",
+        "Organise and manage up to 22 - 32 players at any one time",
+        "Perform crowd control and manage tension appropriately",
+        "Manage substitutions during the game",
+        "Online administration of final game"
+      ],
+      "full_description": [
+        {
+          "heading": "More Info",
+          "content": "Its not often you will see official on a CV but it is an extremely usefull job/hobby to have. I have learned so many skills Officiating, mostly skills including anger management, crowd control, organisation, eye for detail, quick decision making, disciplinaries and commanding respect all of which can come very usefull in other jobs. Not only has it improved and introduced new skills for me but its also helped me mature at a younger age in a working environment, That in turn has helped me work indipendently and organise my own games around a shedule of assigned games by league associates. Often at times i have de-escaleted situations where i was confronted by either players or managers all of which were dealt with in a propper manner. Its also quite funny to note that one of my worst games was a local u18s derby where i disciplined a total of 13 players 9 of which were yellow cards and 4 resulting in being sent off, These games are \"extremely rare\" as quoted by the U18s League representitive with upwards of 20 years refereeing experience and proudly applauded me for my efforts to calm down a game that was innevitaly going to be rough."
+        },
+        {
+          "heading": "Even More",
+          "content": "Not only have i worked by myself, proudly i have worked with plenty of other officials either as a referee or a linesman and some of these are high level referees boasting the potential to make it to the highest of leagues, all of this has provided me with exceptional skills and experience in management, although officially i havent passed a managers course this is a stepping stone towards future careers in management. This has provided me the skill to manage under lots of pressure whilst making competent decisions, refereeing is much more challenging than what meets the eye of an observer as you have to work at high tempos persistently literally sprinting to and from one end to the other then making decisions within a split second all within the knowledge of the laws of the game.\n My proudest acheivements as a referee or linesman was refereeing a year 10s school cup final, as well as being the linesman at the U18s FA Youth cup semi-final, I have also refereed youth squads of proffessional football teams Barnsley FC, Sheffield United, Sheffield Wednesday and Rotherham United at home not to mention the away teams were also proffesional clubs. I retained a great reccord as a referee, picking up literal last minute games to cover for referees that have dropped out and wish to continue refereeing arround work time."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "More Info",
+          "impact": null,
+          "evidence": "Its not often you will see official on a CV but it is an extremely usefull job/hobby to have. I have learned so many skills Officiating, mostly skills including anger management, crowd control, organisation, eye for detail, quick decision making, disciplinaries and commanding respect all of which can come very usefull in other jobs. Not only has it improved and introduced new skills for me but its also helped me mature at a younger age in a working environment, That in turn has helped me work indipendently and organise my own games around a shedule of assigned games by league associates. Often at times i have de-escaleted situations where i was confronted by either players or managers all of which were dealt with in a propper manner. Its also quite funny to note that one of my worst games was a local u18s derby where i disciplined a total of 13 players 9 of which were yellow cards and 4 resulting in being sent off, These games are \"extremely rare\" as quoted by the U18s League representitive with upwards of 20 years refereeing experience and proudly applauded me for my efforts to calm down a game that was innevitaly going to be rough.",
+          "needs_manual_impact": true
+        },
+        {
+          "achievement": "Even More",
+          "impact": null,
+          "evidence": "Not only have i worked by myself, proudly i have worked with plenty of other officials either as a referee or a linesman and some of these are high level referees boasting the potential to make it to the highest of leagues, all of this has provided me with exceptional skills and experience in management, although officially i havent passed a managers course this is a stepping stone towards future careers in management. This has provided me the skill to manage under lots of pressure whilst making competent decisions, refereeing is much more challenging than what meets the eye of an observer as you have to work at high tempos persistently literally sprinting to and from one end to the other then making decisions within a split second all within the knowledge of the laws of the game.\n My proudest acheivements as a referee or linesman was refereeing a year 10s school cup final, as well as being the linesman at the U18s FA Youth cup semi-final, I have also refereed youth squads of proffessional football teams Barnsley FC, Sheffield United, Sheffield Wednesday and Rotherham United at home not to mention the away teams were also proffesional clubs. I retained a great reccord as a referee, picking up literal last minute games to cover for referees that have dropped out and wish to continue refereeing arround work time.",
+          "needs_manual_impact": true
+        }
+      ],
+      "skills_used": [
+        "Decision Making",
+        "Conflict Resolution",
+        "Communication",
+        "Leadership",
+        "Organisation",
+        "Pressure Management",
+        "Attention to Detail",
+        "Administration"
+      ],
+      "tags": [
+        "Administration",
+        "Leadership"
+      ],
+      "conversion_notes": [
+        "Created deterministically from js/descriptions.js.",
+        "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    }
+  ]
+}
