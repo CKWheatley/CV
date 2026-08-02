@@ -12,7 +12,7 @@
   .print-header h1 { color: #fff; }
   .print-profile { max-width: 75ch; margin-top: 2mm !important; }
   .print-site { margin-top: 2mm !important; font-size: 9pt; }
-  .print-header a { color: #fff; font-weight: 700; text-decoration: underline; }
+  .print-cv .print-header a { color: #f8bb3d; font-weight: 700; text-decoration: underline; }
   .print-cv > section { margin-top: 5mm; padding-left: 4mm; border-left: 2mm solid #003049; }
   .print-cv > section:nth-of-type(even) { border-left-color: #f8bb3d; }
   .print-cv > section h2 { color: #003049; }
