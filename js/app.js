@@ -37,13 +37,15 @@ const timelineLayoutEngine = new TimelineLayoutEngine();
 function roleDetails(record, dates, timeline = false) {
   let timelineSkills = timeline && record.job_description_summary?.length ? `<ul class="timeline-responsibilities">${record.job_description_summary.map((responsibility) => `<li>${escapeHtml(responsibility)}</li>`).join('')}</ul>` : '';
   if (timeline) timelineSkills += `<ul class="tag-list timeline-skill-list">${record.skills_used.map((skill) => `<li>${escapeHtml(skill)}</li>`).join('')}</ul>`;
-  return `<div class="role-summary"><h3>${escapeHtml(record.job_title)}</h3><p class="card-meta">${dates.displayRange} &middot; ${timeline ? escapeHtml(record.company) : `${escapeHtml(record.company)} &middot; ${dates.durationLabel}`}</p>${timelineSkills}<button class="role-open-button" type="button" data-role-id="${escapeHtml(record.id)}">Open role details <span aria-hidden="true">→</span></button></div>`;
+  const achievementSummary = !timeline && record.achievements?.length ? `<section class="role-achievements"><h4>Achievements</h4><ul>${record.achievements.map(({ achievement, impact }) => `<li><strong>${escapeHtml(achievement)}</strong>${impact ? ` — ${escapeHtml(impact)}` : ''}</li>`).join('')}</ul></section>` : '';
+  return `<div class="role-summary"><h3>${escapeHtml(record.job_title)}</h3><p class="card-meta">${dates.displayRange} &middot; ${timeline ? escapeHtml(record.company) : `${escapeHtml(record.company)} &middot; ${dates.durationLabel}`}</p>${timelineSkills}${achievementSummary}<button class="role-open-button" type="button" data-role-id="${escapeHtml(record.id)}">Open role details <span aria-hidden="true">→</span></button></div>`;
 }
 
 function openRoleDrawer(record) {
   const dates = new ExperienceDate(record.start_date, record.end_date);
   const descriptions = (record.full_description ?? []).filter((section) => section.heading || section.content);
-  elements.drawerContent.innerHTML = `<p class="eyebrow">ROLE DETAILS</p><h2>${escapeHtml(record.job_title)}</h2><p class="card-meta">${escapeHtml(record.company)} &middot; ${dates.displayRange} &middot; ${dates.durationLabel}</p><p>${escapeHtml(record.department)}</p><h3>Skills used</h3><ul class="tag-list">${record.skills_used.map((skill) => `<li>${escapeHtml(skill)}</li>`).join('')}</ul><h3>Responsibilities</h3><ul>${record.job_description_summary.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>${descriptions.map((section) => `<section><h3>${escapeHtml(section.heading)}</h3><p>${escapeHtml(section.content)}</p></section>`).join('')}`;
+  const achievements = record.achievements?.length ? `<h3>Achievements</h3><ul class="drawer-achievements">${record.achievements.map(({ achievement, impact, evidence }) => `<li><strong>${escapeHtml(achievement)}</strong>${impact ? `<p>${escapeHtml(impact)}</p>` : ''}${evidence ? `<details><summary>Read achievement detail</summary><p>${escapeHtml(evidence)}</p></details>` : ''}</li>`).join('')}</ul>` : '';
+  elements.drawerContent.innerHTML = `<p class="eyebrow">ROLE DETAILS</p><h2>${escapeHtml(record.job_title)}</h2><p class="card-meta">${escapeHtml(record.company)} &middot; ${dates.displayRange} &middot; ${dates.durationLabel}</p><p>${escapeHtml(record.department)}</p><h3>Skills used</h3><ul class="tag-list">${record.skills_used.map((skill) => `<li>${escapeHtml(skill)}</li>`).join('')}</ul><h3>Responsibilities</h3><ul>${record.job_description_summary.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>${achievements}${descriptions.map((section) => `<section><h3>${escapeHtml(section.heading)}</h3><p>${escapeHtml(section.content)}</p></section>`).join('')}`;
   elements.drawer.classList.add('is-open');
   elements.drawerBackdrop.classList.add('is-open');
   elements.drawer.setAttribute('aria-hidden', 'false');
@@ -222,8 +224,9 @@ function createAiExport(engine) {
     const dates = new ExperienceDate(record.start_date, record.end_date);
     const responsibilities = record.job_description_summary.map((item) => `  - ${item}`).join('\n');
     const skills = record.skills_used.join(', ');
-    const achievements = (record.achievements ?? []).map(({ achievement, impact }) => `  - ${achievement}${impact ? ` — ${impact}` : ''}`).join('\n');
-    return `${record.job_title} | ${record.company} | ${dates.displayRange}\nDepartment: ${record.department}\nResponsibilities:\n${responsibilities}\nSkills: ${skills}${achievements ? `\nAchievements:\n${achievements}` : ''}`;
+    const descriptions = (record.full_description ?? []).filter(({ heading, content }) => heading || content).map(({ heading, content }) => `  ${heading || 'Role detail'}: ${content}`).join('\n');
+    const achievements = (record.achievements ?? []).map(({ achievement, impact, evidence }) => `  - ${achievement}${impact ? `\n    Impact: ${impact}` : ''}${evidence ? `\n    Detail: ${evidence}` : ''}`).join('\n');
+    return `${record.job_title} | ${record.company} | ${dates.displayRange}\nDepartment: ${record.department}\nResponsibilities:\n${responsibilities}\nSkills: ${skills}${achievements ? `\nAchievements:\n${achievements}` : ''}${descriptions ? `\nFull role description:\n${descriptions}` : ''}`;
   }).join('\n\n');
   const educationLines = engine.education.length ? engine.education.map((record) => `${record.level}: ${record.title}${record.issuer ? ` | ${record.issuer}` : ''}${record.awarded_date ? ` | Awarded: ${record.awarded_date}` : ''}`).join('\n') : 'No education or certificate records have been completed yet.';
   return `CALLUM WHEATLEY — CV DATABASE EXPORT\nGenerated for AI analysis from the public CV Database.\n\nSKILLS\n${skillLines}\n\nEXPERIENCE\n${experienceLines}\n\nEDUCATION AND CERTIFICATES\n${educationLines}\n`;
