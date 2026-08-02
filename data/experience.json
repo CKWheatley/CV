@@ -182,15 +182,21 @@
       ],
       "achievements": [
         {
-          "achievement": "Upskilled the analysis team in SQL Server",
-          "impact": "Taught colleagues SQL data extraction and created accurate, instantly accessible management information.",
-          "evidence": "As a Pricing & MI Admin, I found myself in a unique position where I could use my skills to greatly benefit the analysis team. One major contribution I made was teaching the team how to use SQL Server for extracting data, as they were unfamiliar with it. This knowledge sharing not only improved the efficiency of our team but also enabled us to work more effectively with the data at hand. In fact, my deep understanding of SQL allowed me to confidently work with the language, using it extensively to extract, manipulate, and analyze data to drive better decision-making. By combining my SQL and Excel expertise, I was able to create innovative work for the management and leadership teams, developing instantly accessible extractions that were highly accurate.",
+          "achievement": "Trained colleagues to use SQL",
+          "impact": "Built the analysis team's capability to extract and work with data using SQL Server.",
+          "evidence": null,
           "needs_manual_impact": false
         },
         {
-          "achievement": "Reduced query time from 7 hours to 30 seconds",
-          "impact": "Re-engineered a data-extraction process and built Excel-based automations using VBA, VBScript and PowerShell.",
-          "evidence": "During my time in this role, I utilized MS Access to build queries and relied heavily on Excel for various tasks. Working closely with the analysis team, I honed my skills in Excel and developed key analysis abilities that greatly enhanced my expertise. My knack for finding innovative solutions played a crucial role in data extraction; for instance, I was able to reduce query times from a staggering 7 hours to just 30 seconds, significantly boosting our productivity. Whenever there was an issue, I proactively addressed and resolved it, ensuring that the quality of my work remained consistently high.\n \n My coding abilities have earned me much recognition, particularly when it comes to automating tasks and streamlining processes. Some of my notable achievements include creating automatic emails within Excel documents and acquiring skills in PowerShell, VBA, and VBScript. These proficiencies have allowed me to automate tasks and further contribute to the overall efficiency and success of the team. By leveraging my SQL skills and other technical proficiencies, I was able to demonstrate my dedication to finding innovative solutions to improve our work processes and solidify my role as an essential member of the team.",
+          "achievement": "Optimised reporting performance",
+          "impact": "Reduced a data-extraction query from around seven hours to 30 seconds.",
+          "evidence": null,
+          "needs_manual_impact": false
+        },
+        {
+          "achievement": "Introduced faster reporting tools",
+          "impact": "Created Excel-based database refresh tools that reduced ad-hoc reporting workload by up to 30%, depending on stakeholder needs, freeing capacity for larger projects.",
+          "evidence": null,
           "needs_manual_impact": false
         }
       ],
@@ -269,16 +275,10 @@
       ],
       "achievements": [
         {
-          "achievement": "More about the job",
-          "impact": null,
-          "evidence": "The job assigned to me that time around was fairly simple, although with a little more responsibility. As I was working back on the premier documents, I was one of the most senior members of staff who was still within the company that knew Premier well. This played a major role in the project as I essentially acted as a senior member to the four new recruits. As of that time, we had thrown away 40 bin bags full of information we didn't need and counting. My colleague and I had been organizing files in order of department and clearing anything we had that was beyond the GDPR breaching time limit.\n\n After the first week of us clearing out and organizing files in accordance with each department, three new recruits had started, so I got right to the point of explaining the first task two of them would be doing. Invoices and proof of delivery slips needed separating and putting into date order. The other recruit would remain with me to filter through customer files for dates considered too old while I checked if the files were relevant and the customers still remained. This evolved over time as, eventually, one of the recruits organized the filing structure, two of them were on the invoice job, and one of them checked the dates of the customer files.",
-          "needs_manual_impact": true
-        },
-        {
-          "achievement": "Extra Tasks",
-          "impact": null,
-          "evidence": "As I mentioned in the previous paragraph, I was one of the only ones who had expertise working with Premier, and as such, many customers still needed documents. The customer services team still required adhoc for the customers and, similar to the last role, I had to provide with the exception of responding to the customer. This was taken on as a favor while managing the other teammates and filtering through Premier's data. Throughout that time, I continued to use the Gas Business System, Sage, and CRM to carry out all tasks assigned.\n \n A surge of demand meant that I had to step in and assist the customer services team with some of their roles. Having as much experience, if not more, than most of the customer service team members, I was the first to be picked to help out. The rest of my team followed suit, except for one who continued working on the data project. Initially, I focused on making outbound calls for customers who were due to receive a gas delivery, but my responsibilities soon evolved into handling many more tasks for the team. This continued until I transitioned into my new role in FP&A.",
-          "needs_manual_impact": true
+          "achievement": "Digitised customer contract records",
+          "impact": "Successfully digitised all customer contract records, improving accessibility and organisation.",
+          "evidence": null,
+          "needs_manual_impact": false
         }
       ],
       "skills_used": [
@@ -341,16 +341,10 @@
       ],
       "achievements": [
         {
-          "achievement": "Premier LPG Customer Service Advisor",
-          "impact": null,
-          "evidence": "Once my contract drew to its end as a Data Admin, they asked me to see if i could stay on longer as a customer support advisor, I straight away started my new role with little to no training other than getting straight on with the job. As I was picking up some of the smaller jobs such as signing contracts and placing orders I decided to use what I learned on the DWP campaign and gather as much info as I possibly could on the first instance I learned it. For example on the Premier LPG campaign we were tasked to do every role the company did between 3 to 4 members of staff, 2 on admin and emails and 2 on the calls plus 1 on finance as part of the Avantigas takeover. Because there were so many different roles I put together a rather complex google sheet which contained all the info I needed when juggling the tasks. Not only that but the sheet was designed to be fool proof so i wouldn't miss anything when following the procedures set out, which to my surprise was promptly adopted by my other colleagues who saw it as incredibly useful in making the administration process much easier and more organized as oppose to the 100\u2019s of templates they had in their files. I created this Google Sheet to make the administration process clearer and more consistent. \n \n With the takeover around the corner we had started the campaign to retain all the customers out of contract at the time, this would involve us sending around 400 emails to customers in the middle of dealing with general enquiries, responding to their replies and then drafting their contracts to them input it on their system. By this point my contract was extended by a further 3 months with a new job role as i was one of the only people in the company capable of working on Premiers System, Sage 50, Avanti's engineering system and finally Avantis main system.",
-          "needs_manual_impact": true
-        },
-        {
-          "achievement": "Avanti Gas Internal Support Administrator",
-          "impact": null,
-          "evidence": "Once the company takeover had finally happened and I had returned to work from surgery my role had changed to Internal Support Advisor/Administrator. My duties were rather all over the place and unpredictable, the switch from one company to the other could have gone much smoother for the customers and an example of that was customers who paid standing order to premier lpg. Lots of the customers were getting through to the customer service department explaining that they had already paid their tank rentals and it was mine and my colleagues' jobs to investigate if that was the case by pulling up previous invoices. The standing orders were already set up in Premier LPG\u2019s name however as they did not foresee that customers wouldnt cancel or even notice the switch, we also had to contact around 250 customers to cancel their SO\u2019s and switch to a direct debit. We had around 4 weeks to complete this along with keeping on top with Customer queries from the CE Team, Signing contracts on behalf of the Retentions teams and keeping on top of 4 inboxes, it makes me proud to say we completed all of these in 2 weeks just before my colleague was due to have time off. I would often find myself contacting customers to pay off the remainder of their outstanding balances and doing odd jobs for other departments as a lot of the time I found myself completing work before the predicted time frame allowing me to help other departments. \n \n It is also worth noting that whenever we had a project using the Standing orders and the final renewal offers we had to send out as examples it was always my duty to report statistics back to the manager. I created a page from scratch to better organise and support notes in Avanti's system, and practised moving the spreadsheet workflow into a page-based tool.",
-          "needs_manual_impact": true
+          "achievement": "Retained subsidiary customers through contract transfers",
+          "impact": "Successfully retained at least 50% of subsidiary customers once transferred through new-contract signing.",
+          "evidence": null,
+          "needs_manual_impact": false
         }
       ],
       "skills_used": [
@@ -399,10 +393,10 @@
       ],
       "achievements": [
         {
-          "achievement": "About the job",
-          "impact": null,
-          "evidence": "At Avanti their parent company UGI Inernational was taking over Premier LPG, therefore all of their customers were to be switched over to Avantigas' systems. My job was to simply scan the QR codes on google sheets which would input data from tables they had extracted from the other system. I thought this was genius, semi-automating the switch process to save money however i took my job a bit further and decided to take on the QR coded sheets and start inputting my own data. Because of my coding experience i managed to manipulate the code in the google sheet making the process not only quicker but easier too. I enjoyed making this process quicker and more efficient as i always strive to do so with my work.",
-          "needs_manual_impact": true
+          "achievement": "Improved subsidiary-data migration",
+          "impact": "Transferred customer records from the subsidiary database into the Avanti Gas database and improved the scanning tool's efficiency, noticeably speeding the transition.",
+          "evidence": null,
+          "needs_manual_impact": false
         }
       ],
       "skills_used": [
@@ -453,16 +447,10 @@
       ],
       "achievements": [
         {
-          "achievement": "About the Job",
-          "impact": null,
-          "evidence": "At Unbloq i worked on both the front end and the back end of websites and email marketing campaigns. Often at times I would find myself building sites from scratch and working on wordpress, At unbloq i had my first hands on experience working on mac systems and adobe suite applications such as dreamweaver, although as time went on i resulted to sticking to visual studio code as my prefered software for builds.",
-          "needs_manual_impact": true
-        },
-        {
-          "achievement": "The Experience I gained",
-          "impact": null,
-          "evidence": "I used a variety of languages, including HTML, CSS, SASS, JavaScript, PHP and SQL.",
-          "needs_manual_impact": true
+          "achievement": "Deployed client websites",
+          "impact": "Helped successfully deploy multiple client websites with good customer satisfaction.",
+          "evidence": null,
+          "needs_manual_impact": false
         }
       ],
       "skills_used": [
@@ -513,20 +501,7 @@
           "content": "During the pandemic the Census project had to go on, So on a temporary contract my duty would be to key in data received from the warehouses and update the information on the system."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "Targets",
-          "impact": null,
-          "evidence": "I regularly exceeded my speed target by around 80% on average, I also exceeded my accuracy target by 1.5% bringing my accuracy rate to almost 99%",
-          "needs_manual_impact": true
-        },
-        {
-          "achievement": "More Info",
-          "impact": null,
-          "evidence": "During the pandemic the Census project had to go on, So on a temporary contract my duty would be to key in data received from the warehouses and update the information on the system.",
-          "needs_manual_impact": true
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Data Entry",
         "Data Accuracy",
@@ -565,16 +540,10 @@
       ],
       "achievements": [
         {
-          "achievement": "My Claim to fame on the Universal Credit Team",
-          "impact": null,
-          "evidence": "I worked on the campaign which as we all know was set up in a rushed fashion to cope with the stress of the pandemic and I could clearly see that all notes left were unorganised and the note taking process was slow and ineffective. So i literally took to the internet to see how i could use Microsoft excel to organise the note taking process and make it more efficient.I spent roughly a week or 2 of my own time creating and learning how to make code within excel, create macros and generally learned how to make the excel sheet aesthetically pleasing as well as simple. I used the \u201cCall Notes Tool\u201d whilst on call with claimants and would gather a list of notes for improvements.When the tool was near enough done it was time to reveal to the team. Then it blew up, Campaign wide adoption had happened within the first week and a personal thanks from the Campaign Manager for my hard work and innovation to help the campaign as a whole. Notably the entire campaign statistics had improved in terms of scorecards, wrap times and general job satisfaction on the campaign as a whole had dramatically improved.",
-          "needs_manual_impact": true
-        },
-        {
-          "achievement": "This was a turning point for my career direction & decided that creation and innovation was what i want to do.",
-          "impact": null,
+          "achievement": "Deployed an Excel-based organisation tool",
+          "impact": "Created an Excel-based organisation tool endorsed by my manager and used by the team, with positive feedback from many users.",
           "evidence": null,
-          "needs_manual_impact": true
+          "needs_manual_impact": false
         }
       ],
       "skills_used": [
@@ -619,14 +588,7 @@
           "content": "At Capita on O2 Retentions, I answered cancellation calls, understood customers' reasons for leaving and offered appropriate retention deals. Where a retention was not possible, I completed the administration needed to process the customer's request, including PAC and STAC code work and disconnection logging."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "More Info",
-          "impact": null,
-          "evidence": "At Capita on O2 Retentions, I answered cancellation calls, understood customers' reasons for leaving and offered appropriate retention deals. Where a retention was not possible, I completed the administration needed to process the customer's request, including PAC and STAC code work and disconnection logging.",
-          "needs_manual_impact": true
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Customer Service",
         "Sales",
@@ -671,14 +633,7 @@
           "content": "Whilst working there as a cook i quickly ascended the ladder as a renown worker within the team. Standards were on point and exceeding expectations even being praised for my work ethic in passing 3 ROCC examinations flawlessly.I would oftenly work up to 14 hours a day and even up to 60 to 70 hours a week, primarily due to lack of staffing levels and it was my job to make sure the cleanliness and product quality was excellent.\n My supervisors and Manager quickly realised my potential and offered me a position as a head cook and asked if i would also work in the middle of house (MOH) to make up for staffing shortfalls to which I took graciously.On some occasions the KFC\u2019s Regional CEO of the UK would check in on the unit as it was a centre of excellence prior to me working there. Although upon a few visits they then came to the decision that they would use our workplace as a hub for cook\u2019s to improve upon their skills which was a huge compliment to my work experience whilst being there"
         }
       ],
-      "achievements": [
-        {
-          "achievement": "My Ascent to Head Cook",
-          "impact": null,
-          "evidence": "Whilst working there as a cook i quickly ascended the ladder as a renown worker within the team. Standards were on point and exceeding expectations even being praised for my work ethic in passing 3 ROCC examinations flawlessly.I would oftenly work up to 14 hours a day and even up to 60 to 70 hours a week, primarily due to lack of staffing levels and it was my job to make sure the cleanliness and product quality was excellent.\n My supervisors and Manager quickly realised my potential and offered me a position as a head cook and asked if i would also work in the middle of house (MOH) to make up for staffing shortfalls to which I took graciously.On some occasions the KFC\u2019s Regional CEO of the UK would check in on the unit as it was a centre of excellence prior to me working there. Although upon a few visits they then came to the decision that they would use our workplace as a hub for cook\u2019s to improve upon their skills which was a huge compliment to my work experience whilst being there",
-          "needs_manual_impact": true
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Leadership",
         "Team Management",
@@ -717,14 +672,7 @@
           "content": "My job at Webhelp consisted mostly of calling our customers at Vodafone to entise them to purchase another line such as a tablet or watch on contract with a sim in it. I would work on the Household department for 3 months before they needed more people on the broadband team so i switched over with practically no training selling broadband this time and continued working there untill the end."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "More Info",
-          "impact": null,
-          "evidence": "My job at Webhelp consisted mostly of calling our customers at Vodafone to entise them to purchase another line such as a tablet or watch on contract with a sim in it. I would work on the Household department for 3 months before they needed more people on the broadband team so i switched over with practically no training selling broadband this time and continued working there untill the end.",
-          "needs_manual_impact": true
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Sales",
         "Outbound Calling",
@@ -763,14 +711,7 @@
           "content": "At Harry Ramsdens i was the young recruit at just 16, literally fresh out of school i worked as the till operative who would take orders then prepare their food shortly before serving them their food."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "More Info",
-          "impact": null,
-          "evidence": "At Harry Ramsdens i was the young recruit at just 16, literally fresh out of school i worked as the till operative who would take orders then prepare their food shortly before serving them their food.",
-          "needs_manual_impact": true
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Customer Service",
         "Cash Handling",
@@ -815,20 +756,7 @@
           "content": "Not only have i worked by myself, proudly i have worked with plenty of other officials either as a referee or a linesman and some of these are high level referees boasting the potential to make it to the highest of leagues, all of this has provided me with exceptional skills and experience in management, although officially i havent passed a managers course this is a stepping stone towards future careers in management. This has provided me the skill to manage under lots of pressure whilst making competent decisions, refereeing is much more challenging than what meets the eye of an observer as you have to work at high tempos persistently literally sprinting to and from one end to the other then making decisions within a split second all within the knowledge of the laws of the game.\n My proudest acheivements as a referee or linesman was refereeing a year 10s school cup final, as well as being the linesman at the U18s FA Youth cup semi-final, I have also refereed youth squads of proffessional football teams Barnsley FC, Sheffield United, Sheffield Wednesday and Rotherham United at home not to mention the away teams were also proffesional clubs. I retained a great reccord as a referee, picking up literal last minute games to cover for referees that have dropped out and wish to continue refereeing arround work time."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "More Info",
-          "impact": null,
-          "evidence": "Its not often you will see official on a CV but it is an extremely usefull job/hobby to have. I have learned so many skills Officiating, mostly skills including anger management, crowd control, organisation, eye for detail, quick decision making, disciplinaries and commanding respect all of which can come very usefull in other jobs. Not only has it improved and introduced new skills for me but its also helped me mature at a younger age in a working environment, That in turn has helped me work indipendently and organise my own games around a shedule of assigned games by league associates. Often at times i have de-escaleted situations where i was confronted by either players or managers all of which were dealt with in a propper manner. Its also quite funny to note that one of my worst games was a local u18s derby where i disciplined a total of 13 players 9 of which were yellow cards and 4 resulting in being sent off, These games are \"extremely rare\" as quoted by the U18s League representitive with upwards of 20 years refereeing experience and proudly applauded me for my efforts to calm down a game that was innevitaly going to be rough.",
-          "needs_manual_impact": true
-        },
-        {
-          "achievement": "Even More",
-          "impact": null,
-          "evidence": "Not only have i worked by myself, proudly i have worked with plenty of other officials either as a referee or a linesman and some of these are high level referees boasting the potential to make it to the highest of leagues, all of this has provided me with exceptional skills and experience in management, although officially i havent passed a managers course this is a stepping stone towards future careers in management. This has provided me the skill to manage under lots of pressure whilst making competent decisions, refereeing is much more challenging than what meets the eye of an observer as you have to work at high tempos persistently literally sprinting to and from one end to the other then making decisions within a split second all within the knowledge of the laws of the game.\n My proudest acheivements as a referee or linesman was refereeing a year 10s school cup final, as well as being the linesman at the U18s FA Youth cup semi-final, I have also refereed youth squads of proffessional football teams Barnsley FC, Sheffield United, Sheffield Wednesday and Rotherham United at home not to mention the away teams were also proffesional clubs. I retained a great reccord as a referee, picking up literal last minute games to cover for referees that have dropped out and wish to continue refereeing arround work time.",
-          "needs_manual_impact": true
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Decision Making",
         "Conflict Resolution",
@@ -868,14 +796,7 @@
           "content": "During the COVID-19 shutdown, I was sent home because I was considered high risk and was asked to remain at home while Capita worked out how to respond to the rapidly changing situation. I was then asked whether I wanted to volunteer to support the NHS Returners Campaign. I chose to participate and was unusually effective at bringing structure and organisation to the work, helping progress the administration required to return retired healthcare professionals to service. The work involved handling applicant information, completing security checks, maintaining accuracy and working at pace in an urgent national response."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "Supported the NHS Returners Campaign during COVID-19",
-          "impact": "Volunteered to help progress returning healthcare professionals through sensitive, time-critical administration.",
-          "evidence": "I was sent home because I was considered high risk during the initial COVID-19 shutdown, while Capita worked through an unusually rushed and changing situation. I was then invited to volunteer for the campaign, accepted the opportunity and was particularly effective at bringing structure and organisation to the work. I contributed to the administration and security checks needed to bring retired NHS professionals back into service.",
-          "needs_manual_impact": false
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Sensitive Data Handling",
         "Security Checks",
@@ -922,14 +843,7 @@
           "content": "I identified that local AI is mainly throughput-limited only while a model is loading into VRAM; once loaded, computation runs on the card. I tested this with the AI Diplomacy mod for Mount and Blade Bannerlord, which uses Ollama for local AI diplomacy. I created a PowerShell script to override Ollama's GPU selection so the second GPU handled the AI workload while the primary GPU continued gaming. The result worked well, reducing response times from roughly two minutes to around ten seconds and making the mod much more playable."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "Repurposed a bandwidth-constrained GPU for local AI",
-          "impact": "Used research and testing to reduce local-AI mod response times from roughly two minutes to around ten seconds.",
-          "evidence": "The experiment covered GPU allocation, PCIe bandwidth, airflow constraints, system testing, VRAM loading behaviour and adapting hardware to a better-suited workload at a cost of approximately \u00a315 for the riser.",
-          "needs_manual_impact": false
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Hardware Testing",
         "Performance Testing",
@@ -977,14 +891,7 @@
           "content": "I enjoy making and adapting game mods, particularly tweaking existing Mount and Blade Bannerlord mods and building Hearts of Iron IV mods from scratch. I have also begun creating a Cheat Engine table for Big Pharma, which is teaching me how game memory is managed, how memory patterns can be identified and how tables can alter stock levels and consumption values."
         }
       ],
-      "achievements": [
-        {
-          "achievement": "Applied software experimentation across games and predictions",
-          "impact": "Built hands-on learning projects spanning decision trees, modding, game memory and software behaviour.",
-          "evidence": "These projects are self-directed practice in understanding systems, testing assumptions and iterating towards working technical solutions.",
-          "needs_manual_impact": false
-        }
-      ],
+      "achievements": [],
       "skills_used": [
         "Decision Trees",
         "Machine Learning",
