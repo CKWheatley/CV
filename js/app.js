@@ -5,6 +5,7 @@ import { TimelineLayoutEngine } from './timelineLayout.js';
 
 const elements = {
   input: document.querySelector('#search-input'), button: document.querySelector('#search-button'),
+  suggestions: document.querySelector('#search-suggestions'),
   quickSearchTrack: document.querySelector('#quick-search-track'), specialSearches: document.querySelector('.special-searches'),
   summary: document.querySelector('#result-summary'),
   empty: document.querySelector('#empty-state'), results: document.querySelector('#results'),
@@ -13,8 +14,8 @@ const elements = {
   exportAi: document.querySelector('#export-ai-button'),
   timelineToggle: document.querySelector('#timeline-toggle-button'),
   heading: document.querySelector('#query-heading'), skills: document.querySelector('#skills-results'),
-  experience: document.querySelector('#experience-results'), education: document.querySelector('#education-results'),
-  experienceSection: document.querySelector('#experience-section'), skillsSection: document.querySelector('#skills-section'), educationSection: document.querySelector('#education-section'),
+  experience: document.querySelector('#experience-results'), education: document.querySelector('#education-results'), hobbies: document.querySelector('#hobbies-results'),
+  experienceSection: document.querySelector('#experience-section'), skillsSection: document.querySelector('#skills-section'), educationSection: document.querySelector('#education-section'), hobbiesSection: document.querySelector('#hobbies-section'),
   skillsViewToggle: document.querySelector('#skills-view-toggle'),
   printCv: document.querySelector('#print-cv'), drawer: document.querySelector('#role-drawer'),
   drawerBackdrop: document.querySelector('#role-drawer-backdrop'), drawerContent: document.querySelector('#role-drawer-content'),
@@ -28,6 +29,7 @@ const durationFromMonths = (months) => `${Math.floor(months / 12) ? `${Math.floo
 let timelineExpanded = false;
 let recordsById = new Map();
 let currentResult = { skills: [] };
+let currentScope = 'everything';
 let typewriterTimer;
 let contactPromptTimer;
 let timelineObserver;
@@ -42,7 +44,7 @@ function roleDetails(record, dates, timeline = false) {
 }
 
 function openRoleDrawer(record) {
-  const dates = new ExperienceDate(record.start_date, record.end_date);
+  const dates = record.start_date ? new ExperienceDate(record.start_date, record.end_date) : { displayRange: 'Personal project', durationLabel: '' };
   const descriptions = (record.full_description ?? []).filter((section) => section.heading || section.content);
   const achievements = record.achievements?.length ? `<h3>Achievements</h3><ul class="drawer-achievements">${record.achievements.map(({ achievement, impact, evidence }) => `<li><strong>${escapeHtml(achievement)}</strong>${impact ? `<p>${escapeHtml(impact)}</p>` : ''}${evidence ? `<details><summary>Read achievement detail</summary><p>${escapeHtml(evidence)}</p></details>` : ''}</li>`).join('')}</ul>` : '';
   elements.drawerContent.innerHTML = `<p class="eyebrow">ROLE DETAILS</p><h2>${escapeHtml(record.job_title)}</h2><p class="card-meta">${escapeHtml(record.company)} &middot; ${dates.displayRange} &middot; ${dates.durationLabel}</p><p>${escapeHtml(record.department)}</p><h3>Skills used</h3><ul class="tag-list">${record.skills_used.map((skill) => `<li>${escapeHtml(skill)}</li>`).join('')}</ul><h3>Responsibilities</h3><ul>${record.job_description_summary.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>${achievements}${descriptions.map((section) => `<section><h3>${escapeHtml(section.heading)}</h3><p>${escapeHtml(section.content)}</p></section>`).join('')}`;
@@ -66,15 +68,26 @@ function setSkillsView(listView) {
   elements.skills.classList.toggle('is-list-view', listView);
 }
 
+function toggleResultSection(button) {
+  const section = document.querySelector(`#${button.dataset.sectionToggle}`);
+  if (!section) return;
+  const collapsed = section.classList.toggle('is-collapsed');
+  button.setAttribute('aria-expanded', String(!collapsed));
+  button.textContent = collapsed ? 'Expand' : 'Collapse';
+}
+
 function setResultScope(scope) {
+  currentScope = scope;
   const sections = {
     experience: scope === 'everything' || scope === 'experience',
     skills: scope === 'everything' || scope === 'skills',
     education: scope === 'everything' || scope === 'education',
+    hobbies: scope === 'everything',
   };
   elements.experienceSection.hidden = !sections.experience;
   elements.skillsSection.hidden = !sections.skills;
   elements.educationSection.hidden = !sections.education;
+  elements.hobbiesSection.hidden = !sections.hobbies;
   elements.specialSearches.querySelectorAll('[data-special-scope]').forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.specialScope === scope));
   });
@@ -92,6 +105,23 @@ function renderExperience(matches) {
 
 function renderEducation(records) {
   elements.education.innerHTML = records.length ? records.map((record) => `<article class="education-card"><h3>${escapeHtml(record.title)}</h3><p class="card-meta">${escapeHtml(record.level)}${record.issuer ? ` &middot; ${escapeHtml(record.issuer)}` : ''}</p></article>`).join('') : '<p class="empty-result">No education or certificates matched this search.</p>';
+}
+
+function renderHobbies(matches) {
+  elements.hobbies.innerHTML = matches.length ? matches.map(({ record }) => `<article class="experience-card hobby-card">${roleDetails(record, { displayRange: 'Personal project', durationLabel: '' })}</article>`).join('') : '<p class="empty-result">No hobbies or personal projects matched this search.</p>';
+}
+
+function clearSuggestions() {
+  elements.suggestions.hidden = true;
+  elements.suggestions.replaceChildren();
+  elements.input.setAttribute('aria-expanded', 'false');
+}
+
+function renderSuggestions(groups) {
+  if (!groups.length) { clearSuggestions(); return; }
+  elements.suggestions.innerHTML = groups.map((group) => `<section class="suggestion-group"><h3>${escapeHtml(group.heading)}</h3><ul>${group.items.map((item) => `<li><button type="button" data-suggestion="${escapeHtml(item.value)}">${escapeHtml(item.label)}</button></li>`).join('')}</ul></section>`).join('');
+  elements.suggestions.hidden = false;
+  elements.input.setAttribute('aria-expanded', 'true');
 }
 
 function renderTimeline(timeline) {
@@ -217,23 +247,31 @@ function dismissPrompt(promptId) {
   window.setTimeout(() => { prompt.hidden = true; }, 450);
 }
 
-function createAiExport(engine) {
-  const allEvidence = engine.search('*');
-  const skillLines = allEvidence.skills.map((skill) => `- ${skill.name}: ${durationFromMonths(skill.totalMonths)} accumulated role exposure`).join('\n');
-  const experienceLines = engine.experience.map((record) => {
+function createAiExport(result, scope) {
+  const isEverythingExport = result.query === '*' && scope === 'everything';
+  const scopeLabel = { experience: 'All Experience', skills: 'All Skills', education: 'All Education', everything: 'Everything' }[scope] ?? 'Search results';
+  const exportNotice = isEverythingExport
+    ? 'This export contains all publicly visible CV Database evidence.'
+    : `This export is based on the active search: "${result.query}" (${scopeLabel}). It contains evidence relevant to that search and is not the complete CV Database.`;
+  const includeExperience = scope === 'everything' || scope === 'experience';
+  const includeSkills = scope === 'everything' || scope === 'skills';
+  const includeEducation = scope === 'everything' || scope === 'education';
+  const skillLines = includeSkills && result.skills.length ? result.skills.map((skill) => `- ${skill.name}: ${durationFromMonths(skill.totalMonths)} accumulated role exposure`).join('\n') : 'No skills are included in this export scope.';
+  const experienceLines = includeExperience && result.experience.length ? result.experience.map(({ record }) => {
     const dates = new ExperienceDate(record.start_date, record.end_date);
     const responsibilities = record.job_description_summary.map((item) => `  - ${item}`).join('\n');
     const skills = record.skills_used.join(', ');
     const descriptions = (record.full_description ?? []).filter(({ heading, content }) => heading || content).map(({ heading, content }) => `  ${heading || 'Role detail'}: ${content}`).join('\n');
     const achievements = (record.achievements ?? []).map(({ achievement, impact, evidence }) => `  - ${achievement}${impact ? `\n    Impact: ${impact}` : ''}${evidence ? `\n    Detail: ${evidence}` : ''}`).join('\n');
     return `${record.job_title} | ${record.company} | ${dates.displayRange}\nDepartment: ${record.department}\nResponsibilities:\n${responsibilities}\nSkills: ${skills}${achievements ? `\nAchievements:\n${achievements}` : ''}${descriptions ? `\nFull role description:\n${descriptions}` : ''}`;
-  }).join('\n\n');
-  const educationLines = engine.education.length ? engine.education.map((record) => `${record.level}: ${record.title}${record.issuer ? ` | ${record.issuer}` : ''}${record.awarded_date ? ` | Awarded: ${record.awarded_date}` : ''}`).join('\n') : 'No education or certificate records have been completed yet.';
-  return `CALLUM WHEATLEY — CV DATABASE EXPORT\nGenerated for AI analysis from the public CV Database.\n\nSKILLS\n${skillLines}\n\nEXPERIENCE\n${experienceLines}\n\nEDUCATION AND CERTIFICATES\n${educationLines}\n`;
+  }).join('\n\n') : 'No experience is included in this export scope.';
+  const educationLines = includeEducation && result.education.length ? result.education.map((record) => `${record.level}: ${record.title}${record.issuer ? ` | ${record.issuer}` : ''}${record.awarded_date ? ` | Awarded: ${record.awarded_date}` : ''}`).join('\n') : 'No education or certificate evidence is included in this export scope.';
+  return `CALLUM WHEATLEY — CV DATABASE EXPORT\n${exportNotice}\n\nSKILLS\n${skillLines}\n\nEXPERIENCE\n${experienceLines}\n\nEDUCATION AND CERTIFICATES\n${educationLines}\n`;
 }
 
-function downloadAiExport(engine) {
-  const blob = new Blob([createAiExport(engine)], { type: 'text/plain;charset=utf-8' });
+function downloadAiExport() {
+  if (!currentResult.query) return;
+  const blob = new Blob([createAiExport(currentResult, currentScope)], { type: 'text/plain;charset=utf-8' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
   link.download = 'callum-wheatley-cv-database.txt';
@@ -283,7 +321,7 @@ function renderResult(result, scope = 'everything') {
     elements.heading.textContent = egg.title;
     elements.skills.innerHTML = `<p class="easter-egg">${egg.contentHtml}</p>`;
     elements.experience.innerHTML = `<p class="easter-egg">${egg.contentHtml}</p>`;
-    elements.education.innerHTML = `<p class="easter-egg">${egg.contentHtml}</p>`;
+    elements.education.innerHTML = `<p class="easter-egg">${egg.contentHtml}</p>`; elements.hobbies.innerHTML = '';
     elements.printCv.innerHTML = '';
     return;
   }
@@ -293,7 +331,7 @@ function renderResult(result, scope = 'everything') {
     elements.heading.textContent = egg.title;
     elements.skills.innerHTML = `<div class="galaxy-crawl"><p id="galaxy-typewriter"></p></div>`;
     elements.experience.innerHTML = '';
-    elements.education.innerHTML = '';
+    elements.education.innerHTML = ''; elements.hobbies.innerHTML = '';
     elements.printCv.innerHTML = '';
     const target = document.querySelector('#galaxy-typewriter');
     let index = 0;
@@ -310,7 +348,7 @@ function renderResult(result, scope = 'everything') {
     elements.heading.textContent = egg.title;
     elements.skills.innerHTML = `<blockquote class="halo-quote">${egg.contentHtml}</blockquote>`;
     elements.experience.innerHTML = '';
-    elements.education.innerHTML = '';
+    elements.education.innerHTML = ''; elements.hobbies.innerHTML = '';
     elements.printCv.innerHTML = '';
     return;
   }
@@ -320,7 +358,7 @@ function renderResult(result, scope = 'everything') {
     elements.heading.textContent = egg.title;
     elements.skills.innerHTML = `<p class="jon-snow-quote">${egg.contentHtml}</p>`;
     elements.experience.innerHTML = '';
-    elements.education.innerHTML = '';
+    elements.education.innerHTML = ''; elements.hobbies.innerHTML = '';
     elements.printCv.innerHTML = '';
     return;
   }
@@ -333,29 +371,36 @@ function renderResult(result, scope = 'everything') {
     elements.heading.textContent = egg.title;
     elements.skills.innerHTML = `<p class="jon-snow-quote">${egg.contentHtml}</p>`;
     elements.experience.innerHTML = '';
-    elements.education.innerHTML = '';
+    elements.education.innerHTML = ''; elements.hobbies.innerHTML = '';
     elements.printCv.innerHTML = '';
     return;
   }
-  elements.summary.textContent = `${result.experience.length} experience records · ${result.skills.length} relevant skills`;
+  elements.summary.textContent = `${result.experience.length} experience records · ${result.skills.length} relevant skills${result.hobbies.length ? ` · ${result.hobbies.length} personal project${result.hobbies.length === 1 ? '' : 's'}` : ''}`;
   elements.heading.textContent = result.query === '*' ? 'All CV evidence' : `Results for “${result.query}”`;
   if (result.query === '*') {
     elements.heading.textContent = { experience: 'All experience', skills: 'All skills', education: 'All education', everything: 'All CV evidence' }[scope];
   }
-  renderSkills(result.skills); renderExperience(result.experience); renderEducation(result.education); renderPrintCv(result.query, result.experience);
+  renderSkills(result.skills); renderExperience(result.experience); renderEducation(result.education); renderHobbies(result.hobbies); renderPrintCv(result.query, result.experience);
 }
 
 async function initialise() {
   try {
     const [experienceResponse, educationResponse] = await Promise.all([fetch('data/experience.json'), fetch('data/education.json')]);
     const engine = new CvSearchEngine(await experienceResponse.json(), await educationResponse.json());
-    recordsById = new Map(engine.experience.map((record) => [record.id, record]));
+    recordsById = new Map(engine.allRecords.map((record) => [record.id, record]));
     elements.summary.textContent = 'Search the CV database to begin.';
     populateQuickSearch(engine);
     renderTimeline(engine.timeline());
-    const submit = () => renderResult(engine.search(elements.input.value));
+    const submit = () => { clearSuggestions(); renderResult(engine.search(elements.input.value)); };
     elements.button.addEventListener('click', submit);
     elements.input.addEventListener('keydown', (event) => { if (event.key === 'Enter') submit(); });
+    elements.input.addEventListener('input', () => renderSuggestions(engine.suggest(elements.input.value)));
+    elements.suggestions.addEventListener('click', (event) => {
+      const suggestion = event.target.closest('[data-suggestion]');
+      if (!suggestion) return;
+      elements.input.value = suggestion.dataset.suggestion;
+      submit();
+    });
     elements.quickSearchTrack.addEventListener('click', (event) => {
       const button = event.target.closest('[data-query]');
       if (button) { elements.input.value = button.dataset.query; submit(); }
@@ -369,7 +414,7 @@ async function initialise() {
     elements.searchView.addEventListener('click', () => setView('search'));
     elements.timelineView.addEventListener('click', () => setView('timeline'));
     elements.timelineToggle.addEventListener('click', () => setTimelineDensity(!timelineExpanded));
-    elements.exportAi.addEventListener('click', () => downloadAiExport(engine));
+    elements.exportAi.addEventListener('click', downloadAiExport);
     document.addEventListener('click', (event) => {
       const closeButton = event.target.closest('[data-dismiss-prompt]');
       if (closeButton) dismissPrompt(closeButton.dataset.dismissPrompt);
@@ -379,8 +424,11 @@ async function initialise() {
     });
     elements.skillsViewToggle.addEventListener('change', () => setSkillsView(elements.skillsViewToggle.checked));
     document.addEventListener('click', (event) => {
+      const sectionToggle = event.target.closest('[data-section-toggle]');
+      if (sectionToggle) { toggleResultSection(sectionToggle); return; }
       const button = event.target.closest('[data-role-id]');
       if (button) openRoleDrawer(recordsById.get(button.dataset.roleId));
+      if (event.target !== elements.input && !event.target.closest('#search-suggestions')) clearSuggestions();
     });
     elements.drawerClose.addEventListener('click', closeRoleDrawer);
     elements.drawerBackdrop.addEventListener('click', closeRoleDrawer);

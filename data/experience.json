@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "record_count": 13,
+  "record_count": 18,
   "records": [
     {
       "id": "experience-ag4",
@@ -16,16 +16,24 @@
         "Creating, Managing and Maintaining Data Warehouses and ETL Pipelines",
         "Proposing business solutions to improve efficiency and effectiveness",
         "S&OP Forecasting analysis and modeling",
-        "Creating and maintaining data pipelines for analysis and reporting"
+        "Creating and maintaining data pipelines for analysis and reporting",
+        "Investigating performance issues and identifying root causes in forecast accuracy, data quality and pricing processes",
+        "Testing changes iteratively, measuring results and refining solutions to improve performance and reliability",
+        "Gathering stakeholder requirements and translating business needs into reporting, process and technical solutions",
+        "Validating solutions against business rules, expected scenarios and user requirements before release",
+        "Producing process maps and documentation to identify automation and simplification opportunities",
+        "Participating in weekly FP&A and project discussions to review priorities, blockers and upcoming work",
+        "Maintaining version control, audit logging, documentation and separation of responsibilities within analytical tools",
+        "Communicating technical findings clearly to analysts, managers, sales teams and senior stakeholders"
       ],
       "full_description": [
         {
-          "heading": "",
-          "content": ""
+          "heading": "Root-cause analysis: weekly price increases",
+          "content": "Investigated why the existing weekly price-increase process was not identifying every customer who met the increase criteria. The root cause was that the stored database structure and existing procedure did not capture the full set of required criteria. I extended the coded procedure, validated it against expected customer scenarios and connected the improved output to the downstream Excel and macro process."
         },
         {
-          "heading": "",
-          "content": ""
+          "heading": "Root-cause analysis: S&OP forecasting",
+          "content": "Investigated an aggregated S&OP forecast performing at around 40% accuracy by reviewing data, assumptions, segmentation and calculation logic. I identified patterns behind the largest errors, applied measured patches month by month and tested each iteration before progressing. Regular aggregate accuracy improved in steps of roughly 5-10 percentage points to approximately 90%."
         }
       ],
       "achievements": [
@@ -44,13 +52,13 @@
         {
           "achievement": "Automated the price-increase process",
           "impact": "Reduced weekly processing from around 90 minutes to 15 minutes, removed manual error, and supported an estimated \u00a330k profit optimisation.",
-          "evidence": "Weekly price increases were a pain, they took me probably 1.5 hour every week of manual excel manipulation and lookuping data from one sheet to another, This process removed thet friction completely. I developed an end to end Price increase process that meant a single Procedure execution, and Excel spreadsheet connection refresh followed by macros to serve the data to multiple departments for their part of the process. this reduced times down to 15 mins, and removed the human error factor completely. Even better, it found error on the data pulling side, all in all in year one optimised 30k in profits that was missed due to human error.",
+          "evidence": "The weekly price-increase process originally took around 90 minutes of manual Excel manipulation and data lookups. Root-cause analysis showed that the existing database procedure did not fully capture the criteria for customers who should receive increases because of the way the underlying data was stored. I extended the procedure, validated it against expected scenarios and connected it to an end-to-end process: one procedure execution, an Excel refresh and macros that served multiple departments. This reduced processing to around 15 minutes, removed manual error and supported an estimated \u00a330k profit optimisation in year one.",
           "needs_manual_impact": false
         },
         {
           "achievement": "Improved S&OP forecast accuracy",
           "impact": "Improved an aggregated forecasting model from 40% to 90% accuracy through iterative time-series development, while introducing an XGBoost decision-tree model.",
-          "evidence": "S&OP Was such a fun bit of work, trying to predict volumes was both challenging and very good and learning how to code Time series analysis and forecast modeling. I proposed a total of 4 methods, One eliminated early, one fall back simplified aggregated approach and 2 time series. One of those time series had so many snags in the process which meant sinking hours improving accuracies but eventually got our aggregated model to hit 90% regularly and the time series one hitting between 70-80% accuracy, the other time series analysis is more recent and involves using my ETL Warehousing and data engineering skills to feed a xgboost decision tree model to predict volumes, Its still in development but is proving to be almost as accurate as the aggregated model with limited time spent on it so its promising for the future. Youl have to ask me more about this one its interesting stuff.",
+          "evidence": "I investigated an existing aggregated forecast performing at around 40% accuracy by reviewing the data, assumptions, segmentation and calculation logic. Root-cause analysis identified patterns contributing to the largest errors. I tested and measured patches month by month, typically improving accuracy by 5-10 percentage points per iteration until regular aggregate accuracy reached approximately 90%. I also proposed four forecasting approaches: one was eliminated early, one remained a simplified fallback and two used time-series analysis. A more recent model uses ETL, warehousing and data-engineering practices to feed an XGBoost decision-tree model; it remains in development but is already approaching the aggregate model's accuracy.",
           "needs_manual_impact": false
         },
         {
@@ -111,14 +119,33 @@
         "Time Series Analysis",
         "Supply Chain Analysis",
         "Supply Chain Optimisation",
-        "Machine Learning Model Development"
+        "Machine Learning Model Development",
+        "Stored Procedures",
+        "Hubspot",
+        "Root Cause Analysis",
+        "Requirements Gathering",
+        "Solution Validation",
+        "Data Quality",
+        "Audit Logging",
+        "User Acceptance Testing (UAT)",
+        "Integration Testing",
+        "Quality Assurance",
+        "Data Governance",
+        "Forecasting",
+        "Predictive Modelling",
+        "Business Analysis",
+        "Technical Documentation",
+        "Process Improvement",
+        "Continuous Improvement"
       ],
       "tags": [
         "Analyst",
         "Data",
         "Engineering",
         "Administration",
-        "Automation"
+        "Automation",
+        "Root Cause Analysis",
+        "Forecasting"
       ],
       "conversion_notes": [
         "Created deterministically from js/descriptions.js.",
@@ -169,6 +196,7 @@
       ],
       "skills_used": [
         "SQL",
+        "Microsoft SQL Server",
         "Microsoft Excel",
         "VBA",
         "Microsoft Access",
@@ -185,7 +213,21 @@
         "Coding",
         "Administration",
         "Visual Studio Code",
-        "Hubspot"
+        "Hubspot",
+        "Root Cause Analysis",
+        "Requirements Gathering",
+        "Solution Validation",
+        "Integration Testing",
+        "Quality Assurance",
+        "Data Governance",
+        "Data Quality",
+        "Audit Logging",
+        "Forecasting",
+        "Predictive Modelling",
+        "Business Analysis",
+        "Technical Documentation",
+        "Process Improvement",
+        "Continuous Improvement"
       ],
       "tags": [
         "Analyst",
@@ -436,6 +478,7 @@
         "Adobe Creative Suite",
         "Adobe Dreamweaver",
         "Visual Studio Code",
+        "GitHub",
         "Quality Assurance",
         "Programming",
         "Coding"
@@ -573,14 +616,14 @@
       "full_description": [
         {
           "heading": "More Info",
-          "content": "My job at Capita on O2 Retentions would be rather simple, Answer calls listen to their reason for cancellation then offer a compelling deal to stay with O2. If the barter didnt fall through i would have to perform a little bit of admin to send them on their way. There was several scenarios of which i was fully prepared for on the job however long story short the pandemic hit and i would be moved to the NHS back to work scheme where i would recruit retired health proffessionals handling their data doing security checks and performing the admin neccesary to get them started. Shortly after i was moved to the DWP department which you can read more about in the next job role."
+          "content": "At Capita on O2 Retentions, I answered cancellation calls, understood customers' reasons for leaving and offered appropriate retention deals. Where a retention was not possible, I completed the administration needed to process the customer's request, including PAC and STAC code work and disconnection logging."
         }
       ],
       "achievements": [
         {
           "achievement": "More Info",
           "impact": null,
-          "evidence": "My job at Capita on O2 Retentions would be rather simple, Answer calls listen to their reason for cancellation then offer a compelling deal to stay with O2. If the barter didnt fall through i would have to perform a little bit of admin to send them on their way. There was several scenarios of which i was fully prepared for on the job however long story short the pandemic hit and i would be moved to the NHS back to work scheme where i would recruit retired health proffessionals handling their data doing security checks and performing the admin neccesary to get them started. Shortly after i was moved to the DWP department which you can read more about in the next job role.",
+          "evidence": "At Capita on O2 Retentions, I answered cancellation calls, understood customers' reasons for leaving and offered appropriate retention deals. Where a retention was not possible, I completed the administration needed to process the customer's request, including PAC and STAC code work and disconnection logging.",
           "needs_manual_impact": true
         }
       ],
@@ -589,8 +632,6 @@
         "Sales",
         "Customer Retention",
         "Administration",
-        "Data Handling",
-        "Security Checks",
         "GDPR",
         "DPA"
       ],
@@ -805,6 +846,240 @@
       "conversion_notes": [
         "Created deterministically from js/descriptions.js.",
         "Skills, tags, and achievement impacts require manual review before publication."
+      ]
+    },
+    {
+      "id": "experience-nhs-returners",
+      "job_title": "NHS Returners Campaign Support",
+      "company": "Capita",
+      "location": "Remote",
+      "department": "NHS Returners Campaign",
+      "record_type": "volunteering",
+      "start_date": "2020-03-01",
+      "end_date": "2020-05-31",
+      "job_description_summary": [
+        "Volunteered to support the NHS campaign bringing retired healthcare professionals back into service during the COVID-19 shutdown",
+        "Handled applicant information, completed security checks and progressed administration for returning staff",
+        "Worked accurately with sensitive information within an urgent national response"
+      ],
+      "full_description": [
+        {
+          "heading": "Voluntary NHS Returners Campaign support",
+          "content": "During the COVID-19 shutdown, I was sent home because I was considered high risk and was asked to remain at home while Capita worked out how to respond to the rapidly changing situation. I was then asked whether I wanted to volunteer to support the NHS Returners Campaign. I chose to participate and was unusually effective at bringing structure and organisation to the work, helping progress the administration required to return retired healthcare professionals to service. The work involved handling applicant information, completing security checks, maintaining accuracy and working at pace in an urgent national response."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "Supported the NHS Returners Campaign during COVID-19",
+          "impact": "Volunteered to help progress returning healthcare professionals through sensitive, time-critical administration.",
+          "evidence": "I was sent home because I was considered high risk during the initial COVID-19 shutdown, while Capita worked through an unusually rushed and changing situation. I was then invited to volunteer for the campaign, accepted the opportunity and was particularly effective at bringing structure and organisation to the work. I contributed to the administration and security checks needed to bring retired NHS professionals back into service.",
+          "needs_manual_impact": false
+        }
+      ],
+      "skills_used": [
+        "Sensitive Data Handling",
+        "Security Checks",
+        "Administration",
+        "Accuracy",
+        "Compliance",
+        "Customer Service"
+      ],
+      "tags": [
+        "Volunteering",
+        "Volunteer",
+        "Voluntary",
+        "NHS",
+        "Administration",
+        "Compliance",
+        "COVID-19"
+      ],
+      "conversion_notes": [
+        "Manually added from the candidate's confirmed voluntary-work record."
+      ]
+    },
+    {
+      "id": "hobby-dual-gpu-experiment",
+      "job_title": "Hardware Tinkering",
+      "company": "Personal projects & experimentation",
+      "location": "Home",
+      "department": "Hobbies",
+      "record_type": "hobby",
+      "start_date": null,
+      "end_date": null,
+      "job_description_summary": [
+        "Built a PC from scratch and experiment with how hardware components work together",
+        "Researched and fitted a spare GPU through an x1 mining riser, including a 3D-printed stabiliser bracket and airflow considerations",
+        "Tested a bandwidth-constrained dual-GPU configuration for gaming and local AI workloads",
+        "Built a PowerShell override so Ollama used the second GPU for a local-AI Bannerlord diplomacy mod while the primary GPU ran the game"
+      ],
+      "full_description": [
+        {
+          "heading": "Dual-GPU experiment: research, build and testing",
+          "content": "I am naturally curious about how hardware works together and built my PC from scratch. With a spare GPU available, I researched how to use it effectively, bought a \u00a315 x1 mining-card riser and attached it to an x1 motherboard socket. I designed and 3D-printed a stabiliser bracket, fitted the GPU into the case and considered the airflow trade-off. Research suggested that Lossless Scaling might struggle over the bandwidth-limited x1 bus, which testing confirmed. Further research identified an eGPU enclosure using Thunderbolt 4 or a new motherboard as gaming-throughput alternatives, but my device was not Thunderbolt 4 compatible."
+        },
+        {
+          "heading": "Repurposing the GPU for local AI",
+          "content": "I identified that local AI is mainly throughput-limited only while a model is loading into VRAM; once loaded, computation runs on the card. I tested this with the AI Diplomacy mod for Mount and Blade Bannerlord, which uses Ollama for local AI diplomacy. I created a PowerShell script to override Ollama's GPU selection so the second GPU handled the AI workload while the primary GPU continued gaming. The result worked well, reducing response times from roughly two minutes to around ten seconds and making the mod much more playable."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "Repurposed a bandwidth-constrained GPU for local AI",
+          "impact": "Used research and testing to reduce local-AI mod response times from roughly two minutes to around ten seconds.",
+          "evidence": "The experiment covered GPU allocation, PCIe bandwidth, airflow constraints, system testing, VRAM loading behaviour and adapting hardware to a better-suited workload at a cost of approximately \u00a315 for the riser.",
+          "needs_manual_impact": false
+        }
+      ],
+      "skills_used": [
+        "Hardware Testing",
+        "Performance Testing",
+        "Root Cause Analysis",
+        "GPU Computing",
+        "AI Workloads",
+        "PowerShell",
+        "3D Printing",
+        "Hardware Research",
+        "Problem Solving"
+      ],
+      "tags": [
+        "Hobbies",
+        "AI",
+        "Hardware",
+        "Performance",
+        "Experimentation",
+        "Game Modding"
+      ],
+      "conversion_notes": [
+        "Manually added as a personal project; excluded from career-duration aggregation and timeline calculations."
+      ]
+    },
+    {
+      "id": "hobby-software-tinkering",
+      "job_title": "Software Tinkering and Game Modding",
+      "company": "Personal projects & experimentation",
+      "location": "Home",
+      "department": "Hobbies",
+      "record_type": "hobby",
+      "start_date": null,
+      "end_date": null,
+      "job_description_summary": [
+        "Building a Premier League and Championship decision-tree model to improve predictions and learn machine-learning algorithms",
+        "Tweaking existing Mount and Blade Bannerlord mods and building Hearts of Iron IV mods from scratch",
+        "Building a Cheat Engine table for Big Pharma to understand game memory, memory patterns and changing stock and consumption values"
+      ],
+      "full_description": [
+        {
+          "heading": "Machine learning experimentation",
+          "content": "Currently building a decision-tree model around Premier League and Championship data to improve predictions. The project is an experimentation and learning exercise focused on machine-learning algorithms and decision trees in particular."
+        },
+        {
+          "heading": "Modding and game-memory exploration",
+          "content": "I enjoy making and adapting game mods, particularly tweaking existing Mount and Blade Bannerlord mods and building Hearts of Iron IV mods from scratch. I have also begun creating a Cheat Engine table for Big Pharma, which is teaching me how game memory is managed, how memory patterns can be identified and how tables can alter stock levels and consumption values."
+        }
+      ],
+      "achievements": [
+        {
+          "achievement": "Applied software experimentation across games and predictions",
+          "impact": "Built hands-on learning projects spanning decision trees, modding, game memory and software behaviour.",
+          "evidence": "These projects are self-directed practice in understanding systems, testing assumptions and iterating towards working technical solutions.",
+          "needs_manual_impact": false
+        }
+      ],
+      "skills_used": [
+        "Decision Trees",
+        "Machine Learning",
+        "Data Analysis",
+        "Game Modding",
+        "Memory Analysis",
+        "Cheat Engine",
+        "Problem Solving"
+      ],
+      "tags": [
+        "Hobbies",
+        "Software",
+        "Machine Learning",
+        "Game Modding",
+        "Experimentation"
+      ],
+      "conversion_notes": [
+        "Manually added as a personal project; excluded from career-duration aggregation and timeline calculations."
+      ]
+    },
+    {
+      "id": "hobby-football",
+      "job_title": "Football",
+      "company": "Andy's Man Club Rotherham charity football club",
+      "location": "Rotherham",
+      "department": "Hobbies",
+      "record_type": "hobby",
+      "start_date": null,
+      "end_date": null,
+      "job_description_summary": [
+        "Play football for a Rotherham charity club supporting mental health",
+        "Play fullback or wingback on either side, using ambidextrous footwork",
+        "Also play central midfield as a playmaker when needed"
+      ],
+      "full_description": [
+        {
+          "heading": "Team football and mental-health community",
+          "content": "I play football for Andy's Man Club Rotherham charity football club. I primarily play fullback or wingback on either side because I am comfortable using both feet, and can also play central midfield as a playmaker. It is a positive team environment connected to mental-health support and community."
+        }
+      ],
+      "achievements": [],
+      "skills_used": [
+        "Teamwork",
+        "Communication",
+        "Adaptability",
+        "Decision Making",
+        "Ambidexterity"
+      ],
+      "tags": [
+        "Hobbies",
+        "Football",
+        "Teamwork",
+        "Mental Health",
+        "Community"
+      ],
+      "conversion_notes": [
+        "Manually added as a personal hobby; excluded from career-duration aggregation and timeline calculations."
+      ]
+    },
+    {
+      "id": "hobby-utility-applications",
+      "job_title": "Utility Application Building",
+      "company": "Personal projects & experimentation",
+      "location": "Home",
+      "department": "Hobbies",
+      "record_type": "hobby",
+      "start_date": null,
+      "end_date": null,
+      "job_description_summary": [
+        "Build small utility applications to make everyday tasks easier",
+        "Use self-directed software projects to explore practical problems and usable solutions"
+      ],
+      "full_description": [
+        {
+          "heading": "Practical utility software",
+          "content": "I enjoy building utility applications at home to make my own life easier. These are self-directed software experiments where I identify a practical frustration, design a lightweight solution and improve it through use."
+        }
+      ],
+      "achievements": [],
+      "skills_used": [
+        "Utility Application Development",
+        "Programming",
+        "Automation",
+        "Problem Solving",
+        "User Experience"
+      ],
+      "tags": [
+        "Hobbies",
+        "Software",
+        "Utility Applications",
+        "Automation",
+        "Problem Solving"
+      ],
+      "conversion_notes": [
+        "Manually added as a personal hobby; excluded from career-duration aggregation and timeline calculations."
       ]
     }
   ]
