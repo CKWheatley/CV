@@ -27,9 +27,10 @@
           </div>
         </div>
         <div class="search-row">
-          <input id="search-input" type="search" placeholder="Try Analyst, Excel, SQL or customer service" autocomplete="off">
+          <input id="search-input" type="search" placeholder="Try Analyst, Excel, SQL, Hobbies or customer service" autocomplete="off" aria-controls="search-suggestions" aria-expanded="false">
           <button id="search-button" type="button">Search</button>
         </div>
+        <div id="search-suggestions" class="search-suggestions" role="status" aria-live="polite" hidden></div>
         <p class="custom-search-tooltip" role="tooltip">For several areas at once, try <code>[data, analysis, programming]</code>.</p>
         <div class="quick-search-window" aria-label="Searchable skills and tags">
           <div id="quick-search-track" class="quick-search"></div>
@@ -59,6 +60,7 @@
           <div class="section-heading">
             <p class="eyebrow">EXPERIENCE</p>
             <h2 id="experience-heading">Relevant experience</h2>
+            <button class="section-collapse-button" type="button" data-section-toggle="experience-section" aria-expanded="true" aria-controls="experience-results">Collapse</button>
           </div>
           <div id="experience-results" class="stack"></div>
         </section>
@@ -68,6 +70,7 @@
             <p class="eyebrow">SKILLS</p>
             <h2 id="skills-heading">Skills in relevant roles</h2>
             <label class="skills-view-control" for="skills-view-toggle">Grid <input id="skills-view-toggle" type="checkbox" role="switch" aria-label="Switch skills between grid and list view"><span class="skills-view-slider" aria-hidden="true"></span> List</label>
+            <button class="section-collapse-button" type="button" data-section-toggle="skills-section" aria-expanded="true" aria-controls="skills-results">Collapse</button>
           </div>
           <div id="skills-results" class="result-grid"></div>
         </section>
@@ -76,8 +79,18 @@
           <div class="section-heading">
             <p class="eyebrow">EDUCATION</p>
             <h2 id="education-heading">Qualifications and certificates</h2>
+            <button class="section-collapse-button" type="button" data-section-toggle="education-section" aria-expanded="true" aria-controls="education-results">Collapse</button>
           </div>
           <div id="education-results" class="stack"></div>
+        </section>
+
+        <section id="hobbies-section" class="result-section" aria-labelledby="hobbies-heading">
+          <div class="section-heading">
+            <p class="eyebrow">HOBBIES</p>
+            <h2 id="hobbies-heading">Personal projects and interests</h2>
+            <button class="section-collapse-button" type="button" data-section-toggle="hobbies-section" aria-expanded="true" aria-controls="hobbies-results">Collapse</button>
+          </div>
+          <div id="hobbies-results" class="stack"></div>
         </section>
       </section>
 
