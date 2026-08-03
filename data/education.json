@@ -1,105 +1,38 @@
 {
-  "schema_version": "1.0.0",
-  "qualifications": [],
-  "certificates": [
+  "schema_version": "1.1.0",
+  "qualifications": [
     {
-      "id": "certificate-ciw-advanced-html5-and-css3-specialist-certificate",
-      "level": "Certificate",
-      "title": "CIW Advanced HTML5 and CSS3 Specialist",
+      "id": "gcse-qualifications-2016",
+      "level": "GCSE",
+      "title": "GCSE qualifications (2016)",
       "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/CIW Advanced HTML5 and CSS3 Specialist certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-css-intermediate-certificate",
-      "level": "Certificate",
-      "title": "CSS Intermediate Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/CSS Intermediate Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-sass-certificate",
-      "level": "Certificate",
-      "title": "Sass Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/SASS Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-html-certificate",
-      "level": "Certificate",
-      "title": "HTML Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/HTML Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-css-certificate",
-      "level": "Certificate",
-      "title": "CSS Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/CSS Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-bootstrap-certificate",
-      "level": "Certificate",
-      "title": "Bootstrap Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/Bootstrap Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-javascript-certificate",
-      "level": "Certificate",
-      "title": "JavaScript Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/JavaScript Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-jquery-certificate",
-      "level": "Certificate",
-      "title": "jQuery Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/JQuery Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-sql-certification",
-      "level": "Certificate",
-      "title": "SQL Certification",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/SQL Certification.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-php-certificate",
-      "level": "Certificate",
-      "title": "PHP Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/PHP Certificate.png",
-      "tags": []
-    },
-    {
-      "id": "certificate-python-fundamentals",
-      "level": "Certificate",
-      "title": "Python Fundamentals Certificate",
-      "issuer": null,
-      "awarded_date": null,
-      "evidence_path": "images/certificates/Python Fundamentals.png",
+      "awarded_date": "2016",
+      "institution": "St Bernard's Catholic High School",
+      "attendance_dates": "09/2011–06/2016",
+      "details": ["History - B", "Mathematics - C", "Science Core - C", "Science Additional - C", "English Literature - C", "English Language - C", "Geography - D"],
       "tags": []
     }
+  ],
+  "certificates": [
+    { "id": "ciw-advanced-html5-css3-specialist", "level": "Certificate", "title": "CIW Advanced HTML5 and CSS3 Specialist Certificate (23/11/2021) [CIW]", "issuer": "CIW", "awarded_date": "23/11/2021", "evidence_path": "data/Certs/CIW/CIW Advanced HTML5 and CSS3 Specialist certificate.pdf", "tags": [] },
+    { "id": "codecademy-bootstrap", "level": "Certificate", "title": "Learn Bootstrap Course (03/12/2021) [Codecademy]", "issuer": "Codecademy", "awarded_date": "03/12/2021", "evidence_path": "data/Certs/Codecademy/Bootstrap Certificate.pdf", "tags": [] },
+    { "id": "codecademy-css", "level": "Certificate", "title": "Learn CSS Course (04/07/2021) [Codecademy]", "issuer": "Codecademy", "awarded_date": "04/07/2021", "evidence_path": "data/Certs/Codecademy/CSS Certificate.pdf", "tags": [] },
+    { "id": "codecademy-intermediate-css", "level": "Certificate", "title": "Learn Intermediate CSS Course (07/01/2022) [Codecademy]", "issuer": "Codecademy", "awarded_date": "07/01/2022", "evidence_path": "data/Certs/Codecademy/CSS Intermediate Certificate.pdf", "tags": [] },
+    { "id": "codecademy-excel-analysis", "level": "Certificate", "title": "Learn Microsoft Excel for Data Analysis Course (03/04/2023) [Codecademy]", "issuer": "Codecademy", "awarded_date": "03/04/2023", "evidence_path": "data/Certs/Codecademy/Excel Analysis Certificate.pdf", "tags": [] },
+    { "id": "codecademy-html", "level": "Certificate", "title": "Learn HTML Course (04/07/2021) [Codecademy]", "issuer": "Codecademy", "awarded_date": "04/07/2021", "evidence_path": "data/Certs/Codecademy/HTML Certificate.pdf", "tags": [] },
+    { "id": "codecademy-javascript", "level": "Certificate", "title": "Learn JavaScript Course (06/07/2021) [Codecademy]", "issuer": "Codecademy", "awarded_date": "06/07/2021", "evidence_path": "data/Certs/Codecademy/JavaScript Certificate.pdf", "tags": [] },
+    { "id": "codecademy-jquery", "level": "Certificate", "title": "Learn jQuery Course (10/08/2021) [Codecademy]", "issuer": "Codecademy", "awarded_date": "10/08/2021", "evidence_path": "data/Certs/Codecademy/JQuery Certificate.pdf", "tags": [] },
+    { "id": "codecademy-php", "level": "Certificate", "title": "Learn PHP Course (22/01/2022) [Codecademy]", "issuer": "Codecademy", "awarded_date": "22/01/2022", "evidence_path": "data/Certs/Codecademy/PHP Certificate.pdf", "tags": [] },
+    { "id": "codecademy-python-3", "level": "Certificate", "title": "Learn Python 3 Course (16/07/2025) [Codecademy]", "issuer": "Codecademy", "awarded_date": "16/07/2025", "evidence_path": "data/Certs/Codecademy/Python (Codecademy).pdf", "tags": [] },
+    { "id": "codecademy-sass", "level": "Certificate", "title": "Learn Sass Course (07/01/2022) [Codecademy]", "issuer": "Codecademy", "awarded_date": "07/01/2022", "evidence_path": "data/Certs/Codecademy/SASS Certificate.pdf", "tags": [] },
+    { "id": "codecademy-analyse-data-sql", "level": "Certificate", "title": "Analyze Data with SQL Skill Path (18/05/2023) [Codecademy]", "issuer": "Codecademy", "awarded_date": "18/05/2023", "evidence_path": "data/Certs/Codecademy/SQL ANALYSIS.pdf", "tags": [] },
+    { "id": "codecademy-sql", "level": "Certificate", "title": "Learn SQL Course (14/12/2021) [Codecademy]", "issuer": "Codecademy", "awarded_date": "14/12/2021", "evidence_path": "data/Certs/Codecademy/SQL Certification.pdf", "tags": [] },
+    { "id": "itcs-html-css3", "level": "Certificate", "title": "HTML5 and CSS3 Fundamentals (13/03/2021) [IT Career Switch]", "issuer": "IT Career Switch", "awarded_date": "13/03/2021", "evidence_path": "data/Certs/IT Career Switch/HTML & CSS3 Fundamentals.pdf", "tags": [] },
+    { "id": "itcs-python", "level": "Certificate", "title": "Introduction to Python (04/03/2021) [IT Career Switch]", "issuer": "IT Career Switch", "awarded_date": "04/03/2021", "evidence_path": "data/Certs/IT Career Switch/Introduction to Python.pdf", "tags": [] },
+    { "id": "itcs-javascript", "level": "Certificate", "title": "Javascript Essentials (02/04/2021) [IT Career Switch]", "issuer": "IT Career Switch", "awarded_date": "02/04/2021", "evidence_path": "data/Certs/IT Career Switch/Javascript Essentials.pdf", "tags": [] },
+    { "id": "itcs-70-480", "level": "Certificate", "title": "Microsoft 70-480: Programming in HTML5 with JavaScript and CSS3 (02/04/2021) [IT Career Switch]", "issuer": "IT Career Switch", "awarded_date": "02/04/2021", "evidence_path": "data/Certs/IT Career Switch/Microsoft 70-480Programming.pdf", "tags": [] },
+    { "id": "ucertify-ciw-prep", "level": "Certificate", "title": "CIW Advanced HTML5 and CSS3 Specialist V2.0 Prep Certificate (08/11/2021) [uCertify]", "issuer": "uCertify", "awarded_date": "08/11/2021", "evidence_path": "data/Certs/UCertify/CIW Advanced HTML5 and CSS3 Specialist V2.0 Prep Certificate.pdf", "tags": [] },
+    { "id": "ucertify-python", "level": "Certificate", "title": "Python Fundamentals (22/08/2022) [uCertify]", "issuer": "uCertify", "awarded_date": "22/08/2022", "evidence_path": "data/Certs/UCertify/Python Fundamentals.pdf", "tags": [] },
+    { "id": "ucertify-software-fundamentals", "level": "Certificate", "title": "Software Fundamentals Certificate (23/10/2022) [uCertify]", "issuer": "uCertify", "awarded_date": "23/10/2022", "evidence_path": "data/Certs/UCertify/Software Fundamentals Cert.pdf", "tags": [] }
   ]
 }
