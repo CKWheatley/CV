@@ -3,6 +3,11 @@ import { findEasterEgg } from './easterEggs.js';
 
 const normalise = (value) => String(value ?? '').toLocaleLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const monthNumber = (date) => date.getFullYear() * 12 + date.getMonth();
+const educationDate = (value) => {
+  if (/^\d{4}$/.test(String(value))) return new Date(Number(value), 5, 1);
+  const [day, month, year] = String(value).split('/').map(Number);
+  return new Date(year, month - 1, day || 1);
+};
 const hasTerm = (text, term) => text.split(' ').includes(term);
 const suggestionScore = (label, terms) => {
   const candidate = normalise(label);
@@ -104,17 +109,23 @@ export class CvSearchEngine {
   timeline() {
     const now = new Date();
     const endDate = (record) => record.end_date ? ExperienceDate.parse(record.end_date) : now;
-    const latest = Math.max(monthNumber(now), ...this.experience.map((record) => monthNumber(endDate(record))));
-    const earliest = Math.min(...this.experience.map((record) => monthNumber(ExperienceDate.parse(record.start_date))));
+    const datedEducation = this.education.filter((record) => record.awarded_date).map((record) => ({ record, date: educationDate(record.awarded_date) }));
+    const latest = Math.max(monthNumber(now), ...this.experience.map((record) => monthNumber(endDate(record))), ...datedEducation.map(({ date }) => monthNumber(date)));
+    const earliest = Math.min(...this.experience.map((record) => monthNumber(ExperienceDate.parse(record.start_date))), ...datedEducation.map(({ date }) => monthNumber(date)));
     const laneEnds = [];
-    const records = [...this.experience].map((record) => {
+    const employmentEvents = this.experience.map((record) => {
       const start = monthNumber(ExperienceDate.parse(record.start_date));
       const end = monthNumber(endDate(record));
       const rowStart = latest - end + 1;
       const rowSpan = end - start + 1;
       const eventRow = latest - start + 1;
-      return { record, rowStart, rowSpan, rowEnd: rowStart + rowSpan - 1, eventRow, durationMonths: rowSpan };
-    }).sort((a, b) => a.rowStart - b.rowStart).map((item) => {
+      return { id: record.id, type: 'employment', record, rowStart, rowSpan, rowEnd: rowStart + rowSpan - 1, eventRow, durationMonths: rowSpan };
+    });
+    const educationEvents = datedEducation.map(({ record, date }) => {
+      const rowStart = latest - monthNumber(date) + 1;
+      return { id: `education-${record.id}`, type: 'education', record, rowStart, rowSpan: 2, rowEnd: rowStart + 1, eventRow: rowStart, durationMonths: 2 };
+    });
+    const records = [...employmentEvents, ...educationEvents].sort((a, b) => a.rowStart - b.rowStart).map((item) => {
       let lane = laneEnds.findIndex((laneEnd) => item.rowStart > laneEnd);
       if (lane === -1) lane = laneEnds.length;
       laneEnds[lane] = item.rowEnd;

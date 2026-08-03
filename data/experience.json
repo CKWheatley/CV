@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "record_count": 18,
+  "record_count": 19,
   "records": [
     {
       "id": "experience-ag4",
@@ -46,7 +46,7 @@
         {
           "achievement": "Modernised a 15-year-old pricing model",
           "impact": "Consolidated two legacy models into one version-controlled tool, making updates easier and improving sales-representative productivity.",
-          "evidence": "Pricng models are tricky, large and complex beasts, even fellow analysts took a shot at both our new business and retention models, they failed in the attempt, since i was assigned the task of updating the 15 year old pricing models it was challenging but taught me a great deal about financial decision making and financial assignment within a pricing matrix. I conquered the task, Its far more efficient and effective than before, introduced version control, newer scripting via macros (As it was an excel matrix) new data modeling merging 2 of the New business models into one, audit logging for faster debugging and error checking and finally, seperation of concerns with out monthly supply updates.",
+          "evidence": "Pricing models are tricky, large and complex beasts, even fellow analysts took a shot at both our new business and retention models, they failed in the attempt, since i was assigned the task of updating the 15 year old pricing models it was challenging but taught me a great deal about financial decision making and financial assignment within a pricing matrix. I conquered the task, Its far more efficient and effective than before, introduced version control, newer scripting via macros (As it was an Excel matrix) new data modeling merging 2 of the New business models into one, audit logging for faster debugging and error checking and finally, separation of concerns without monthly supply updates.",
           "needs_manual_impact": false
         },
         {
@@ -64,7 +64,7 @@
         {
           "achievement": "Enabled practical AI use across the business",
           "impact": "Established monthly LLM learning sessions and created reusable AI skills and tools colleagues use for database querying, schema discovery and complex work.",
-          "evidence": "I have long been considered the 'AI Man' of the business, as such i have started monthly meeting designed to educate the business in LLM usage within the business with my techniques and methods to get the most out of AI since i have been using LLM's since GPT Launched, i was once told by another analyst 'I tell people you think you know how to use AI but you havent met Callum', a compliment of course but thats because im pushing innovation with its usage daily. We now have Algorithmic Skills developed by me that can Query the database accurately mimicing previous data examples and schema searching for management info and for assistance on more complex work, sometimes its one shot prompts some times itl take 2 or three, but the AI is now the second best SQL writer in the business, after me of course :). But Thats just one example, feel free to speak to me more about this.",
+          "evidence": "I have long been considered the 'AI Man' of the business, as such i have started monthly meeting designed to educate the business in LLM usage within the business with my techniques and methods to get the most out of AI since i have been using LLM's since GPT Launched, i was once told by another analyst 'I tell people you think you know how to use AI but you havent met Callum', a compliment of course but thats because im pushing innovation with its usage daily. We now have Algorithmic Skills developed by me that can Query the database accurately mimicking previous data examples and schema searching for management info and for assistance on more complex work, sometimes its one shot prompts some times it'll take 2 or three, but the AI is now the second best SQL writer in the business, after me of course :). But Thats just one example, feel free to speak to me more about this.",
           "needs_manual_impact": false
         }
       ],
@@ -164,9 +164,9 @@
         "Creating management reports on request",
         "Using Both Access & SQL Server for data",
         "Teaching the analysis team SQL",
-        "Generating sheduled reports for analysis",
+        "Generating scheduled reports for analysis",
         "Converting Access code into SQL Server",
-        "Creating automatic functions in excel using VBA",
+        "Creating automatic functions in Excel using VBA",
         "Assisting the analysis team with their work",
         "Liaising with leadership and management teams (home & abroad)"
       ],
@@ -383,12 +383,12 @@
       "end_date": "2022-04-30",
       "job_description_summary": [
         "Validating data from Premier LPG",
-        "Inputting Data into Avanti DB via excel and google sheets QR Scanning"
+        "Inputting data into Avanti DB via Excel and Google Sheets QR scanning"
       ],
       "full_description": [
         {
           "heading": "About the job",
-          "content": "At Avanti their parent company UGI Inernational was taking over Premier LPG, therefore all of their customers were to be switched over to Avantigas' systems. My job was to simply scan the QR codes on google sheets which would input data from tables they had extracted from the other system. I thought this was genius, semi-automating the switch process to save money however i took my job a bit further and decided to take on the QR coded sheets and start inputting my own data. Because of my coding experience i managed to manipulate the code in the google sheet making the process not only quicker but easier too. I enjoyed making this process quicker and more efficient as i always strive to do so with my work."
+          "content": "At Avanti their parent company UGI Inernational was taking over Premier LPG, therefore all of their customers were to be switched over to Avantigas' systems. My job was to simply scan the QR codes on Google Sheets which would input data from tables they had extracted from the other system. I thought this was genius, semi-automating the switch process to save money however i took my job a bit further and decided to take on the QR coded sheets and start inputting my own data. Because of my coding experience i managed to manipulate the code in the Google Sheet, making the process not only quicker but easier too. I enjoyed making this process quicker and more efficient as i always strive to do so with my work."
         }
       ],
       "achievements": [
@@ -438,7 +438,7 @@
       "full_description": [
         {
           "heading": "About the Job",
-          "content": "At Unbloq i worked on both the front end and the back end of websites and email marketing campaigns. Often at times I would find myself building sites from scratch and working on wordpress, At unbloq i had my first hands on experience working on mac systems and adobe suite applications such as dreamweaver, although as time went on i resulted to sticking to visual studio code as my prefered software for builds."
+          "content": "At Unbloq i worked on both the front end and the back end of websites and email marketing campaigns. Often at times I would find myself building sites from scratch and working on WordPress, At Unbloq i had my first hands on experience working on Mac systems and Adobe suite applications such as Dreamweaver, although as time went on i resulted to sticking to Visual Studio Code as my preferred software for builds."
         },
         {
           "heading": "The Experience I gained",
@@ -501,7 +501,14 @@
           "content": "During the pandemic the Census project had to go on, So on a temporary contract my duty would be to key in data received from the warehouses and update the information on the system."
         }
       ],
-      "achievements": [],
+      "achievements": [
+        {
+          "achievement": "Ranked in the top 1% of fastest keying agents",
+          "impact": "Maintained an accuracy rate above 95% while delivering high-volume data entry.",
+          "evidence": "Achieved top-1% keying speed while maintaining over 95% accuracy.",
+          "needs_manual_impact": false
+        }
+      ],
       "skills_used": [
         "Data Entry",
         "Data Accuracy",
@@ -531,7 +538,7 @@
       "full_description": [
         {
           "heading": "My Claim to fame on the Universal Credit Team",
-          "content": "I worked on the campaign which as we all know was set up in a rushed fashion to cope with the stress of the pandemic and I could clearly see that all notes left were unorganised and the note taking process was slow and ineffective. So i literally took to the internet to see how i could use Microsoft excel to organise the note taking process and make it more efficient.I spent roughly a week or 2 of my own time creating and learning how to make code within excel, create macros and generally learned how to make the excel sheet aesthetically pleasing as well as simple. I used the \u201cCall Notes Tool\u201d whilst on call with claimants and would gather a list of notes for improvements.When the tool was near enough done it was time to reveal to the team. Then it blew up, Campaign wide adoption had happened within the first week and a personal thanks from the Campaign Manager for my hard work and innovation to help the campaign as a whole. Notably the entire campaign statistics had improved in terms of scorecards, wrap times and general job satisfaction on the campaign as a whole had dramatically improved."
+          "content": "I worked on the campaign which as we all know was set up in a rushed fashion to cope with the stress of the pandemic and I could clearly see that all notes left were unorganised and the note taking process was slow and ineffective. So i literally took to the internet to see how i could use Microsoft Excel to organise the note taking process and make it more efficient.I spent roughly a week or 2 of my own time creating and learning how to make code within Excel, create macros and generally learned how to make the Excel sheet aesthetically pleasing as well as simple. I used the \u201cCall Notes Tool\u201d whilst on call with claimants and would gather a list of notes for improvements.When the tool was near enough done it was time to reveal to the team. Then it blew up, Campaign wide adoption had happened within the first week and a personal thanks from the Campaign Manager for my hard work and innovation to help the campaign as a whole. Notably the entire campaign statistics had improved in terms of scorecards, wrap times and general job satisfaction on the campaign as a whole had dramatically improved."
         },
         {
           "heading": "This was a turning point for my career direction & decided that creation and innovation was what i want to do.",
@@ -669,7 +676,7 @@
       "full_description": [
         {
           "heading": "More Info",
-          "content": "My job at Webhelp consisted mostly of calling our customers at Vodafone to entise them to purchase another line such as a tablet or watch on contract with a sim in it. I would work on the Household department for 3 months before they needed more people on the broadband team so i switched over with practically no training selling broadband this time and continued working there untill the end."
+          "content": "My job at Webhelp consisted mostly of calling our customers at Vodafone to entice them to purchase another line such as a tablet or watch on contract with a SIM in it. I would work on the Household department for 3 months before they needed more people on the broadband team so i switched over with practically no training selling broadband this time and continued working there until the end."
         }
       ],
       "achievements": [],
@@ -708,7 +715,7 @@
       "full_description": [
         {
           "heading": "More Info",
-          "content": "At Harry Ramsdens i was the young recruit at just 16, literally fresh out of school i worked as the till operative who would take orders then prepare their food shortly before serving them their food."
+          "content": "At Harry Ramsden's i was the young recruit at just 16, literally fresh out of school i worked as the till operative who would take orders then prepare their food shortly before serving them their food."
         }
       ],
       "achievements": [],
@@ -738,7 +745,7 @@
         "Organise pre-game (administration, kit, venue .etc)",
         "Pre-game checks and management",
         "Officiate in accordance to laws of the game",
-        "Issueing disciplinaries to players that infringe the laws of the game",
+        "Issuing disciplinaries to players that infringe the laws of the game",
         "Manage a team of officials or work with lead official",
         "Work as a team to make decisions decisively",
         "Organise and manage up to 22 - 32 players at any one time",
@@ -749,11 +756,11 @@
       "full_description": [
         {
           "heading": "More Info",
-          "content": "Its not often you will see official on a CV but it is an extremely usefull job/hobby to have. I have learned so many skills Officiating, mostly skills including anger management, crowd control, organisation, eye for detail, quick decision making, disciplinaries and commanding respect all of which can come very usefull in other jobs. Not only has it improved and introduced new skills for me but its also helped me mature at a younger age in a working environment, That in turn has helped me work indipendently and organise my own games around a shedule of assigned games by league associates. Often at times i have de-escaleted situations where i was confronted by either players or managers all of which were dealt with in a propper manner. Its also quite funny to note that one of my worst games was a local u18s derby where i disciplined a total of 13 players 9 of which were yellow cards and 4 resulting in being sent off, These games are \"extremely rare\" as quoted by the U18s League representitive with upwards of 20 years refereeing experience and proudly applauded me for my efforts to calm down a game that was innevitaly going to be rough."
+          "content": "Its not often you will see official on a CV but it is an extremely useful job/hobby to have. I have learned so many skills Officiating, mostly skills including anger management, crowd control, organisation, eye for detail, quick decision making, disciplinaries and commanding respect all of which can come very useful in other jobs. Not only has it improved and introduced new skills for me but its also helped me mature at a younger age in a working environment, That in turn has helped me work independently and organise my own games around a schedule of assigned games by league associates. Often at times i have de-escalated situations where i was confronted by either players or managers all of which were dealt with in a proper manner. Its also quite funny to note that one of my worst games was a local u18s derby where i disciplined a total of 13 players 9 of which were yellow cards and 4 resulting in being sent off, These games are \"extremely rare\" as quoted by the U18s League representative with upwards of 20 years refereeing experience and proudly applauded me for my efforts to calm down a game that was inevitably going to be rough."
         },
         {
           "heading": "Even More",
-          "content": "Not only have i worked by myself, proudly i have worked with plenty of other officials either as a referee or a linesman and some of these are high level referees boasting the potential to make it to the highest of leagues, all of this has provided me with exceptional skills and experience in management, although officially i havent passed a managers course this is a stepping stone towards future careers in management. This has provided me the skill to manage under lots of pressure whilst making competent decisions, refereeing is much more challenging than what meets the eye of an observer as you have to work at high tempos persistently literally sprinting to and from one end to the other then making decisions within a split second all within the knowledge of the laws of the game.\n My proudest acheivements as a referee or linesman was refereeing a year 10s school cup final, as well as being the linesman at the U18s FA Youth cup semi-final, I have also refereed youth squads of proffessional football teams Barnsley FC, Sheffield United, Sheffield Wednesday and Rotherham United at home not to mention the away teams were also proffesional clubs. I retained a great reccord as a referee, picking up literal last minute games to cover for referees that have dropped out and wish to continue refereeing arround work time."
+          "content": "Not only have i worked by myself, proudly i have worked with plenty of other officials either as a referee or a linesman and some of these are high level referees boasting the potential to make it to the highest of leagues, all of this has provided me with exceptional skills and experience in management, although officially i havent passed a managers course this is a stepping stone towards future careers in management. This has provided me the skill to manage under lots of pressure whilst making competent decisions, refereeing is much more challenging than what meets the eye of an observer as you have to work at high tempos persistently literally sprinting to and from one end to the other then making decisions within a split second all within the knowledge of the laws of the game.\n My proudest achievements as a referee or linesman was refereeing a year 10s school cup final, as well as being the linesman at the U18s FA Youth cup semi-final, I have also refereed youth squads of professional football teams Barnsley FC, Sheffield United, Sheffield Wednesday and Rotherham United at home not to mention the away teams were also professional clubs. I retained a great record as a referee, picking up literal last minute games to cover for referees that have dropped out and wish to continue refereeing around work time."
         }
       ],
       "achievements": [],
@@ -778,7 +785,7 @@
     },
     {
       "id": "experience-nhs-returners",
-      "job_title": "NHS Returners Campaign Support",
+      "job_title": "NHS Returners Campaign Voluntary Support",
       "company": "Capita",
       "location": "Remote",
       "department": "NHS Returners Campaign",
@@ -828,15 +835,15 @@
       "start_date": null,
       "end_date": null,
       "job_description_summary": [
-        "Built a PC from scratch and experiment with how hardware components work together",
-        "Researched and fitted a spare GPU through an x1 mining riser, including a 3D-printed stabiliser bracket and airflow considerations",
+        "Built a PC from scratch and experimented with how hardware components work together",
+        "Researched and fitted a spare GPU through a PCIe x1 riser, including a 3D-printed stabiliser bracket and airflow considerations",
         "Tested a bandwidth-constrained dual-GPU configuration for gaming and local AI workloads",
         "Built a PowerShell override so Ollama used the second GPU for a local-AI Bannerlord diplomacy mod while the primary GPU ran the game"
       ],
       "full_description": [
         {
           "heading": "Dual-GPU experiment: research, build and testing",
-          "content": "I am naturally curious about how hardware works together and built my PC from scratch. With a spare GPU available, I researched how to use it effectively, bought a \u00a315 x1 mining-card riser and attached it to an x1 motherboard socket. I designed and 3D-printed a stabiliser bracket, fitted the GPU into the case and considered the airflow trade-off. Research suggested that Lossless Scaling might struggle over the bandwidth-limited x1 bus, which testing confirmed. Further research identified an eGPU enclosure using Thunderbolt 4 or a new motherboard as gaming-throughput alternatives, but my device was not Thunderbolt 4 compatible."
+          "content": "I am naturally curious about how hardware works together and built my PC from scratch. With a spare GPU available, I researched how to use it effectively, bought a \u00a315 PCIe x1 riser and attached it to an x1 motherboard socket. I designed and 3D-printed a stabiliser bracket, fitted the GPU into the case and considered the airflow trade-off. Research suggested that Lossless Scaling might struggle over the bandwidth-limited x1 bus, which testing confirmed. Further research identified an eGPU enclosure using Thunderbolt 4 or a new motherboard as gaming-throughput alternatives, but my device was not Thunderbolt 4 compatible."
         },
         {
           "heading": "Repurposing the GPU for local AI",
@@ -952,6 +959,40 @@
       ]
     },
     {
+      "id": "hobby-reading",
+      "job_title": "Reading",
+      "company": "Personal interest",
+      "location": "Home",
+      "department": "Hobbies",
+      "record_type": "hobby",
+      "start_date": null,
+      "end_date": null,
+      "job_description_summary": [
+        "Read Halo, Game of Thrones and Cyberpunk fiction alongside informational books and biographies"
+      ],
+      "full_description": [
+        {
+          "heading": "Reading",
+          "content": "I enjoy reading Halo, Game of Thrones and Cyberpunk fiction, as well as informational books and biographies."
+        }
+      ],
+      "achievements": [],
+      "skills_used": [
+        "Research",
+        "Continuous Learning"
+      ],
+      "tags": [
+        "Hobbies",
+        "Reading",
+        "Fiction",
+        "Biographies",
+        "Learning"
+      ],
+      "conversion_notes": [
+        "Manually added as a personal hobby; excluded from career-duration aggregation and timeline calculations."
+      ]
+    },
+    {
       "id": "hobby-utility-applications",
       "job_title": "Utility Application Building",
       "company": "Personal projects & experimentation",
@@ -961,7 +1002,7 @@
       "start_date": null,
       "end_date": null,
       "job_description_summary": [
-        "Build small utility applications to make everyday tasks easier",
+        "Building small utility applications to make everyday tasks easier",
         "Use self-directed software projects to explore practical problems and usable solutions"
       ],
       "full_description": [
