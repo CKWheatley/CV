@@ -24,7 +24,12 @@
         "Producing process maps and documentation to identify automation and simplification opportunities",
         "Participating in weekly FP&A and project discussions to review priorities, blockers and upcoming work",
         "Maintaining version control, audit logging, documentation and separation of responsibilities within analytical tools",
-        "Communicating technical findings clearly to analysts, managers, sales teams and senior stakeholders"
+        "Communicating technical findings clearly to analysts, managers, sales teams and senior stakeholders",
+        "Acting as technical lead for an API integration between HubSpot and an internal business system, coordinating communication between the project lead, developers and employees involved in the project",
+        "Hosting requirements-gathering and scope meetings, identifying problems and designing integration solutions",
+        "Leading data modelling across both integrated systems and facilitating all middleware testing phases within an engineering V-model approach",
+        "Delegating work requirements to the delivery team and reporting findings to the project manager to support critical decisions and technical project planning",
+        "Leading AI workshops and monthly AI coaching sessions to help colleagues use AI effectively"
       ],
       "full_description": [
         {
@@ -34,6 +39,10 @@
         {
           "heading": "Root-cause analysis: S&OP forecasting",
           "content": "Investigated an aggregated S&OP forecast performing at around 40% accuracy by reviewing data, assumptions, segmentation and calculation logic. I identified patterns behind the largest errors, applied measured patches month by month and tested each iteration before progressing. Regular aggregate accuracy improved in steps of roughly 5-10 percentage points to approximately 90%."
+        },
+        {
+          "heading": "Technical leadership: HubSpot API integration",
+          "content": "I am the technical lead for an API integration between HubSpot and an internal business system, coordinating communication between the project lead, developers and employees involved in the project. I host requirements-gathering and scope meetings, identify problems and design solutions. I lead data modelling across both systems and facilitate all testing phases for the middleware, with involvement in engineering V-model management and technical project planning. I delegate work requirements to the delivery team and feed findings back to the project manager to support critical decision-making."
         }
       ],
       "achievements": [
@@ -63,8 +72,8 @@
         },
         {
           "achievement": "Enabled practical AI use across the business",
-          "impact": "Established monthly LLM learning sessions and created reusable AI skills and tools colleagues use for database querying, schema discovery and complex work.",
-          "evidence": "I have long been considered the 'AI Man' of the business, as such i have started monthly meeting designed to educate the business in LLM usage within the business with my techniques and methods to get the most out of AI since i have been using LLM's since GPT Launched, i was once told by another analyst 'I tell people you think you know how to use AI but you havent met Callum', a compliment of course but thats because im pushing innovation with its usage daily. We now have Algorithmic Skills developed by me that can Query the database accurately mimicking previous data examples and schema searching for management info and for assistance on more complex work, sometimes its one shot prompts some times it'll take 2 or three, but the AI is now the second best SQL writer in the business, after me of course :). But Thats just one example, feel free to speak to me more about this.",
+          "impact": "Established monthly AI coaching sessions and lead AI workshops to help colleagues use AI effectively, alongside reusable AI skills and tools for database querying, schema discovery and complex work.",
+          "evidence": "I lead AI workshops and monthly AI coaching sessions to help colleagues use AI effectively in their work, sharing practical techniques for prompting and context engineering. I have developed reusable AI skills and tools that support accurate database querying using previous data examples and schema discovery, helping colleagues access management information and tackle more complex work.",
           "needs_manual_impact": false
         }
       ],
@@ -136,7 +145,26 @@
         "Business Analysis",
         "Technical Documentation",
         "Process Improvement",
-        "Continuous Improvement"
+        "Continuous Improvement",
+        "Technical Leadership",
+        "Engineering V-Model Management",
+        "Technical Project Planning",
+        "AI Coaching",
+        "Workshop Facilitation",
+        "API Integration",
+        "Systems Integration",
+        "Middleware Integration",
+        "Data Modelling",
+        "Requirements Analysis",
+        "Scope Management",
+        "Solution Design",
+        "Test Planning",
+        "Test Coordination",
+        "Stakeholder Communication",
+        "Cross-Functional Collaboration",
+        "Delegation",
+        "Problem Solving",
+        "Meeting Facilitation"
       ],
       "tags": [
         "Analyst",
@@ -145,7 +173,8 @@
         "Administration",
         "Automation",
         "Root Cause Analysis",
-        "Forecasting"
+        "Forecasting",
+        "Leadership"
       ],
       "conversion_notes": [
         "Created deterministically from js/descriptions.js.",
@@ -233,7 +262,10 @@
         "Business Analysis",
         "Technical Documentation",
         "Process Improvement",
-        "Continuous Improvement"
+        "Continuous Improvement",
+        "AI (LLM)",
+        "Context Engineering (AI)",
+        "Prompt Engineering (AI)"
       ],
       "tags": [
         "Analyst",
@@ -292,7 +324,8 @@
         "CRM",
         "Sage 50",
         "Microsoft Excel",
-        "Hubspot"
+        "Hubspot",
+        "AI (LLM)"
       ],
       "tags": [
         "Data",
@@ -358,7 +391,8 @@
         "Invoicing",
         "Data Reporting",
         "Direct Debit Administration",
-        "Customer Retention"
+        "Customer Retention",
+        "AI (LLM)"
       ],
       "tags": [
         "Data",
